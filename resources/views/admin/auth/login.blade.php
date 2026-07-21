@@ -38,6 +38,10 @@
                 <p class="form-note" data-state="error">{{ $message }}</p>
             @enderror
         </form>
+        <nav class="legal-auth-links" aria-label="Liens legaux">
+            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions legales</a>
+            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Confidentialite</a>
+        </nav>
     </main>
 </body>
 </html>

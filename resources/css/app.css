@@ -1047,7 +1047,7 @@ h3 {
     color: var(--white);
     background:
         linear-gradient(135deg, rgba(8, 27, 49, .98), rgba(18, 56, 95, .95)),
-        url('/images/jca-cooperation.png') center / cover;
+        url('/images/jca-cooperation.webp') center / cover;
 }
 
 .services-section h2 {
@@ -1327,7 +1327,7 @@ h3 {
     color: var(--white);
     background:
         linear-gradient(135deg, rgba(11, 31, 58, .98), rgba(16, 43, 77, .92)),
-        url('/images/jca-hero.png') center / cover;
+        url('/images/jca-hero.webp') center / cover;
 }
 
 .cta-band h2,
@@ -1542,7 +1542,7 @@ h3 {
     color: var(--white);
     background:
         linear-gradient(135deg, rgba(8, 27, 49, .98), rgba(18, 56, 95, .94)),
-        url('/images/jca-recruitment.png') center / cover;
+        url('/images/jca-recruitment.webp') center / cover;
 }
 
 .service-experience h2 {
@@ -1602,7 +1602,7 @@ h3 {
     background:
         linear-gradient(135deg, rgba(8, 27, 49, .98), rgba(18, 56, 95, .9)),
         radial-gradient(circle at 82% 18%, rgba(31, 138, 132, .24), transparent 34%),
-        url('/images/jca-cooperation.png') center / cover;
+        url('/images/jca-cooperation.webp') center / cover;
 }
 
 .impact-story {
@@ -1791,7 +1791,7 @@ h3 {
     padding: 24px;
     background:
         linear-gradient(135deg, rgba(7, 21, 39, .95), rgba(16, 43, 77, .88)),
-        url('/images/jca-hero.png') center / cover;
+        url('/images/jca-hero.webp') center / cover;
 }
 
 .login-panel {
@@ -1949,6 +1949,29 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 16px 42px rgba(11, 31, 58, .08);
     backdrop-filter: blur(14px);
+}
+
+.security-note {
+    margin-top: 10px;
+    color: #7a5b0b;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.legal-auth-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .78);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.legal-auth-links a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .admin-topbar h1 {
@@ -2386,6 +2409,66 @@ h3 {
     z-index: -1;
 }
 
+.bar-width-6 {
+    --bar: 6%;
+}
+
+.bar-width-8 {
+    --bar: 8%;
+}
+
+.bar-width-12 {
+    --bar: 12%;
+}
+
+.bar-width-16 {
+    --bar: 16%;
+}
+
+.bar-width-24 {
+    --bar: 24%;
+}
+
+.bar-width-32 {
+    --bar: 32%;
+}
+
+.bar-width-36 {
+    --bar: 36%;
+}
+
+.bar-width-48 {
+    --bar: 48%;
+}
+
+.bar-width-60 {
+    --bar: 60%;
+}
+
+.bar-width-64 {
+    --bar: 64%;
+}
+
+.bar-width-72 {
+    --bar: 72%;
+}
+
+.bar-width-80 {
+    --bar: 80%;
+}
+
+.bar-width-84 {
+    --bar: 84%;
+}
+
+.bar-width-96 {
+    --bar: 96%;
+}
+
+.bar-width-100 {
+    --bar: 100%;
+}
+
 .compact-report-bars strong {
     min-height: 30px;
 }
@@ -2532,6 +2615,14 @@ h3 {
     box-shadow: 0 10px 28px rgba(11, 31, 58, .06);
 }
 
+.job-search label {
+    display: grid;
+    gap: 8px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 900;
+}
+
 .job-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2615,6 +2706,58 @@ h3 {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, .12);
     font-size: 13px;
+}
+
+.legal-content {
+    display: grid;
+    gap: 18px;
+    background: var(--soft);
+}
+
+.legal-content .admin-panel {
+    display: grid;
+    gap: 14px;
+}
+
+.legal-content h2 {
+    font-size: clamp(1.5rem, 2.1rem, 2.6rem);
+}
+
+.legal-content p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.cookie-banner {
+    position: fixed;
+    left: clamp(14px, 3vw, 28px);
+    right: clamp(14px, 3vw, 28px);
+    bottom: clamp(14px, 3vw, 28px);
+    z-index: 80;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 18px;
+    color: var(--white);
+    background: rgba(7, 21, 39, .96);
+    border: 1px solid rgba(213, 173, 71, .38);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.cookie-banner[hidden] {
+    display: none;
+}
+
+.cookie-banner p {
+    color: rgba(255, 255, 255, .84);
+    line-height: 1.6;
+}
+
+.cookie-banner > div {
+    display: flex;
+    gap: 10px;
 }
 
 .language-switcher {
@@ -2885,7 +3028,7 @@ h3 {
     overflow: hidden;
     background:
         linear-gradient(135deg, rgba(8, 27, 49, .96), rgba(18, 56, 95, .9)),
-        url('/images/jca-hero.png') center / cover;
+        url('/images/jca-hero.webp') center / cover;
 }
 
 .portal-hero::after {
@@ -3373,6 +3516,14 @@ h3 {
     .search-panel button,
     .button {
         width: 100%;
+    }
+
+    .cookie-banner {
+        grid-template-columns: 1fr;
+    }
+
+    .cookie-banner > div {
+        display: grid;
     }
 
     .stats-band,

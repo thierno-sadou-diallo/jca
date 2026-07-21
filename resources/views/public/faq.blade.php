@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Questions frequentes JCA sur immigration, recrutement, espace client et accompagnement international.">
-    <title>FAQ | JCA</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => 'FAQ | JCA',
+        'description' => 'Questions frequentes JCA sur immigration, recrutement, espace client et accompagnement international.',
+        'structuredData' => [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => $faqs->flatten()->map(fn ($faq) => [
+                '@type' => 'Question',
+                'name' => $faq->question,
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $faq->answer,
+                ],
+            ])->values()->all(),
+        ],
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -21,9 +32,9 @@
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
-                <img src="{{ asset('images/jca-immigration.png') }}" alt="">
-                <img src="{{ asset('images/jca-hero.png') }}" alt="">
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="">
+                <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
+                <img src="{{ asset('images/jca-hero.webp') }}" alt="">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
             </div>
         </section>
 
@@ -54,5 +65,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

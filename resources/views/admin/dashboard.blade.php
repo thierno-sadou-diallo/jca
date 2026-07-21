@@ -7,13 +7,14 @@
         </div>
         <div class="admin-welcome-card">
             <span>Priorite immediate</span>
-            <strong>{{ $stats['newLeads'] + $stats['pendingDocuments'] + $stats['unreadMessages'] }}</strong>
-            <p>Demandes, documents ou messages qui attendent une action.</p>
+            <strong>{{ $stats['newLeads'] + $stats['pendingDocuments'] + $stats['unreadMessages'] + $stats['pendingClients'] }}</strong>
+            <p>Comptes, demandes, documents ou messages qui attendent une action.</p>
         </div>
     </section>
 
     <section class="admin-stats admin-stats-clean admin-stats-featured">
         <article><span>Clients</span><strong>{{ $stats['clients'] }}</strong></article>
+        <article><span>Comptes a activer</span><strong>{{ $stats['pendingClients'] }}</strong></article>
         <article><span>Demandes a traiter</span><strong>{{ $stats['newLeads'] }}</strong></article>
         <article><span>Documents attente</span><strong>{{ $stats['pendingDocuments'] }}</strong></article>
         <article><span>Messages non lus</span><strong>{{ $stats['unreadMessages'] }}</strong></article>
@@ -23,6 +24,10 @@
         <a href="{{ route('admin.clients.index') }}">
             <strong>Clients</strong>
             <span>Consulter les profils, statuts, documents et conversations.</span>
+        </a>
+        <a href="{{ route('admin.users.index', ['role' => 'client', 'status' => 'inactive']) }}">
+            <strong>Comptes a activer</strong>
+            <span>Valider les nouvelles inscriptions avant l acces au portail.</span>
         </a>
         <a href="{{ route('admin.leads.index') }}">
             <strong>Demandes clients</strong>

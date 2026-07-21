@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Article;
 use App\Models\Appointment;
+use App\Models\Article;
 use App\Models\CooperationProject;
 use App\Models\Document;
 use App\Models\Faq;
@@ -28,6 +28,7 @@ class DashboardController extends Controller
             'stats' => [
                 'leads' => LeadRequest::count(),
                 'clients' => User::where('role', 'client')->count(),
+                'pendingClients' => User::where('role', 'client')->where('status', 'inactive')->count(),
                 'admins' => User::where('role', 'admin')->count(),
                 'newLeads' => LeadRequest::where('status', 'new')->count(),
                 'publishedJobs' => JobPosting::where('status', 'published')->count(),

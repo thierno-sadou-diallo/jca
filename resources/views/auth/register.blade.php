@@ -75,6 +75,7 @@
                     <button class="button primary" type="submit">Creer mon espace</button>
                     <a class="button ghost" href="{{ route('portal.login') }}">Connexion</a>
                 </div>
+                <p class="form-note">En creant un compte, vous acceptez les <a href="{{ route('legal.show', 'conditions-utilisation') }}">conditions d utilisation</a> et la <a href="{{ route('legal.show', 'politique-confidentialite') }}">politique de confidentialite</a>.</p>
             </form>
         </section>
     </main>

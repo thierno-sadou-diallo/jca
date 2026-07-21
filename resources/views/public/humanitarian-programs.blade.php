@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Programmes humanitaires - JCA</title>
-    <meta name="description" content="Programmes humanitaires et initiatives sociales JCA: inclusion, formation, employabilite, solidarite et impact humain.">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => 'Programmes humanitaires | JCA',
+        'description' => 'Programmes humanitaires et initiatives sociales JCA: inclusion, formation, employabilite, solidarite et impact humain.',
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -21,9 +20,9 @@
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
-                <img src="{{ asset('images/jca-hero.png') }}" alt="">
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="">
-                <img src="{{ asset('images/jca-immigration.png') }}" alt="">
+                <img src="{{ asset('images/jca-hero.webp') }}" alt="">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
+                <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
             </div>
         </section>
 
@@ -48,7 +47,7 @@
             <div class="cards-grid">
                 @forelse ($programs as $program)
                     <article class="news-card reveal">
-                        <img src="{{ $program->image_path ? asset('storage/'.$program->image_path) : asset('images/jca-hero.png') }}" alt="{{ $program->title }}" loading="lazy">
+                        <img src="{{ $program->image_path ? asset('storage/'.$program->image_path) : asset('images/jca-hero.webp') }}" alt="{{ $program->title }}" loading="lazy">
                         <span>{{ $program->focus_area ?: 'Impact social' }} - {{ $program->country ?: 'International' }}</span>
                         <h3>{{ $program->title }}</h3>
                         <p>{{ $program->description ? str($program->description)->limit(170) : 'Programme actif accompagne par JCA pour soutenir des besoins sociaux prioritaires.' }}</p>
@@ -72,5 +71,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

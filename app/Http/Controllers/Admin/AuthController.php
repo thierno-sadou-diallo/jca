@@ -33,7 +33,6 @@ class AuthController extends Controller
         $request->session()->regenerate();
 
         $user = $request->user();
-        $user->forceFill(['last_login_at' => now()])->save();
 
         if (! $user->isAdmin()) {
             Auth::logout();
@@ -44,6 +43,8 @@ class AuthController extends Controller
                 'email' => 'Votre compte n a pas acces a l administration.',
             ]);
         }
+
+        $user->forceFill(['last_login_at' => now()])->save();
 
         return redirect()->intended(route('admin.dashboard'));
     }

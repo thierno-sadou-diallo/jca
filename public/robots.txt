@@ -1,2 +1,10 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /espace
+Disallow: /espace/
+Disallow: /connexion
+Disallow: /inscription
+
+Sitemap: https://jca-international.com/sitemap.xml

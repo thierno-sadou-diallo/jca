@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
 
 class PortalRegisterController extends Controller
@@ -30,7 +31,7 @@ class PortalRegisterController extends Controller
             'name' => ['required', 'string', 'min:2', 'max:120'],
             'email' => ['required', 'email', 'unique:users,email'],
             'phone' => ['nullable', 'string', 'max:40'],
-            'password' => ['required', 'confirmed', 'min:8'],
+            'password' => ['required', 'confirmed', Password::min(12)->letters()->mixedCase()->numbers()],
             'profile_photo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
             'type_client' => ['required', Rule::in(UserProfile::clientTypes())],
             'country' => ['nullable', 'string', 'max:80'],
@@ -50,6 +51,8 @@ class PortalRegisterController extends Controller
             ? $request->file('profile_photo')->store('profile-photos', 'public')
             : null;
 
+        $autoActivate = (bool) config('auth.portal_auto_activate', false);
+
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
@@ -57,7 +60,7 @@ class PortalRegisterController extends Controller
             'profile_photo_path' => $profilePhotoPath,
             'password' => $validated['password'],
             'role' => 'client',
-            'status' => 'active',
+            'status' => $autoActivate ? 'active' : 'inactive',
         ]);
 
         DB::table('user_profiles')->updateOrInsert(
@@ -77,6 +80,12 @@ class PortalRegisterController extends Controller
         $roleId = DB::table('roles')->where('name', 'client')->value('id');
         if ($roleId) {
             DB::table('role_user')->updateOrInsert(['role_id' => $roleId, 'user_id' => $user->id]);
+        }
+
+        if (! $autoActivate) {
+            return redirect()
+                ->route('portal.login')
+                ->with('status', 'Votre compte a ete cree. L equipe JCA doit l activer avant le premier acces.');
         }
 
         Auth::login($user);

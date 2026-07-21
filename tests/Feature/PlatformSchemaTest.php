@@ -2,12 +2,12 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
 use App\Models\Article;
 use App\Models\CooperationProject;
 use App\Models\Faq;
 use App\Models\HumanitarianProgram;
 use App\Models\Partner;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Schema;
@@ -87,16 +87,49 @@ class PlatformSchemaTest extends TestCase
         ])->assertRedirect('/espace');
     }
 
-    public function test_visitor_can_register_and_access_portal(): void
+    public function test_inactive_client_cannot_login_to_portal(): void
     {
+        User::factory()->create([
+            'email' => 'inactive-client@jca.local',
+            'password' => 'password',
+            'role' => 'client',
+            'status' => 'suspended',
+        ]);
+
+        $this->post('/connexion', [
+            'email' => 'inactive-client@jca.local',
+            'password' => 'password',
+        ])->assertSessionHasErrors('email');
+
+        $this->assertGuest();
+    }
+
+    public function test_inactive_authenticated_client_is_removed_from_portal(): void
+    {
+        $user = User::factory()->create([
+            'role' => 'client',
+            'status' => 'suspended',
+        ]);
+
+        $this->actingAs($user)
+            ->get('/espace')
+            ->assertRedirect('/connexion');
+
+        $this->assertGuest();
+    }
+
+    public function test_visitor_can_register_and_access_portal_when_auto_activation_is_enabled(): void
+    {
+        config(['auth.portal_auto_activate' => true]);
+
         $this->post('/inscription', [
             'account_type' => 'client',
             'name' => 'Nouveau Client',
             'email' => 'new-client@example.com',
             'phone' => '+1 514 000 0000',
             'country' => 'Canada',
-            'password' => 'password123',
-            'password_confirmation' => 'password123',
+            'password' => 'SecurePass123',
+            'password_confirmation' => 'SecurePass123',
         ])->assertRedirect('/espace');
 
         $this->assertAuthenticated();
@@ -140,6 +173,32 @@ class PlatformSchemaTest extends TestCase
             'user_id' => $user->id,
             'title' => 'Passeport',
             'visibility' => 'private',
+        ]);
+    }
+
+    public function test_client_cannot_book_past_appointment_slot(): void
+    {
+        $user = User::factory()->create([
+            'role' => 'client',
+            'status' => 'active',
+        ]);
+
+        $slotId = \DB::table('appointment_slots')->insertGetId([
+            'starts_at' => now()->subDay(),
+            'ends_at' => now()->subDay()->addMinutes(45),
+            'status' => 'available',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        $this->actingAs($user)
+            ->post('/espace/rendez-vous', ['slot_id' => $slotId])
+            ->assertSessionHasErrors('slot_id');
+
+        $this->assertDatabaseHas('appointment_slots', [
+            'id' => $slotId,
+            'status' => 'available',
+            'appointment_id' => null,
         ]);
     }
 
@@ -390,6 +449,15 @@ class PlatformSchemaTest extends TestCase
         $this->get('/partenaires')
             ->assertOk()
             ->assertSee('Institution Demo');
+
+        $this->get('/en/faq')
+            ->assertOk()
+            ->assertSee('<html lang="en"', false)
+            ->assertSee('Comment suivre mon dossier?');
+
+        $this->get('/fr/blog')
+            ->assertOk()
+            ->assertSee('Guide mobilite internationale');
     }
 
     public function test_public_impact_pages_render_active_records_only(): void

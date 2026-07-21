@@ -25,6 +25,10 @@
             <a href="{{ route('public.blog') }}">Blog</a>
             <a href="{{ route('public.faq') }}">FAQ</a>
             <a href="{{ route('public.partners') }}">Partenaires</a>
+            <a href="{{ route('page.show', 'accreditations') }}">Accreditations</a>
+            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions legales</a>
+            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Politique de confidentialite</a>
+            <a href="{{ route('legal.show', 'conditions-utilisation') }}">Conditions d utilisation</a>
         </div>
         <div>
             <h3>Contact</h3>

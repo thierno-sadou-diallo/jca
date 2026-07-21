@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $project->title }} - JCA</title>
-    <meta name="description" content="{{ str($project->description ?: 'Projet de cooperation internationale accompagne par JCA.')->limit(155) }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => $project->title.' | JCA',
+        'description' => str($project->description ?: 'Projet de cooperation internationale accompagne par JCA.')->limit(155),
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -20,7 +19,7 @@
 
         <section class="content-band article-body">
             <div class="admin-panel">
-                <img class="article-cover" src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.png') }}" alt="{{ $project->title }}">
+                <img class="article-cover" src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.webp') }}" alt="{{ $project->title }}" loading="lazy">
                 <span class="eyebrow">Projet actif</span>
                 <p>{!! nl2br(e($project->description ?: 'Ce projet de cooperation est accompagne par JCA avec une approche structuree, orientee impact, coordination et resultats durables.')) !!}</p>
                 @if (! empty($project->indicators))
@@ -35,5 +34,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

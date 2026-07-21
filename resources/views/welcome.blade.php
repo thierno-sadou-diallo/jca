@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="JCA est un cabinet international de conseil et d accompagnement specialise en immigration, mobilite internationale, recrutement international, cooperation internationale et developpement durable.">
-    <meta property="og:title" content="JCA | Immigration, Recrutement International, Cooperation et Developpement International">
-    <meta property="og:description" content="Solutions integrees pour la mobilite des personnes, le recrutement de talents qualifies et les projets de developpement a fort impact.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ asset('images/logo_jca.jpg') }}">
-    <title>JCA | Immigration, Recrutement International et Cooperation</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => 'JCA | Immigration, Recrutement International et Cooperation',
+        'description' => 'JCA est un cabinet international de conseil et d accompagnement specialise en immigration, mobilite internationale, recrutement international, cooperation internationale et developpement durable.',
+        'structuredData' => [
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => $siteSettings['brand_name'] ?? 'JCA',
+            'url' => url('/'),
+            'logo' => asset('images/logo_jca.jpg'),
+            'email' => $siteSettings['contact_email'] ?? 'contact@jca-international.com',
+            'telephone' => $siteSettings['contact_phone'] ?? null,
+            'sameAs' => array_values(array_filter([
+                $siteSettings['facebook_url'] ?? null,
+                $siteSettings['linkedin_url'] ?? null,
+            ])),
+        ],
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -17,10 +25,10 @@
     <main>
         <section class="hero">
             <div class="hero-media" aria-hidden="true">
-                <img src="{{ asset('images/jca-hero.png') }}" alt="" loading="eager">
-                <img src="{{ asset('images/jca-immigration.png') }}" alt="" loading="lazy">
-                <img src="{{ asset('images/jca-recruitment.png') }}" alt="" loading="lazy">
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="" loading="lazy">
+                <img src="{{ asset('images/jca-hero.webp') }}" alt="" loading="eager">
+                <img src="{{ asset('images/jca-immigration.webp') }}" alt="" loading="lazy">
+                <img src="{{ asset('images/jca-recruitment.webp') }}" alt="" loading="lazy">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="" loading="lazy">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -62,17 +70,17 @@
 
         <section class="motion-gallery" aria-label="Apercus visuels JCA">
             <article>
-                <img src="{{ asset('images/jca-immigration.png') }}" alt="Accompagnement immigration">
+                <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration" loading="lazy">
                 <span>Immigration</span>
                 <strong>Dossier clair, pieces utiles, suivi confidentiel.</strong>
             </article>
             <article>
-                <img src="{{ asset('images/jca-recruitment.png') }}" alt="Recrutement international">
+                <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Recrutement international" loading="lazy">
                 <span>Talents</span>
                 <strong>Profil, CV, opportunites et mobilite professionnelle.</strong>
             </article>
             <article>
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="Cooperation internationale">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
                 <span>Impact</span>
                 <strong>Projets, partenaires et developpement international.</strong>
             </article>
@@ -85,7 +93,7 @@
                 <p>Une equipe internationale pour clarifier les options, structurer les dossiers et relier les talents, organisations et opportunites.</p>
             </div>
             <div class="intro-visual reveal" aria-label="Domaines JCA">
-                <img src="{{ asset('images/jca-hero.png') }}" alt="Accompagnement international JCA">
+                <img src="{{ asset('images/jca-hero.webp') }}" alt="Accompagnement international JCA" loading="lazy">
                 <div class="intro-badges">
                     <span>Analyse</span>
                     <span>Documents</span>
@@ -108,15 +116,15 @@
             </div>
             <div class="visual-card-grid">
                 <article class="visual-card reveal">
-                    <img src="{{ asset('images/jca-immigration.png') }}" alt="Accompagnement immigration et mobilite internationale">
+                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration et mobilite internationale" loading="lazy">
                     <div><span>01</span><h3>Immigration et mobilite</h3><p>Procedures vers le Canada, l Europe, les Etats-Unis et d autres destinations strategiques: permis, visas, residence permanente, reunification familiale et conseils de mobilite.</p></div>
                 </article>
                 <article class="visual-card reveal">
-                    <img src="{{ asset('images/jca-recruitment.png') }}" alt="Recrutement international de talents qualifies">
+                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Recrutement international de talents qualifies" loading="lazy">
                     <div><span>02</span><h3>Recrutement international</h3><p>Recherche, selection, integration et retention de talents qualifies pour les employeurs confrontes aux enjeux de penurie de main-d oeuvre.</p></div>
                 </article>
                 <article class="visual-card reveal">
-                    <img src="{{ asset('images/jca-cooperation.png') }}" alt="Cooperation internationale et projets de developpement">
+                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale et projets de developpement" loading="lazy">
                     <div><span>03</span><h3>Cooperation et developpement</h3><p>Conception, mise en oeuvre et evaluation de projets pour gouvernements, institutions, organisations et partenaires au developpement.</p></div>
                 </article>
             </div>
@@ -124,7 +132,7 @@
 
         <section class="client-tools">
             <div class="tools-visual reveal">
-                <img src="{{ asset('images/jca-recruitment.png') }}" alt="Espace client et suivi des demandes">
+                <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Espace client et suivi des demandes" loading="lazy">
             </div>
             <div class="section-heading">
                 <span class="eyebrow">Parcours utiles</span>
@@ -170,7 +178,7 @@
                 <p>La force de JCA reside dans sa capacite a relier les dynamiques migratoires, les besoins des organisations, les mecanismes de cooperation et les objectifs de developpement durable. Cette approche permet d offrir des solutions concretes, innovantes et adaptees, avec un accompagnement rigoureux a chaque etape.</p>
             </div>
             <div class="feature-panel reveal">
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="Cooperation internationale et strategie">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale et strategie" loading="lazy">
                 <div class="feature-stack">
                     <span>Expertise juridique et strategique</span>
                     <span>Connaissance des marches internationaux du travail</span>
@@ -218,7 +226,7 @@
             <div class="cards-grid">
                 @forelse ($homeProjects as $project)
                     <article class="news-card reveal">
-                        <img src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.png') }}" alt="{{ $project->title }}" loading="lazy">
+                        <img src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.webp') }}" alt="{{ $project->title }}" loading="lazy">
                         <span>{{ $project->sector ?: 'Cooperation' }} - {{ $project->country ?: 'International' }}</span>
                         <h3>{{ $project->title }}</h3>
                         <p>{{ $project->description ? str($project->description)->limit(135) : 'Projet de cooperation actif accompagne par JCA.' }}</p>
@@ -242,7 +250,7 @@
 
                 @forelse ($homePrograms as $program)
                     <article class="news-card reveal">
-                        <img src="{{ $program->image_path ? asset('storage/'.$program->image_path) : asset('images/jca-hero.png') }}" alt="{{ $program->title }}" loading="lazy">
+                        <img src="{{ $program->image_path ? asset('storage/'.$program->image_path) : asset('images/jca-hero.webp') }}" alt="{{ $program->title }}" loading="lazy">
                         <span>{{ $program->focus_area ?: 'Humanitaire' }} - {{ $program->country ?: 'International' }}</span>
                         <h3>{{ $program->title }}</h3>
                         <p>{{ $program->description ? str($program->description)->limit(135) : 'Programme humanitaire actif accompagne par JCA.' }}</p>
@@ -316,5 +324,6 @@
     </main>
 
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

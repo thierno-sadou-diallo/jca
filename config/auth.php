@@ -114,4 +114,6 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    'portal_auto_activate' => env('PORTAL_AUTO_ACTIVATE', false),
+
 ];

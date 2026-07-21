@@ -47,6 +47,7 @@
                 <span class="eyebrow">JCA Admin</span>
                 <h1>{{ $title ?? 'Tableau de bord' }}</h1>
                 <p>Bonjour {{ auth()->user()?->name ?? 'Admin' }}, pilotez les demandes, dossiers et contenus depuis un espace clair et reactif.</p>
+                <p class="security-note">Securite equipe: utilisez un mot de passe fort, un gestionnaire de mots de passe et activez la 2FA sur les comptes administrateurs des que le fournisseur d identite ou le module Laravel le permet.</p>
             </div>
             <form method="post" action="{{ route('admin.logout') }}">
                 @csrf

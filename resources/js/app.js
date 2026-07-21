@@ -142,6 +142,22 @@ document.querySelectorAll('[data-lead-form]').forEach((form) => {
     });
 });
 
+const cookieBanner = document.querySelector('[data-cookie-banner]');
+
+if (cookieBanner && !localStorage.getItem('jca_cookie_choice')) {
+    cookieBanner.hidden = false;
+
+    cookieBanner.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+        localStorage.setItem('jca_cookie_choice', 'accepted');
+        cookieBanner.hidden = true;
+    });
+
+    cookieBanner.querySelector('[data-cookie-decline]')?.addEventListener('click', () => {
+        localStorage.setItem('jca_cookie_choice', 'declined');
+        cookieBanner.hidden = true;
+    });
+}
+
 document.querySelectorAll('[data-appointment-picker]').forEach((form) => {
     const weekSelect = form.querySelector('[data-week-select]');
     const slotSelect = form.querySelector('[data-slot-select]');

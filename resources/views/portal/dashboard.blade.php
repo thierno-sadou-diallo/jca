@@ -70,9 +70,9 @@
                 <h2>Votre prochain meilleur mouvement.</h2>
                 <p>JCA transforme votre avancement en parcours clair : ce qui est fait, ce qui bloque, et ce qui vous rapproche du resultat.</p>
                 <div class="portal-media-strip" aria-label="Apercu visuel du parcours JCA">
-                    <img src="{{ asset('images/jca-immigration.png') }}" alt="Dossier immigration">
-                    <img src="{{ asset('images/jca-recruitment.png') }}" alt="Mobilite professionnelle">
-                    <img src="{{ asset('images/jca-cooperation.png') }}" alt="Projet international">
+                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="Dossier immigration" loading="lazy">
+                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Mobilite professionnelle" loading="lazy">
+                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Projet international" loading="lazy">
                 </div>
             </div>
             <div class="journey-progress">

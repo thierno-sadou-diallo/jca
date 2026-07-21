@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Consultez les offres d emploi internationales publiees par JCA et trouvez des opportunites adaptees a votre profil.">
-    <title>Emplois internationaux | JCA</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => 'Emplois internationaux | JCA',
+        'description' => 'Consultez les offres d emploi internationales publiees par JCA et trouvez des opportunites adaptees a votre profil.',
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -20,19 +19,19 @@
 
         <section class="job-board">
             <form class="job-search" method="get" action="{{ route('jobs.index') }}">
-                <input name="q" value="{{ $query }}" placeholder="Metier, entreprise, competence...">
-                <select name="sector">
+                <label>Recherche<input name="q" value="{{ $query }}" placeholder="Metier, entreprise, competence..."></label>
+                <label>Secteur<select name="sector">
                     <option value="">Tous les secteurs</option>
                     @foreach ($sectors as $item)
                         <option value="{{ $item }}" @selected($sector === $item)>{{ $item }}</option>
                     @endforeach
-                </select>
-                <select name="country">
+                </select></label>
+                <label>Pays<select name="country">
                     <option value="">Tous les pays</option>
                     @foreach ($countries as $item)
                         <option value="{{ $item }}" @selected($country === $item)>{{ $item }}</option>
                     @endforeach
-                </select>
+                </select></label>
                 <button class="button primary" type="submit">Rechercher</button>
             </form>
 
@@ -84,5 +83,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

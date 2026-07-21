@@ -29,7 +29,19 @@ class PortalAuthController extends Controller
 
         $request->session()->regenerate();
 
-        if ($request->user()->isAdmin()) {
+        $user = $request->user();
+
+        if ($user->status !== 'active') {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return back()
+                ->withErrors(['email' => 'Votre compte n est pas actif. Veuillez contacter JCA.'])
+                ->onlyInput('email');
+        }
+
+        if ($user->isAdmin()) {
             return redirect()->route('admin.dashboard');
         }
 

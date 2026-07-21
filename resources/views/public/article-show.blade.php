@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $article->excerpt }}">
-    <title>{{ $article->title }} | JCA</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => $article->title.' | JCA',
+        'description' => $article->excerpt ?: str($article->body)->limit(160),
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -26,5 +25,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

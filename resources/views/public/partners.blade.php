@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Reseau de partenaires JCA: institutions, universites, entreprises, ONG et gouvernements.">
-    <title>Partenaires | JCA</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => 'Partenaires | JCA',
+        'description' => 'Reseau de partenaires JCA: institutions, universites, entreprises, ONG et gouvernements.',
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -21,9 +20,9 @@
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="">
-                <img src="{{ asset('images/jca-recruitment.png') }}" alt="">
-                <img src="{{ asset('images/jca-hero.png') }}" alt="">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
+                <img src="{{ asset('images/jca-recruitment.webp') }}" alt="">
+                <img src="{{ asset('images/jca-hero.webp') }}" alt="">
             </div>
         </section>
 
@@ -65,5 +64,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

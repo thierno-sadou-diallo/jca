@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projets de cooperation - JCA</title>
-    <meta name="description" content="Projets de cooperation internationale portes par JCA: gouvernance, developpement territorial, institutions et impact durable.">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => 'Projets de cooperation | JCA',
+        'description' => 'Projets de cooperation internationale portes par JCA: gouvernance, developpement territorial, institutions et impact durable.',
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -21,9 +20,9 @@
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
-                <img src="{{ asset('images/jca-cooperation.png') }}" alt="">
-                <img src="{{ asset('images/jca-recruitment.png') }}" alt="">
-                <img src="{{ asset('images/jca-hero.png') }}" alt="">
+                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
+                <img src="{{ asset('images/jca-recruitment.webp') }}" alt="">
+                <img src="{{ asset('images/jca-hero.webp') }}" alt="">
             </div>
         </section>
 
@@ -48,7 +47,7 @@
             <div class="cards-grid">
                 @forelse ($projects as $project)
                     <article class="news-card reveal">
-                        <img src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.png') }}" alt="{{ $project->title }}" loading="lazy">
+                        <img src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.webp') }}" alt="{{ $project->title }}" loading="lazy">
                         <span>{{ $project->sector ?: 'Cooperation' }} - {{ $project->country ?: 'International' }}</span>
                         <h3>{{ $project->title }}</h3>
                         <p>{{ $project->description ? str($project->description)->limit(170) : 'Projet actif accompagne par JCA avec une approche orientee resultats, gouvernance et durabilite.' }}</p>
@@ -73,5 +72,6 @@
         </section>
     </main>
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

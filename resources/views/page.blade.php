@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ $page['intro'] }}">
-    <meta property="og:title" content="{{ $page['title'] }} | JCA">
-    <meta property="og:description" content="{{ $page['intro'] }}">
-    <meta property="og:type" content="website">
-    <title>{{ $page['title'] }} | JCA</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @include('partials.head', [
+        'title' => $page['title'].' | JCA',
+        'description' => $page['intro'],
+    ])
 </head>
 <body>
     @include('partials.header')
@@ -26,9 +22,9 @@
             </div>
             @if (in_array($slug, ['qui-sommes-nous', 'services'], true))
                 <div class="page-hero-collage" aria-hidden="true">
-                    <img src="{{ asset('images/jca-hero.png') }}" alt="">
-                    <img src="{{ asset('images/jca-immigration.png') }}" alt="">
-                    <img src="{{ asset('images/jca-cooperation.png') }}" alt="">
+                    <img src="{{ asset('images/jca-hero.webp') }}" alt="">
+                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
+                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
                 </div>
             @endif
         </section>
@@ -42,15 +38,15 @@
                 </div>
                 <div class="story-gallery" aria-label="Univers JCA">
                     <article>
-                        <img src="{{ asset('images/jca-immigration.png') }}" alt="Mobilite internationale">
+                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="Mobilite internationale" loading="lazy">
                         <strong>Mobilite</strong>
                     </article>
                     <article>
-                        <img src="{{ asset('images/jca-recruitment.png') }}" alt="Talents internationaux">
+                        <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
                         <strong>Talents</strong>
                     </article>
                     <article>
-                        <img src="{{ asset('images/jca-cooperation.png') }}" alt="Cooperation internationale">
+                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
                         <strong>Impact</strong>
                     </article>
                 </div>
@@ -76,15 +72,15 @@
         @if (! in_array($slug, ['qui-sommes-nous', 'services'], true))
             <section class="page-visual-ribbon" aria-label="Univers visuel JCA">
                 <article>
-                    <img src="{{ asset('images/jca-immigration.png') }}" alt="Accompagnement immigration">
+                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration" loading="lazy">
                     <span>Mobilite</span>
                 </article>
                 <article>
-                    <img src="{{ asset('images/jca-recruitment.png') }}" alt="Talents internationaux">
+                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
                     <span>Talents</span>
                 </article>
                 <article>
-                    <img src="{{ asset('images/jca-cooperation.png') }}" alt="Cooperation internationale">
+                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
                     <span>Impact</span>
                 </article>
             </section>
@@ -172,5 +168,6 @@
     </main>
 
     @include('partials.footer')
+    @include('partials.cookie-banner')
 </body>
 </html>

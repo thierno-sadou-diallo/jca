@@ -30,9 +30,31 @@ class TranslateRenderedPage
 
         uksort($dictionary, fn (string $a, string $b): int => strlen($b) <=> strlen($a));
 
-        $response->setContent(str_replace(array_keys($dictionary), array_values($dictionary), $content));
+        $response->setContent($this->translateTextSegments($content, $dictionary));
 
         return $response;
+    }
+
+    /**
+     * @param  array<string, string>  $dictionary
+     */
+    private function translateTextSegments(string $content, array $dictionary): string
+    {
+        $segments = preg_split('/(<[^>]+>)/', $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+        if (! is_array($segments)) {
+            return $content;
+        }
+
+        foreach ($segments as $index => $segment) {
+            if ($segment === '' || str_starts_with($segment, '<')) {
+                continue;
+            }
+
+            $segments[$index] = str_replace(array_keys($dictionary), array_values($dictionary), $segment);
+        }
+
+        return implode('', $segments);
     }
 
     private function shouldTranslate(Request $request, Response $response): bool

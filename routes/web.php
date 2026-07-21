@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\AvailabilityController;
-use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
-use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
 use App\Http\Controllers\Admin\ClientController as AdminClientController;
+use App\Http\Controllers\Admin\CooperationProjectController as AdminCooperationProjectController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
-use App\Http\Controllers\Admin\CooperationProjectController as AdminCooperationProjectController;
 use App\Http\Controllers\Admin\HumanitarianProgramController as AdminHumanitarianProgramController;
 use App\Http\Controllers\Admin\ImmigrationCaseController as AdminImmigrationCaseController;
 use App\Http\Controllers\Admin\JobApplicationController as AdminJobApplicationController;
@@ -17,15 +17,15 @@ use App\Http\Controllers\Admin\LeadRequestController as AdminLeadRequestControll
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
 use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
 use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
-use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\ReportController as AdminReportController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\SiteSettingController as AdminSiteSettingController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobBoardController;
 use App\Http\Controllers\LeadRequestController;
-use App\Http\Controllers\PortalAuthController;
 use App\Http\Controllers\PortalAppointmentController;
+use App\Http\Controllers\PortalAuthController;
 use App\Http\Controllers\PortalDashboardController;
 use App\Http\Controllers\PortalDocumentController;
 use App\Http\Controllers\PortalMessageController;
@@ -34,13 +34,15 @@ use App\Http\Controllers\PortalProfileController;
 use App\Http\Controllers\PortalRegisterController;
 use App\Http\Controllers\PortalReviewController;
 use App\Http\Controllers\PublicContentController;
+use App\Http\Middleware\EnsureAccountIsActive;
 use App\Http\Middleware\EnsureUserIsAdmin;
+use App\Models\Article;
 use App\Models\CooperationProject;
 use App\Models\HumanitarianProgram;
 use App\Models\JobPosting;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 $pages = [
     'qui-sommes-nous' => [
@@ -53,6 +55,18 @@ $pages = [
             ['Notre mission', 'Faciliter la mobilite des talents, soutenir la croissance des organisations et contribuer au developpement durable des communautes.'],
             ['Nos valeurs', 'Excellence, integrite, professionnalisme, innovation, inclusion, responsabilite sociale et developpement durable.'],
             ['Notre impact', 'Batir des ponts entre les talents, les organisations et les opportunites pour contribuer a un monde plus ouvert, inclusif et prospere.'],
+        ],
+    ],
+    'accreditations' => [
+        'title' => 'Accreditations',
+        'eyebrow' => 'Legitimite professionnelle',
+        'intro' => 'JCA publie les titres, affiliations et responsabilites professionnelles utiles pour permettre aux clients et partenaires d identifier clairement le cadre d intervention du cabinet.',
+        'sections' => [
+            ['Equipe et titres', 'Les fonctions, diplomes pertinents et champs d intervention sont presentes de facon transparente afin de situer le role de chaque intervenant dans le traitement des dossiers.'],
+            ['Licences professionnelles', 'Lorsque des licences, autorisations ou affiliations professionnelles sont requises par une juridiction, JCA les documente et les associe au perimetre exact des services concernes.'],
+            ['Verification', 'Les clients peuvent demander les references verifiables applicables a leur dossier lorsque celles-ci existent dans un registre public ou un cadre professionnel reconnu.'],
+            ['Limites de mandat', 'JCA distingue les services d accompagnement, de conseil strategique et de coordination des situations qui exigent l intervention d un avocat, consultant reglemente ou autre professionnel autorise.'],
+            ['Temoignages', 'Les retours clients publies sont selectionnes avec consentement, moderation et souci de confidentialite, sans presenter une experience individuelle comme garantie de resultat.'],
         ],
     ],
     'services' => [
@@ -192,7 +206,7 @@ $pages = [
         'sections' => [
             ['Canaux', 'Telephone, WhatsApp, Messenger, email et formulaire de contact.'],
             ['Horaires', 'Accueil sur rendez-vous et suivi numerique des demandes.'],
-            ['Adresse et carte', 'Zone prevue pour integration Google Maps lorsque l adresse officielle sera confirmee.'],
+            ['Adresse et carte', 'Les coordonnees officielles et les indications de rendez-vous sont communiquees par les canaux JCA afin d eviter toute confusion avec des intermediaires non autorises.'],
         ],
         'form' => 'contact',
     ],
@@ -203,14 +217,124 @@ $pages = [
         'sections' => [
             ['Choisir le motif', 'Immigration, visa, recrutement, projet, partenariat ou accompagnement strategique.'],
             ['Calendrier', 'Selection de creneau et confirmation par email ou WhatsApp.'],
-            ['Paiement', 'Zone prevue pour integration d un module de paiement securise.'],
+            ['Paiement', 'Les frais applicables sont confirmes avant engagement et les paiements sont traites via les canaux valides par JCA.'],
             ['Confirmation', 'Resume de la demande, documents requis et prochaines etapes.'],
         ],
         'form' => 'consultation',
     ],
 ];
 
-Route::get('/', fn () => view('welcome', [
+$legalPages = [
+    'mentions-legales' => [
+        'title' => 'Mentions legales',
+        'description' => 'Informations legales relatives a l editeur du site JCA, a son hebergement et aux responsabilites de publication.',
+        'sections' => [
+            [
+                'title' => 'Editeur du site',
+                'paragraphs' => [
+                    'Le site jca-international.com est edite par JCA. Les informations administratives completes de l entite, son adresse officielle, son immatriculation et les licences professionnelles applicables sont tenues a jour par la direction et communiquees aux clients selon le cadre juridique pertinent.',
+                    'Responsable de publication: direction JCA. Contact: contact@jca-international.com.',
+                ],
+            ],
+            [
+                'title' => 'Hebergement',
+                'paragraphs' => [
+                    'Le site est exploite sur une infrastructure cloud securisee compatible avec Laravel. Les informations completes de l hebergeur de production sont conservees dans le dossier technique du site et peuvent etre communiquees sur demande legitime.',
+                ],
+            ],
+            [
+                'title' => 'Responsabilite',
+                'paragraphs' => [
+                    'Les contenus publies par JCA sont fournis a titre informatif et ne constituent pas une garantie de resultat administratif, d obtention de visa, de permis, d emploi ou de financement.',
+                    'Les decisions finales relevent toujours des autorites competentes, des employeurs, institutions ou partenaires concernes.',
+                ],
+            ],
+        ],
+    ],
+    'politique-confidentialite' => [
+        'title' => 'Politique de confidentialite',
+        'description' => 'Politique de traitement des donnees personnelles recueillies par JCA via le site public et l espace client.',
+        'sections' => [
+            [
+                'title' => 'Donnees collectees',
+                'paragraphs' => [
+                    'JCA peut collecter les donnees d identification, coordonnees, pays, ville, type de client, informations de projet, CV, pieces justificatives, documents d identite, messages, candidatures, rendez-vous, adresse IP et donnees techniques de navigation.',
+                ],
+                'items' => [
+                    'Identite et coordonnees: nom, email, telephone, pays, ville, organisation.',
+                    'Donnees de dossier: motif, messages, statut, notes de suivi et documents transmis.',
+                    'Documents sensibles: CV, diplomes, justificatifs, pieces d identite et fichiers utiles au traitement.',
+                    'Donnees techniques: IP, navigateur, journaux de securite et horodatages.',
+                ],
+            ],
+            [
+                'title' => 'Finalites',
+                'paragraphs' => [
+                    'Ces donnees servent a repondre aux demandes, evaluer les projets, organiser les consultations, gerer les candidatures, suivre les dossiers dans l espace client, securiser les acces et respecter les obligations legales ou contractuelles applicables.',
+                ],
+            ],
+            [
+                'title' => 'Conservation',
+                'paragraphs' => [
+                    'Les donnees sont conservees pendant la duree necessaire au traitement du dossier, puis archivees ou supprimees selon les obligations legales, contractuelles et operationnelles applicables. Les demandes sans suite sont reexaminees periodiquement afin de limiter la conservation aux besoins reels du service.',
+                ],
+            ],
+            [
+                'title' => 'Sous-traitants',
+                'paragraphs' => [
+                    'Les sous-traitants peuvent inclure l hebergeur du site, les services d email transactionnel, les outils de sauvegarde, les services de paiement et, le cas echeant, un outil d analytique comme Matomo ou Google Analytics 4 apres consentement.',
+                    'JCA doit maintenir une liste interne des sous-traitants reellement utilises et la mettre a jour avant toute communication publique.',
+                ],
+            ],
+            [
+                'title' => 'Droits des personnes',
+                'paragraphs' => [
+                    'Toute personne concernee peut demander l acces, la rectification, la suppression, la limitation ou la portabilite de ses donnees lorsque le droit applicable le permet.',
+                    'Contact responsable du traitement: contact@jca-international.com.',
+                ],
+            ],
+            [
+                'title' => 'Cadre juridique',
+                'paragraphs' => [
+                    'Pour les donnees de residents quebecois, JCA doit verifier l application de la Loi 25 du Quebec. Pour les personnes situees dans l Union europeenne ou visees par une offre europeenne, JCA doit verifier l application du RGPD. Ces cadres ne creent pas exactement les memes obligations et doivent etre traites distinctement.',
+                ],
+            ],
+        ],
+    ],
+    'conditions-utilisation' => [
+        'title' => 'Conditions generales d utilisation',
+        'description' => 'Conditions d acces au site JCA et a l espace client securise.',
+        'sections' => [
+            [
+                'title' => 'Acces a l espace client',
+                'paragraphs' => [
+                    'L espace client permet de deposer des demandes, documents, messages, candidatures et informations de suivi. L utilisateur s engage a fournir des informations exactes, completes et a jour.',
+                    'Chaque compte est personnel. L utilisateur doit proteger son mot de passe et signaler tout acces suspect.',
+                ],
+            ],
+            [
+                'title' => 'Documents transmis',
+                'paragraphs' => [
+                    'Les documents transmis doivent appartenir a l utilisateur ou etre transmis avec autorisation legitime. JCA peut refuser ou demander la correction de fichiers incomplets, illisibles ou non pertinents.',
+                ],
+            ],
+            [
+                'title' => 'Absence de garantie de resultat',
+                'paragraphs' => [
+                    'JCA securise la strategie et la qualite des dossiers, mais ne garantit pas l obtention d un visa, d un permis, d une admission, d un emploi, d un financement ou d une decision favorable.',
+                ],
+            ],
+            [
+                'title' => 'Suspension et securite',
+                'paragraphs' => [
+                    'JCA peut suspendre un compte en cas d usage abusif, fraude, tentative d acces non autorise, usurpation d identite ou risque pour la securite de la plateforme.',
+                ],
+            ],
+        ],
+    ],
+];
+
+$homeData = fn () => [
     'pages' => $pages,
     'latestJobs' => Schema::hasTable('job_postings')
         ? JobPosting::where('status', 'published')->latest('published_at')->limit(3)->get()
@@ -224,10 +348,19 @@ Route::get('/', fn () => view('welcome', [
     'testimonials' => Schema::hasTable('testimonials')
         ? DB::table('testimonials')->where('is_published', true)->latest()->limit(3)->get()
         : collect(),
-]))->name('home');
+];
+
+Route::get('/', fn () => view('welcome', $homeData()))->name('home');
+Route::get('/{locale}', function (string $locale) use ($homeData) {
+    abort_unless(in_array($locale, ['fr', 'en'], true), 404);
+    session(['locale' => $locale]);
+    app()->setLocale($locale);
+
+    return view('welcome', $homeData());
+})->whereIn('locale', ['fr', 'en'])->name('localized.home');
 Route::get('/emplois', [JobBoardController::class, 'index'])->name('jobs.index');
 Route::post('/emplois/{job}/postuler', [JobApplicationController::class, 'store'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('jobs.apply');
 Route::get('/lang/{locale}', function (string $locale) {
     abort_unless(in_array($locale, ['fr', 'en'], true), 404);
@@ -236,7 +369,76 @@ Route::get('/lang/{locale}', function (string $locale) {
     return back();
 })->name('locale.switch');
 
-Route::post('/demandes', [LeadRequestController::class, 'store'])->name('lead-requests.store');
+Route::get('/sitemap.xml', function () use ($pages, $legalPages) {
+    $staticUrls = collect(array_keys($pages))
+        ->reject(fn (string $slug) => $slug === 'emplois')
+        ->map(fn (string $slug) => url($slug))
+        ->merge([
+            route('home'),
+            route('jobs.index'),
+            route('public.blog'),
+            route('public.news'),
+            route('public.faq'),
+            route('public.partners'),
+            route('public.cooperation-projects'),
+            route('public.humanitarian-programs'),
+        ])
+        ->merge(collect(array_keys($legalPages))->map(fn (string $slug) => route('legal.show', $slug)))
+        ->merge(collect(['fr', 'en'])->flatMap(function (string $locale) use ($pages, $legalPages) {
+            return collect(array_keys($pages))
+                ->reject(fn (string $slug) => $slug === 'emplois')
+                ->map(fn (string $slug) => url($locale.'/'.$slug))
+                ->merge([
+                    url($locale),
+                    route('localized.jobs.index', $locale),
+                    route('localized.public.blog', $locale),
+                    route('localized.public.news', $locale),
+                    route('localized.public.faq', $locale),
+                    route('localized.public.partners', $locale),
+                    route('localized.public.cooperation-projects', $locale),
+                    route('localized.public.humanitarian-programs', $locale),
+                ])
+                ->merge(collect(array_keys($legalPages))->map(fn (string $slug) => route('localized.legal.show', [$locale, $slug])));
+        }))
+        ->merge(Schema::hasTable('articles')
+            ? Article::where('status', 'published')->pluck('slug')->flatMap(fn (string $slug) => [
+                route('public.articles.show', $slug),
+                route('localized.public.articles.show', ['fr', $slug]),
+                route('localized.public.articles.show', ['en', $slug]),
+            ])
+            : collect())
+        ->merge(Schema::hasTable('job_postings')
+            ? JobPosting::where('status', 'published')->pluck('slug')->flatMap(fn (string $slug) => [
+                route('jobs.index'),
+                route('localized.jobs.index', 'fr'),
+                route('localized.jobs.index', 'en'),
+            ])
+            : collect())
+        ->merge(Schema::hasTable('cooperation_projects')
+            ? CooperationProject::where('status', 'active')->pluck('slug')->flatMap(fn (string $slug) => [
+                route('public.cooperation-projects.show', $slug),
+                route('localized.public.cooperation-projects.show', ['fr', $slug]),
+                route('localized.public.cooperation-projects.show', ['en', $slug]),
+            ])
+            : collect())
+        ->merge(Schema::hasTable('humanitarian_programs')
+            ? HumanitarianProgram::where('status', 'active')->pluck('slug')->flatMap(fn (string $slug) => [
+                route('public.humanitarian-programs.show', $slug),
+                route('localized.public.humanitarian-programs.show', ['fr', $slug]),
+                route('localized.public.humanitarian-programs.show', ['en', $slug]),
+            ])
+            : collect())
+        ->unique()
+        ->values();
+
+    return response()
+        ->view('sitemap', ['urls' => $staticUrls])
+        ->header('Content-Type', 'application/xml');
+})->name('sitemap');
+
+Route::post('/demandes', [LeadRequestController::class, 'store'])
+    ->middleware('throttle:lead-requests')
+    ->name('lead-requests.store');
 Route::get('/blog', [PublicContentController::class, 'blog'])->name('public.blog');
 Route::get('/actualites', [PublicContentController::class, 'news'])->name('public.news');
 Route::get('/articles/{article:slug}', [PublicContentController::class, 'article'])->name('public.articles.show');
@@ -246,15 +448,102 @@ Route::get('/projets-cooperation', [PublicContentController::class, 'cooperation
 Route::get('/projets-cooperation/{project:slug}', [PublicContentController::class, 'cooperationProject'])->name('public.cooperation-projects.show');
 Route::get('/programmes-humanitaires', [PublicContentController::class, 'humanitarianPrograms'])->name('public.humanitarian-programs');
 Route::get('/programmes-humanitaires/{program:slug}', [PublicContentController::class, 'humanitarianProgram'])->name('public.humanitarian-programs.show');
+Route::get('/legal/{slug}', function (string $slug) use ($legalPages) {
+    abort_unless(isset($legalPages[$slug]), 404);
+
+    return view('legal.show', [
+        'legalPage' => $legalPages[$slug],
+        'slug' => $slug,
+    ]);
+})->name('legal.show');
+
+Route::prefix('{locale}')
+    ->whereIn('locale', ['fr', 'en'])
+    ->group(function () use ($legalPages): void {
+        $setLocale = function (string $locale): void {
+            session(['locale' => $locale]);
+            app()->setLocale($locale);
+        };
+
+        Route::get('/emplois', function (string $locale, JobBoardController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->index(request());
+        })->name('localized.jobs.index');
+
+        Route::get('/blog', function (string $locale, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->blog();
+        })->name('localized.public.blog');
+
+        Route::get('/actualites', function (string $locale, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->news();
+        })->name('localized.public.news');
+
+        Route::get('/articles/{article:slug}', function (string $locale, Article $article, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->article($article);
+        })->name('localized.public.articles.show');
+
+        Route::get('/faq', function (string $locale, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->faq();
+        })->name('localized.public.faq');
+
+        Route::get('/partenaires', function (string $locale, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->partners();
+        })->name('localized.public.partners');
+
+        Route::get('/projets-cooperation', function (string $locale, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->cooperationProjects();
+        })->name('localized.public.cooperation-projects');
+
+        Route::get('/projets-cooperation/{project:slug}', function (string $locale, CooperationProject $project, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->cooperationProject($project);
+        })->name('localized.public.cooperation-projects.show');
+
+        Route::get('/programmes-humanitaires', function (string $locale, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->humanitarianPrograms();
+        })->name('localized.public.humanitarian-programs');
+
+        Route::get('/programmes-humanitaires/{program:slug}', function (string $locale, HumanitarianProgram $program, PublicContentController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->humanitarianProgram($program);
+        })->name('localized.public.humanitarian-programs.show');
+
+        Route::get('/legal/{slug}', function (string $locale, string $slug) use ($legalPages, $setLocale) {
+            $setLocale($locale);
+            abort_unless(isset($legalPages[$slug]), 404);
+
+            return view('legal.show', [
+                'legalPage' => $legalPages[$slug],
+                'slug' => $slug,
+            ]);
+        })->name('localized.legal.show');
+    });
 Route::redirect('/login', '/connexion')->name('login');
 Route::get('/inscription', [PortalRegisterController::class, 'create'])->name('portal.register');
 
 Route::middleware('guest')->group(function (): void {
     Route::get('/admin/login', [AuthController::class, 'create'])->name('admin.login');
-    Route::post('/admin/login', [AuthController::class, 'store'])->name('admin.login.store');
+    Route::post('/admin/login', [AuthController::class, 'store'])->middleware('throttle:login')->name('admin.login.store');
     Route::get('/connexion', [PortalAuthController::class, 'create'])->name('portal.login');
-    Route::post('/connexion', [PortalAuthController::class, 'store'])->name('portal.login.store');
-    Route::post('/inscription', [PortalRegisterController::class, 'store'])->name('portal.register.store');
+    Route::post('/connexion', [PortalAuthController::class, 'store'])->middleware('throttle:login')->name('portal.login.store');
+    Route::post('/inscription', [PortalRegisterController::class, 'store'])->middleware('throttle:registration')->name('portal.register.store');
 });
 
 Route::post('/deconnexion', [PortalAuthController::class, 'destroy'])
@@ -328,31 +617,31 @@ Route::prefix('admin')
     });
 
 Route::get('/espace', PortalDashboardController::class)
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.dashboard');
 
 Route::patch('/espace/profil', [PortalProfileController::class, 'update'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.profile.update');
 
 Route::post('/espace/documents', [PortalDocumentController::class, 'store'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.documents.store');
 
 Route::post('/espace/avis', [PortalReviewController::class, 'store'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.reviews.store');
 
 Route::post('/espace/messages', [PortalMessageController::class, 'store'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.messages.store');
 
 Route::post('/espace/notifications/lues', [PortalNotificationController::class, 'markAllRead'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.notifications.read');
 
 Route::post('/espace/rendez-vous', [PortalAppointmentController::class, 'store'])
-    ->middleware('auth')
+    ->middleware(['auth', EnsureAccountIsActive::class])
     ->name('portal.appointments.store');
 
 Route::get('/{slug}', function (string $slug) use ($pages) {
@@ -364,3 +653,15 @@ Route::get('/{slug}', function (string $slug) use ($pages) {
         'pages' => $pages,
     ]);
 })->name('page.show');
+
+Route::get('/{locale}/{slug}', function (string $locale, string $slug) use ($pages) {
+    abort_unless(in_array($locale, ['fr', 'en'], true) && isset($pages[$slug]), 404);
+    session(['locale' => $locale]);
+    app()->setLocale($locale);
+
+    return view('page', [
+        'slug' => $slug,
+        'page' => $pages[$slug],
+        'pages' => $pages,
+    ]);
+})->whereIn('locale', ['fr', 'en'])->name('localized.page.show');

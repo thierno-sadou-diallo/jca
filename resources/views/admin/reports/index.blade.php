@@ -15,7 +15,7 @@
                 @foreach ($monthlyLeads as $item)
                     <div>
                         <span>{{ $item['label'] }}</span>
-                        <strong style="--bar: {{ max(6, min(100, $item['value'] * 16)) }}%">{{ $item['value'] }}</strong>
+                        <strong class="bar-width-{{ max(6, min(100, $item['value'] * 16)) }}">{{ $item['value'] }}</strong>
                     </div>
                 @endforeach
             </div>
@@ -30,10 +30,10 @@
                 @forelse ($clientTypes as $item)
                     <div>
                         <span>{{ $item->type_client ?: 'Non indique' }}</span>
-                        <strong style="--bar: {{ max(8, min(100, $item->total * 12)) }}%">{{ $item->total }}</strong>
+                        <strong class="bar-width-{{ max(8, min(100, $item->total * 12)) }}">{{ $item->total }}</strong>
                     </div>
                 @empty
-                    <div><span>Aucun client</span><strong style="--bar: 8%">0</strong></div>
+                    <div><span>Aucun client</span><strong class="bar-width-8">0</strong></div>
                 @endforelse
             </div>
         </article>
@@ -56,10 +56,10 @@
                     @forelse ($items as $item)
                         <div>
                             <span>{{ $item['label'] }}</span>
-                            <strong style="--bar: {{ max(8, min(100, $item['value'] * 12)) }}%">{{ $item['value'] }}</strong>
+                            <strong class="bar-width-{{ max(8, min(100, $item['value'] * 12)) }}">{{ $item['value'] }}</strong>
                         </div>
                     @empty
-                        <div><span>Aucune donnee</span><strong style="--bar: 8%">0</strong></div>
+                        <div><span>Aucune donnee</span><strong class="bar-width-8">0</strong></div>
                     @endforelse
                 </div>
             </article>
