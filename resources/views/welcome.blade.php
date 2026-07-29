@@ -34,16 +34,17 @@
             <div class="hero-content">
                 <span class="eyebrow">{{ __('site.home.eyebrow') }}</span>
                 <h1>JCA</h1>
-                <p class="hero-kicker">Conseil international, mobilite des talents et projets a impact.</p>
-                <p class="hero-lede">Immigration, recrutement international, cooperation et developpement: une plateforme claire pour transformer les projets internationaux en parcours suivis.</p>
+                <p class="hero-kicker">Immigration, recrutement international et cooperation.</p>
+                <p class="hero-lede">Un accompagnement clair pour comprendre vos options, preparer vos documents et avancer avec un suivi confidentiel.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('portal.register') }}">Creer mon espace</a>
-                    <a class="button secondary" href="{{ route('page.show', 'services') }}">Voir les services</a>
+                    <a class="button secondary" href="{{ route('page.show', 'consultation') }}">Prendre rendez-vous</a>
+                    <a class="button secondary ghost-link" href="{{ route('page.show', 'services') }}">Voir les services</a>
                 </div>
                 <div class="hero-signals" aria-label="Forces JCA">
-                    <span>Mobilite des talents</span>
-                    <span>Dossiers suivis</span>
-                    <span>Impact international</span>
+                    <span>Diagnostic</span>
+                    <span>Dossier suivi</span>
+                    <span>Confidentialite</span>
                 </div>
             </div>
             <div class="hero-art" aria-hidden="true">
@@ -53,19 +54,29 @@
             </div>
         </section>
 
-        <section class="home-pathway">
-            <a href="{{ route('page.show', 'qui-sommes-nous') }}"><strong>Comprendre JCA</strong><span>Mission, approche et valeurs</span></a>
-            <a href="{{ route('page.show', 'services') }}"><strong>Choisir un service</strong><span>Immigration, recrutement, cooperation</span></a>
-            <a href="{{ route('portal.register') }}"><strong>Ouvrir son espace</strong><span>Demandes, documents et suivi</span></a>
+        <section class="home-pathway quick-actions" aria-label="Actions rapides">
+            <a href="{{ route('page.show', 'consultation') }}"><strong>Prendre rendez-vous</strong><span>Clarifier votre projet avec JCA</span></a>
+            <a href="{{ route('portal.register') }}"><strong>Creer mon espace</strong><span>Documents, demandes et suivi</span></a>
+            <a href="{{ route('jobs.index') }}"><strong>Voir les offres</strong><span>Opportunites et candidature</span></a>
         </section>
 
-        <section class="trust-strip" aria-label="Domaines d intervention">
-            <span>Immigration</span>
-            <span>Mobilite internationale</span>
-            <span>Recrutement</span>
-            <span>Cooperation</span>
-            <span>Developpement durable</span>
-            <span>Action humanitaire</span>
+        <section class="trust-strip axis-strip" aria-label="Axes d intervention">
+            @foreach ([
+                ['01', 'Immigration', 'Visas, permis, residence et reunification'],
+                ['02', 'Mobilite', 'Etudes, travail et installation internationale'],
+                ['03', 'Recrutement', 'Talents, employeurs et prequalification'],
+                ['04', 'Cooperation', 'Institutions, projets et partenariats'],
+                ['05', 'Developpement', 'Inclusion, formation et impact durable'],
+                ['06', 'Humanitaire', 'Actions sociales et resilience communautaire'],
+                ['07', 'Espace client', 'Documents, messages et suivi confidentiel'],
+                ['08', 'Conseil', 'Feuille de route et analyse des risques'],
+            ] as [$number, $title, $text])
+                <article>
+                    <span>{{ $number }}</span>
+                    <strong>{{ $title }}</strong>
+                    <p>{{ $text }}</p>
+                </article>
+            @endforeach
         </section>
 
         <section class="motion-gallery" aria-label="Apercus visuels JCA">
@@ -112,7 +123,7 @@
         <section class="content-band">
             <div class="section-heading">
                 <span class="eyebrow">Pourquoi choisir JCA</span>
-                <h2>Une expertise multidisciplinaire pour agir avec methode et impact.</h2>
+                <h2>Un parcours plus simple: comprendre, preparer, suivre.</h2>
             </div>
             <div class="visual-card-grid">
                 <article class="visual-card reveal">
@@ -150,7 +161,7 @@
         <section class="services-section">
             <div class="section-heading">
                 <span class="eyebrow">Nos domaines</span>
-                <h2>Un portail complet pour tous les publics cibles.</h2>
+                <h2>Choisissez rapidement le service qui correspond a votre situation.</h2>
             </div>
             <div class="service-list">
                 @foreach ([
@@ -207,13 +218,22 @@
         </section>
 
         <section class="partners-section">
-            <span class="eyebrow">Partenaires</span>
+            <div class="section-heading compact-heading">
+                <span class="eyebrow">Credibilite</span>
+                <h2>Un reseau pense pour relier clients, employeurs et institutions.</h2>
+            </div>
             <div class="partner-logos" aria-label="Types de partenaires">
                 <span>Institutions</span>
                 <span>Universites</span>
                 <span>Entreprises</span>
                 <span>Gouvernements</span>
                 <span>ONG</span>
+            </div>
+            <div class="proof-grid">
+                <article><strong>8</strong><span>Axes d intervention</span></article>
+                <article><strong>3</strong><span>Parcours principaux</span></article>
+                <article><strong>0</strong><span>Promesse de visa garantie</span></article>
+                <article><strong>1</strong><span>Espace client confidentiel</span></article>
             </div>
         </section>
 
@@ -309,17 +329,21 @@
         <section class="faq-preview">
             <div>
                 <span class="eyebrow">FAQ</span>
-                <h2>Questions frequentes</h2>
+                <h2>Questions frequentes avant de commencer</h2>
             </div>
             <details open><summary>JCA garantit-il l obtention d un visa?</summary><p>Non. JCA securise la strategie et la qualite du dossier, mais la decision appartient toujours aux autorites competentes.</p></details>
-            <details><summary>Les entreprises peuvent-elles publier une offre?</summary><p>Oui. Le parcours employeur permet de qualifier le besoin et de preparer une mission de recrutement.</p></details>
-            <details><summary>Le site peut-il devenir administrable?</summary><p>Oui. La structure Laravel permet d ajouter tableau de bord, articles, emplois, documents et statistiques.</p></details>
+            <details><summary>Comment commencer rapidement?</summary><p>Vous pouvez creer votre espace client ou demander une consultation afin de presenter votre situation et recevoir les prochaines etapes.</p></details>
+            <details><summary>Les entreprises peuvent-elles publier une offre?</summary><p>Oui. JCA qualifie le besoin, les profils recherches et les contraintes de mobilite avant de lancer une demarche de recrutement.</p></details>
+            <details><summary>Mes documents sont-ils confidentiels?</summary><p>Oui. Les documents transmis depuis l espace client sont traites comme des pieces privees et suivis dans un parcours securise.</p></details>
         </section>
 
         <section class="cta-band">
             <span class="eyebrow">Espace client</span>
             <h2>Votre projet merite un espace clair, confidentiel et suivi.</h2>
-            <a class="button primary" href="{{ route('portal.register') }}">Creer mon espace</a>
+            <div class="hero-actions">
+                <a class="button primary" href="{{ route('portal.register') }}">Creer mon espace</a>
+                <a class="button secondary" href="{{ route('page.show', 'consultation') }}">Prendre rendez-vous</a>
+            </div>
         </section>
     </main>
 

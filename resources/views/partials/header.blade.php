@@ -16,10 +16,10 @@
     <nav class="main-nav" data-nav>
         <a href="{{ route('home') }}">Accueil</a>
         <a href="{{ route('page.show', 'qui-sommes-nous') }}">A propos</a>
-        <a href="{{ route('page.show', 'accreditations') }}">Accreditations</a>
         <a href="{{ route('page.show', 'services') }}">Services</a>
         <a href="{{ route('public.cooperation-projects') }}">Cooperation</a>
-        <a href="{{ route('public.humanitarian-programs') }}">Humanitaire</a>
+        <a href="{{ route('jobs.index') }}">Emplois</a>
+        <a class="nav-cta" href="{{ route('page.show', 'consultation') }}">Prendre rendez-vous</a>
         @auth
             <a class="nav-login" href="{{ route('portal.dashboard') }}">Mon espace</a>
         @else
