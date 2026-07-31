@@ -9,6 +9,7 @@ use App\Models\JobApplication;
 use App\Models\Message;
 use App\Models\Payment;
 use App\Models\UserProfile;
+use App\Support\AppointmentCalendar;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -18,12 +19,8 @@ class PortalDashboardController extends Controller
     public function __invoke(): View
     {
         $user = auth()->user();
-        $currentWeekStart = now()->startOfWeek()->startOfDay();
-        $currentWeekEnd = now()->endOfWeek()->endOfDay();
-        $nextWeekStart = now()->addWeek()->startOfWeek()->startOfDay();
-        $nextWeekEnd = now()->addWeek()->endOfWeek()->endOfDay();
         $bookingStart = now()->startOfDay();
-        $bookingEnd = $nextWeekEnd->copy();
+        $bookingEnd = now()->addMonth()->endOfMonth();
         Message::where('recipient_id', $user->id)
             ->whereNull('read_at')
             ->update(['read_at' => now()]);
@@ -53,29 +50,29 @@ class PortalDashboardController extends Controller
 
         $journeySteps = collect([
             [
-                'title' => 'Profil calibre',
+                'title' => 'Profil calibré',
                 'done' => filled($profile->country) || filled($profile->organization_name),
-                'text' => 'Completez votre pays, organisation ou ville pour personnaliser l accompagnement.',
+                'text' => 'Complétez votre pays, organisation ou ville pour personnaliser l’accompagnement.',
             ],
             [
-                'title' => 'Demande creee',
+                'title' => 'Demande créée',
                 'done' => $requestsCount > 0,
-                'text' => 'Envoyez une demande claire avec objectif, delais et canal prefere.',
+                'text' => 'Envoyez une demande claire avec objectif, délais et canal préféré.',
             ],
             [
-                'title' => 'Pieces transmises',
+                'title' => 'Pièces transmises',
                 'done' => $documentsCount > 0,
-                'text' => 'Ajoutez passeport, CV, diplomes ou preuves utiles pour accelerer l analyse.',
+                'text' => 'Ajoutez passeport, CV, diplômes ou preuves utiles pour accélérer l’analyse.',
             ],
             [
-                'title' => 'Rendez-vous planifie',
+                'title' => 'Rendez-vous planifié',
                 'done' => $appointmentsCount > 0,
-                'text' => 'Choisissez un creneau disponible pour obtenir une feuille de route.',
+                'text' => 'Choisissez un créneau disponible pour obtenir une feuille de route.',
             ],
             [
                 'title' => 'Facturation suivie',
                 'done' => $pendingPaymentsCount === 0,
-                'text' => 'Consultez les frais ouverts et utilisez le lien de paiement si necessaire.',
+                'text' => 'Consultez les frais ouverts et utilisez le lien de paiement si nécessaire.',
             ],
         ]);
 
@@ -101,18 +98,8 @@ class PortalDashboardController extends Controller
             'appointments' => Appointment::where('user_id', $user->id)->latest()->limit(6)->get(),
             'payments' => Payment::where('user_id', $user->id)->latest()->limit(6)->get(),
             'journeySteps' => $journeySteps,
-            'appointmentSlotOptions' => $slots->map(function ($slot) use ($currentWeekStart, $currentWeekEnd, $nextWeekStart, $nextWeekEnd): array {
-                $startsAt = Carbon::parse($slot->starts_at);
-                $weekKey = $startsAt->betweenIncluded($currentWeekStart, $currentWeekEnd) ? 'current' : 'next';
-                $weekLabel = $weekKey === 'current' ? 'Cette semaine' : 'Semaine prochaine';
-
-                return [
-                    'id' => $slot->id,
-                    'weekKey' => $weekKey,
-                    'weekLabel' => $weekLabel,
-                    'label' => $weekLabel.' - '.$startsAt->translatedFormat('l d F Y').' a '.$startsAt->format('H:i'),
-                ];
-            }),
+            'appointmentSlotOptions' => $slots,
+            'appointmentCalendars' => AppointmentCalendar::months($slots),
             'stats' => [
                 'documents' => $documentsCount,
                 'requests' => $requestsCount,

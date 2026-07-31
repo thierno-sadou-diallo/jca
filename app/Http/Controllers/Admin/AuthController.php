@@ -40,7 +40,7 @@ class AuthController extends Controller
             $request->session()->regenerateToken();
 
             return redirect()->route('admin.login')->withErrors([
-                'email' => 'Votre compte n a pas acces a l administration.',
+                'email' => 'Votre compte n’a pas accès à l’administration.',
             ]);
         }
 

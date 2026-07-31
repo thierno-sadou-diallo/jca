@@ -63,7 +63,7 @@ class JobApplicationController extends Controller
 
         $application->user?->notify(new PortalStatusNotification(
             'Candidature mise a jour',
-            ($validated['admin_note'] ?? null) ?: 'Le statut de votre candidature a ete mis a jour.',
+            ($validated['admin_note'] ?? null) ?: 'Le statut de votre candidature a été mis à jour.',
             'candidature',
             route('portal.dashboard'),
         ));

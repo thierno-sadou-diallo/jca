@@ -15,8 +15,8 @@
                 <h1>Projets de coopération</h1>
                 <p>Des initiatives structurées avec institutions, gouvernements, organisations et partenaires techniques pour transformer les besoins territoriaux en actions mesurables.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('page.show', 'contact') }}">Demander une collaboration</a>
-                    <a class="button ghost" href="{{ route('public.partners') }}">Voir les partenaires</a>
+                    <a class="button primary" href="{{ $publicRoute('page.show', 'contact') }}">Demander une collaboration</a>
+                    <a class="button ghost" href="{{ $publicRoute('public.partners') }}">Voir les partenaires</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
@@ -59,7 +59,7 @@
                             </div>
                         @endif
                         <small>{{ $project->starts_at?->format('d/m/Y') ?: 'Date à définir' }} - {{ $project->ends_at?->format('d/m/Y') ?: 'En cours' }}</small>
-                        <a class="admin-link" href="{{ route('public.cooperation-projects.show', $project) }}">Voir le projet</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.cooperation-projects.show', $project) }}">Voir le projet</a>
                     </article>
                 @empty
                     <article class="empty-state">

@@ -55,7 +55,7 @@ class DocumentController extends Controller
 
         $document->user?->notify(new PortalStatusNotification(
             'Document mis a jour',
-            ($validated['admin_note'] ?? null) ?: 'Le statut de votre document '.$document->title.' a ete mis a jour.',
+            ($validated['admin_note'] ?? null) ?: 'Le statut de votre document '.$document->title.' a été mis à jour.',
             'document',
             route('portal.dashboard'),
         ));

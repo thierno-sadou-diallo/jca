@@ -18,7 +18,7 @@
         </section>
 
         <section class="job-board">
-            <form class="job-search" method="get" action="{{ route('jobs.index') }}">
+            <form class="job-search" method="get" action="{{ $publicRoute('jobs.index') }}">
                 <label>Recherche<input name="q" value="{{ $query }}" placeholder="Metier, entreprise, competence..."></label>
                 <label>Secteur<select name="sector">
                     <option value="">Tous les secteurs</option>

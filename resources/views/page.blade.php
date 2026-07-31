@@ -17,7 +17,7 @@
                 <p>{{ $page['intro'] }}</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
-                    <a class="button ghost" href="{{ route('page.show', 'contact') }}">Nous contacter</a>
+                    <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>
                 </div>
             </div>
             @if (in_array($slug, ['qui-sommes-nous', 'services'], true))
@@ -89,7 +89,7 @@
         <section class="content-band">
             <div class="section-heading">
                 <span class="eyebrow">Expertise</span>
-                <h2>Un accompagnement structure et confidentiel</h2>
+                <h2>Un accompagnement structuré et confidentiel</h2>
                 <p>Chaque demande est analysée selon ses objectifs, ses contraintes documentaires et son horizon international.</p>
             </div>
             <div class="{{ $slug === 'services' ? 'service-icon-grid' : 'cards-grid' }}">
@@ -108,16 +108,42 @@
         </section>
 
         @isset($page['form'])
-            <section class="split-section">
-                <div>
-                    <span class="eyebrow">Demande</span>
-                    <h2>{{ $page['form'] === 'consultation' ? 'Planifier une consultation' : 'Envoyer un message' }}</h2>
-                    <p>Le formulaire est pret pour une intégration CRM, email transactionnel ou espace client Laravel sécurisé.</p>
-                    <ul class="check-list">
-                        <li>Protection CSRF Laravel</li>
-                        <li>Pièces jointes prevues pour CV, passeport, diplômes et justificatifs</li>
-                        <li>Confirmation et notifications à connecter</li>
-                    </ul>
+            <section class="{{ $page['form'] === 'contact' ? 'contact-section' : 'split-section' }}">
+                <div class="{{ $page['form'] === 'contact' ? 'contact-profile' : '' }}">
+                    <span class="eyebrow">{{ $page['form'] === 'consultation' ? 'Demande' : 'Contact JCA' }}</span>
+                    <h2>{{ $page['form'] === 'consultation' ? 'Planifier une consultation' : 'Parlons de votre projet international.' }}</h2>
+                    @if ($page['form'] === 'contact')
+                        <p>JCA répond aux particuliers, entreprises et organisations qui souhaitent structurer une démarche d’immigration, de mobilité, de recrutement ou de coopération internationale.</p>
+                        <div class="contact-cards">
+                            <article>
+                                <strong>Email</strong>
+                                <span><a href="mailto:contact@jcaconseil.com">contact@jcaconseil.com</a></span>
+                            </article>
+                            <article>
+                                <strong>Téléphone / WhatsApp</strong>
+                                <span><a href="tel:+221789685116">78 968 51 16</a></span>
+                            </article>
+                            <article>
+                                <strong>Accueil professionnel</strong>
+                                <span>Votre demande est orientée vers le bon interlocuteur selon le sujet, le pays concerné et le niveau d’urgence.</span>
+                            </article>
+                            <article>
+                                <strong>Suivi confidentiel</strong>
+                                <span>Les informations partagées servent uniquement à comprendre votre besoin et à proposer les prochaines étapes.</span>
+                            </article>
+                            <article>
+                                <strong>Partenariats</strong>
+                                <span>Institutions, employeurs et organisations peuvent présenter une collaboration ou un projet à développer.</span>
+                            </article>
+                        </div>
+                    @else
+                        <p>Présentez votre situation à JCA afin de recevoir une première orientation claire et les étapes utiles pour avancer.</p>
+                        <ul class="check-list">
+                            <li>Analyse du besoin et du contexte international</li>
+                            <li>Documents utiles pour immigration, emploi, partenariat ou projet</li>
+                            <li>Réponse de suivi avec les prochaines étapes recommandées</li>
+                        </ul>
+                    @endif
                 </div>
                 <form class="lead-form" method="post" action="{{ route('lead-requests.store') }}" enctype="multipart/form-data" data-lead-form>
                     @csrf
@@ -163,7 +189,7 @@
         <section class="cta-band">
             <span class="eyebrow">Prochaine étape</span>
             <h2>Transformez votre projet international en feuille de route claire.</h2>
-            <a class="button primary" href="{{ route('page.show', 'consultation') }}">Demander une consultation</a>
+            <a class="button primary" href="{{ $publicRoute('page.show', 'consultation') }}">Demander une consultation</a>
         </section>
     </main>
 

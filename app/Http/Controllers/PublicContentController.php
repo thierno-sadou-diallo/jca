@@ -13,7 +13,7 @@ class PublicContentController extends Controller
 {
     public function blog(): View
     {
-        return $this->articles(Article::TYPE_BLOG, 'Blog', 'Conseils pratiques', 'Des guides pour mieux preparer vos projets de mobilite, emploi et cooperation.');
+        return $this->articles(Article::TYPE_BLOG, 'Blog', 'Conseils pratiques', 'Des guides pour mieux préparer vos projets de mobilité, emploi et coopération.');
     }
 
     public function news(): View

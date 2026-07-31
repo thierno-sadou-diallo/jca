@@ -95,7 +95,7 @@ class MessageController extends Controller
             route('portal.dashboard'),
         ));
 
-        return back()->with('message_status', 'Message envoye au client.');
+        return back()->with('message_status', 'Message envoyé au client.');
     }
 
     private function conversationWith(User $client)

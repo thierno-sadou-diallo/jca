@@ -29,7 +29,7 @@
                         @endforeach
                     </div>
                 @endif
-                <a class="button primary" href="{{ route('page.show', 'contact') }}">Demander une collaboration</a>
+                <a class="button primary" href="{{ $publicRoute('page.show', 'contact') }}">Demander une collaboration</a>
             </div>
         </section>
     </main>

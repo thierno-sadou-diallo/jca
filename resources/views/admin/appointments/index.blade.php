@@ -5,7 +5,7 @@
                 <h2>Rendez-vous clients</h2>
                 <span>Acceptation, report, refus et annulation</span>
             </div>
-            <a class="button ghost" href="{{ route('admin.availability.index') }}">Disponibilites</a>
+            <a class="button ghost" href="{{ route('admin.availability.index') }}">Disponibilités</a>
         </div>
         <form class="admin-filter wide-filter" method="get" action="{{ route('admin.appointments.index') }}">
             <input name="q" value="{{ $query }}" placeholder="Client, email, sujet">

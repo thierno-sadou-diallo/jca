@@ -41,7 +41,7 @@ class HumanitarianProgramController extends Controller
 
         $program = HumanitarianProgram::create($validated);
 
-        return redirect()->route('admin.humanitarian-programs.edit', $program)->with('status', 'Programme humanitaire cree.');
+        return redirect()->route('admin.humanitarian-programs.edit', $program)->with('status', 'Programme humanitaire créé.');
     }
 
     public function edit(HumanitarianProgram $program): View

@@ -35,7 +35,7 @@ class PortalAppointmentController extends Controller
                 'email' => $request->user()->email,
                 'phone' => $request->user()->phone,
                 'topic' => 'Demande de rendez-vous',
-                'message' => 'Le client a demande un rendez-vous depuis son espace personnel.',
+                'message' => 'Le client a demandé un rendez-vous depuis son espace personnel.',
                 'source' => 'portal',
                 'page_slug' => 'espace',
                 'preferred_date' => $startsAt->toDateString(),
@@ -53,7 +53,7 @@ class PortalAppointmentController extends Controller
             $appointmentId = DB::table('appointments')->insertGetId([
                 'user_id' => $request->user()->id,
                 'lead_request_id' => $lead->id,
-                'topic' => 'Rendez-vous strategique',
+                'topic' => 'Rendez-vous stratégique',
                 'starts_at' => $slot->starts_at,
                 'duration_minutes' => max(15, $endsAt->diffInMinutes($startsAt)),
                 'channel' => 'online',
@@ -72,9 +72,9 @@ class PortalAppointmentController extends Controller
         });
 
         if (! $booked) {
-            return back()->withErrors(['slot_id' => 'Ce creneau n est plus disponible.']);
+            return back()->withErrors(['slot_id' => 'Ce créneau n’est plus disponible.']);
         }
 
-        return back()->with('appointment_status', 'Votre rendez-vous a ete confirme.');
+        return back()->with('appointment_status', 'Votre rendez-vous a été confirmé.');
     }
 }

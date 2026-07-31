@@ -232,14 +232,14 @@ $legalPages = [
             [
                 'title' => 'Éditeur du site',
                 'paragraphs' => [
-                    'Le site jca-international.com est édité par JCA. Les informations administratives complètes de l’entité, son adresse officielle, son immatriculation et les licences professionnelles applicables sont tenues à jour par la direction et communiquées aux clients selon le cadre juridique pertinent.',
-                    'Responsable de publication: direction JCA. Contact: contact@jca-international.com.',
+                    'Le site jcaconseil.com est édité par JCA. Les informations administratives complètes de l’entité, son adresse officielle, son immatriculation et les licences professionnelles applicables sont tenues à jour par la direction et communiquées aux clients selon le cadre juridique pertinent.',
+                    'Responsable de publication: direction JCA. Contact: contact@jcaconseil.com.',
                 ],
             ],
             [
                 'title' => 'Hébergement',
                 'paragraphs' => [
-                    'Le site est exploité sur une infrastructure cloud sécurisée compatible avec Laravel. Les informations complètes de l’hébergeur de production sont conservées dans le dossier technique du site et peuvent être communiquées sur demande légitime.',
+                    'Le site est exploité sur une infrastructure cloud sécurisée. Les informations complètes de l’hébergeur de production sont conservées dans le dossier technique du site et peuvent être communiquées sur demande légitime.',
                 ],
             ],
             [
@@ -290,7 +290,7 @@ $legalPages = [
                 'title' => 'Droits des personnes',
                 'paragraphs' => [
                     'Toute personne concernée peut demander l’accès, la rectification, la suppression, la limitation ou la portabilité de ses données lorsque le droit applicable le permet.',
-                    'Contact responsable du traitement: contact@jca-international.com.',
+                    'Contact responsable du traitement: contact@jcaconseil.com.',
                 ],
             ],
             [
@@ -366,7 +366,11 @@ Route::get('/lang/{locale}', function (string $locale) {
     abort_unless(in_array($locale, ['fr', 'en'], true), 404);
     session(['locale' => $locale]);
 
-    return back();
+    $previousPath = trim(parse_url(url()->previous(), PHP_URL_PATH) ?: '', '/');
+    $normalPath = preg_replace('#^(fr|en)(/|$)#', '', $previousPath) ?? '';
+    $targetPath = $locale === 'en' ? trim('en/'.$normalPath, '/') : $normalPath;
+
+    return redirect(url($targetPath));
 })->name('locale.switch');
 
 Route::get('/sitemap.xml', function () use ($pages, $legalPages) {

@@ -41,6 +41,6 @@ class PortalProfileController extends Controller
             ],
         );
 
-        return back()->with('profile_status', 'Votre profil client a ete mis a jour.');
+        return back()->with('profile_status', 'Votre profil client a été mis à jour.');
     }
 }

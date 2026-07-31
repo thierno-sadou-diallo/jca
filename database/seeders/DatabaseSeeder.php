@@ -29,23 +29,23 @@ class DatabaseSeeder extends Seeder
         foreach ($roles as $name => $label) {
             DB::table('roles')->updateOrInsert(
                 ['name' => $name],
-                ['label' => $label, 'description' => 'Role systeme JCA', 'created_at' => now(), 'updated_at' => now()],
+                ['label' => $label, 'description' => 'Rôle système JCA', 'created_at' => now(), 'updated_at' => now()],
             );
         }
 
         $permissions = [
-            'manage_users' => 'Gerer les utilisateurs',
-            'manage_roles' => 'Gerer les roles et permissions',
-            'manage_services' => 'Gerer les services',
-            'manage_content' => 'Gerer pages, blog, actualites et FAQ',
-            'manage_jobs' => 'Gerer les offres et candidatures',
-            'manage_immigration_cases' => 'Gerer les dossiers immigration',
-            'manage_appointments' => 'Gerer les rendez-vous',
-            'manage_payments' => 'Gerer les paiements',
-            'manage_documents' => 'Gerer les documents',
-            'manage_partnerships' => 'Gerer partenaires et projets',
+            'manage_users' => 'Gérer les utilisateurs',
+            'manage_roles' => 'Gérer les rôles et permissions',
+            'manage_services' => 'Gérer les services',
+            'manage_content' => 'Gérer pages, blog, actualités et FAQ',
+            'manage_jobs' => 'Gérer les offres et candidatures',
+            'manage_immigration_cases' => 'Gérer les dossiers immigration',
+            'manage_appointments' => 'Gérer les rendez-vous',
+            'manage_payments' => 'Gérer les paiements',
+            'manage_documents' => 'Gérer les documents',
+            'manage_partnerships' => 'Gérer partenaires et projets',
             'view_reports' => 'Consulter les statistiques',
-            'access_portal' => 'Acceder a l espace personnel',
+            'access_portal' => 'Accéder à l’espace personnel',
         ];
 
         foreach ($permissions as $name => $label) {
@@ -101,9 +101,9 @@ class DatabaseSeeder extends Seeder
         }
 
         $categories = [
-            ['name' => 'Immigration', 'slug' => 'immigration', 'summary' => 'Dossiers, visas, residence, permis et citoyennete.', 'sort_order' => 1],
-            ['name' => 'Recrutement international', 'slug' => 'recrutement-international', 'summary' => 'Talents, employeurs, offres et integration.', 'sort_order' => 2],
-            ['name' => 'Cooperation internationale', 'slug' => 'cooperation-internationale', 'summary' => 'Programmes, partenariats et financement.', 'sort_order' => 3],
+            ['name' => 'Immigration', 'slug' => 'immigration', 'summary' => 'Dossiers, visas, résidence, permis et citoyenneté.', 'sort_order' => 1],
+            ['name' => 'Recrutement international', 'slug' => 'recrutement-international', 'summary' => 'Talents, employeurs, offres et intégration.', 'sort_order' => 2],
+            ['name' => 'Coopération internationale', 'slug' => 'cooperation-internationale', 'summary' => 'Programmes, partenariats et financement.', 'sort_order' => 3],
         ];
 
         foreach ($categories as $category) {
@@ -126,9 +126,9 @@ class DatabaseSeeder extends Seeder
             ['slug' => 'preparer-un-dossier-international-solide'],
             [
                 'user_id' => $admin->id,
-                'title' => 'Preparer un dossier international solide',
-                'excerpt' => 'Les preuves, la coherence et les delais sont les piliers d un dossier fiable.',
-                'body' => 'Article de demonstration pret a etre edite dans une future interface CRUD.',
+                'title' => 'Préparer un dossier international solide',
+                'excerpt' => 'Les preuves, la cohérence et les délais sont les piliers d’un dossier fiable.',
+                'body' => 'Article de démonstration prêt à être édité dans une future interface CRUD.',
                 'status' => 'published',
                 'published_at' => now(),
             ],
@@ -144,7 +144,7 @@ class DatabaseSeeder extends Seeder
                 'sector' => 'Industrie',
                 'contract_type' => 'Temps plein',
                 'description' => 'Offre pilote pour valider le module emplois.',
-                'requirements' => 'Experience technique, rigueur et disponibilite internationale.',
+                'requirements' => 'Expérience technique, rigueur et disponibilité internationale.',
                 'status' => 'published',
                 'published_at' => now(),
             ],
@@ -155,7 +155,7 @@ class DatabaseSeeder extends Seeder
             [
                 'type' => 'Institution',
                 'country' => 'International',
-                'summary' => 'Partenaire de demonstration pour le reseau JCA.',
+                'summary' => 'Partenaire de démonstration pour le réseau JCA.',
                 'is_featured' => true,
             ],
         );
@@ -164,21 +164,21 @@ class DatabaseSeeder extends Seeder
             ['slug' => 'jca-immigration-recrutement-cooperation'],
             [
                 'user_id' => $admin->id,
-                'title' => 'JCA - Immigration, Recrutement International, Cooperation et Developpement International',
-                'excerpt' => 'Cabinet international de conseil et d accompagnement pour la mobilite, les talents et les projets a impact.',
+                'title' => 'JCA - Immigration, recrutement international, coopération et développement international',
+                'excerpt' => 'Cabinet international de conseil et d’accompagnement pour la mobilité, les talents et les projets à impact.',
                 'body' => 'Page institutionnelle administrable pour le positionnement global de JCA.',
                 'status' => 'published',
-                'seo_title' => 'JCA | Immigration, Recrutement International et Cooperation',
-                'seo_description' => 'Solutions integrees pour immigration, mobilite internationale, recrutement, cooperation et developpement durable.',
+                'seo_title' => 'JCA | Immigration, recrutement international et coopération',
+                'seo_description' => 'Solutions intégrées pour immigration, mobilité internationale, recrutement, coopération et développement durable.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
         );
 
         foreach ([
-            ['Immigration', 'JCA garantit-il l obtention d un visa?', 'Non. JCA securise la strategie et la qualite du dossier, mais la decision appartient aux autorites competentes.'],
+            ['Immigration', 'JCA garantit-il l’obtention d’un visa?', 'Non. JCA sécurise la stratégie et la qualité du dossier, mais la décision appartient aux autorités compétentes.'],
             ['Recrutement', 'Une entreprise peut-elle publier une offre?', 'Oui. Le portail permet de qualifier le besoin, publier une offre et suivre les candidatures.'],
-            ['Cooperation', 'JCA accompagne-t-il les projets institutionnels?', 'Oui. JCA intervient en conception, mobilisation de ressources, mise en oeuvre, suivi et evaluation.'],
+            ['Coopération', 'JCA accompagne-t-il les projets institutionnels?', 'Oui. JCA intervient en conception, mobilisation de ressources, mise en œuvre, suivi et évaluation.'],
         ] as $index => $faq) {
             DB::table('faqs')->updateOrInsert(
                 ['question' => $faq[1]],
@@ -198,7 +198,7 @@ class DatabaseSeeder extends Seeder
             [
                 'author_role' => 'Partenaire institutionnel',
                 'organization' => 'Programme international',
-                'quote' => 'JCA apporte une approche structuree, professionnelle et orientee impact.',
+                'quote' => 'JCA apporte une approche structurée, professionnelle et orientée impact.',
                 'is_published' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -221,7 +221,7 @@ class DatabaseSeeder extends Seeder
             ['reference' => 'JCA-IMM-000001'],
             [
                 'user_id' => $client->id,
-                'program_type' => 'Residence permanente',
+                'program_type' => 'Résidence permanente',
                 'destination_country' => 'Canada',
                 'status' => 'received',
                 'created_at' => now(),
@@ -230,7 +230,7 @@ class DatabaseSeeder extends Seeder
         );
 
         DB::table('appointments')->updateOrInsert(
-            ['user_id' => $client->id, 'topic' => 'Consultation strategique'],
+            ['user_id' => $client->id, 'topic' => 'Consultation stratégique'],
             [
                 'starts_at' => now()->addWeek(),
                 'duration_minutes' => 45,
@@ -244,11 +244,11 @@ class DatabaseSeeder extends Seeder
         DB::table('cooperation_projects')->updateOrInsert(
             ['slug' => 'renforcement-capacites-demo'],
             [
-                'title' => 'Renforcement des capacites institutionnelles',
+                'title' => 'Renforcement des capacités institutionnelles',
                 'country' => 'International',
                 'sector' => 'Gouvernance',
                 'status' => 'draft',
-                'description' => 'Projet pilote pour le module cooperation internationale.',
+                'description' => 'Projet pilote pour le module coopération internationale.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -261,7 +261,7 @@ class DatabaseSeeder extends Seeder
                 'country' => 'International',
                 'focus_area' => 'Inclusion sociale',
                 'status' => 'draft',
-                'description' => 'Programme pilote pour le module action humanitaire et developpement durable.',
+                'description' => 'Programme pilote pour le module action humanitaire et développement durable.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

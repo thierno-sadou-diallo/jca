@@ -44,7 +44,7 @@ class ArticleController extends Controller
 
         $article = Article::create($validated);
 
-        return redirect()->route('admin.articles.edit', $article)->with('status', 'Article cree.');
+        return redirect()->route('admin.articles.edit', $article)->with('status', 'Article créé.');
     }
 
     public function edit(Article $article): View

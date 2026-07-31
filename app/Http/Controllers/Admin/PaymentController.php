@@ -54,7 +54,7 @@ class PaymentController extends Controller
 
         $payment = Payment::create($validated);
 
-        return redirect()->route('admin.payments.edit', $payment)->with('status', 'Paiement cree.');
+        return redirect()->route('admin.payments.edit', $payment)->with('status', 'Paiement créé.');
     }
 
     public function edit(Payment $payment): View

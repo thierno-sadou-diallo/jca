@@ -40,6 +40,6 @@ class JobApplicationController extends Controller
             'status' => JobApplication::STATUS_NEW,
         ]);
 
-        return back()->with('application_status', 'Votre candidature a ete transmise a JCA.');
+        return back()->with('application_status', 'Votre candidature a été transmise à JCA.');
     }
 }

@@ -82,14 +82,14 @@ class ImmigrationCaseController extends Controller
         $case->histories()->create([
             'user_id' => $request->user()->id,
             'status' => $validated['status'],
-            'note' => $validated['note'] ?? 'Dossier cree par l administration.',
+            'note' => $validated['note'] ?? 'Dossier créé par l’administration.',
         ]);
 
         if (! empty($validated['lead_request_id'])) {
             LeadRequest::where('id', $validated['lead_request_id'])->update(['status' => 'converted']);
         }
 
-        return redirect()->route('admin.immigration-cases.show', $case)->with('status', 'Dossier immigration cree.');
+        return redirect()->route('admin.immigration-cases.show', $case)->with('status', 'Dossier immigration créé.');
     }
 
     public function show(ImmigrationCase $immigrationCase): View
@@ -130,7 +130,7 @@ class ImmigrationCaseController extends Controller
 
             $immigrationCase->user?->notify(new PortalStatusNotification(
                 'Dossier immigration mis a jour',
-                ($validated['note'] ?? null) ?: 'Le statut de votre dossier '.$immigrationCase->reference.' a ete mis a jour.',
+                ($validated['note'] ?? null) ?: 'Le statut de votre dossier '.$immigrationCase->reference.' a été mis à jour.',
                 'dossier',
                 route('portal.dashboard'),
             ));

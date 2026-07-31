@@ -40,10 +40,10 @@ class PortalRegisterController extends Controller
             'next' => ['nullable', Rule::in(['rendez-vous', 'dossier', 'documents'])],
         ], [
             'name.required' => 'Veuillez indiquer votre nom complet.',
-            'email.unique' => 'Un compte existe deja avec cette adresse email.',
+            'email.unique' => 'Un compte existe déjà avec cette adresse email.',
             'password.confirmed' => 'La confirmation du mot de passe ne correspond pas.',
             'password.min' => 'Le mot de passe doit contenir au moins :min caracteres.',
-            'profile_photo.image' => 'La photo doit etre une image valide.',
+            'profile_photo.image' => 'La photo doit être une image valide.',
             'profile_photo.max' => 'La photo ne doit pas depasser 2 Mo.',
             'type_client.required' => 'Veuillez choisir votre type de client.',
         ]);

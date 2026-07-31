@@ -30,7 +30,7 @@ class JobPostingController extends Controller
         $job = JobPosting::create($this->validatedData($request));
         $this->log($request, 'job_created', $job);
 
-        return redirect()->route('admin.jobs.edit', $job)->with('status', 'Offre creee.');
+        return redirect()->route('admin.jobs.edit', $job)->with('status', 'Offre créée.');
     }
 
     public function edit(JobPosting $job): View

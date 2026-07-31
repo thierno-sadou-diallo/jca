@@ -39,9 +39,9 @@ class UpdateClientProfileRequest extends FormRequest
             'name.required' => 'Veuillez indiquer votre nom complet ou votre organisation.',
             'type_client.required' => 'Veuillez choisir votre type de client.',
             'type_client.in' => 'Le type de client selectionne est invalide.',
-            'profile_photo.image' => 'La photo doit etre une image valide.',
+            'profile_photo.image' => 'La photo doit être une image valide.',
             'profile_photo.max' => 'La photo ne doit pas depasser 2 Mo.',
-            'preferred_language.in' => 'La langue preferee doit etre FR ou EN.',
+            'preferred_language.in' => 'La langue préférée doit être FR ou EN.',
         ];
     }
 }

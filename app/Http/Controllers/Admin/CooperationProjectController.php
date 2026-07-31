@@ -41,7 +41,7 @@ class CooperationProjectController extends Controller
 
         $project = CooperationProject::create($validated);
 
-        return redirect()->route('admin.cooperation-projects.edit', $project)->with('status', 'Projet de cooperation cree.');
+        return redirect()->route('admin.cooperation-projects.edit', $project)->with('status', 'Projet de coopération créé.');
     }
 
     public function edit(CooperationProject $project): View
@@ -58,7 +58,7 @@ class CooperationProjectController extends Controller
 
         $project->update($validated);
 
-        return back()->with('status', 'Projet de cooperation mis a jour.');
+        return back()->with('status', 'Projet de coopération mis à jour.');
     }
 
     /**

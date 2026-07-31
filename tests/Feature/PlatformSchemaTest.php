@@ -62,8 +62,8 @@ class PlatformSchemaTest extends TestCase
             ->assertSee('Espace personnel')
             ->assertSee('Feuille de route intelligente')
             ->assertSee('Votre prochain meilleur mouvement.')
-            ->assertSee('Profil calibre')
-            ->assertSee('Demande creee');
+            ->assertSee('Profil calibré')
+            ->assertSee('Demande créée');
     }
 
     public function test_guest_portal_redirects_to_portal_login(): void
@@ -248,10 +248,10 @@ class PlatformSchemaTest extends TestCase
             ->post('/demandes', [
                 'name' => $user->name,
                 'email' => $user->email,
-                'topic' => 'Consultation strategique',
+                'topic' => 'Consultation stratégique',
                 'source' => 'portal',
                 'page_slug' => 'espace',
-                'message' => 'Je veux creer une nouvelle demande depuis mon espace client JCA.',
+                'message' => 'Je veux créer une nouvelle demande depuis mon espace client JCA.',
             ])
             ->assertRedirect();
 

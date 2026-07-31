@@ -10,8 +10,8 @@
             'name' => $siteSettings['brand_name'] ?? 'JCA',
             'url' => url('/'),
             'logo' => asset('images/logo_jca.jpg'),
-            'email' => $siteSettings['contact_email'] ?? 'contact@jca-international.com',
-            'téléphone' => $siteSettings['contact_phone'] ?? null,
+            'email' => $siteSettings['contact_email'] ?? 'contact@jcaconseil.com',
+            'telephone' => $siteSettings['contact_phone'] ?? '78 968 51 16',
             'sameAs' => array_values(array_filter([
                 $siteSettings['facebook_url'] ?? null,
                 $siteSettings['linkedin_url'] ?? null,
@@ -39,7 +39,7 @@
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('portal.register') }}">Créer mon espace</a>
                     <a class="button secondary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
-                    <a class="button secondary ghost-link" href="{{ route('page.show', 'services') }}">Voir les services</a>
+                    <a class="button secondary ghost-link" href="{{ $publicRoute('page.show', 'services') }}">Voir les services</a>
                 </div>
                 <div class="hero-signals" aria-label="Forces JCA">
                     <span>Diagnostic</span>
@@ -57,7 +57,7 @@
         <section class="home-pathway quick-actions" aria-label="Actions rapides">
             <a href="{{ route('public.appointments') }}"><strong>Prendre rendez-vous</strong><span>Choisir un créneau dans l’espace client</span></a>
             <a href="{{ route('portal.register') }}"><strong>Créer mon espace</strong><span>Documents, demandes et suivi</span></a>
-            <a href="{{ route('jobs.index') }}"><strong>Voir les offres</strong><span>Opportunités et candidature</span></a>
+            <a href="{{ $publicRoute('jobs.index') }}"><strong>Voir les offres</strong><span>Opportunités et candidature</span></a>
         </section>
 
         <section class="trust-strip axis-strip" aria-label="Axes d’intervention">
@@ -172,7 +172,7 @@
                     'humanitaire',
                     'emplois',
                 ] as $slug)
-                    <a class="service-row reveal" href="{{ route('page.show', $slug) }}">
+                    <a class="service-row reveal" href="{{ $publicRoute('page.show', $slug) }}">
                         <span class="service-row-icon service-icon-{{ $slug }}" aria-hidden="true"></span>
                         <span>{{ $pages[$slug]['eyebrow'] }}</span>
                         <strong>{{ $pages[$slug]['title'] }}</strong>
@@ -257,14 +257,14 @@
                                 @endforeach
                             </div>
                         @endif
-                        <a class="admin-link" href="{{ route('public.cooperation-projects.show', $project) }}">Voir le projet</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.cooperation-projects.show', $project) }}">Voir le projet</a>
                     </article>
                 @empty
                     <article class="news-card reveal">
                         <span>Coopération</span>
                         <h3>Structurer un projet institutionnel</h3>
                         <p>JCA accompagne la conception, la gouvernance, la mobilisation de partenaires et le suivi d’impact.</p>
-                        <a class="admin-link" href="{{ route('public.cooperation-projects') }}">Explorer</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.cooperation-projects') }}">Explorer</a>
                     </article>
                 @endforelse
 
@@ -281,14 +281,14 @@
                                 @endforeach
                             </div>
                         @endif
-                        <a class="admin-link" href="{{ route('public.humanitarian-programs.show', $program) }}">Voir le programme</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.humanitarian-programs.show', $program) }}">Voir le programme</a>
                     </article>
                 @empty
                     <article class="news-card reveal">
                         <span>Humanitaire</span>
                         <h3>Lancer une initiative sociale</h3>
                         <p>Des programmes utiles pour l’inclusion, la formation, l’employabilité et la résilience des publics.</p>
-                        <a class="admin-link" href="{{ route('public.humanitarian-programs') }}">Explorer</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.humanitarian-programs') }}">Explorer</a>
                     </article>
                 @endforelse
             </div>
@@ -301,11 +301,11 @@
             </div>
             <div class="cards-grid">
                 @forelse ($latestJobs as $job)
-                    <article class="news-card reveal"><span>{{ $job->sector }}</span><h3>{{ $job->title }}</h3><p>{{ $job->country }} - {{ str($job->description)->limit(120) }}</p><a class="admin-link" href="{{ route('jobs.index') }}">Voir les offres</a></article>
+                    <article class="news-card reveal"><span>{{ $job->sector }}</span><h3>{{ $job->title }}</h3><p>{{ $job->country }} - {{ str($job->description)->limit(120) }}</p><a class="admin-link" href="{{ $publicRoute('jobs.index') }}">Voir les offres</a></article>
                 @empty
-                    <article class="news-card reveal"><span>Recrutement</span><h3>Déposez votre profil international</h3><p>Les opportunités publiées apparaîtront ici. Vous pouvez déjà présenter votre profil pour préqualification.</p><a class="admin-link" href="{{ route('page.show', 'contact') }}">Déposer un profil</a></article>
-                    <article class="news-card reveal"><span>Employeurs</span><h3>Publier un besoin de recrutement</h3><p>JCA qualifie les postes, les profils cibles et les contraintes de mobilité internationale.</p><a class="admin-link" href="{{ route('page.show', 'contact') }}">Nous contacter</a></article>
-                    <article class="news-card reveal"><span>Immigration</span><h3>Préparer un dossier solide</h3><p>Les preuves, la cohérence du parcours et le respect des critères restent décisifs.</p><a class="admin-link" href="{{ route('page.show', 'consultation') }}">Demander une consultation</a></article>
+                    <article class="news-card reveal"><span>Recrutement</span><h3>Déposez votre profil international</h3><p>Les opportunités publiées apparaîtront ici. Vous pouvez déjà présenter votre profil pour préqualification.</p><a class="admin-link" href="{{ $publicRoute('page.show', 'contact') }}">Déposer un profil</a></article>
+                    <article class="news-card reveal"><span>Employeurs</span><h3>Publier un besoin de recrutement</h3><p>JCA qualifie les postes, les profils cibles et les contraintes de mobilité internationale.</p><a class="admin-link" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a></article>
+                    <article class="news-card reveal"><span>Immigration</span><h3>Préparer un dossier solide</h3><p>Les preuves, la cohérence du parcours et le respect des critères restent décisifs.</p><a class="admin-link" href="{{ $publicRoute('page.show', 'consultation') }}">Demander une consultation</a></article>
                 @endforelse
             </div>
         </section>

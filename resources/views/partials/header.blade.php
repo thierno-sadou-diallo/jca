@@ -1,9 +1,9 @@
 <header class="site-header" data-header>
-    <a class="brand" href="{{ route('home') }}" aria-label="Accueil JCA">
+    <a class="brand" href="{{ $publicRoute('home') }}" aria-label="Accueil JCA">
         <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
         <span>
             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
-            <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recruitment & coopération' }}</small>
+            <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et coopération' }}</small>
         </span>
     </a>
 
@@ -14,11 +14,11 @@
     </button>
 
     <nav class="main-nav" data-nav>
-        <a href="{{ route('home') }}">Accueil</a>
-        <a href="{{ route('page.show', 'qui-sommes-nous') }}">A propos</a>
-        <a href="{{ route('page.show', 'services') }}">Services</a>
-        <a href="{{ route('public.cooperation-projects') }}">Coopération</a>
-        <a href="{{ route('jobs.index') }}">Emplois</a>
+        <a href="{{ $publicRoute('home') }}">Accueil</a>
+        <a href="{{ $publicRoute('page.show', 'qui-sommes-nous') }}">A propos</a>
+        <a href="{{ $publicRoute('page.show', 'services') }}">Services</a>
+        <a href="{{ $publicRoute('public.cooperation-projects') }}">Coopération</a>
+        <a href="{{ $publicRoute('jobs.index') }}">Emplois</a>
         <a class="nav-cta" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
         @auth
             <a class="nav-login" href="{{ route('portal.dashboard') }}">Mon espace</a>

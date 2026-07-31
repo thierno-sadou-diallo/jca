@@ -10,7 +10,7 @@
 <body class="admin-login">
     <main class="register-shell">
         <section class="register-intro">
-            <a class="brand" href="{{ route('home') }}">
+            <a class="brand" href="{{ $publicRoute('home') }}">
                 <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
                 <span>
                     <strong>JCA</strong>
@@ -78,7 +78,7 @@
                     <button class="button primary" type="submit">Créer mon espace</button>
                     <a class="button ghost" href="{{ route('portal.login', array_filter(['next' => request('next')])) }}">Connexion</a>
                 </div>
-                <p class="form-note">En creant un compte, vous acceptez les <a href="{{ route('legal.show', 'conditions-utilisation') }}">conditions d’utilisation</a> et la <a href="{{ route('legal.show', 'politique-confidentialite') }}">politique de confidentialité</a>.</p>
+                <p class="form-note">En creant un compte, vous acceptez les <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">conditions d’utilisation</a> et la <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">politique de confidentialité</a>.</p>
             </form>
         </section>
     </main>

@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-grid">
         <div>
-            <a class="brand footer-brand" href="{{ route('home') }}">
+            <a class="brand footer-brand" href="{{ $publicRoute('home') }}">
                 <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
                 <span>
                     <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
@@ -12,31 +12,29 @@
         </div>
         <div>
             <h3>Domaines</h3>
-            <a href="{{ route('page.show', 'immigration') }}">Immigration</a>
-            <a href="{{ route('page.show', 'recrutement-international') }}">Recrutement international</a>
-            <a href="{{ route('page.show', 'cooperation-internationale') }}">Coopération internationale</a>
-            <a href="{{ route('public.cooperation-projects') }}">Projets de coopération</a>
-            <a href="{{ route('public.humanitarian-programs') }}">Programmes humanitaires</a>
-            <a href="{{ route('page.show', 'developpement-durable') }}">Développement durable</a>
+            <a href="{{ $publicRoute('page.show', 'immigration') }}">Immigration</a>
+            <a href="{{ $publicRoute('page.show', 'recrutement-international') }}">Recrutement international</a>
+            <a href="{{ $publicRoute('page.show', 'cooperation-internationale') }}">Coopération internationale</a>
+            <a href="{{ $publicRoute('public.cooperation-projects') }}">Projets de coopération</a>
+            <a href="{{ $publicRoute('public.humanitarian-programs') }}">Programmes humanitaires</a>
+            <a href="{{ $publicRoute('page.show', 'developpement-durable') }}">Développement durable</a>
         </div>
         <div>
             <h3>Ressources</h3>
-            <a href="{{ route('public.news') }}">Actualités</a>
-            <a href="{{ route('public.blog') }}">Blog</a>
-            <a href="{{ route('public.faq') }}">FAQ</a>
-            <a href="{{ route('public.partners') }}">Partenaires</a>
-            <a href="{{ route('page.show', 'accreditations') }}">Accréditations</a>
-            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Politique de confidentialité</a>
-            <a href="{{ route('legal.show', 'conditions-utilisation') }}">Conditions d’utilisation</a>
+            <a href="{{ $publicRoute('public.news') }}">Actualités</a>
+            <a href="{{ $publicRoute('public.blog') }}">Blog</a>
+            <a href="{{ $publicRoute('public.faq') }}">FAQ</a>
+            <a href="{{ $publicRoute('public.partners') }}">Partenaires</a>
+            <a href="{{ $publicRoute('page.show', 'accreditations') }}">Accréditations</a>
+            <a href="{{ $publicRoute('legal.show', 'mentions-legales') }}">Mentions légales</a>
+            <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">Politique de confidentialité</a>
+            <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">Conditions d’utilisation</a>
         </div>
         <div>
             <h3>Contact</h3>
-            <a href="{{ route('page.show', 'contact') }}">Formulaire</a>
-            <a href="mailto:{{ $siteSettings['contact_email'] ?? 'contact@jca-international.com' }}">{{ $siteSettings['contact_email'] ?? 'contact@jca-international.com' }}</a>
-            @if (! empty($siteSettings['contact_phone']))
-                <a href="tel:{{ $siteSettings['contact_phone'] }}">{{ $siteSettings['contact_phone'] }}</a>
-            @endif
+            <a href="{{ $publicRoute('page.show', 'contact') }}">Formulaire</a>
+            <a href="mailto:{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}">{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}</a>
+            <a href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '+221789685116') }}">{{ $siteSettings['contact_phone'] ?? '78 968 51 16' }}</a>
             @if (! empty($siteSettings['whatsapp']))
                 <a href="https://wa.me/{{ preg_replace('/\D+/', '', $siteSettings['whatsapp']) }}">WhatsApp</a>
             @endif

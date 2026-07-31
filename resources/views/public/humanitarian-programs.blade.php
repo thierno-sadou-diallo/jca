@@ -15,7 +15,7 @@
                 <h1>Programmes humanitaires</h1>
                 <p>Des actions sociales et solidaires pensees pour accompagner les publics, renforcer l’inclusion et construire des parcours plus dignes, utiles et durables.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('page.show', 'contact') }}">Proposer un partenariat</a>
+                    <a class="button primary" href="{{ $publicRoute('page.show', 'contact') }}">Proposer un partenariat</a>
                     <a class="button ghost" href="{{ route('portal.register') }}">Créer mon espace</a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                                 @endforeach
                             </div>
                         @endif
-                        <a class="admin-link" href="{{ route('public.humanitarian-programs.show', $program) }}">Voir le programme</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.humanitarian-programs.show', $program) }}">Voir le programme</a>
                     </article>
                 @empty
                     <article class="empty-state">

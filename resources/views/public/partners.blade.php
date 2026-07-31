@@ -15,8 +15,8 @@
                 <h1>Partenaires</h1>
                 <p>JCA construit des collaborations avec institutions, universites, entreprises, gouvernements et partenaires techniques.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('page.show', 'contact') }}">Proposer un partenariat</a>
-                    <a class="button ghost" href="{{ route('public.cooperation-projects') }}">Voir les projets</a>
+                    <a class="button primary" href="{{ $publicRoute('page.show', 'contact') }}">Proposer un partenariat</a>
+                    <a class="button ghost" href="{{ $publicRoute('public.cooperation-projects') }}">Voir les projets</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">

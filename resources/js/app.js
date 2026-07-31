@@ -49,8 +49,8 @@ document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe
 const searchablePages = [
     { title: 'Immigration', url: '/immigration', terms: 'visa residence permanente permis etude travail citoyennete asile famille statut' },
     { title: 'Recrutement international', url: '/recrutement-international', terms: 'cv emploi employeur talents offre recrutement travailleurs integration' },
-    { title: 'Cooperation internationale', url: '/cooperation-internationale', terms: 'ong institution projet financement collectivites partenaires developpement' },
-    { title: 'Developpement durable', url: '/developpement-durable', terms: 'femmes jeunes entrepreneuriat sante education inclusion resilience' },
+    { title: 'Coopération internationale', url: '/cooperation-internationale', terms: 'ong institution projet financement collectivites partenaires developpement' },
+    { title: 'Développement durable', url: '/developpement-durable', terms: 'femmes jeunes entrepreneuriat sante education inclusion resilience' },
     { title: 'Emplois', url: '/emplois', terms: 'offres candidature filtres cv diplomes contrat entreprise' },
     { title: 'Consultation', url: '/consultation', terms: 'rendez-vous paiement calendrier confirmation accompagnement strategie' },
     { title: 'Contact', url: '/contact', terms: 'telephone whatsapp messenger email horaires formulaire carte' },
@@ -109,7 +109,7 @@ document.querySelectorAll('[data-lead-form]').forEach((form) => {
 
         submitButton.disabled = true;
         submitButton.textContent = 'Envoi en cours...';
-        setNote('Transmission securisee de votre demande...', 'loading');
+        setNote('Transmission sécurisée de votre demande...', 'loading');
 
         try {
             const response = await fetch(form.action, {
@@ -126,7 +126,7 @@ document.querySelectorAll('[data-lead-form]').forEach((form) => {
             if (!response.ok) {
                 const firstError = data.errors
                     ? Object.values(data.errors).flat()[0]
-                    : 'Impossible d envoyer la demande pour le moment.';
+                    : 'Impossible d’envoyer la demande pour le moment.';
 
                 throw new Error(firstError);
             }
@@ -158,35 +158,19 @@ if (cookieBanner && !localStorage.getItem('jca_cookie_choice')) {
     });
 }
 
-document.querySelectorAll('[data-appointment-picker]').forEach((form) => {
-    const weekSelect = form.querySelector('[data-week-select]');
-    const slotSelect = form.querySelector('[data-slot-select]');
-
-    if (!weekSelect || !slotSelect) {
-        return;
-    }
-
-    const allOptions = Array.from(slotSelect.options).map((option) => option.cloneNode(true));
-
-    const renderSlots = () => {
-        const week = weekSelect.value;
-        const matchingOptions = allOptions.filter((option) => option.dataset.week === week);
-
-        slotSelect.innerHTML = '';
-
-        if (!matchingOptions.length) {
-            const emptyOption = document.createElement('option');
-            emptyOption.value = '';
-            emptyOption.textContent = 'Aucun creneau disponible pour cette selection';
-            slotSelect.appendChild(emptyOption);
-            slotSelect.disabled = true;
+document.querySelectorAll('.calendar-choice input, .calendar-slot-options input').forEach((input) => {
+    const syncCalendarSelection = () => {
+        if (input.type === 'radio') {
+            document.querySelectorAll(`input[type="radio"][name="${input.name}"]`).forEach((radio) => {
+                radio.closest('.calendar-day')?.classList.toggle('is-selected', radio.checked);
+                radio.closest('label')?.classList.toggle('is-selected', radio.checked);
+            });
             return;
         }
 
-        matchingOptions.forEach((option) => slotSelect.appendChild(option.cloneNode(true)));
-        slotSelect.disabled = false;
+        input.closest('.calendar-day')?.classList.toggle('is-selected', input.checked);
     };
 
-    weekSelect.addEventListener('change', renderSlots);
-    renderSlots();
+    input.addEventListener('change', syncCalendarSelection);
+    syncCalendarSelection();
 });

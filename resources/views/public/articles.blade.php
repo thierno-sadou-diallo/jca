@@ -16,7 +16,7 @@
                 <p>{{ $intro }}</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('portal.register') }}">Créer mon espace</a>
-                    <a class="button ghost" href="{{ route('page.show', 'services') }}">Voir les services</a>
+                    <a class="button ghost" href="{{ $publicRoute('page.show', 'services') }}">Voir les services</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
@@ -39,7 +39,7 @@
                         <span>{{ $article->published_at?->format('d/m/Y') ?: 'JCA' }}</span>
                         <h3>{{ $article->title }}</h3>
                         <p>{{ $article->excerpt ?: str($article->body)->limit(150) }}</p>
-                        <a class="admin-link" href="{{ route('public.articles.show', $article) }}">Lire</a>
+                        <a class="admin-link" href="{{ $publicRoute('public.articles.show', $article) }}">Lire</a>
                     </article>
                 @empty
                     <article class="empty-state">

@@ -9,7 +9,7 @@
 </head>
 <body class="admin-login">
     <main class="login-panel">
-        <a class="brand" href="{{ route('home') }}">
+        <a class="brand" href="{{ $publicRoute('home') }}">
             <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
             <span>
                 <strong>JCA</strong>
@@ -43,9 +43,9 @@
             @enderror
         </form>
         <nav class="legal-auth-links" aria-label="Liens legaux">
-            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions légales</a>
-            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Confidentialité</a>
-            <a href="{{ route('legal.show', 'conditions-utilisation') }}">Conditions</a>
+            <a href="{{ $publicRoute('legal.show', 'mentions-legales') }}">Mentions légales</a>
+            <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">Confidentialité</a>
+            <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">Conditions</a>
         </nav>
     </main>
 </body>

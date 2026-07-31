@@ -35,6 +35,6 @@ class PortalMessageController extends Controller
             'body' => $validated['body'],
         ]);
 
-        return back()->with('message_status', 'Votre message a ete envoye a l equipe JCA.');
+        return back()->with('message_status', 'Votre message a été envoyé à l’équipe JCA.');
     }
 }

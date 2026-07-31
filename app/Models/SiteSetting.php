@@ -22,8 +22,8 @@ class SiteSetting extends Model
             'brand_name' => 'JCA',
             'brand_tagline' => 'Immigration et développement international',
             'footer_description' => 'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
-            'contact_email' => 'contact@jca-international.com',
-            'contact_phone' => '',
+            'contact_email' => 'contact@jcaconseil.com',
+            'contact_phone' => '78 968 51 16',
             'whatsapp' => '',
             'address' => '',
             'footer_signature' => 'Des ponts entre les talents, les organisations et les opportunités.',
@@ -39,9 +39,19 @@ class SiteSetting extends Model
             return self::defaults();
         }
 
-        return array_merge(
+        $values = array_merge(
             self::defaults(),
             self::query()->pluck('value', 'key')->map(fn ($value) => (string) $value)->all(),
         );
+
+        if (($values['contact_email'] ?? '') === 'contact@jca-international.com') {
+            $values['contact_email'] = 'contact@jcaconseil.com';
+        }
+
+        if (blank($values['contact_phone'] ?? '')) {
+            $values['contact_phone'] = '78 968 51 16';
+        }
+
+        return $values;
     }
 }

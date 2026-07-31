@@ -35,7 +35,7 @@ class FaqController extends Controller
     {
         $faq = Faq::create($this->validated($request));
 
-        return redirect()->route('admin.faqs.edit', $faq)->with('status', 'FAQ creee.');
+        return redirect()->route('admin.faqs.edit', $faq)->with('status', 'FAQ créée.');
     }
 
     public function edit(Faq $faq): View

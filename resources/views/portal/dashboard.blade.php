@@ -50,7 +50,7 @@
             <a href="#portal-request">
                 <span>01</span>
                 <strong>Déposer mon dossier</strong>
-                <p>Expliquez votre objectif et joignez les premieres pièces utiles.</p>
+                <p>Expliquez votre objectif et joignez les premières pièces utiles.</p>
             </a>
             <a href="#portal-appointment">
                 <span>02</span>
@@ -60,7 +60,7 @@
             <a href="#portal-documents">
                 <span>03</span>
                 <strong>Compléter mes documents</strong>
-                <p>Ajoutez CV, passeport, diplômes ou preuves pour accelerer l’analyse.</p>
+                <p>Ajoutez CV, passeport, diplômes ou preuves pour accélérer l’analyse.</p>
             </a>
         </section>
 
@@ -69,7 +69,7 @@
                 <span class="eyebrow">Feuille de route intelligente</span>
                 <h2>Votre prochain meilleur mouvement.</h2>
                 <p>JCA transforme votre avancement en parcours clair : ce qui est fait, ce qui bloque, et ce qui vous rapproche du résultat.</p>
-                <div class="portal-media-strip" aria-label="Apercu visuel du parcours JCA">
+                <div class="portal-media-strip" aria-label="Aperçu visuel du parcours JCA">
                     <img src="{{ asset('images/jca-immigration.webp') }}" alt="Dossier immigration" loading="lazy">
                     <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Mobilité professionnelle" loading="lazy">
                     <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Projet international" loading="lazy">
@@ -88,7 +88,7 @@
 
                 <aside class="journey-motivation">
                     <span>Votre dossier avance ici</span>
-                    <strong>Restez actif, JCA suit chaque piece ajoutee.</strong>
+                    <strong>Restez actif, JCA suit chaque pièce ajoutée.</strong>
                     <p>Un profil complet, des documents clairs et un message précis permettent à l’équipe de mieux vous orienter.</p>
                     <div class="journey-motivation-actions">
                         <a href="#portal-profile">Compléter mon profil</a>
@@ -102,7 +102,7 @@
             <div class="section-heading">
                 <span class="eyebrow">Modules disponibles</span>
                 <h2>Votre espace de suivi international.</h2>
-                <p>Déposez vos documents, suivez vos dossiers et conservez vos prochaines étapes au meme endroit.</p>
+                <p>Déposez vos documents, suivez vos dossiers et conservez vos prochaines étapes au même endroit.</p>
             </div>
 
             <div class="portal-grid">
@@ -204,19 +204,56 @@
                     @if ($appointmentSlotOptions->isNotEmpty())
                         <form class="lead-form admin-form appointment-picker" method="post" action="{{ route('portal.appointments.store') }}" data-appointment-picker>
                             @csrf
-                            <label>Semaine
-                                <select name="week_choice" data-week-select required>
-                                    <option value="current">Cette semaine</option>
-                                    <option value="next">Semaine prochaine</option>
-                                </select>
-                            </label>
-                            <label>Date et heure disponibles
-                                <select name="slot_id" data-slot-select required>
-                                    @foreach ($appointmentSlotOptions as $option)
-                                        <option value="{{ $option['id'] }}" data-week="{{ $option['weekKey'] }}">{{ $option['label'] }}</option>
-                                    @endforeach
-                                </select>
-                            </label>
+                            <div class="appointment-calendar appointment-calendar-client" aria-label="Calendrier des rendez-vous disponibles">
+                                @foreach ($appointmentCalendars as $calendar)
+                                    <section class="compact-calendar">
+                                        <h3>{{ $calendar['label'] }}</h3>
+                                        <div class="calendar-weekdays" aria-hidden="true">
+                                            <span>Lun</span>
+                                            <span>Mar</span>
+                                            <span>Mer</span>
+                                            <span>Jeu</span>
+                                            <span>Ven</span>
+                                            <span>Sam</span>
+                                            <span>Dim</span>
+                                        </div>
+                                        <div class="calendar-grid">
+                                            @foreach ($calendar['days'] as $day)
+                                                @if ($day['blank'])
+                                                    <span class="calendar-empty" aria-hidden="true"></span>
+                                                @else
+                                                    <div @class([
+                                                        'calendar-day calendar-slot-day',
+                                                        'is-disabled' => $day['isPast'] || $day['slots']->isEmpty(),
+                                                        'is-active' => $day['slots']->isNotEmpty(),
+                                                        'is-today' => $day['isToday'],
+                                                        'is-weekend' => $day['isWeekend'],
+                                                    ])>
+                                                        <strong>{{ $day['number'] }}</strong>
+                                                        <span class="calendar-dot-row" aria-hidden="true">
+                                                            @forelse ($day['slots']->take(3) as $slot)
+                                                                <i></i>
+                                                            @empty
+                                                                <i></i>
+                                                            @endforelse
+                                                        </span>
+                                                        @if ($day['slots']->isNotEmpty())
+                                                            <div class="calendar-slot-options">
+                                                                @foreach ($day['slots'] as $slot)
+                                                                    <label>
+                                                                        <input type="radio" name="slot_id" value="{{ $slot['id'] }}" required>
+                                                                        <span>{{ $slot['time'] }}</span>
+                                                                    </label>
+                                                                @endforeach
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </section>
+                                @endforeach
+                            </div>
                             <button class="button primary" type="submit">Confirmer le rendez-vous</button>
                         </form>
                     @else
@@ -346,12 +383,12 @@
                     @endif
                     <form class="lead-form admin-form" method="post" action="{{ route('portal.documents.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <label>Titre<input name="title" placeholder="Passeport, CV, diplome..." required></label>
+                        <label>Titre<input name="title" placeholder="Passeport, CV, diplôme..." required></label>
                         <label>Type
                             <select name="type" required>
                                 <option>Passeport</option>
                                 <option>CV</option>
-                                <option>Diplome</option>
+                                <option>Diplôme</option>
                                 <option>Preuve d’expérience</option>
                                 <option>Document financier</option>
                                 <option>Autre</option>
@@ -409,7 +446,7 @@
                                 @endif
                             </div>
                         @empty
-                            <div><strong>Aucun document</strong><span>Déposez vos pièces pour accelerer l’analyse.</span></div>
+                            <div><strong>Aucun document</strong><span>Déposez vos pièces pour accélérer l’analyse.</span></div>
                         @endforelse
                     </div>
                 </article>

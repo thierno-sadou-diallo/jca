@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Support\AppointmentCalendar;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -13,7 +14,14 @@ class AvailabilityController extends Controller
 {
     public function index(): View
     {
+        $calendarSlots = DB::table('appointment_slots')
+            ->where('starts_at', '>=', now()->startOfMonth())
+            ->where('starts_at', '<=', now()->addMonth()->endOfMonth())
+            ->orderBy('starts_at')
+            ->get();
+
         return view('admin.availability.index', [
+            'calendars' => AppointmentCalendar::months($calendarSlots),
             'slots' => DB::table('appointment_slots')
                 ->where('starts_at', '>=', now()->startOfDay())
                 ->orderBy('starts_at')
@@ -24,25 +32,52 @@ class AvailabilityController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'date' => ['required', 'date', 'after_or_equal:today'],
+            'dates' => ['nullable', 'array'],
+            'dates.*' => ['date', 'after_or_equal:today'],
+            'date' => ['nullable', 'date', 'after_or_equal:today'],
             'time' => ['required', 'date_format:H:i'],
             'duration_minutes' => ['required', 'integer', 'in:30,45,60,90'],
             'notes' => ['nullable', 'string', 'max:500'],
         ]);
 
-        $startsAt = Carbon::parse($validated['date'].' '.$validated['time']);
-        $endsAt = $startsAt->copy()->addMinutes((int) $validated['duration_minutes']);
+        $dates = collect($validated['dates'] ?? [])
+            ->when(empty($validated['dates']) && ! empty($validated['date']), fn ($collection) => $collection->push($validated['date']))
+            ->unique()
+            ->values();
 
-        DB::table('appointment_slots')->insert([
-            'starts_at' => $startsAt,
-            'ends_at' => $endsAt,
-            'status' => 'available',
-            'notes' => $validated['notes'] ?? null,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        if ($dates->isEmpty()) {
+            return back()->withErrors(['dates' => 'Sélectionnez au moins un jour disponible.']);
+        }
 
-        return back()->with('status', 'Disponibilite ajoutee.');
+        $created = 0;
+
+        foreach ($dates as $date) {
+            $startsAt = Carbon::parse($date.' '.$validated['time']);
+            $endsAt = $startsAt->copy()->addMinutes((int) $validated['duration_minutes']);
+            $exists = DB::table('appointment_slots')
+                ->where('starts_at', $startsAt)
+                ->where('status', 'available')
+                ->exists();
+
+            if ($exists) {
+                continue;
+            }
+
+            DB::table('appointment_slots')->insert([
+                'starts_at' => $startsAt,
+                'ends_at' => $endsAt,
+                'status' => 'available',
+                'notes' => $validated['notes'] ?? null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+            $created++;
+        }
+
+        return back()->with('status', $created > 1
+            ? $created.' disponibilités ajoutées.'
+            : 'Disponibilité ajoutée.');
     }
 
     public function destroy(int $slot): RedirectResponse
@@ -52,6 +87,6 @@ class AvailabilityController extends Controller
             ->where('status', 'available')
             ->delete();
 
-        return back()->with('status', 'Disponibilite supprimee.');
+        return back()->with('status', 'Disponibilité supprimée.');
     }
 }

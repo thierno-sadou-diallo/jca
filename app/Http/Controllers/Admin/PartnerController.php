@@ -39,7 +39,7 @@ class PartnerController extends Controller
     {
         $partner = Partner::create($this->validated($request));
 
-        return redirect()->route('admin.partners.edit', $partner)->with('status', 'Partenaire cree.');
+        return redirect()->route('admin.partners.edit', $partner)->with('status', 'Partenaire créé.');
     }
 
     public function edit(Partner $partner): View

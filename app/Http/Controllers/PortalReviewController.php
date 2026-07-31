@@ -28,6 +28,6 @@ class PortalReviewController extends Controller
             'updated_at' => now(),
         ]);
 
-        return back()->with('review_status', 'Merci. Votre avis a ete envoye a JCA.');
+        return back()->with('review_status', 'Merci. Votre avis a été envoyé à JCA.');
     }
 }
