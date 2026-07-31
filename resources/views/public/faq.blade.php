@@ -3,7 +3,7 @@
 <head>
     @include('partials.head', [
         'title' => 'FAQ | JCA',
-        'description' => 'Questions frequentes JCA sur immigration, recrutement, espace client et accompagnement international.',
+        'description' => 'Questions fréquentes JCA sur immigration, recrutement, espace client et accompagnement international.',
         'structuredData' => [
             '@context' => 'https://schema.org',
             '@type' => 'FAQPage',
@@ -23,12 +23,12 @@
     <main>
         <section class="page-hero page-hero-art is-immersive">
             <div>
-                <span class="eyebrow">Questions frequentes</span>
+                <span class="eyebrow">Questions fréquentes</span>
                 <h1>FAQ</h1>
-                <p>Les reponses essentielles avant une consultation ou le depot d un dossier.</p>
+                <p>Les réponses essentielles avant une consultation ou le dépôt d un dossier.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('portal.register') }}">Creer mon espace</a>
-                    <a class="button ghost" href="{{ route('page.show', 'consultation') }}">Prendre rendez-vous</a>
+                    <a class="button primary" href="{{ route('portal.register') }}">Créer mon espace</a>
+                    <a class="button ghost" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
@@ -40,7 +40,7 @@
 
         <section class="page-guidance">
             <article><span>01</span><strong>Comprendre</strong><p>Verifier les bases avant de commencer.</p></article>
-            <article><span>02</span><strong>Preparer</strong><p>Identifier les documents et informations utiles.</p></article>
+            <article><span>02</span><strong>Préparer</strong><p>Identifier les documents et informations utiles.</p></article>
             <article><span>03</span><strong>Avancer</strong><p>Ouvrir un espace client ou demander une consultation.</p></article>
         </section>
 
@@ -59,7 +59,7 @@
             @empty
                 <details open>
                     <summary>Aucune FAQ publiee</summary>
-                    <p>Les reponses JCA seront publiees prochainement.</p>
+                    <p>Les réponses JCA seront publiées prochainement.</p>
                 </details>
             @endforelse
         </section>

@@ -5,9 +5,9 @@ return [
         'about' => 'Qui sommes-nous',
         'immigration' => 'Immigration',
         'recruitment' => 'Recrutement',
-        'cooperation' => 'Cooperation',
+        'coopération' => 'Coopération',
         'jobs' => 'Emplois',
-        'testimonials' => 'Temoignages',
+        'testimonials' => 'Témoignages',
         'portal' => 'Espace',
         'consultation' => 'Consultation',
     ],
@@ -16,7 +16,7 @@ return [
         'register' => 'Inscription',
     ],
     'home' => [
-        'eyebrow' => 'Immigration, recrutement et developpement international',
-        'lede' => 'Cabinet international de conseil et d accompagnement, JCA facilite la mobilite des talents, soutient la croissance des organisations et contribue au developpement durable des communautes.',
+        'eyebrow' => 'Immigration, recrutement et développement international',
+        'lede' => 'Cabinet international de conseil et d’accompagnement, JCA facilite la mobilité des talents, soutient la croissance des organisations et contribue au développement durable des communautes.',
     ],
 ];

@@ -13,10 +13,10 @@
             <div>
                 <span class="eyebrow">Action humanitaire</span>
                 <h1>Programmes humanitaires</h1>
-                <p>Des actions sociales et solidaires pensees pour accompagner les publics, renforcer l inclusion et construire des parcours plus dignes, utiles et durables.</p>
+                <p>Des actions sociales et solidaires pensees pour accompagner les publics, renforcer l’inclusion et construire des parcours plus dignes, utiles et durables.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('page.show', 'contact') }}">Proposer un partenariat</a>
-                    <a class="button ghost" href="{{ route('portal.register') }}">Creer mon espace</a>
+                    <a class="button ghost" href="{{ route('portal.register') }}">Créer mon espace</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
@@ -29,13 +29,13 @@
         <section class="impact-story">
             <div>
                 <span class="eyebrow">Impact humain</span>
-                <h2>Des initiatives qui donnent de la dignite, des competences et un cap.</h2>
+                <h2>Des initiatives qui donnent de la dignite, des compétences et un cap.</h2>
                 <p>JCA relie besoins sociaux, partenaires techniques et suivi mesurable pour transformer les intentions solidaires en actions visibles.</p>
             </div>
             <div class="impact-story-grid">
                 <article><span>01</span><strong>Identifier</strong><p>Comprendre les publics, les urgences et les ressources locales.</p></article>
                 <article><span>02</span><strong>Accompagner</strong><p>Former, orienter, soutenir et documenter les parcours.</p></article>
-                <article><span>03</span><strong>Mesurer</strong><p>Suivre les resultats et valoriser l impact humain.</p></article>
+                <article><span>03</span><strong>Mesurer</strong><p>Suivre les résultats et valoriser l impact humain.</p></article>
             </div>
         </section>
 
@@ -63,7 +63,7 @@
                 @empty
                     <article class="empty-state">
                         <h2>Aucun programme actif publie pour le moment.</h2>
-                        <p>Les programmes humanitaires actifs apparaitront ici apres validation par l equipe JCA.</p>
+                        <p>Les programmes humanitaires actifs apparaîtront ici après validation par l’équipe JCA.</p>
                     </article>
                 @endforelse
             </div>

@@ -7,7 +7,7 @@
         @endforeach
     </select>
 </label>
-<label>Resume<textarea name="excerpt" rows="3">{{ old('excerpt', $article->excerpt) }}</textarea></label>
+<label>Résumé<textarea name="excerpt" rows="3">{{ old('excerpt', $article->excerpt) }}</textarea></label>
 <label>Contenu<textarea name="body" rows="12">{{ old('body', $article->body) }}</textarea></label>
 <label>Statut
     <select name="status" required>

@@ -2,7 +2,7 @@
     <section class="admin-panel">
         <div class="admin-panel-head">
             <div>
-                <h2>Articles et actualites</h2>
+                <h2>Articles et actualités</h2>
                 <span>Blog, conseils et veille internationale</span>
             </div>
             <a class="button primary" href="{{ route('admin.articles.create') }}">Nouvel article</a>
@@ -29,7 +29,7 @@
                             <td><a class="admin-link" href="{{ route('admin.articles.edit', $article) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="5">Aucun article trouve.</td></tr>
+                        <tr><td colspan="5">Aucun article trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

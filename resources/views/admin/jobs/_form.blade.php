@@ -18,12 +18,12 @@
 <div class="form-grid">
     <label>Statut
         <select name="status" required>
-            @foreach (['draft' => 'Brouillon', 'published' => 'Publiee', 'closed' => 'Fermee'] as $value => $label)
+            @foreach (['draft' => 'Brouillon', 'published' => 'Publiée', 'closed' => 'Fermée'] as $value => $label)
                 <option value="{{ $value }}" @selected(old('status', $job->status ?: 'draft') === $value)>{{ $label }}</option>
             @endforeach
         </select>
     </label>
-    <label>Date limite<input type="date" name="expires_at" value="{{ old('expires_at', optional($job->expires_at)->format('Y-m-d')) }}"></label>
+    <label>Date limite<input type="date" name="expires_at" value="{{ old('expires_at', optional($job->expires_at)->format('Y-m-d’)) }}"></label>
 </div>
 
 @if ($errors->any())

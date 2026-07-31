@@ -53,7 +53,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a class="admin-link" href="{{ route('admin.documents.download', $document) }}">Telecharger</a>
+                                <a class="admin-link" href="{{ route('admin.documents.download', $document) }}">Télécharger</a>
                                 <form class="inline-review-form" method="post" action="{{ route('admin.documents.update', $document) }}">
                                     @csrf
                                     @method('PATCH')
@@ -63,12 +63,12 @@
                                         @endforeach
                                     </select>
                                     <textarea name="admin_note" rows="2" placeholder="Note au client">{{ $document->admin_note }}</textarea>
-                                    <button class="button primary" type="submit">Mettre a jour</button>
+                                    <button class="button primary" type="submit">Mettre à jour</button>
                                 </form>
                             </td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun document trouve.</td></tr>
+                        <tr><td colspan="6">Aucun document trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

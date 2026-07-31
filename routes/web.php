@@ -48,133 +48,133 @@ $pages = [
     'qui-sommes-nous' => [
         'title' => 'Qui sommes-nous',
         'eyebrow' => 'Cabinet international de conseil',
-        'intro' => 'JCA est un cabinet international de conseil et d accompagnement specialise en immigration, mobilite internationale, recrutement international, cooperation internationale et developpement durable.',
+        'intro' => 'JCA est un cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
         'sections' => [
-            ['Notre positionnement', 'Nous accompagnons particuliers, entreprises, institutions publiques, organisations internationales, organismes a but non lucratif et investisseurs dans leurs projets a l echelle mondiale.'],
-            ['Notre approche', 'JCA combine expertise juridique, comprehension des dynamiques migratoires, connaissance des marches internationaux du travail et maitrise des mecanismes de cooperation.'],
-            ['Notre mission', 'Faciliter la mobilite des talents, soutenir la croissance des organisations et contribuer au developpement durable des communautes.'],
-            ['Nos valeurs', 'Excellence, integrite, professionnalisme, innovation, inclusion, responsabilite sociale et developpement durable.'],
-            ['Notre impact', 'Batir des ponts entre les talents, les organisations et les opportunites pour contribuer a un monde plus ouvert, inclusif et prospere.'],
+            ['Notre positionnement', 'Nous accompagnons particuliers, entreprises, institutions publiques, organisations internationales, organismes à but non lucratif et investisseurs dans leurs projets à l’échelle mondiale.'],
+            ['Notre approche', 'JCA combine expertise juridique, compréhension des dynamiques migratoires, connaissance des marchés internationaux du travail et maîtrise des mécanismes de coopération.'],
+            ['Notre mission', 'Faciliter la mobilité des talents, soutenir la croissance des organisations et contribuer au développement durable des communautes.'],
+            ['Nos valeurs', 'Excellence, intégrité, professionnalisme, innovation, inclusion, responsabilité sociale et développement durable.'],
+            ['Notre impact', 'Bâtir des ponts entre les talents, les organisations et les opportunités pour contribuer à un monde plus ouvert, inclusif et prospère.'],
         ],
     ],
     'accreditations' => [
-        'title' => 'Accreditations',
+        'title' => 'Accréditations',
         'eyebrow' => 'Legitimite professionnelle',
-        'intro' => 'JCA publie les titres, affiliations et responsabilites professionnelles utiles pour permettre aux clients et partenaires d identifier clairement le cadre d intervention du cabinet.',
+        'intro' => 'JCA publie les titres, affiliations et responsabilités professionnelles utiles pour permettre aux clients et partenaires d identifier clairement le cadre d’intervention du cabinet.',
         'sections' => [
-            ['Equipe et titres', 'Les fonctions, diplomes pertinents et champs d intervention sont presentes de facon transparente afin de situer le role de chaque intervenant dans le traitement des dossiers.'],
-            ['Licences professionnelles', 'Lorsque des licences, autorisations ou affiliations professionnelles sont requises par une juridiction, JCA les documente et les associe au perimetre exact des services concernes.'],
-            ['Verification', 'Les clients peuvent demander les references verifiables applicables a leur dossier lorsque celles-ci existent dans un registre public ou un cadre professionnel reconnu.'],
-            ['Limites de mandat', 'JCA distingue les services d accompagnement, de conseil strategique et de coordination des situations qui exigent l intervention d un avocat, consultant reglemente ou autre professionnel autorise.'],
-            ['Temoignages', 'Les retours clients publies sont selectionnes avec consentement, moderation et souci de confidentialite, sans presenter une experience individuelle comme garantie de resultat.'],
+            ['Équipe et titres', 'Les fonctions, diplômes pertinents et champs d’intervention sont présentés de facon transparente afin de situer le role de chaque intervenant dans le traitement des dossiers.'],
+            ['Licences professionnelles', 'Lorsque des licences, autorisations ou affiliations professionnelles sont requises par une juridiction, JCA les documente et les associé àu périmètre exact des services concernes.'],
+            ['Vérification', 'Les clients peuvent demander les références vérifiables applicables à leur dossier lorsque celles-ci existent dans un registre public ou un cadre professionnel reconnu.'],
+            ['Limites de mandat', 'JCA distingue les services d’accompagnement, de conseil stratégique et de coordination des situations qui exigent l’intervention d’un avocat, consultant réglementé ou autre professionnel autorisé.'],
+            ['Témoignages', 'Les retours clients publies sont selectionnes avec consentement, moderation et souci de confidentialité, sans présenter une expérience individuelle comme garantie de résultat.'],
         ],
     ],
     'services' => [
         'title' => 'Services',
         'eyebrow' => 'Solutions internationales',
-        'intro' => 'JCA accompagne les projets de mobilite, d immigration, de recrutement international, de cooperation et de developpement avec des parcours clairs et securises.',
+        'intro' => 'JCA accompagne les projets de mobilité, d’immigration, de recrutement international, de coopération et de développement avec des parcours clairs et sécurisés.',
         'sections' => [
-            ['Immigration et mobilite', 'Evaluation, strategie, preparation documentaire, depot, suivi et accompagnement des candidats, familles, etudiants et travailleurs.'],
-            ['Recrutement international', 'Accompagnement des employeurs et candidats: publication des besoins, prequalification, integration et suivi.'],
-            ['Cooperation internationale', 'Montage de projets, partenariats, gouvernance, financement, indicateurs et evaluation.'],
-            ['Developpement durable', 'Programmes a impact autour de l inclusion, de l entrepreneuriat, de l education, de la sante et de la resilience.'],
-            ['Espace client securise', 'Apres inscription, chaque client peut deposer ses documents, envoyer ses demandes et suivre ses dossiers.'],
-            ['Accompagnement strategique', 'Consultations, feuille de route, analyse des risques et coordination des prochaines etapes.'],
+            ['Immigration et mobilité', 'Évaluation, stratégie, préparation documentaire, dépôt, suivi et accompagnement des candidats, familles, étudiants et travailleurs.'],
+            ['Recrutement international', 'Accompagnement des employeurs et candidats: publication des besoins, préqualification, intégration et suivi.'],
+            ['Coopération internationale', 'Montage de projets, partenariats, gouvernance, financement, indicateurs et évaluation.'],
+            ['Développement durable', 'Programmes a impact autour de l’inclusion, de l’entrepreneuriat, de l’éducation, de la santé et de la résilience.'],
+            ['Espace client sécurisé', 'Après inscription, chaque client peut déposer ses documents, envoyer ses demandes et suivre ses dossiers.'],
+            ['Accompagnement stratégique', 'Consultations, feuille de route, analyse des risques et coordination des prochaines étapes.'],
         ],
     ],
     'immigration' => [
         'title' => 'Immigration',
         'eyebrow' => 'Dossiers et statuts',
-        'intro' => 'JCA accompagne ses clients dans toutes les etapes des procedures d immigration et de mobilite internationale vers le Canada, l Europe, les Etats-Unis et d autres destinations strategiques.',
+        'intro' => 'JCA accompagne ses clients dans toutes les étapes des procédures d’immigration et de mobilité internationale vers le Canada, l’Europe, les Etats-Unis et d’autres destinations stratégiques.',
         'sections' => [
-            ['Immigration economique et professionnelle', 'Evaluation du profil, strategie de selection, preparation documentaire et suivi des programmes adaptes.'],
-            ['Permis de travail et permis d etudes', 'Accompagnement des etudiants, travailleurs qualifies, employeurs et familles dans la preparation des demandes.'],
-            ['Residence permanente', 'Structuration du dossier, preuves, formulaires, coherence du parcours et anticipation des exigences.'],
-            ['Reunification familiale', 'Verification des criteres, preuves relationnelles et accompagnement des familles dans les etapes sensibles.'],
-            ['Visas temporaires', 'Dossiers visiteurs, invitations, garanties financieres, assurances et justificatifs de retour.'],
-            ['Mobilite internationale', 'Conseils strategiques pour employeurs, travailleurs et organisations qui operent dans plusieurs territoires.'],
+            ['Immigration économique et professionnelle', 'Évaluation du profil, stratégie de sélection, préparation documentaire et suivi des programmes adaptes.'],
+            ['Permis de travail et permis d’études', 'Accompagnement des étudiants, travailleurs qualifiés, employeurs et familles dans la préparation des demandes.'],
+            ['Résidence permanente', 'Structuration du dossier, preuves, formulaires, cohérence du parcours et anticipation des exigences.'],
+            ['Réunification familiale', 'Vérification des critères, preuves relationnelles et accompagnement des familles dans les étapes sensibles.'],
+            ['Visas temporaires', 'Dossiers visiteurs, invitations, garanties financières, assurances et justificatifs de retour.'],
+            ['Mobilité internationale', 'Conseils stratégiques pour employeurs, travailleurs et organisations qui opèrent dans plusieurs territoires.'],
         ],
     ],
     'recrutement-international' => [
         'title' => 'Recrutement international',
         'eyebrow' => 'Talents et employeurs',
-        'intro' => 'JCA soutient les employeurs dans la recherche, la selection, l integration et la retention de talents qualifies provenant de differents marches internationaux.',
+        'intro' => 'JCA soutient les employeurs dans la recherche, la sélection, l intégration et la rétention de talents qualifiés provenant de differents marchés internationaux.',
         'sections' => [
-            ['Travailleurs qualifies', 'Identification de profils specialises, preselection, entretiens, verification des competences et coordination des etapes.'],
+            ['Travailleurs qualifiés', 'Identification de profils spécialisés, présélection, entretiens, verification des compétences et coordination des étapes.'],
             ['Missions de recrutement', 'Dispositifs adaptes aux besoins sectoriels, campagnes internationales et suivi des cohortes.'],
-            ['Penuries de main-d oeuvre', 'Accompagnement des employeurs pour planifier les besoins, les contrats, la mobilite et l integration.'],
-            ['Integration et retention', 'Preparation administrative, culturelle et logistique pour favoriser une installation durable.'],
-            ['Institutions de formation', 'Developpement de passerelles entre employeurs, talents et organismes de formation.'],
-            ['Portail candidat', 'Parcours clair pour deposer CV, diplomes, langues, disponibilites et preferences professionnelles.'],
+            ['Pénuries de main-d’œuvre', 'Accompagnement des employeurs pour planifier les besoins, les contrats, la mobilité et l intégration.'],
+            ['Intégration et rétention', 'Préparation administrative, culturelle et logistique pour favoriser une installation durable.'],
+            ['Institutions de formation', 'Développement de passerelles entre employeurs, talents et organismes de formation.'],
+            ['Portail candidat', 'Parcours clair pour déposer CV, diplômes, langues, disponibilités et préférences professionnelles.'],
         ],
     ],
     'cooperation-internationale' => [
-        'title' => 'Cooperation internationale',
+        'title' => 'Coopération internationale',
         'eyebrow' => 'Institutions et projets',
-        'intro' => 'JCA accompagne les gouvernements, institutions, organisations et partenaires au developpement dans la conception, la mise en oeuvre et l evaluation de programmes a fort impact.',
+        'intro' => 'JCA accompagne les gouvernements, institutions, organisations et partenaires au développement dans la conception, la mise en oeuvre et l évaluation de programmes à fort impact.',
         'sections' => [
-            ['Developpement economique et territorial', 'Programmes favorisant l entrepreneuriat, les chaines de valeur, l emploi et la structuration locale.'],
-            ['Renforcement des capacites', 'Diagnostic, plan d action, gouvernance, formation et outils de pilotage institutionnel.'],
-            ['Gouvernance et politiques publiques', 'Appui a la formulation, a la coordination et au suivi de programmes publics ou partenariaux.'],
-            ['Education et formation', 'Projets relies aux competences, a l employabilite, a la formation professionnelle et aux transitions de carriere.'],
-            ['Mobilisation de ressources', 'Preparation de notes conceptuelles, dossiers de financement et argumentaires de partenariat international.'],
+            ['Développement économique et territorial', 'Programmes favorisant l’entrepreneuriat, les chaines de valeur, l emploi et la structuration locale.'],
+            ['Renforcement des capacités', 'Diagnostic, plan d’action, gouvernance, formation et outils de pilotage institutionnel.'],
+            ['Gouvernance et politiques publiques', 'Appui à la formulation, à la coordination et au suivi de programmes publics ou partenariaux.'],
+            ['Éducation et formation', 'Projets relies aux compétences, à l’employabilité, à la formation professionnelle et aux transitions de carriere.'],
+            ['Mobilisation de ressources', 'Préparation de notes conceptuelles, dossiers de financement et argumentaires de partenariat international.'],
         ],
     ],
     'developpement-durable' => [
-        'title' => 'Developpement durable',
-        'eyebrow' => 'Impact et resilience',
-        'intro' => 'Des programmes orientes vers l inclusion, l education, la sante communautaire, l entrepreneuriat, l employabilite et la resilience des communautes.',
+        'title' => 'Développement durable',
+        'eyebrow' => 'Impact et résilience',
+        'intro' => 'Des programmes orientes vers l’inclusion, l’éducation, la santé communautaire, l’entrepreneuriat, l’employabilité et la résilience des communautes.',
         'sections' => [
-            ['Femmes et jeunes', 'Initiatives de formation, leadership, insertion professionnelle et autonomisation economique.'],
+            ['Femmes et jeunes', 'Initiatives de formation, leadership, insertion professionnelle et autonomisation économique.'],
             ['Entrepreneuriat', 'Accompagnement des porteurs de projets, structuration, marche, financement et mentorat.'],
-            ['Sante et education', 'Projets a fort impact social, de la conception au reporting.'],
-            ['Inclusion', 'Approches sensibles aux vulnerabilites, a l egalite des chances et a la participation locale.'],
-            ['Resilience', 'Programmes capables de repondre aux chocs economiques, sociaux et environnementaux.'],
+            ['Santé et éducation', 'Projets à fort impact social, de la conception au reporting.'],
+            ['Inclusion', 'Approches sensibles aux vulnerabilites, à l’egalite des chances et à la participation locale.'],
+            ['Résilience', 'Programmes capables de repondre aux chocs économiques, sociaux et environnementaux.'],
         ],
     ],
     'humanitaire' => [
         'title' => 'Humanitaire',
         'eyebrow' => 'Actions et impact',
-        'intro' => 'JCA contribue a la conception et a la realisation d initiatives visant l amelioration durable des conditions de vie des populations vulnerables.',
+        'intro' => 'JCA contribue à la conception et à la realisation d initiatives visant l amélioration durable des conditions de vie des populations vulnérables.',
         'sections' => [
-            ['Education', 'Initiatives favorisant l acces a l education, aux competences et aux opportunites d apprentissage.'],
-            ['Sante communautaire', 'Actions visant l amelioration des conditions de vie et de la prevention au niveau local.'],
-            ['Developpement economique local', 'Programmes soutenant l autonomie, l emploi, l entrepreneuriat et les revenus durables.'],
-            ['Inclusion sociale', 'Accompagnement des femmes, des jeunes et des groupes vulnerables dans des parcours d autonomisation.'],
-            ['Resilience communautaire', 'Dispositifs capables de renforcer la capacite d adaptation face aux chocs sociaux et economiques.'],
+            ['Éducation', 'Initiatives favorisant l’accès à l’éducation, aux compétences et aux opportunités d’apprentissage.'],
+            ['Santé communautaire', 'Actions visant l amélioration des conditions de vie et de la prévention au niveau local.'],
+            ['Développement économique local', 'Programmes soutenant l autonomie, l emploi, l’entrepreneuriat et les revenus durables.'],
+            ['Inclusion sociale', 'Accompagnement des femmes, des jeunes et des groupes vulnérables dans des parcours d’autonomisation.'],
+            ['Résilience communautaire', 'Dispositifs capables de renforcer la capacité d’adaptation face aux chocs sociaux et économiques.'],
         ],
     ],
     'actualites' => [
-        'title' => 'Actualites',
+        'title' => 'Actualités',
         'eyebrow' => 'Veille et communiques',
-        'intro' => 'Un espace editorial pour suivre les reformes, opportunites, conseils et communiques autour de la mobilite internationale.',
+        'intro' => 'Un espace editorial pour suivre les reformes, opportunités, conseils et communiques autour de la mobilité internationale.',
         'sections' => [
-            ['Immigration Canada', 'Analyses des changements de programmes, delais, criteres et bonnes pratiques documentaires.'],
-            ['Europe et USA', 'Informations utiles sur les parcours, visas, et opportunites internationales.'],
-            ['Opportunites', 'Appels a candidatures, recrutements, bourses, partenariats et programmes ouverts.'],
+            ['Immigration Canada', 'Analyses des changements de programmes, délais, critères et bonnes pratiques documentaires.'],
+            ['Europe et USA', 'Informations utiles sur les parcours, visas, et opportunités internationales.'],
+            ['Opportunités', 'Appels à candidatures, recrutements, bourses, partenariats et programmes ouverts.'],
             ['Communiques', 'Annonces officielles, activites de JCA et informations institutionnelles.'],
         ],
     ],
     'blog' => [
         'title' => 'Blog',
         'eyebrow' => 'Conseils pratiques',
-        'intro' => 'Des articles pedagogiques pour aider les candidats, familles, employeurs et partenaires a mieux comprendre leurs options.',
+        'intro' => 'Des articles pédagogiques pour aider les candidats, familles, employeurs et partenaires a mieux comprendre leurs options.',
         'sections' => [
-            ['Immigration', 'Guides, erreurs courantes, preuves importantes et preparation des dossiers.'],
-            ['Travail', 'CV international, entretiens, integration et attentes des employeurs.'],
-            ['Etudes', 'Choix de programme, admission, budget, visa et preparation du depart.'],
-            ['Cooperation', 'Montage de projets, financement, gouvernance et partenariats.'],
+            ['Immigration', 'Guides, erreurs courantes, preuves importantes et préparation des dossiers.'],
+            ['Travail', 'CV international, entretiens, intégration et attentes des employeurs.'],
+            ['Études', 'Choix de programme, admission, budget, visa et préparation du depart.'],
+            ['Coopération', 'Montage de projets, financement, gouvernance et partenariats.'],
         ],
     ],
     'emplois' => [
         'title' => 'Emplois',
         'eyebrow' => 'Offres et candidatures',
-        'intro' => 'Un espace de publication d offres avec recherche, filtres metiers et candidature avec CV.',
+        'intro' => 'Un espace de publication d’offres avec recherche, filtres métiers et candidature avec CV.',
         'sections' => [
-            ['Offres disponibles', 'Operateurs industriels, sante, technologies, hotellerie, transport, construction et services.'],
-            ['Recherche et filtres', 'Filtrage par pays, secteur, experience, langue, disponibilite et type de contrat.'],
-            ['Candidature', 'Depot de CV, diplomes et pieces justificatives pour prequalification.'],
-            ['Entreprises', 'Publication d offres et presentation des besoins de recrutement international.'],
+            ['Offres disponibles', 'Opérateurs industriels, santé, technologies, hôtellerie, transport, construction et services.'],
+            ['Recherche et filtres', 'Filtrage par pays, secteur, expérience, langue, disponibilité et type de contrat.'],
+            ['Candidature', 'Dépôt de CV, diplômes et pièces justificatives pour préqualification.'],
+            ['Entreprises', 'Publication d’offres et présentation des besoins de recrutement international.'],
         ],
     ],
     'partenaires' => [
@@ -182,43 +182,43 @@ $pages = [
         'eyebrow' => 'Reseau international',
         'intro' => 'JCA construit des collaborations avec institutions, universites, entreprises, gouvernements et partenaires techniques.',
         'sections' => [
-            ['Institutions', 'Cooperation avec acteurs publics et organisations internationales.'],
-            ['Universites', 'Passerelles pour les etudes, la recherche, la formation et la mobilite academique.'],
-            ['Entreprises', 'Partenariats pour le recrutement, la formation et l integration des talents.'],
+            ['Institutions', 'Coopération avec acteurs publics et organisations internationales.'],
+            ['Universites', 'Passerelles pour les études, la recherche, la formation et la mobilité académique.'],
+            ['Entreprises', 'Partenariats pour le recrutement, la formation et l intégration des talents.'],
             ['Gouvernements', 'Appui aux politiques, programmes et projets territoriaux.'],
         ],
     ],
     'faq' => [
         'title' => 'FAQ',
-        'eyebrow' => 'Questions frequentes',
-        'intro' => 'Les reponses essentielles avant une consultation ou le depot d un dossier.',
+        'eyebrow' => 'Questions fréquentes',
+        'intro' => 'Les réponses essentielles avant une consultation ou le dépôt d un dossier.',
         'sections' => [
-            ['Combien de temps dure une procedure?', 'Les delais dependent du pays, du programme, de la qualite du dossier et des volumes de traitement.'],
-            ['JCA garantit-il le visa?', 'Aucun cabinet serieux ne peut garantir une decision administrative. JCA securise la strategie et la presentation du dossier.'],
-            ['Puis-je deposer un CV sans offre?', 'Oui. Le profil peut etre conserve pour des opportunites compatibles avec les besoins des employeurs partenaires.'],
-            ['Les entreprises peuvent-elles publier une offre?', 'Oui. Un formulaire dedie permet de qualifier le besoin et d organiser une mission de recrutement.'],
+            ['Combien de temps dure une procédure?', 'Les délais dependent du pays, du programme, de la qualité du dossier et des volumes de traitement.'],
+            ['JCA garantit-il le visa?', 'Aucun cabinet sérieux ne peut garantir une décision administrative. JCA sécurise la stratégie et la présentation du dossier.'],
+            ['Puis-je déposer un CV sans offre?', 'Oui. Le profil peut être conserve pour des opportunités compatibles avec les besoins des employeurs partenaires.'],
+            ['Les entreprises peuvent-elles publier une offre?', 'Oui. Un formulaire dedie permet de qualifiér le besoin et d organiser une mission de recrutement.'],
         ],
     ],
     'contact' => [
         'title' => 'Contact',
         'eyebrow' => 'Parlons de votre projet',
-        'intro' => 'Contactez JCA pour une consultation, un partenariat, une demande d immigration, un projet ou un besoin de recrutement.',
+        'intro' => 'Contactez JCA pour une consultation, un partenariat, une demande d’immigration, un projet ou un besoin de recrutement.',
         'sections' => [
-            ['Canaux', 'Telephone, WhatsApp, Messenger, email et formulaire de contact.'],
-            ['Horaires', 'Accueil sur rendez-vous et suivi numerique des demandes.'],
-            ['Adresse et carte', 'Les coordonnees officielles et les indications de rendez-vous sont communiquees par les canaux JCA afin d eviter toute confusion avec des intermediaires non autorises.'],
+            ['Canaux', 'Téléphone, WhatsApp, Messenger, email et formulaire de contact.'],
+            ['Horaires', 'Accueil sur rendez-vous et suivi numérique des demandes.'],
+            ['Adresse et carte', 'Les coordonnées officielles et les indications de rendez-vous sont communiquées par les canaux JCA afin d’éviter toute confusion avec des intermédiaires non autorisés.'],
         ],
         'form' => 'contact',
     ],
     'consultation' => [
         'title' => 'Consultation',
-        'eyebrow' => 'Rendez-vous strategique',
+        'eyebrow' => 'Rendez-vous stratégique',
         'intro' => 'Planifiez une consultation pour clarifier votre situation, identifier vos options et recevoir une feuille de route.',
         'sections' => [
-            ['Choisir le motif', 'Immigration, visa, recrutement, projet, partenariat ou accompagnement strategique.'],
-            ['Calendrier', 'Selection de creneau et confirmation par email ou WhatsApp.'],
-            ['Paiement', 'Les frais applicables sont confirmes avant engagement et les paiements sont traites via les canaux valides par JCA.'],
-            ['Confirmation', 'Resume de la demande, documents requis et prochaines etapes.'],
+            ['Choisir le motif', 'Immigration, visa, recrutement, projet, partenariat ou accompagnement stratégique.'],
+            ['Calendrier', 'Selection de créneau et confirmation par email ou WhatsApp.'],
+            ['Paiement', 'Les frais applicables sont confirmés avant engagement et les paiements sont traités via les canaux validés par JCA.'],
+            ['Confirmation', 'Résumé de la demande, documents requis et prochaines étapes.'],
         ],
         'form' => 'consultation',
     ],
@@ -226,108 +226,108 @@ $pages = [
 
 $legalPages = [
     'mentions-legales' => [
-        'title' => 'Mentions legales',
-        'description' => 'Informations legales relatives a l editeur du site JCA, a son hebergement et aux responsabilites de publication.',
+        'title' => 'Mentions légales',
+        'description' => 'Informations légales relatives à l’éditeur du site JCA, a son hébergement et aux responsabilités de publication.',
         'sections' => [
             [
-                'title' => 'Editeur du site',
+                'title' => 'Éditeur du site',
                 'paragraphs' => [
-                    'Le site jca-international.com est edite par JCA. Les informations administratives completes de l entite, son adresse officielle, son immatriculation et les licences professionnelles applicables sont tenues a jour par la direction et communiquees aux clients selon le cadre juridique pertinent.',
+                    'Le site jca-international.com est édité par JCA. Les informations administratives complètes de l’entité, son adresse officielle, son immatriculation et les licences professionnelles applicables sont tenues à jour par la direction et communiquées aux clients selon le cadre juridique pertinent.',
                     'Responsable de publication: direction JCA. Contact: contact@jca-international.com.',
                 ],
             ],
             [
-                'title' => 'Hebergement',
+                'title' => 'Hébergement',
                 'paragraphs' => [
-                    'Le site est exploite sur une infrastructure cloud securisee compatible avec Laravel. Les informations completes de l hebergeur de production sont conservees dans le dossier technique du site et peuvent etre communiquees sur demande legitime.',
+                    'Le site est exploité sur une infrastructure cloud sécurisée compatible avec Laravel. Les informations complètes de l’hébergeur de production sont conservées dans le dossier technique du site et peuvent être communiquées sur demande légitime.',
                 ],
             ],
             [
-                'title' => 'Responsabilite',
+                'title' => 'Responsabilité',
                 'paragraphs' => [
-                    'Les contenus publies par JCA sont fournis a titre informatif et ne constituent pas une garantie de resultat administratif, d obtention de visa, de permis, d emploi ou de financement.',
-                    'Les decisions finales relevent toujours des autorites competentes, des employeurs, institutions ou partenaires concernes.',
+                    'Les contenus publies par JCA sont fournis à titre informatif et ne constituent pas une garantie de résultat administratif, d obtention de visa, de permis, d’emploi ou de financement.',
+                    'Les décisions finales relèvent toujours des autorités compétentes, des employeurs, institutions ou partenaires concernés.',
                 ],
             ],
         ],
     ],
     'politique-confidentialite' => [
-        'title' => 'Politique de confidentialite',
-        'description' => 'Politique de traitement des donnees personnelles recueillies par JCA via le site public et l espace client.',
+        'title' => 'Politique de confidentialité',
+        'description' => 'Politique de traitement des données personnelles reçueillies par JCA via le site public et l’espace client.',
         'sections' => [
             [
-                'title' => 'Donnees collectees',
+                'title' => 'Données collectees',
                 'paragraphs' => [
-                    'JCA peut collecter les donnees d identification, coordonnees, pays, ville, type de client, informations de projet, CV, pieces justificatives, documents d identite, messages, candidatures, rendez-vous, adresse IP et donnees techniques de navigation.',
+                    'JCA peut collecter les données d identification, coordonnées, pays, ville, type de client, informations de projet, CV, pièces justificatives, documents d’identité, messages, candidatures, rendez-vous, adresse IP et données techniques de navigation.',
                 ],
                 'items' => [
-                    'Identite et coordonnees: nom, email, telephone, pays, ville, organisation.',
-                    'Donnees de dossier: motif, messages, statut, notes de suivi et documents transmis.',
-                    'Documents sensibles: CV, diplomes, justificatifs, pieces d identite et fichiers utiles au traitement.',
-                    'Donnees techniques: IP, navigateur, journaux de securite et horodatages.',
+                    'Identite et coordonnées: nom, email, téléphone, pays, ville, organisation.',
+                    'Données de dossier: motif, messages, statut, notes de suivi et documents transmis.',
+                    'Documents sensibles: CV, diplômes, justificatifs, pièces d’identité et fichiers utiles au traitement.',
+                    'Données techniques: IP, navigateur, journaux de sécurité et horodatages.',
                 ],
             ],
             [
                 'title' => 'Finalites',
                 'paragraphs' => [
-                    'Ces donnees servent a repondre aux demandes, evaluer les projets, organiser les consultations, gerer les candidatures, suivre les dossiers dans l espace client, securiser les acces et respecter les obligations legales ou contractuelles applicables.',
+                    'Ces données servent à répondre aux demandes, évaluer les projets, organiser les consultations, gérer les candidatures, suivre les dossiers dans l’espace client, sécuriser les accès et respecter les obligations légales ou contractuelles applicables.',
                 ],
             ],
             [
                 'title' => 'Conservation',
                 'paragraphs' => [
-                    'Les donnees sont conservees pendant la duree necessaire au traitement du dossier, puis archivees ou supprimees selon les obligations legales, contractuelles et operationnelles applicables. Les demandes sans suite sont reexaminees periodiquement afin de limiter la conservation aux besoins reels du service.',
+                    'Les données sont conservées pendant la durée nécessaire au traitement du dossier, puis archivées ou supprimées selon les obligations légales, contractuelles et opérationnelles applicables. Les demandes sans suite sont réexaminées périodiquement afin de limiter la conservation aux besoins réels du service.',
                 ],
             ],
             [
                 'title' => 'Sous-traitants',
                 'paragraphs' => [
-                    'Les sous-traitants peuvent inclure l hebergeur du site, les services d email transactionnel, les outils de sauvegarde, les services de paiement et, le cas echeant, un outil d analytique comme Matomo ou Google Analytics 4 apres consentement.',
-                    'JCA doit maintenir une liste interne des sous-traitants reellement utilises et la mettre a jour avant toute communication publique.',
+                    'Les sous-traitants peuvent inclure l’hébergeur du site, les services d email transactionnel, les outils de sauvegarde, les services de paiement et, le cas echeant, un outil d analytique comme Matomo ou Google Analytics 4 après consentement.',
+                    'JCA doit maintenir une liste interne des sous-traitants reellement utilises et la mettre à jour avant toute communication publique.',
                 ],
             ],
             [
                 'title' => 'Droits des personnes',
                 'paragraphs' => [
-                    'Toute personne concernee peut demander l acces, la rectification, la suppression, la limitation ou la portabilite de ses donnees lorsque le droit applicable le permet.',
+                    'Toute personne concernée peut demander l’accès, la rectification, la suppression, la limitation ou la portabilité de ses données lorsque le droit applicable le permet.',
                     'Contact responsable du traitement: contact@jca-international.com.',
                 ],
             ],
             [
                 'title' => 'Cadre juridique',
                 'paragraphs' => [
-                    'Pour les donnees de residents quebecois, JCA doit verifier l application de la Loi 25 du Quebec. Pour les personnes situees dans l Union europeenne ou visees par une offre europeenne, JCA doit verifier l application du RGPD. Ces cadres ne creent pas exactement les memes obligations et doivent etre traites distinctement.',
+                    'Pour les données de résidents québécois, JCA doit vérifier l’application de la Loi 25 du Québec. Pour les personnes situées dans l’Union européenne ou visées par une offre européenne, JCA doit vérifier l’application du RGPD. Ces cadres ne créent pas exactement les mêmes obligations et doivent être traités distinctement.',
                 ],
             ],
         ],
     ],
     'conditions-utilisation' => [
-        'title' => 'Conditions generales d utilisation',
-        'description' => 'Conditions d acces au site JCA et a l espace client securise.',
+        'title' => 'Conditions generales d’utilisation',
+        'description' => 'Conditions d accès au site JCA et à l’espace client sécurisé.',
         'sections' => [
             [
-                'title' => 'Acces a l espace client',
+                'title' => 'Accès à l’espace client',
                 'paragraphs' => [
-                    'L espace client permet de deposer des demandes, documents, messages, candidatures et informations de suivi. L utilisateur s engage a fournir des informations exactes, completes et a jour.',
-                    'Chaque compte est personnel. L utilisateur doit proteger son mot de passe et signaler tout acces suspect.',
+                    'L’espace client permet de déposer des demandes, documents, messages, candidatures et informations de suivi. L’utilisateur s’engage à fournir des informations exactes, complètes et à jour.',
+                    'Chaque compte est personnel. L utilisateur doit proteger son mot de passe et signaler tout accès suspect.',
                 ],
             ],
             [
                 'title' => 'Documents transmis',
                 'paragraphs' => [
-                    'Les documents transmis doivent appartenir a l utilisateur ou etre transmis avec autorisation legitime. JCA peut refuser ou demander la correction de fichiers incomplets, illisibles ou non pertinents.',
+                    'Les documents transmis doivent appartenir à l’utilisateur ou être transmis avec autorisation légitime. JCA peut refuser ou demander la correction de fichiers incomplets, illisibles ou non pertinents.',
                 ],
             ],
             [
-                'title' => 'Absence de garantie de resultat',
+                'title' => 'Absence de garantie de résultat',
                 'paragraphs' => [
-                    'JCA securise la strategie et la qualite des dossiers, mais ne garantit pas l obtention d un visa, d un permis, d une admission, d un emploi, d un financement ou d une decision favorable.',
+                    'JCA sécurise la stratégie et la qualité des dossiers, mais ne garantit pas l’obtention d’un visa, d’un permis, d’une admission, d’un emploi, d’un financement ou d’une décision favorable.',
                 ],
             ],
             [
-                'title' => 'Suspension et securite',
+                'title' => 'Suspension et sécurité',
                 'paragraphs' => [
-                    'JCA peut suspendre un compte en cas d usage abusif, fraude, tentative d acces non autorise, usurpation d identite ou risque pour la securite de la plateforme.',
+                    'JCA peut suspendre un compte en cas d usage abusif, fraude, tentative d accès non autorisé, usurpation d’identité ou risque pour la sécurité de la plateforme.',
                 ],
             ],
         ],
@@ -549,6 +549,18 @@ Route::middleware('guest')->group(function (): void {
 Route::post('/deconnexion', [PortalAuthController::class, 'destroy'])
     ->middleware('auth')
     ->name('portal.logout');
+
+Route::get('/rendez-vous', function () {
+    if (auth()->check()) {
+        if (auth()->user()->isAdmin()) {
+            return redirect()->route('admin.appointments.index');
+        }
+
+        return redirect()->to(route('portal.dashboard').'#portal-appointment');
+    }
+
+    return redirect()->route('portal.register', ['next' => 'rendez-vous']);
+})->name('public.appointments');
 
 Route::prefix('admin')
     ->name('admin.')

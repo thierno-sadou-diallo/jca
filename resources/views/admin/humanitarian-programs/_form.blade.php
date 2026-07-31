@@ -3,7 +3,7 @@
 <label>Titre<input name="title" value="{{ old('title', $program->title) }}" required></label>
 <div class="form-grid">
     <label>Pays<input name="country" value="{{ old('country', $program->country) }}"></label>
-    <label>Domaine d'impact<input name="focus_area" value="{{ old('focus_area', $program->focus_area) }}" placeholder="Inclusion, sante, formation..."></label>
+    <label>Domaine d’impact<input name="focus_area" value="{{ old('focus_area', $program->focus_area) }}" placeholder="Inclusion, santé, formation..."></label>
 </div>
 <label>Statut
     <select name="status" required>
@@ -21,7 +21,7 @@
     @for ($index = 0; $index < 3; $index++)
         <div class="form-grid">
             <label>Valeur<input name="impact_metrics[{{ $index }}][value]" value="{{ $metricRows[$index]['value'] ?? '' }}" placeholder="Ex: 250"></label>
-            <label>Libelle<input name="impact_metrics[{{ $index }}][label]" value="{{ $metricRows[$index]['label'] ?? '' }}" placeholder="Ex: personnes accompagnees"></label>
+            <label>Libellé<input name="impact_metrics[{{ $index }}][label]" value="{{ $metricRows[$index]['label'] ?? '' }}" placeholder="Ex: personnes accompagnées"></label>
         </div>
     @endfor
 </div>

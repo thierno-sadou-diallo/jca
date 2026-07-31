@@ -18,7 +18,7 @@
         </a>
 
         <div>
-            <span class="eyebrow">Acces securise</span>
+            <span class="eyebrow">Accès sécurisé</span>
             <h1>Espace admin</h1>
             <p>Connectez-vous pour piloter les demandes, utilisateurs, contenus, offres et partenaires.</p>
         </div>
@@ -39,8 +39,8 @@
             @enderror
         </form>
         <nav class="legal-auth-links" aria-label="Liens legaux">
-            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions legales</a>
-            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Confidentialite</a>
+            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions légales</a>
+            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Confidentialité</a>
         </nav>
     </main>
 </body>

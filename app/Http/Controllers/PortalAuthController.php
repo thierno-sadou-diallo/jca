@@ -45,7 +45,7 @@ class PortalAuthController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return redirect()->intended(route('portal.dashboard'));
+        return redirect()->intended($this->nextUrl($request->string('next')->toString()));
     }
 
     public function destroy(Request $request): RedirectResponse
@@ -56,5 +56,15 @@ class PortalAuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('home');
+    }
+
+    private function nextUrl(?string $next): string
+    {
+        return match ($next) {
+            'rendez-vous' => route('portal.dashboard').'#portal-appointment',
+            'dossier' => route('portal.dashboard').'#portal-request',
+            'documents' => route('portal.dashboard').'#portal-documents',
+            default => route('portal.dashboard'),
+        };
     }
 }

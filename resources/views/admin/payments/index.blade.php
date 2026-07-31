@@ -30,7 +30,7 @@
                             <td><a class="admin-link" href="{{ route('admin.payments.edit', $payment) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun paiement trouve.</td></tr>
+                        <tr><td colspan="6">Aucun paiement trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

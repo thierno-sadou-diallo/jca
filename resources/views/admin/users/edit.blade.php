@@ -20,8 +20,8 @@
 
         <article class="admin-panel">
             <div class="admin-panel-head">
-                <h2>Parametres du compte</h2>
-                <span>Acces et statut</span>
+                <h2>Paramètres du compte</h2>
+                <span>Accès et statut</span>
             </div>
             @if (session('status'))
                 <p class="form-note" data-state="success">{{ session('status') }}</p>
@@ -30,7 +30,7 @@
                 @csrf
                 @method('PATCH')
                 <label>Nom<input name="name" value="{{ old('name', $managedUser->name) }}" required></label>
-                <label>Telephone<input name="phone" value="{{ old('phone', $managedUser->phone) }}"></label>
+                <label>Téléphone<input name="phone" value="{{ old('phone', $managedUser->phone) }}"></label>
                 <div class="form-grid">
                     <label>Role
                         <select name="role" required>

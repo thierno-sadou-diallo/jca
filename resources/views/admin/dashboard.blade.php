@@ -2,11 +2,11 @@
     <section class="admin-welcome">
         <div>
             <span class="eyebrow">Centre de pilotage</span>
-            <h2>Une vue claire pour prendre les bonnes decisions.</h2>
-            <p>Retrouvez uniquement les priorites utiles pour traiter les clients rapidement.</p>
+            <h2>Une vue claire pour prendre les bonnes décisions.</h2>
+            <p>Retrouvez uniquement les priorités utiles pour traiter les clients rapidement.</p>
         </div>
         <div class="admin-welcome-card">
-            <span>Priorite immediate</span>
+            <span>Priorité immédiate</span>
             <strong>{{ $stats['newLeads'] + $stats['pendingDocuments'] + $stats['unreadMessages'] + $stats['pendingClients'] }}</strong>
             <p>Comptes, demandes, documents ou messages qui attendent une action.</p>
         </div>
@@ -14,8 +14,8 @@
 
     <section class="admin-stats admin-stats-clean admin-stats-featured">
         <article><span>Clients</span><strong>{{ $stats['clients'] }}</strong></article>
-        <article><span>Comptes a activer</span><strong>{{ $stats['pendingClients'] }}</strong></article>
-        <article><span>Demandes a traiter</span><strong>{{ $stats['newLeads'] }}</strong></article>
+        <article><span>Comptes à activer</span><strong>{{ $stats['pendingClients'] }}</strong></article>
+        <article><span>Demandes à traiter</span><strong>{{ $stats['newLeads'] }}</strong></article>
         <article><span>Documents attente</span><strong>{{ $stats['pendingDocuments'] }}</strong></article>
         <article><span>Messages non lus</span><strong>{{ $stats['unreadMessages'] }}</strong></article>
     </section>
@@ -26,12 +26,12 @@
             <span>Consulter les profils, statuts, documents et conversations.</span>
         </a>
         <a href="{{ route('admin.users.index', ['role' => 'client', 'status' => 'inactive']) }}">
-            <strong>Comptes a activer</strong>
-            <span>Valider les nouvelles inscriptions avant l acces au portail.</span>
+            <strong>Comptes à activer</strong>
+            <span>Valider les nouvelles inscriptions avant l’accès au portail.</span>
         </a>
         <a href="{{ route('admin.leads.index') }}">
             <strong>Demandes clients</strong>
-            <span>Lire, repondre, changer le statut et suivre les documents joints.</span>
+            <span>Lire, répondre, changer le statut et suivre les documents joints.</span>
         </a>
         <a href="{{ route('admin.documents.index') }}">
             <strong>Documents</strong>
@@ -39,7 +39,7 @@
         </a>
         <a href="{{ route('admin.immigration-cases.index') }}">
             <strong>Dossiers immigration</strong>
-            <span>Suivre les statuts, l historique et les prochaines etapes.</span>
+            <span>Suivre les statuts, l’historique et les prochaines étapes.</span>
         </a>
         <a href="{{ route('admin.appointments.index') }}">
             <strong>Rendez-vous</strong>
@@ -47,14 +47,14 @@
         </a>
         <a href="{{ route('admin.messages.index') }}">
             <strong>Messagerie</strong>
-            <span>Lire les messages clients et repondre depuis le back-office.</span>
+            <span>Lire les messages clients et répondre depuis le back-office.</span>
         </a>
     </section>
 
     <section class="admin-grid">
         <article class="admin-panel">
             <div class="admin-panel-head">
-                <h2>Dernieres demandes</h2>
+                <h2>Dernières demandes</h2>
                 <span>Traitement prioritaire</span>
             </div>
             <div class="admin-table-wrap">

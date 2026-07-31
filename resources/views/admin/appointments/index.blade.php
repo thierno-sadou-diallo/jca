@@ -31,7 +31,7 @@
                             <td><a class="admin-link" href="{{ route('admin.appointments.show', $appointment) }}">Traiter</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun rendez-vous trouve.</td></tr>
+                        <tr><td colspan="6">Aucun rendez-vous trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

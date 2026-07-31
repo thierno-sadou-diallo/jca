@@ -5,7 +5,7 @@
     <label>Pays<input name="country" value="{{ old('country', $partner->country) }}"></label>
 </div>
 <label>Site web<input type="url" name="website" value="{{ old('website', $partner->website) }}" placeholder="https://..."></label>
-<label>Resume<textarea name="summary" rows="6">{{ old('summary', $partner->summary) }}</textarea></label>
+<label>Résumé<textarea name="summary" rows="6">{{ old('summary', $partner->summary) }}</textarea></label>
 <label>Logo<input type="file" name="logo" accept="image/*"></label>
 @if ($partner->logo_path)
     <p class="form-note">Logo actuel: {{ $partner->logo_path }}</p>

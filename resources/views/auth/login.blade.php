@@ -18,13 +18,16 @@
         </a>
 
         <div>
-            <span class="eyebrow">Acces securise</span>
+            <span class="eyebrow">Accès sécurisé</span>
             <h1>Connexion</h1>
-            <p>Accedez a vos dossiers, rendez-vous, documents, candidatures, paiements et messages.</p>
+            <p>Accedez à vos dossiers, rendez-vous, documents, candidatures, paiements et messages.</p>
         </div>
 
         <form class="lead-form admin-form" method="post" action="{{ route('portal.login.store') }}">
             @csrf
+            @if (in_array(request('next'), ['rendez-vous', 'dossier', 'documents'], true))
+                <input type="hidden" name="next" value="{{ request('next') }}">
+            @endif
             <label>Email<input type="email" name="email" value="{{ old('email') }}" required autofocus></label>
             <label>Mot de passe
                 <span class="password-field">
@@ -34,14 +37,14 @@
             </label>
             <label class="inline-choice"><input type="checkbox" name="remember" value="1"> Rester connecte</label>
             <button class="button primary" type="submit">Se connecter</button>
-            <a class="admin-link" href="{{ route('portal.register') }}">Creer un compte client</a>
+            <a class="admin-link" href="{{ route('portal.register', array_filter(['next' => request('next')])) }}">Créer un compte client</a>
             @error('email')
                 <p class="form-note" data-state="error">{{ $message }}</p>
             @enderror
         </form>
         <nav class="legal-auth-links" aria-label="Liens legaux">
-            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions legales</a>
-            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Confidentialite</a>
+            <a href="{{ route('legal.show', 'mentions-legales') }}">Mentions légales</a>
+            <a href="{{ route('legal.show', 'politique-confidentialite') }}">Confidentialité</a>
             <a href="{{ route('legal.show', 'conditions-utilisation') }}">Conditions</a>
         </nav>
     </main>

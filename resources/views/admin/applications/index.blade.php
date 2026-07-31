@@ -3,7 +3,7 @@
         <div class="admin-panel-head">
             <div>
                 <h2>Candidatures emploi</h2>
-                <span>CV, prequalification et suivi des talents</span>
+                <span>CV, préqualification et suivi des talents</span>
             </div>
             <form class="admin-filter wide-filter" method="get" action="{{ route('admin.applications.index') }}">
                 <input name="q" value="{{ $query }}" placeholder="Candidat, email ou offre">
@@ -35,14 +35,14 @@
                         <tr>
                             <td><strong>{{ $application->name }}</strong><span>{{ $application->email }} {{ $application->phone ? '- '.$application->phone : '' }}</span></td>
                             <td>{{ $application->jobPosting?->title ?? 'Offre supprimee' }}</td>
-                            <td>{{ $application->country ?: 'Non indique' }}</td>
+                            <td>{{ $application->country ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $statuses[$application->status] ?? $application->status }}</mark></td>
                             <td>{{ $application->reviewer?->name ?? 'Non revue' }}</td>
                             <td>{{ $application->created_at->format('d/m/Y H:i') }}</td>
                             <td><a class="admin-link" href="{{ route('admin.applications.show', $application) }}">Traiter</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="7">Aucune candidature trouvee.</td></tr>
+                        <tr><td colspan="7">Aucune candidature trouvée.</td></tr>
                     @endforelse
                 </tbody>
             </table>

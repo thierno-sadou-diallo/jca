@@ -13,12 +13,12 @@
             <div class="admin-list">
                 <div><strong>Offre</strong><span>{{ $application->jobPosting?->title ?? 'Offre supprimee' }}</span></div>
                 <div><strong>Entreprise</strong><span>{{ $application->jobPosting?->company_name ?: 'Entreprise partenaire' }}</span></div>
-                <div><strong>Pays</strong><span>{{ $application->country ?: 'Non indique' }}</span></div>
+                <div><strong>Pays</strong><span>{{ $application->country ?: 'Non indiqué' }}</span></div>
                 <div><strong>Message</strong><span>{{ $application->message ?: 'Aucun message' }}</span></div>
                 <div><strong>Statut</strong><span>{{ $statuses[$application->status] ?? $application->status }}</span></div>
                 <div><strong>CV</strong><span>{{ $application->resume_path ? 'Fichier disponible' : 'Aucun CV' }}</span>
                     @if ($application->resume_path)
-                        <a class="admin-link" href="{{ route('admin.applications.download', $application) }}">Telecharger le CV</a>
+                        <a class="admin-link" href="{{ route('admin.applications.download', $application) }}">Télécharger le CV</a>
                     @endif
                 </div>
             </div>
@@ -27,7 +27,7 @@
         <article class="admin-panel">
             <div class="admin-panel-head">
                 <h2>Action</h2>
-                <span>Prequalification</span>
+                <span>Préqualification</span>
             </div>
             @if (session('application_review_status'))
                 <p class="form-note" data-state="success">{{ session('application_review_status') }}</p>
@@ -43,7 +43,7 @@
                     </select>
                 </label>
                 <label>Note admin / retour candidat
-                    <textarea name="admin_note" rows="7" placeholder="Indiquez les prochaines etapes, pieces attendues ou raisons de refus.">{{ old('admin_note', $application->admin_note) }}</textarea>
+                    <textarea name="admin_note" rows="7" placeholder="Indiquez les prochaines étapes, pièces attendues ou raisons de refus.">{{ old('admin_note', $application->admin_note) }}</textarea>
                 </label>
                 @if ($errors->any())
                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>

@@ -12,7 +12,7 @@
         <select name="appointment_id">
             <option value="">Aucun</option>
             @foreach ($appointments as $appointment)
-                <option value="{{ $appointment->id }}" @selected((int) old('appointment_id', $payment->appointment_id) === $appointment->id)>{{ $appointment->topic }} - {{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'Date a confirmer' }}</option>
+                <option value="{{ $appointment->id }}" @selected((int) old('appointment_id', $payment->appointment_id) === $appointment->id)>{{ $appointment->topic }} - {{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'Date à confirmer' }}</option>
             @endforeach
         </select>
     </label>

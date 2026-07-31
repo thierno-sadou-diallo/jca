@@ -37,6 +37,7 @@ class PortalRegisterController extends Controller
             'country' => ['nullable', 'string', 'max:80'],
             'city' => ['nullable', 'string', 'max:120'],
             'organization_name' => ['nullable', 'string', 'max:160'],
+            'next' => ['nullable', Rule::in(['rendez-vous', 'dossier', 'documents'])],
         ], [
             'name.required' => 'Veuillez indiquer votre nom complet.',
             'email.unique' => 'Un compte existe deja avec cette adresse email.',
@@ -84,14 +85,14 @@ class PortalRegisterController extends Controller
 
         if (! $autoActivate) {
             return redirect()
-                ->route('portal.login')
-                ->with('status', 'Votre compte a ete cree. L equipe JCA doit l activer avant le premier acces.');
+                ->route('portal.login', array_filter(['next' => $validated['next'] ?? null]))
+                ->with('status', 'Votre compte a été créé. L’équipe JCA doit l’activer avant le premier accès.');
         }
 
         Auth::login($user);
         $request->session()->regenerate();
 
-        return redirect()->route('portal.dashboard');
+        return redirect()->to($this->nextUrl($validated['next'] ?? null));
     }
 
     private function legacyAccountTypeToClientType(string $accountType): string
@@ -101,6 +102,16 @@ class PortalRegisterController extends Controller
             'company' => UserProfile::TYPE_ENTREPRISE,
             'institution_partner' => UserProfile::TYPE_INSTITUTION,
             default => UserProfile::TYPE_PARTICULIER,
+        };
+    }
+
+    private function nextUrl(?string $next): string
+    {
+        return match ($next) {
+            'rendez-vous' => route('portal.dashboard').'#portal-appointment',
+            'dossier' => route('portal.dashboard').'#portal-request',
+            'documents' => route('portal.dashboard').'#portal-documents',
+            default => route('portal.dashboard'),
         };
     }
 }

@@ -29,23 +29,23 @@
                     <form class="lead-form admin-form" method="post" action="{{ route('admin.reviews.update', $review->id) }}">
                         @csrf
                         @method('PATCH')
-                        <label>Reponse admin
+                        <label>Réponse admin
                             <textarea name="admin_response" rows="4">{{ $review->admin_response }}</textarea>
                         </label>
                         <label>Statut
                             <select name="status">
                                 <option value="pending" @selected($review->status === 'pending')>En attente</option>
                                 <option value="published" @selected($review->status === 'published')>Publie</option>
-                                <option value="closed" @selected($review->status === 'closed')>Ferme</option>
+                                <option value="closed" @selected($review->status === 'closed')>Fermé</option>
                             </select>
                         </label>
-                        <button class="button primary" type="submit">Enregistrer la reponse</button>
+                        <button class="button primary" type="submit">Enregistrer la réponse</button>
                     </form>
                 </article>
             @empty
                 <article class="empty-state">
                     <h2>Aucun avis pour le moment.</h2>
-                    <p>Les avis envoyes par les clients depuis leur espace apparaitront ici.</p>
+                    <p>Les avis envoyes par les clients depuis leur espace apparaîtront ici.</p>
                 </article>
             @endforelse
         </div>

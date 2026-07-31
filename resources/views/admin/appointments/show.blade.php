@@ -13,7 +13,7 @@
             <div class="admin-list">
                 <div><strong>Client</strong><span>{{ $appointment->user?->name ?? 'Non lie' }} - {{ $appointment->user?->email }}</span></div>
                 <div><strong>Date</strong><span>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'A confirmer' }}</span></div>
-                <div><strong>Duree</strong><span>{{ $appointment->duration_minutes }} minutes</span></div>
+                <div><strong>Durée</strong><span>{{ $appointment->duration_minutes }} minutes</span></div>
                 <div><strong>Canal</strong><span>{{ $appointment->channel }}</span></div>
                 <div><strong>Demande source</strong><span>{{ $appointment->leadRequest?->topic ?? 'Aucune' }}</span></div>
                 <div><strong>Notes</strong><span>{{ $appointment->notes ?: 'Aucune note' }}</span></div>
@@ -34,7 +34,7 @@
                 <label>Sujet<input name="topic" value="{{ old('topic', $appointment->topic) }}" required></label>
                 <div class="form-grid">
                     <label>Date et heure<input type="datetime-local" name="starts_at" value="{{ old('starts_at', $appointment->starts_at?->format('Y-m-d\TH:i')) }}"></label>
-                    <label>Duree
+                    <label>Durée
                         <select name="duration_minutes" required>
                             @foreach ([30, 45, 60, 90] as $duration)
                                 <option value="{{ $duration }}" @selected((int) $appointment->duration_minutes === $duration)>{{ $duration }} min</option>

@@ -15,7 +15,7 @@
                 <h1>{{ $title }}</h1>
                 <p>{{ $intro }}</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('portal.register') }}">Creer mon espace</a>
+                    <a class="button primary" href="{{ route('portal.register') }}">Créer mon espace</a>
                     <a class="button ghost" href="{{ route('page.show', 'services') }}">Voir les services</a>
                 </div>
             </div>
@@ -28,8 +28,8 @@
 
         <section class="page-guidance">
             <article><span>01</span><strong>S informer</strong><p>Lire les analyses et conseils publies par JCA.</p></article>
-            <article><span>02</span><strong>Comparer</strong><p>Comprendre les options avant de choisir une demarche.</p></article>
-            <article><span>03</span><strong>Agir</strong><p>Passer de l information a un dossier suivi.</p></article>
+            <article><span>02</span><strong>Comparer</strong><p>Comprendre les options avant de choisir une démarche.</p></article>
+            <article><span>03</span><strong>Agir</strong><p>Passer de l information à un dossier suivi.</p></article>
         </section>
 
         <section class="content-band">
@@ -44,7 +44,7 @@
                 @empty
                     <article class="empty-state">
                         <h2>Aucun contenu publie pour le moment.</h2>
-                        <p>Les publications JCA apparaitront ici des leur publication.</p>
+                        <p>Les publications JCA apparaîtront ici des leur publication.</p>
                     </article>
                 @endforelse
             </div>

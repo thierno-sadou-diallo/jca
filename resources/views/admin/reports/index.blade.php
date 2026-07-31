@@ -29,7 +29,7 @@
             <div class="report-bars">
                 @forelse ($clientTypes as $item)
                     <div>
-                        <span>{{ $item->type_client ?: 'Non indique' }}</span>
+                        <span>{{ $item->type_client ?: 'Non indiqué' }}</span>
                         <strong class="bar-width-{{ max(8, min(100, $item->total * 12)) }}">{{ $item->total }}</strong>
                     </div>
                 @empty

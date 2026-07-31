@@ -3,7 +3,7 @@
         <div class="admin-panel-head">
             <div>
                 <h2>{{ $project->title }}</h2>
-                <span>{{ $project->sector ?: 'Projet de cooperation' }}</span>
+                <span>{{ $project->sector ?: 'Projet de coopération' }}</span>
             </div>
             <a class="button ghost" href="{{ route('admin.cooperation-projects.index') }}">Retour</a>
         </div>

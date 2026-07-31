@@ -44,7 +44,7 @@ class Document extends Model
             self::STATUS_PENDING => 'En attente',
             self::STATUS_VALIDATED => 'Valide',
             self::STATUS_REJECTED => 'Rejete',
-            self::STATUS_NEW_VERSION_REQUESTED => 'Nouvelle version demandee',
+            self::STATUS_NEW_VERSION_REQUESTED => 'Nouvelle version demandée',
         ];
     }
 

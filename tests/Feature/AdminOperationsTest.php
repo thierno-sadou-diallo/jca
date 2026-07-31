@@ -53,7 +53,7 @@ class AdminOperationsTest extends TestCase
         $this->get('/emplois')
             ->assertOk()
             ->assertSee('Infirmier international')
-            ->assertSee('Creer un compte pour postuler');
+            ->assertSee('Créer un compte pour postuler');
     }
 
     public function test_admin_can_process_a_lead_request(): void
@@ -296,8 +296,8 @@ class AdminOperationsTest extends TestCase
             ->get("/admin/demandes/{$lead->id}")
             ->assertOk()
             ->assertSee('Passeport principal')
-            ->assertSee('Telecharger')
-            ->assertSee('Reponse professionnelle au client');
+            ->assertSee('Télécharger')
+            ->assertSee('Réponse professionnelle au client');
 
         $this->actingAs($admin)
             ->patch("/admin/demandes/{$lead->id}", [
@@ -310,7 +310,7 @@ class AdminOperationsTest extends TestCase
         $this->actingAs($client)
             ->get('/espace')
             ->assertOk()
-            ->assertSee('Reponse disponible')
+            ->assertSee('Réponse disponible')
             ->assertSee('Bonjour, votre document a bien ete recu.');
     }
 
@@ -362,7 +362,7 @@ class AdminOperationsTest extends TestCase
         $this->actingAs($client)
             ->get('/espace')
             ->assertOk()
-            ->assertSee('Nouvelle version demandee')
+            ->assertSee('Nouvelle version demandée')
             ->assertSee('version signee');
     }
 
@@ -574,7 +574,7 @@ class AdminOperationsTest extends TestCase
             ->get('/espace')
             ->assertOk()
             ->assertSee('Soudeur international')
-            ->assertSee('Prequalifiee')
+            ->assertSee('Préqualifiée')
             ->assertSee('entretien sera planifie');
     }
 

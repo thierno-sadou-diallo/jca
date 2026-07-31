@@ -2,8 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('partials.head', [
-        'title' => 'Projets de cooperation | JCA',
-        'description' => 'Projets de cooperation internationale portes par JCA: gouvernance, developpement territorial, institutions et impact durable.',
+        'title' => 'Projets de coopération | JCA',
+        'description' => 'Projets de coopération internationale portes par JCA: gouvernance, développement territorial, institutions et impact durable.',
     ])
 </head>
 <body>
@@ -11,9 +11,9 @@
     <main>
         <section class="page-hero page-hero-art is-immersive impact-hero">
             <div>
-                <span class="eyebrow">Cooperation internationale</span>
-                <h1>Projets de cooperation</h1>
-                <p>Des initiatives structurees avec institutions, gouvernements, organisations et partenaires techniques pour transformer les besoins territoriaux en actions mesurables.</p>
+                <span class="eyebrow">Coopération internationale</span>
+                <h1>Projets de coopération</h1>
+                <p>Des initiatives structurées avec institutions, gouvernements, organisations et partenaires techniques pour transformer les besoins territoriaux en actions mesurables.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('page.show', 'contact') }}">Demander une collaboration</a>
                     <a class="button ghost" href="{{ route('public.partners') }}">Voir les partenaires</a>
@@ -34,8 +34,8 @@
             </div>
             <div class="impact-story-grid">
                 <article><span>01</span><strong>Structurer</strong><p>Objectifs, acteurs, calendrier, gouvernance et indicateurs.</p></article>
-                <article><span>02</span><strong>Mobiliser</strong><p>Partenaires, ressources, competences et coordination.</p></article>
-                <article><span>03</span><strong>Valoriser</strong><p>Resultats, apprentissages et impact durable.</p></article>
+                <article><span>02</span><strong>Mobiliser</strong><p>Partenaires, ressources, compétences et coordination.</p></article>
+                <article><span>03</span><strong>Valoriser</strong><p>Résultats, apprentissages et impact durable.</p></article>
             </div>
         </section>
 
@@ -48,9 +48,9 @@
                 @forelse ($projects as $project)
                     <article class="news-card reveal">
                         <img src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.webp') }}" alt="{{ $project->title }}" loading="lazy">
-                        <span>{{ $project->sector ?: 'Cooperation' }} - {{ $project->country ?: 'International' }}</span>
+                        <span>{{ $project->sector ?: 'Coopération' }} - {{ $project->country ?: 'International' }}</span>
                         <h3>{{ $project->title }}</h3>
-                        <p>{{ $project->description ? str($project->description)->limit(170) : 'Projet actif accompagne par JCA avec une approche orientee resultats, gouvernance et durabilite.' }}</p>
+                        <p>{{ $project->description ? str($project->description)->limit(170) : 'Projet actif accompagne par JCA avec une approche orientee résultats, gouvernance et durabilite.' }}</p>
                         @if (! empty($project->indicators))
                             <div class="mini-metrics">
                                 @foreach (array_slice($project->indicators, 0, 2) as $metric)
@@ -58,13 +58,13 @@
                                 @endforeach
                             </div>
                         @endif
-                        <small>{{ $project->starts_at?->format('d/m/Y') ?: 'Date a definir' }} - {{ $project->ends_at?->format('d/m/Y') ?: 'En cours' }}</small>
+                        <small>{{ $project->starts_at?->format('d/m/Y') ?: 'Date à définir' }} - {{ $project->ends_at?->format('d/m/Y') ?: 'En cours' }}</small>
                         <a class="admin-link" href="{{ route('public.cooperation-projects.show', $project) }}">Voir le projet</a>
                     </article>
                 @empty
                     <article class="empty-state">
                         <h2>Aucun projet actif publie pour le moment.</h2>
-                        <p>Les projets de cooperation actifs apparaitront ici apres validation par l equipe JCA.</p>
+                        <p>Les projets de coopération actifs apparaîtront ici après validation par l’équipe JCA.</p>
                     </article>
                 @endforelse
             </div>

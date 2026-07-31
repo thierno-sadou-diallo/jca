@@ -1,6 +1,6 @@
 @csrf
 <label>Question<input name="question" value="{{ old('question', $faq->question) }}" required></label>
-<label>Reponse<textarea name="answer" rows="8" required>{{ old('answer', $faq->answer) }}</textarea></label>
+<label>Réponse<textarea name="answer" rows="8" required>{{ old('answer', $faq->answer) }}</textarea></label>
 <div class="form-grid">
     <label>Categorie<input name="category" value="{{ old('category', $faq->category) }}"></label>
     <label>Ordre<input type="number" min="0" max="9999" name="sort_order" value="{{ old('sort_order', $faq->sort_order ?? 0) }}" required></label>

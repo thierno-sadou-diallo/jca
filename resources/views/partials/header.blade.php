@@ -3,7 +3,7 @@
         <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
         <span>
             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
-            <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recruitment & cooperation' }}</small>
+            <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recruitment & coopération' }}</small>
         </span>
     </a>
 
@@ -17,9 +17,9 @@
         <a href="{{ route('home') }}">Accueil</a>
         <a href="{{ route('page.show', 'qui-sommes-nous') }}">A propos</a>
         <a href="{{ route('page.show', 'services') }}">Services</a>
-        <a href="{{ route('public.cooperation-projects') }}">Cooperation</a>
+        <a href="{{ route('public.cooperation-projects') }}">Coopération</a>
         <a href="{{ route('jobs.index') }}">Emplois</a>
-        <a class="nav-cta" href="{{ route('page.show', 'consultation') }}">Prendre rendez-vous</a>
+        <a class="nav-cta" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
         @auth
             <a class="nav-login" href="{{ route('portal.dashboard') }}">Mon espace</a>
         @else

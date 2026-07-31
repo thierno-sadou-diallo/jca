@@ -13,16 +13,16 @@
 
             <div class="admin-list">
                 <div><strong>Programme</strong><span>{{ $case->program_type }}</span></div>
-                <div><strong>Destination</strong><span>{{ $case->destination_country ?: 'Non indique' }}</span></div>
-                <div><strong>Soumission</strong><span>{{ $case->submitted_at?->format('d/m/Y') ?: 'Non indiquee' }}</span></div>
-                <div><strong>Decision</strong><span>{{ $case->decision_at?->format('d/m/Y') ?: 'Non indiquee' }}</span></div>
+                <div><strong>Destination</strong><span>{{ $case->destination_country ?: 'Non indiqué' }}</span></div>
+                <div><strong>Soumission</strong><span>{{ $case->submitted_at?->format('d/m/Y') ?: 'Non indiquée' }}</span></div>
+                <div><strong>Décision</strong><span>{{ $case->decision_at?->format('d/m/Y') ?: 'Non indiquée' }}</span></div>
                 <div><strong>Demande source</strong><span>{{ $case->leadRequest?->topic ?? 'Dossier direct' }}</span></div>
             </div>
         </article>
 
         <article class="admin-panel">
             <div class="admin-panel-head">
-                <h2>Mettre a jour</h2>
+                <h2>Mettre à jour</h2>
                 <span>Suivi client</span>
             </div>
             @if (session('status'))
@@ -44,9 +44,9 @@
                 </div>
                 <div class="form-grid">
                     <label>Date de soumission<input type="date" name="submitted_at" value="{{ old('submitted_at', $case->submitted_at?->toDateString()) }}"></label>
-                    <label>Date de decision<input type="date" name="decision_at" value="{{ old('decision_at', $case->decision_at?->toDateString()) }}"></label>
+                    <label>Date de décision<input type="date" name="decision_at" value="{{ old('decision_at', $case->decision_at?->toDateString()) }}"></label>
                 </div>
-                <label>Note de suivi<textarea name="note" rows="5" placeholder="Expliquez la mise a jour visible dans l historique.">{{ old('note') }}</textarea></label>
+                <label>Note de suivi<textarea name="note" rows="5" placeholder="Expliquez la mise à jour visible dans l’historique.">{{ old('note') }}</textarea></label>
                 @if ($errors->any())
                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                 @endif
@@ -65,13 +65,13 @@
                 <article>
                     <span>{{ $history->created_at->format('d/m/Y H:i') }} - {{ $history->user?->name ?? 'Systeme' }}</span>
                     <strong>{{ $statuses[$history->status] ?? $history->status }}</strong>
-                    <p>{{ $history->note ?: 'Mise a jour du statut.' }}</p>
+                    <p>{{ $history->note ?: 'Mise à jour du statut.' }}</p>
                 </article>
             @empty
                 <article>
                     <span>Historique</span>
                     <strong>Aucun evenement</strong>
-                    <p>Les changements de statut apparaitront ici.</p>
+                    <p>Les changements de statut apparaîtront ici.</p>
                 </article>
             @endforelse
         </div>

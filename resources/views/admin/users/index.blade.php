@@ -7,7 +7,7 @@
             </div>
         </div>
         <form class="admin-filter wide-filter" method="get" action="{{ route('admin.users.index') }}">
-            <input name="q" value="{{ $query }}" placeholder="Nom, email, telephone">
+            <input name="q" value="{{ $query }}" placeholder="Nom, email, téléphone">
             <select name="role">
                 <option value="">Tous les roles</option>
                 <option value="admin" @selected($role === 'admin')>Administrateur</option>
@@ -35,7 +35,7 @@
                             <td><a class="admin-link" href="{{ route('admin.users.edit', $user) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun utilisateur trouve.</td></tr>
+                        <tr><td colspan="6">Aucun utilisateur trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

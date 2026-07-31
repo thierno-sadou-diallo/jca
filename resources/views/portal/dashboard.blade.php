@@ -16,8 +16,8 @@
                 <div>
                     <span class="eyebrow">Espace personnel</span>
                     <h1>Bonjour {{ $user->name }}</h1>
-                    <p>Votre espace JCA rassemble vos demandes, documents, rendez-vous et messages pour avancer avec clarte.</p>
-                    <div class="portal-hero-signals" aria-label="Resume client">
+                    <p>Votre espace JCA rassemble vos demandes, documents, rendez-vous et messages pour avancer avec clarté.</p>
+                    <div class="portal-hero-signals" aria-label="Résumé client">
                         <span>{{ $stats['requests'] }} demande(s)</span>
                         <span>{{ $stats['documents'] }} document(s)</span>
                         <span>{{ $stats['pendingPayments'] }} paiement(s) en attente</span>
@@ -46,21 +46,21 @@
             <article><span>Paiements</span><strong>{{ $stats['pendingPayments'] }}</strong></article>
         </section>
 
-        <section class="portal-action-board" aria-label="Actions recommandees">
+        <section class="portal-action-board" aria-label="Actions recommandées">
             <a href="#portal-request">
                 <span>01</span>
-                <strong>Deposer mon dossier</strong>
-                <p>Expliquez votre objectif et joignez les premieres pieces utiles.</p>
+                <strong>Déposer mon dossier</strong>
+                <p>Expliquez votre objectif et joignez les premieres pièces utiles.</p>
             </a>
             <a href="#portal-appointment">
                 <span>02</span>
                 <strong>Prendre rendez-vous</strong>
-                <p>Choisissez un creneau pour clarifier la strategie avec JCA.</p>
+                <p>Choisissez un créneau pour clarifier la stratégie avec JCA.</p>
             </a>
             <a href="#portal-documents">
                 <span>03</span>
-                <strong>Completer mes documents</strong>
-                <p>Ajoutez CV, passeport, diplomes ou preuves pour accelerer l analyse.</p>
+                <strong>Compléter mes documents</strong>
+                <p>Ajoutez CV, passeport, diplômes ou preuves pour accelerer l’analyse.</p>
             </a>
         </section>
 
@@ -68,10 +68,10 @@
             <div class="journey-copy">
                 <span class="eyebrow">Feuille de route intelligente</span>
                 <h2>Votre prochain meilleur mouvement.</h2>
-                <p>JCA transforme votre avancement en parcours clair : ce qui est fait, ce qui bloque, et ce qui vous rapproche du resultat.</p>
+                <p>JCA transforme votre avancement en parcours clair : ce qui est fait, ce qui bloque, et ce qui vous rapproche du résultat.</p>
                 <div class="portal-media-strip" aria-label="Apercu visuel du parcours JCA">
                     <img src="{{ asset('images/jca-immigration.webp') }}" alt="Dossier immigration" loading="lazy">
-                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Mobilite professionnelle" loading="lazy">
+                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Mobilité professionnelle" loading="lazy">
                     <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Projet international" loading="lazy">
                 </div>
             </div>
@@ -89,9 +89,9 @@
                 <aside class="journey-motivation">
                     <span>Votre dossier avance ici</span>
                     <strong>Restez actif, JCA suit chaque piece ajoutee.</strong>
-                    <p>Un profil complet, des documents clairs et un message precis permettent a l equipe de mieux vous orienter.</p>
+                    <p>Un profil complet, des documents clairs et un message précis permettent à l’équipe de mieux vous orienter.</p>
                     <div class="journey-motivation-actions">
-                        <a href="#portal-profile">Completer mon profil</a>
+                        <a href="#portal-profile">Compléter mon profil</a>
                         <a href="#portal-documents">Ajouter un document</a>
                     </div>
                 </aside>
@@ -102,7 +102,7 @@
             <div class="section-heading">
                 <span class="eyebrow">Modules disponibles</span>
                 <h2>Votre espace de suivi international.</h2>
-                <p>Deposez vos documents, suivez vos dossiers et conservez vos prochaines etapes au meme endroit.</p>
+                <p>Déposez vos documents, suivez vos dossiers et conservez vos prochaines étapes au meme endroit.</p>
             </div>
 
             <div class="portal-grid">
@@ -128,7 +128,7 @@
                                 <p>{{ $notification->data['message'] ?? '' }}</p>
                             </div>
                         @empty
-                            <div><strong>Aucune notification</strong><span>Les mises a jour importantes apparaitront ici.</span></div>
+                            <div><strong>Aucune notification</strong><span>Les mises à jour importantes apparaîtront ici.</span></div>
                         @endforelse
                     </div>
                 </article>
@@ -155,7 +155,7 @@
                                     @endforeach
                                 </select>
                             </label>
-                            <label>Langue preferee
+                            <label>Langue préférée
                                 <select name="preferred_language" required>
                                     <option value="fr" @selected(old('preferred_language', $profile->preferred_language) === 'fr')>FR</option>
                                     <option value="en" @selected(old('preferred_language', $profile->preferred_language) === 'en')>EN</option>
@@ -163,7 +163,7 @@
                             </label>
                         </div>
                         <div class="form-grid">
-                            <label>Telephone / WhatsApp
+                            <label>Téléphone / WhatsApp
                                 <input name="phone" value="{{ old('phone', $user->phone) }}">
                             </label>
                             <label>Organisation
@@ -185,7 +185,7 @@
                         @if ($errors->any())
                             <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                         @endif
-                        <button class="button primary" type="submit">Mettre a jour mon profil</button>
+                        <button class="button primary" type="submit">Mettre à jour mon profil</button>
                     </form>
                 </article>
 
@@ -196,7 +196,7 @@
                     </div>
                     <div class="portal-card-nudge">
                         <strong>Un rendez-vous transforme votre projet en plan clair.</strong>
-                        <p>Choisissez un creneau si vous souhaitez valider les etapes, les pieces et les priorites.</p>
+                        <p>Choisissez un créneau si vous souhaitez valider les étapes, les pièces et les priorités.</p>
                     </div>
                     @if (session('appointment_status'))
                         <p class="form-note" data-state="success">{{ session('appointment_status') }}</p>
@@ -220,13 +220,13 @@
                             <button class="button primary" type="submit">Confirmer le rendez-vous</button>
                         </form>
                     @else
-                        <p class="form-note">Aucune disponibilite ouverte pour cette semaine ou la semaine prochaine.</p>
+                        <p class="form-note">Aucune disponibilité ouverte pour cette semaine ou la semaine prochaine.</p>
                     @endif
                     <div class="admin-list">
                         @forelse ($appointments as $appointment)
                             <div>
                                 <strong>{{ $appointment->topic }}</strong>
-                                <span>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'Date a confirmer' }} - {{ \App\Models\Appointment::statuses()[$appointment->status] ?? $appointment->status }}</span>
+                                <span>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'Date à confirmer' }} - {{ \App\Models\Appointment::statuses()[$appointment->status] ?? $appointment->status }}</span>
                                 @if ($appointment->notes)
                                     <p>{{ $appointment->notes }}</p>
                                 @endif
@@ -243,8 +243,8 @@
                         <span>Immigration, emploi, partenariat ou consultation</span>
                     </div>
                     <div class="portal-card-nudge">
-                        <strong>Plus votre demande est precise, plus l analyse est rapide.</strong>
-                        <p>Indiquez votre objectif, votre pays cible, vos delais et les documents deja disponibles.</p>
+                        <strong>Plus votre demande est précise, plus l’analyse est rapide.</strong>
+                        <p>Indiquez votre objectif, votre pays cible, vos délais et les documents déjà disponibles.</p>
                     </div>
                     @if (session('lead_success'))
                         <p class="form-note" data-state="success">{{ session('lead_success') }}</p>
@@ -260,22 +260,22 @@
                             <select name="topic" required>
                                 <option>Immigration</option>
                                 <option>Recrutement international</option>
-                                <option>Cooperation internationale</option>
+                                <option>Coopération internationale</option>
                                 <option>Partenariat</option>
-                                <option>Consultation strategique</option>
+                                <option>Consultation stratégique</option>
                             </select>
                         </label>
-                        <label>Canal prefere
+                        <label>Canal préféré
                             <select name="preferred_channel">
                                 <option>Email</option>
                                 <option>WhatsApp</option>
-                                <option>Telephone</option>
+                                <option>Téléphone</option>
                             </select>
                         </label>
                         <label>Documents
                             <input type="file" name="documents[]" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
                         </label>
-                        <label>Message<textarea name="message" rows="5" required placeholder="Expliquez votre situation, votre objectif et les delais importants."></textarea></label>
+                        <label>Message<textarea name="message" rows="5" required placeholder="Expliquez votre situation, votre objectif et les délais importants."></textarea></label>
                         <button class="button primary" type="submit">Envoyer ma demande</button>
                     </form>
                 </article>
@@ -283,20 +283,20 @@
                 <article class="admin-panel portal-priority">
                     <div class="admin-panel-head">
                         <h2>Mes demandes</h2>
-                        <span>Reponses et suivi</span>
+                        <span>Réponses et suivi</span>
                     </div>
                     <div class="admin-list">
                         @forelse ($leads as $lead)
                             @php($payload = json_decode($lead->payload ?? '[]', true) ?: [])
                             <div>
                                 <strong>{{ $lead->topic }} - {{ $lead->status }}</strong>
-                                <span>{{ $lead->created_at }}{{ isset($payload['response_message']) ? ' - Reponse disponible' : '' }}</span>
+                                <span>{{ $lead->created_at }}{{ isset($payload['response_message']) ? ' - Réponse disponible' : '' }}</span>
                                 @if (! empty($payload['response_message']))
                                     <p>{{ $payload['response_message'] }}</p>
                                 @endif
                             </div>
                         @empty
-                            <div><strong>Aucune demande</strong><span>Envoyez une premiere demande depuis votre espace.</span></div>
+                            <div><strong>Aucune demande</strong><span>Envoyez une première demande depuis votre espace.</span></div>
                         @endforelse
                     </div>
                 </article>
@@ -312,7 +312,7 @@
                     <form class="lead-form admin-form" method="post" action="{{ route('portal.messages.store') }}">
                         @csrf
                         <label>Sujet<input name="subject" value="{{ old('subject') }}" placeholder="Question, document, suivi de dossier..."></label>
-                        <label>Message<textarea name="body" rows="5" required placeholder="Ecrivez votre message a l equipe JCA.">{{ old('body') }}</textarea></label>
+                        <label>Message<textarea name="body" rows="5" required placeholder="Écrivez votre message à l’équipe JCA.">{{ old('body') }}</textarea></label>
                         <button class="button primary" type="submit">Envoyer un message</button>
                     </form>
                     <div class="message-thread compact-thread">
@@ -326,7 +326,7 @@
                             <article class="message-bubble is-admin">
                                 <span>Messagerie</span>
                                 <strong>Aucun message</strong>
-                                <p>Envoyez une question ou une precision a l equipe JCA.</p>
+                                <p>Envoyez une question ou une précision à l’équipe JCA.</p>
                             </article>
                         @endforelse
                     </div>
@@ -334,12 +334,12 @@
 
                 <article class="admin-panel" id="portal-documents">
                     <div class="admin-panel-head">
-                        <h2>Deposer un document</h2>
+                        <h2>Déposer un document</h2>
                         <span>PDF, image ou Word - 8 Mo max</span>
                     </div>
                     <div class="portal-card-nudge">
-                        <strong>Chaque document ajoute de la force a votre dossier.</strong>
-                        <p>Commencez par les pieces principales, puis completez progressivement selon les demandes de JCA.</p>
+                        <strong>Chaque document ajoute de la force à votre dossier.</strong>
+                        <p>Commencez par les pièces principales, puis complétez progressivement selon les demandes de JCA.</p>
                     </div>
                     @if (session('document_status'))
                         <p class="form-note" data-state="success">{{ session('document_status') }}</p>
@@ -352,7 +352,7 @@
                                 <option>Passeport</option>
                                 <option>CV</option>
                                 <option>Diplome</option>
-                                <option>Preuve d experience</option>
+                                <option>Preuve d’expérience</option>
                                 <option>Document financier</option>
                                 <option>Autre</option>
                             </select>
@@ -361,21 +361,21 @@
                         @if ($errors->any())
                             <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                         @endif
-                        <button class="button primary" type="submit">Deposer le document</button>
+                        <button class="button primary" type="submit">Déposer le document</button>
                     </form>
                 </article>
 
                 <article class="admin-panel">
                     <div class="admin-panel-head">
                         <h2>Donner mon avis</h2>
-                        <span>Retour d experience</span>
+                        <span>Retour d’expérience</span>
                     </div>
                     @if (session('review_status'))
                         <p class="form-note" data-state="success">{{ session('review_status') }}</p>
                     @endif
                     <form class="lead-form admin-form" method="post" action="{{ route('portal.reviews.store') }}">
                         @csrf
-                        <label>Votre avis<textarea name="quote" rows="5" required placeholder="Partagez votre experience avec JCA."></textarea></label>
+                        <label>Votre avis<textarea name="quote" rows="5" required placeholder="Partagez votre expérience avec JCA."></textarea></label>
                         <button class="button primary" type="submit">Envoyer mon avis</button>
                     </form>
                     <div class="admin-list">
@@ -385,11 +385,11 @@
                                 <span>{{ $review->created_at }}</span>
                                 <p>{{ $review->quote }}</p>
                                 @if ($review->admin_response)
-                                    <p><strong>Reponse JCA:</strong> {{ $review->admin_response }}</p>
+                                    <p><strong>Réponse JCA:</strong> {{ $review->admin_response }}</p>
                                 @endif
                             </div>
                         @empty
-                            <div><strong>Aucun avis</strong><span>Votre retour aide JCA a ameliorer l accompagnement.</span></div>
+                            <div><strong>Aucun avis</strong><span>Votre retour aide JCA à améliorer l’accompagnement.</span></div>
                         @endforelse
                     </div>
                 </article>
@@ -409,7 +409,7 @@
                                 @endif
                             </div>
                         @empty
-                            <div><strong>Aucun document</strong><span>Deposez vos pieces pour accelerer l analyse.</span></div>
+                            <div><strong>Aucun document</strong><span>Déposez vos pièces pour accelerer l’analyse.</span></div>
                         @endforelse
                     </div>
                 </article>
@@ -452,7 +452,7 @@
                                 @endif
                             </div>
                         @empty
-                            <div><strong>Aucun paiement</strong><span>Les factures et frais de consultation apparaitront ici.</span></div>
+                            <div><strong>Aucun paiement</strong><span>Les factures et frais de consultation apparaîtront ici.</span></div>
                         @endforelse
                     </div>
                 </article>
@@ -469,11 +469,11 @@
                                 <strong>{{ $case->reference }}</strong>
                                 <span>{{ $case->program_type }} - {{ \App\Models\ImmigrationCase::statuses()[$case->status] ?? $case->status }}</span>
                                 @if ($latestCaseHistory)
-                                    <p>{{ $latestCaseHistory->note ?: 'Derniere mise a jour du dossier.' }}</p>
+                                    <p>{{ $latestCaseHistory->note ?: 'Derniere mise à jour du dossier.' }}</p>
                                 @endif
                             </div>
                         @empty
-                            <div><strong>Aucun dossier actif</strong><span>Une demande convertie en dossier apparaitra ici.</span></div>
+                            <div><strong>Aucun dossier actif</strong><span>Une demande convertie en dossier apparaîtra ici.</span></div>
                         @endforelse
                     </div>
                 </article>

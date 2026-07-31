@@ -22,9 +22,9 @@
 
             <div class="admin-list">
                 <div><strong>Type de client</strong><span>{{ $client->profile?->type_client ?? 'Particulier' }}</span></div>
-                <div><strong>Organisation</strong><span>{{ $client->profile?->organization_name ?: 'Non indique' }}</span></div>
-                <div><strong>Pays / ville</strong><span>{{ $client->profile?->country ?: 'Non indique' }}{{ $client->profile?->city ? ' - '.$client->profile->city : '' }}</span></div>
-                <div><strong>Langue preferee</strong><span>{{ strtoupper($client->profile?->preferred_language ?? 'fr') }}</span></div>
+                <div><strong>Organisation</strong><span>{{ $client->profile?->organization_name ?: 'Non indiqué' }}</span></div>
+                <div><strong>Pays / ville</strong><span>{{ $client->profile?->country ?: 'Non indiqué' }}{{ $client->profile?->city ? ' - '.$client->profile->city : '' }}</span></div>
+                <div><strong>Langue préférée</strong><span>{{ strtoupper($client->profile?->preferred_language ?? 'fr') }}</span></div>
                 <div><strong>Statut du compte</strong><span>{{ $client->status }}</span></div>
                 <div><strong>Creation</strong><span>{{ $client->created_at->format('d/m/Y H:i') }}</span></div>
             </div>
@@ -82,7 +82,7 @@
                         <a class="admin-link" href="{{ route('admin.leads.show', $lead) }}">Traiter</a>
                     </div>
                 @empty
-                    <div><strong>Aucune demande</strong><span>Les demandes du client apparaitront ici.</span></div>
+                    <div><strong>Aucune demande</strong><span>Les demandes du client apparaîtront ici.</span></div>
                 @endforelse
             </div>
         </article>
@@ -90,17 +90,17 @@
         <article class="admin-panel">
             <div class="admin-panel-head">
                 <h2>Documents</h2>
-                <span>Pieces deposees</span>
+                <span>Pièces deposees</span>
             </div>
             <div class="admin-list">
                 @forelse ($documents as $document)
                     <div>
                         <strong>{{ $document->title }}</strong>
                         <span>{{ $document->type }} - {{ \App\Models\Document::statuses()[$document->status] ?? $document->status }} - {{ $document->created_at->format('d/m/Y H:i') }}</span>
-                        <a class="admin-link" href="{{ route('admin.documents.download', $document) }}">Telecharger</a>
+                        <a class="admin-link" href="{{ route('admin.documents.download', $document) }}">Télécharger</a>
                     </div>
                 @empty
-                    <div><strong>Aucun document</strong><span>Le client n a pas encore depose de piece.</span></div>
+                    <div><strong>Aucun document</strong><span>Le client n’a pas encore déposé de piece.</span></div>
                 @endforelse
             </div>
         </article>
@@ -120,7 +120,7 @@
                         <a class="admin-link" href="{{ route('admin.immigration-cases.show', $case) }}">Ouvrir</a>
                     </div>
                 @empty
-                    <div><strong>Aucun dossier</strong><span>Aucun dossier immigration associe a ce client.</span></div>
+                    <div><strong>Aucun dossier</strong><span>Aucun dossier immigration associé à ce client.</span></div>
                 @endforelse
             </div>
         </article>
@@ -138,7 +138,7 @@
                         <a class="admin-link" href="{{ route('admin.applications.show', $application) }}">Traiter</a>
                     </div>
                 @empty
-                    <div><strong>Aucune candidature</strong><span>Aucune candidature associee a ce client.</span></div>
+                    <div><strong>Aucune candidature</strong><span>Aucune candidature associée à ce client.</span></div>
                 @endforelse
             </div>
         </article>
@@ -152,9 +152,9 @@
             </div>
             <div class="admin-list">
                 @forelse ($appointments as $appointment)
-                    <div><strong>{{ $appointment->topic }}</strong><span>{{ $appointment->starts_at ?: 'Date a confirmer' }} - {{ $appointment->status }}</span></div>
+                    <div><strong>{{ $appointment->topic }}</strong><span>{{ $appointment->starts_at ?: 'Date à confirmer' }} - {{ $appointment->status }}</span></div>
                 @empty
-                    <div><strong>Aucun rendez-vous</strong><span>Aucun rendez-vous associe a ce client.</span></div>
+                    <div><strong>Aucun rendez-vous</strong><span>Aucun rendez-vous associé à ce client.</span></div>
                 @endforelse
             </div>
         </article>

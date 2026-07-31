@@ -6,7 +6,7 @@
                 <span>Particuliers, candidats, entreprises, ONG, institutions et partenaires</span>
             </div>
             <form class="admin-filter wide-filter" method="get" action="{{ route('admin.clients.index') }}">
-                <input name="q" value="{{ $query }}" placeholder="Nom, email, telephone">
+                <input name="q" value="{{ $query }}" placeholder="Nom, email, téléphone">
                 <select name="type_client">
                     <option value="">Tous les types</option>
                     @foreach ($clientTypes as $type)
@@ -42,15 +42,15 @@
                         <tr>
                             <td><strong>{{ $client->name }}</strong><span>{{ $client->email }} {{ $client->phone ? '- '.$client->phone : '' }}</span></td>
                             <td>{{ $client->profile?->type_client ?? 'Particulier' }}</td>
-                            <td>{{ $client->profile?->organization_name ?: 'Non indique' }}</td>
-                            <td>{{ $client->profile?->country ?: 'Non indique' }}</td>
+                            <td>{{ $client->profile?->organization_name ?: 'Non indiqué' }}</td>
+                            <td>{{ $client->profile?->country ?: 'Non indiqué' }}</td>
                             <td><strong>{{ $client->documents_count }}</strong><span>piece(s)</span></td>
                             <td><mark>{{ $client->status }}</mark></td>
                             <td>{{ $client->created_at->format('d/m/Y') }}</td>
                             <td><a class="admin-link" href="{{ route('admin.clients.show', $client) }}">Ouvrir</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="8">Aucun client trouve.</td></tr>
+                        <tr><td colspan="8">Aucun client trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

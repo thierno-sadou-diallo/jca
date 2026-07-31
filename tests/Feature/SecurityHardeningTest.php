@@ -64,7 +64,7 @@ class SecurityHardeningTest extends TestCase
         $this->actingAs($admin)
             ->get('/admin')
             ->assertOk()
-            ->assertSee('Comptes a activer')
+            ->assertSee('Comptes à activer')
             ->assertSee('Valider les nouvelles inscriptions');
     }
 

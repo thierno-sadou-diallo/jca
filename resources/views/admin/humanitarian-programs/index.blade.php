@@ -18,19 +18,19 @@
         </form>
         <div class="admin-table-wrap">
             <table class="admin-table">
-                <thead><tr><th>Programme</th><th>Pays</th><th>Domaine</th><th>Statut</th><th>Derniere mise a jour</th><th></th></tr></thead>
+                <thead><tr><th>Programme</th><th>Pays</th><th>Domaine</th><th>Statut</th><th>Derniere mise à jour</th><th></th></tr></thead>
                 <tbody>
                     @forelse ($programs as $program)
                         <tr>
                             <td><strong>{{ $program->title }}</strong><span>{{ $program->slug }}</span></td>
                             <td>{{ $program->country ?: 'International' }}</td>
-                            <td>{{ $program->focus_area ?: 'Non indique' }}</td>
+                            <td>{{ $program->focus_area ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $program->status }}</mark></td>
                             <td>{{ $program->updated_at?->format('d/m/Y') }}</td>
                             <td><a class="admin-link" href="{{ route('admin.humanitarian-programs.edit', $program) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun programme trouve.</td></tr>
+                        <tr><td colspan="6">Aucun programme trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

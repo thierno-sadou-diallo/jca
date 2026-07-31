@@ -21,7 +21,7 @@
                         <a class="admin-link" href="{{ route('admin.messages.show', $client) }}">Ouvrir</a>
                     </div>
                 @empty
-                    <div><strong>Aucune conversation</strong><span>Les messages clients apparaitront ici.</span></div>
+                    <div><strong>Aucune conversation</strong><span>Les messages clients apparaîtront ici.</span></div>
                 @endforelse
             </div>
         </article>

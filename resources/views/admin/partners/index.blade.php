@@ -29,14 +29,14 @@
                     @forelse ($partners as $partner)
                         <tr>
                             <td><strong>{{ $partner->name }}</strong><span>{{ str($partner->summary)->limit(120) }}</span></td>
-                            <td>{{ $partner->type ?: 'Non indique' }}</td>
+                            <td>{{ $partner->type ?: 'Non indiqué' }}</td>
                             <td>{{ $partner->country ?: 'International' }}</td>
-                            <td>{{ $partner->website ?: 'Non indique' }}</td>
+                            <td>{{ $partner->website ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $partner->is_featured ? 'Oui' : 'Non' }}</mark></td>
                             <td><a class="admin-link" href="{{ route('admin.partners.edit', $partner) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun partenaire trouve.</td></tr>
+                        <tr><td colspan="6">Aucun partenaire trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

@@ -29,20 +29,20 @@
         <section class="impact-story cooperation-story">
             <div>
                 <span class="eyebrow">Alliance utile</span>
-                <h2>Un reseau qui renforce les projets et ouvre des opportunites.</h2>
-                <p>Chaque partenaire ajoute une competence, un territoire, une expertise ou une capacite d action au service des clients et des programmes JCA.</p>
+                <h2>Un reseau qui renforce les projets et ouvre des opportunités.</h2>
+                <p>Chaque partenaire ajoute une competence, un territoire, une expertise ou une capacité d’action au service des clients et des programmes JCA.</p>
             </div>
             <div class="impact-story-grid">
                 <article><span>01</span><strong>Connecter</strong><p>Relier institutions, talents, entreprises et organisations.</p></article>
                 <article><span>02</span><strong>Construire</strong><p>Structurer des projets avec une gouvernance claire.</p></article>
-                <article><span>03</span><strong>Amplifier</strong><p>Valoriser les resultats et l impact des collaborations.</p></article>
+                <article><span>03</span><strong>Amplifier</strong><p>Valoriser les résultats et l impact des collaborations.</p></article>
             </div>
         </section>
 
         <section class="content-band">
             <div class="section-heading">
                 <span class="eyebrow">Partenaires mis en avant</span>
-                <h2>Un reseau oriente impact, mobilite et cooperation.</h2>
+                <h2>Un reseau oriente impact, mobilité et coopération.</h2>
             </div>
             <div class="cards-grid">
                 @forelse ($partners as $partner)
@@ -57,7 +57,7 @@
                 @empty
                     <article class="empty-state">
                         <h2>Aucun partenaire publie pour le moment.</h2>
-                        <p>Le reseau JCA sera presente ici.</p>
+                        <p>Le reseau JCA sera présente ici.</p>
                     </article>
                 @endforelse
             </div>

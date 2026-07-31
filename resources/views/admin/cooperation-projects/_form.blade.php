@@ -3,7 +3,7 @@
 <label>Titre<input name="title" value="{{ old('title', $project->title) }}" required></label>
 <div class="form-grid">
     <label>Pays<input name="country" value="{{ old('country', $project->country) }}"></label>
-    <label>Secteur<input name="sector" value="{{ old('sector', $project->sector) }}" placeholder="Education, sante, gouvernance..."></label>
+    <label>Secteur<input name="sector" value="{{ old('sector', $project->sector) }}" placeholder="Éducation, santé, gouvernance..."></label>
 </div>
 <div class="form-grid">
     <label>Date debut<input type="date" name="starts_at" value="{{ old('starts_at', $project->starts_at?->toDateString()) }}"></label>

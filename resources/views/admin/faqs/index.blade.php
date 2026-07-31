@@ -2,8 +2,8 @@
     <section class="admin-panel">
         <div class="admin-panel-head">
             <div>
-                <h2>Questions frequentes</h2>
-                <span>Reponses publiques organisees par categorie</span>
+                <h2>Questions fréquentes</h2>
+                <span>Réponses publiques organisees par categorie</span>
             </div>
             <a class="button primary" href="{{ route('admin.faqs.create') }}">Nouvelle FAQ</a>
         </div>
@@ -18,7 +18,7 @@
         </form>
         <div class="admin-table-wrap">
             <table class="admin-table">
-                <thead><tr><th>Question</th><th>Categorie</th><th>Ordre</th><th>Publiee</th><th></th></tr></thead>
+                <thead><tr><th>Question</th><th>Catégorie</th><th>Ordre</th><th>Publiée</th><th></th></tr></thead>
                 <tbody>
                     @forelse ($faqs as $faq)
                         <tr>
@@ -29,7 +29,7 @@
                             <td><a class="admin-link" href="{{ route('admin.faqs.edit', $faq) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="5">Aucune FAQ trouvee.</td></tr>
+                        <tr><td colspan="5">Aucune FAQ trouvée.</td></tr>
                     @endforelse
                 </tbody>
             </table>

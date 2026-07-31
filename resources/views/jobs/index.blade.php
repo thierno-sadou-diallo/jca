@@ -3,7 +3,7 @@
 <head>
     @include('partials.head', [
         'title' => 'Emplois internationaux | JCA',
-        'description' => 'Consultez les offres d emploi internationales publiees par JCA et trouvez des opportunites adaptees a votre profil.',
+        'description' => 'Consultez les offres d’emploi internationales publiées par JCA et trouvez des opportunités adaptées à votre profil.',
     ])
 </head>
 <body>
@@ -13,7 +13,7 @@
             <div>
                 <span class="eyebrow">Talents et employeurs</span>
                 <h1>Emplois internationaux</h1>
-                <p>Recherchez les opportunites publiees par JCA et preparez votre candidature avec un parcours clair, professionnel et securise.</p>
+                <p>Recherchez les opportunités publiées par JCA et preparez votre candidature avec un parcours clair, professionnel et sécurisé.</p>
             </div>
         </section>
 
@@ -38,7 +38,7 @@
             <div class="job-grid">
                 @if (session('application_status'))
                     <article class="empty-state">
-                        <h2>Candidature envoyee</h2>
+                        <h2>Candidature envoyée</h2>
                         <p>{{ session('application_status') }}</p>
                     </article>
                 @endif
@@ -48,7 +48,7 @@
                         <h2>{{ $job->title }}</h2>
                         <p>{{ $job->company_name ?: 'Entreprise partenaire' }} - {{ $job->city ? $job->city.', ' : '' }}{{ $job->country }}</p>
                         <div class="job-meta">
-                            <strong>{{ $job->contract_type ?: 'Contrat a definir' }}</strong>
+                            <strong>{{ $job->contract_type ?: 'Contrat à définir' }}</strong>
                             <strong>{{ $job->expires_at ? 'Limite '.$job->expires_at->format('d/m/Y') : 'Ouvert' }}</strong>
                         </div>
                         <p>{{ str($job->description)->limit(170) }}</p>
@@ -57,24 +57,24 @@
                                 @csrf
                                 <div class="form-grid">
                                     <label>Pays<input name="country" value="{{ old('country', auth()->user()->profile?->country) }}"></label>
-                                    <label>Telephone<input name="phone" value="{{ old('phone', auth()->user()->phone) }}"></label>
+                                    <label>Téléphone<input name="phone" value="{{ old('phone', auth()->user()->phone) }}"></label>
                                 </div>
-                                <label>CV<input type="file" name="resume" accept=".pdf,.doc,.docx" required></label>
-                                <label>Message<textarea name="message" rows="3" placeholder="Resumez votre experience et votre disponibilite.">{{ old('message') }}</textarea></label>
+                                <label>CV<input type="file" name="résumé" accept=".pdf,.doc,.docx" required></label>
+                                <label>Message<textarea name="message" rows="3" placeholder="Resumez votre expérience et votre disponibilité.">{{ old('message') }}</textarea></label>
                                 @if ($errors->any())
                                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                                 @endif
                                 <button class="button primary" type="submit">Postuler</button>
                             </form>
                         @else
-                            <a class="button ghost" href="{{ route('portal.register') }}">Creer un compte pour postuler</a>
+                            <a class="button ghost" href="{{ route('portal.register') }}">Créer un compte pour postuler</a>
                         @endauth
                     </article>
                 @empty
                     <article class="empty-state">
-                        <h2>Aucune offre ne correspond a votre recherche.</h2>
-                        <p>Deposez votre profil pour etre prequalifie lorsqu une opportunite compatible sera ouverte.</p>
-                        <a class="button primary" href="{{ route('portal.register') }}">Creer un compte</a>
+                        <h2>Aucune offre ne correspond à votre recherche.</h2>
+                        <p>Déposez votre profil pour être préqualifié lorsqu une opportunite compatible sera ouverte.</p>
+                        <a class="button primary" href="{{ route('portal.register') }}">Créer un compte</a>
                     </article>
                 @endforelse
             </div>

@@ -1,4 +1,4 @@
-<x-admin.layout title="Modifier l'article">
+<x-admin.layout title="Modifier l’article">
     <section class="admin-panel admin-form-panel">
         <div class="admin-panel-head">
             <div>

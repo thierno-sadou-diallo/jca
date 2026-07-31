@@ -20,13 +20,13 @@ class SiteSetting extends Model
     {
         return [
             'brand_name' => 'JCA',
-            'brand_tagline' => 'Immigration et developpement international',
-            'footer_description' => 'Cabinet international de conseil et d accompagnement specialise en immigration, mobilite internationale, recrutement international, cooperation internationale et developpement durable.',
+            'brand_tagline' => 'Immigration et développement international',
+            'footer_description' => 'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
             'contact_email' => 'contact@jca-international.com',
             'contact_phone' => '',
             'whatsapp' => '',
             'address' => '',
-            'footer_signature' => 'Des ponts entre les talents, les organisations et les opportunites.',
+            'footer_signature' => 'Des ponts entre les talents, les organisations et les opportunités.',
         ];
     }
 

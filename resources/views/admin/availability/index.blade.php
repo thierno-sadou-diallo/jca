@@ -3,7 +3,7 @@
         <article class="admin-panel">
             <div class="admin-panel-head">
                 <div>
-                    <h2>Ajouter un creneau</h2>
+                    <h2>Ajouter un créneau</h2>
                     <span>Visible au client pour la semaine actuelle et la semaine prochaine</span>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                     <label>Date<input type="date" name="date" required></label>
                     <label>Heure<input type="time" name="time" required></label>
                 </div>
-                <label>Duree
+                <label>Durée
                     <select name="duration_minutes" required>
                         <option value="30">30 minutes</option>
                         <option value="45" selected>45 minutes</option>
@@ -28,14 +28,14 @@
                 @if ($errors->any())
                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                 @endif
-                <button class="button primary" type="submit">Ajouter la disponibilite</button>
+                <button class="button primary" type="submit">Ajouter la disponibilité</button>
             </form>
         </article>
 
         <article class="admin-panel">
             <div class="admin-panel-head">
-                <h2>Creneaux a venir</h2>
-                <span>Disponibles ou reserves</span>
+                <h2>Créneaux à venir</h2>
+                <span>Disponibles ou réservés</span>
             </div>
             <div class="admin-list">
                 @forelse ($slots as $slot)
@@ -51,7 +51,7 @@
                         @endif
                     </div>
                 @empty
-                    <div><strong>Aucun creneau</strong><span>Ajoutez vos disponibilites pour ouvrir les reservations.</span></div>
+                    <div><strong>Aucun créneau</strong><span>Ajoutez vos disponibilités pour ouvrir les réservations.</span></div>
                 @endforelse
             </div>
             {{ $slots->links() }}

@@ -1,8 +1,8 @@
-<x-admin.layout title="Parametres">
+<x-admin.layout title="Paramètres">
     <section class="admin-panel admin-form-panel">
         <div class="admin-panel-head">
             <div>
-                <h2>Parametres du site</h2>
+                <h2>Paramètres du site</h2>
                 <span>Identite, contact et pied de page</span>
             </div>
             <a class="button ghost" href="{{ route('home') }}">Voir le site</a>
@@ -20,7 +20,7 @@
             <label>Description pied de page<textarea name="footer_description" rows="5">{{ old('footer_description', $settings['footer_description']) }}</textarea></label>
             <div class="form-grid">
                 <label>Email contact<input type="email" name="contact_email" value="{{ old('contact_email', $settings['contact_email']) }}" required></label>
-                <label>Telephone<input name="contact_phone" value="{{ old('contact_phone', $settings['contact_phone']) }}"></label>
+                <label>Téléphone<input name="contact_phone" value="{{ old('contact_phone', $settings['contact_phone']) }}"></label>
             </div>
             <div class="form-grid">
                 <label>WhatsApp<input name="whatsapp" value="{{ old('whatsapp', $settings['whatsapp']) }}"></label>
@@ -30,7 +30,7 @@
             @if ($errors->any())
                 <p class="form-note" data-state="error">{{ $errors->first() }}</p>
             @endif
-            <button class="button primary" type="submit">Enregistrer les parametres</button>
+            <button class="button primary" type="submit">Enregistrer les paramêtres</button>
         </form>
     </section>
 </x-admin.layout>

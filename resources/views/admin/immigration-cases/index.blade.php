@@ -3,7 +3,7 @@
         <div class="admin-panel-head">
             <div>
                 <h2>Suivi des dossiers</h2>
-                <span>Statuts, historique et prochaines etapes</span>
+                <span>Statuts, historique et prochaines étapes</span>
             </div>
             <a class="button primary" href="{{ route('admin.immigration-cases.create') }}">Nouveau dossier</a>
         </div>
@@ -38,13 +38,13 @@
                             <td><strong>{{ $case->reference }}</strong><span>{{ $case->leadRequest?->topic ?: 'Dossier direct' }}</span></td>
                             <td><strong>{{ $case->user?->name ?? 'Client non lie' }}</strong><span>{{ $case->user?->email }}</span></td>
                             <td>{{ $case->program_type }}</td>
-                            <td>{{ $case->destination_country ?: 'Non indique' }}</td>
+                            <td>{{ $case->destination_country ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $statuses[$case->status] ?? $case->status }}</mark></td>
                             <td>{{ $case->created_at->format('d/m/Y') }}</td>
                             <td><a class="admin-link" href="{{ route('admin.immigration-cases.show', $case) }}">Ouvrir</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="7">Aucun dossier immigration trouve.</td></tr>
+                        <tr><td colspan="7">Aucun dossier immigration trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

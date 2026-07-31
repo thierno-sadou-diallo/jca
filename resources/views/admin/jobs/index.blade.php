@@ -2,8 +2,8 @@
     <section class="admin-panel">
         <div class="admin-panel-head">
             <div>
-                <h2>Offres d emploi</h2>
-                <span>Creation, publication et suivi des opportunites</span>
+                <h2>Offres d’emploi</h2>
+                <span>Creation, publication et suivi des opportunités</span>
             </div>
             <a class="button primary" href="{{ route('admin.jobs.create') }}">Nouvelle offre</a>
         </div>

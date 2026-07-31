@@ -1,8 +1,8 @@
-<x-admin.layout title="Projets cooperation">
+<x-admin.layout title="Projets coopération">
     <section class="admin-panel">
         <div class="admin-panel-head">
             <div>
-                <h2>Projets de cooperation</h2>
+                <h2>Projets de coopération</h2>
                 <span>Gouvernance, financement, partenariats et impact territorial</span>
             </div>
             <a class="button primary" href="{{ route('admin.cooperation-projects.create') }}">Nouveau projet</a>
@@ -24,13 +24,13 @@
                         <tr>
                             <td><strong>{{ $project->title }}</strong><span>{{ $project->slug }}</span></td>
                             <td>{{ $project->country ?: 'International' }}</td>
-                            <td>{{ $project->sector ?: 'Non indique' }}</td>
+                            <td>{{ $project->sector ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $project->status }}</mark></td>
                             <td>{{ $project->starts_at?->format('d/m/Y') ?: 'A definir' }} - {{ $project->ends_at?->format('d/m/Y') ?: 'En cours' }}</td>
                             <td><a class="admin-link" href="{{ route('admin.cooperation-projects.edit', $project) }}">Modifier</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="6">Aucun projet trouve.</td></tr>
+                        <tr><td colspan="6">Aucun projet trouvé.</td></tr>
                     @endforelse
                 </tbody>
             </table>

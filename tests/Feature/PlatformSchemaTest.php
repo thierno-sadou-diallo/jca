@@ -149,7 +149,40 @@ class PlatformSchemaTest extends TestCase
         $this->actingAs($user)
             ->get('/inscription')
             ->assertOk()
-            ->assertSee('Creer un compte');
+            ->assertSee('Créer un compte');
+    }
+
+    public function test_appointment_cta_sends_guest_to_registration_with_intent(): void
+    {
+        $this->get('/rendez-vous')
+            ->assertRedirect('/inscription?next=rendez-vous');
+    }
+
+    public function test_appointment_cta_sends_active_client_to_booking_module(): void
+    {
+        $client = User::factory()->create([
+            'role' => 'client',
+            'status' => 'active',
+        ]);
+
+        $this->actingAs($client)
+            ->get('/rendez-vous')
+            ->assertRedirect('/espace#portal-appointment');
+    }
+
+    public function test_registration_preserves_appointment_intent_when_auto_activation_is_enabled(): void
+    {
+        config(['auth.portal_auto_activate' => true]);
+
+        $this->post('/inscription', [
+            'name' => 'Client Rendez Vous',
+            'email' => 'rendezvous@example.com',
+            'phone' => '+15145550001',
+            'password' => 'SecurePass123',
+            'password_confirmation' => 'SecurePass123',
+            'type_client' => 'Particulier',
+            'next' => 'rendez-vous',
+        ])->assertRedirect('/espace#portal-appointment');
     }
 
     public function test_client_can_upload_document_from_portal(): void
@@ -598,7 +631,7 @@ class PlatformSchemaTest extends TestCase
             ->assertOk()
             ->assertSee('Create my space')
             ->assertSee('Immigration, international recruitment and cooperation.')
-            ->assertDontSee('Creer mon espace');
+            ->assertDontSee('Créer mon espace');
 
         $this->withSession(['locale' => 'en'])
             ->get('/projets-cooperation')

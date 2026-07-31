@@ -12,7 +12,7 @@ class JobApplication extends Model
 
     public const STATUS_NEW = 'new';
     public const STATUS_IN_REVIEW = 'in_review';
-    public const STATUS_PREQUALIFIED = 'prequalified';
+    public const STATUS_PREQUALIFIED = 'préqualifiéd';
     public const STATUS_INTERVIEW = 'interview';
     public const STATUS_ACCEPTED = 'accepted';
     public const STATUS_REJECTED = 'rejected';
@@ -47,7 +47,7 @@ class JobApplication extends Model
         return [
             self::STATUS_NEW => 'Nouvelle',
             self::STATUS_IN_REVIEW => 'En analyse',
-            self::STATUS_PREQUALIFIED => 'Prequalifiee',
+            self::STATUS_PREQUALIFIED => 'Préqualifiée',
             self::STATUS_INTERVIEW => 'Entretien',
             self::STATUS_ACCEPTED => 'Acceptee',
             self::STATUS_REJECTED => 'Rejetee',

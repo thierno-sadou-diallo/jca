@@ -8,7 +8,7 @@
             <form class="admin-filter" method="get" action="{{ route('admin.leads.index') }}">
                 <select name="status">
                     <option value="">Tous les statuts</option>
-                    @foreach (['new' => 'Nouveau', 'in_review' => 'Analyse', 'contacted' => 'Contacte', 'converted' => 'Converti', 'closed' => 'Ferme'] as $value => $label)
+                    @foreach (['new' => 'Nouveau', 'in_review' => 'Analyse', 'contacted' => 'Contacté', 'converted' => 'Converti', 'closed' => 'Fermé'] as $value => $label)
                         <option value="{{ $value }}" @selected($status === $value)>{{ $label }}</option>
                     @endforeach
                 </select>
@@ -42,7 +42,7 @@
                                         <span>{{ \Carbon\Carbon::parse($lead->payload['appointment_requested_at'])->format('H:i') }}</span>
                                     @endif
                                 @else
-                                    <span>Non indique</span>
+                                    <span>Non indiqué</span>
                                 @endif
                             </td>
                             <td><strong>{{ $lead->documents_count }}</strong><span>piece(s)</span></td>
@@ -52,7 +52,7 @@
                             <td><a class="admin-link" href="{{ route('admin.leads.show', $lead) }}">Traiter</a></td>
                         </tr>
                     @empty
-                        <tr><td colspan="8">Aucune demande trouvee.</td></tr>
+                        <tr><td colspan="8">Aucune demande trouvée.</td></tr>
                     @endforelse
                 </tbody>
             </table>

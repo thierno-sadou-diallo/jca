@@ -36,8 +36,8 @@
             @endif
             <form class="lead-form admin-form" method="post" action="{{ route('admin.messages.store', $client) }}">
                 @csrf
-                <label>Sujet<input name="subject" value="{{ old('subject', 'Reponse JCA') }}"></label>
-                <label>Message<textarea name="body" rows="8" required placeholder="Ecrivez une reponse claire, professionnelle et actionnable.">{{ old('body') }}</textarea></label>
+                <label>Sujet<input name="subject" value="{{ old('subject', 'Réponse JCA') }}"></label>
+                <label>Message<textarea name="body" rows="8" required placeholder="Écrivez une réponse claire, professionnelle et actionnable.">{{ old('body') }}</textarea></label>
                 @if ($errors->any())
                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                 @endif
