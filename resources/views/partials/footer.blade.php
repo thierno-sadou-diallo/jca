@@ -19,7 +19,6 @@
         </div>
         <div>
             <h3>Informations</h3>
-            <a href="{{ $publicRoute('page.show', 'equipe') }}">Équipe</a>
             <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
             <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
             <a href="{{ $publicRoute('public.faq') }}">FAQ</a>

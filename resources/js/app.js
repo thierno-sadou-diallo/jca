@@ -50,7 +50,6 @@ const searchablePages = [
     { title: 'Immigration', url: '/immigration', terms: 'visa residence permanente permis etude travail citoyennete asile famille statut' },
     { title: 'Recrutement international', url: '/recrutement-international', terms: 'cv emploi employeur talents offre recrutement travailleurs integration' },
     { title: 'Coopération internationale', url: '/cooperation-internationale', terms: 'ong institution projet financement collectivites partenaires' },
-    { title: 'Équipe', url: '/equipe', terms: 'equipe conseil orientation competences immigration recrutement cooperation partenariat' },
     { title: 'Collaboration', url: '/collaboration', terms: 'partenariat partenaire employeur institution ong universite collaboration contacter' },
     { title: 'Confidentialité', url: '/confidentialite', terms: 'donnees documents confidentialite securite protection informations' },
     { title: 'Emplois', url: '/emplois', terms: 'offres candidature filtres cv diplomes contrat entreprise' },

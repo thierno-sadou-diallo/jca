@@ -57,7 +57,7 @@
                 ])
             </section>
         @else
-            <section class="page-hero page-hero-art {{ in_array($slug, ['qui-sommes-nous', 'services'], true) ? 'is-immersive' : '' }}">
+            <section class="page-hero page-hero-art is-immersive">
                 <div>
                     <span class="eyebrow">{{ __($page['eyebrow']) }}</span>
                     <h1>{{ __($page['title']) }}</h1>
@@ -68,13 +68,11 @@
                     </div>
                 </div>
 
-                @if (in_array($slug, ['qui-sommes-nous', 'services'], true))
-                    <div class="page-hero-collage" aria-hidden="true">
-                        <img src="{{ asset('images/jca-hero.webp') }}" alt="">
-                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
-                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
-                    </div>
-                @endif
+                <div class="page-hero-collage" aria-hidden="true">
+                    <img src="{{ asset('images/jca-hero.webp') }}" alt="">
+                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
+                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
+                </div>
             </section>
 
             @if ($slug === 'qui-sommes-nous')
@@ -101,7 +99,7 @@
                 </section>
             @endif
 
-            @if (! in_array($slug, ['qui-sommes-nous', 'services', 'collaboration', 'confidentialite'], true))
+            @if ($slug !== 'qui-sommes-nous')
                 <section class="page-visual-ribbon" aria-label="Univers visuel JCA">
                     <article>
                         <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration" loading="lazy">
