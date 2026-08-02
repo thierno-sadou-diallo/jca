@@ -19,8 +19,10 @@
         </div>
         <div>
             <h3>Informations</h3>
+            <a href="{{ $publicRoute('page.show', 'qui-sommes-nous') }}">À propos</a>
             <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
             <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
+            <a href="{{ $publicRoute('public.blog') }}">Blog</a>
             <a href="{{ $publicRoute('public.faq') }}">FAQ</a>
             <a href="{{ $publicRoute('legal.show', 'mentions-legales') }}">Mentions légales</a>
             <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">Politique de confidentialité</a>

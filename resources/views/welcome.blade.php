@@ -63,6 +63,23 @@
             <a href="{{ $publicRoute('page.show', 'collaboration') }}"><strong>{{ __('Collaborer avec JCA') }}</strong><span>{{ __('Employeurs, institutions et partenaires') }}</span></a>
         </section>
 
+        <section class="home-focus-strip" aria-label="Priorités JCA">
+            <article>
+                <span class="service-icon service-icon-2" aria-hidden="true"></span>
+                <div>
+                    <strong>{{ __('Talents') }}</strong>
+                    <p>{{ __('Relier les profils aux bons projets.') }}</p>
+                </div>
+            </article>
+            <article>
+                <span class="service-icon service-icon-3" aria-hidden="true"></span>
+                <div>
+                    <strong>{{ __('Partenariats') }}</strong>
+                    <p>{{ __('Structurer des collaborations qui tiennent.') }}</p>
+                </div>
+            </article>
+        </section>
+
         <section class="content-band target-band">
             <div class="section-heading">
                 <span class="eyebrow">{{ __('Pour qui') }}</span>
@@ -72,59 +89,22 @@
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'recrutement-international') }}">
                     <span class="target-icon employer-icon" aria-hidden="true"></span>
                     <h3>{{ __('Employeur') }}</h3>
-                    <p>{{ __('Identifier des profils, structurer un besoin et préparer une mobilité professionnelle fiable.') }}</p>
+                    <p>{{ __('Recruter, mobiliser et fidéliser les meilleurs talents étrangers avec un parcours clair et professionnel.') }}</p>
+                    <span class="target-action">{{ __('Accéder') }}</span>
                 </a>
-                <a class="target-card reveal" href="{{ $publicRoute('jobs.index') }}">
+                <a class="target-card reveal" href="{{ $publicRoute('page.show', 'immigration') }}">
                     <span class="target-icon candidate-icon" aria-hidden="true"></span>
                     <h3>{{ __('Candidat') }}</h3>
-                    <p>{{ __('Comprendre vos options, présenter votre profil et avancer avec un accompagnement lisible.') }}</p>
+                    <p>{{ __('Étudiants, travailleurs et investisseurs: comprendre vos options et préparer un projet de mobilité solide.') }}</p>
+                    <span class="target-action">{{ __('Accéder') }}</span>
                 </a>
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'collaboration') }}">
                     <span class="target-icon partner-icon" aria-hidden="true"></span>
                     <h3>{{ __('Partenaire') }}</h3>
-                    <p>{{ __('Construire une collaboration internationale autour d’objectifs concrets et mesurables.') }}</p>
+                    <p>{{ __('Institutions, ONG et gouvernements: structurer des collaborations utiles, mesurables et durables.') }}</p>
+                    <span class="target-action">{{ __('Accéder') }}</span>
                 </a>
             </div>
-        </section>
-
-        <section class="home-manifesto">
-            <div class="manifesto-copy">
-                <span class="eyebrow">{{ __('Notre boussole') }}</span>
-                <h2>{{ __('Un cabinet qui transforme l’intention en feuille de route.') }}</h2>
-                <p>{{ __('Chaque projet international commence avec une question simple: comment avancer sans se perdre? JCA apporte une méthode, une lecture professionnelle et un cadre de confiance pour décider, préparer et agir.') }}</p>
-            </div>
-            <div class="manifesto-grid">
-                <article class="reveal">
-                    <span class="service-icon service-icon-1" aria-hidden="true"></span>
-                    <h3>{{ __('Mission') }}</h3>
-                    <p>{{ __('Clarifier les parcours, organiser les démarches et accompagner les décisions importantes.') }}</p>
-                </article>
-                <article class="reveal">
-                    <span class="service-icon service-icon-3" aria-hidden="true"></span>
-                    <h3>{{ __('Vision') }}</h3>
-                    <p>{{ __('Créer des ponts solides entre talents, organisations et opportunités internationales.') }}</p>
-                </article>
-                <article class="reveal">
-                    <span class="service-icon service-icon-5" aria-hidden="true"></span>
-                    <h3>{{ __('Valeurs') }}</h3>
-                    <p>{{ __('Exigence, intégrité, confidentialité, écoute et responsabilité dans chaque accompagnement.') }}</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="home-gallery" aria-label="Images JCA">
-            <article>
-                <img src="{{ asset('images/jca-hero.webp') }}" alt="Accompagnement international JCA" loading="lazy">
-                <div><span>{{ __('Conseil') }}</span><strong>{{ __('Voir plus loin, décider plus clairement.') }}</strong></div>
-            </article>
-            <article>
-                <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
-                <div><span>{{ __('Talents') }}</span><strong>{{ __('Relier les profils aux bons projets.') }}</strong></div>
-            </article>
-            <article>
-                <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Partenariats internationaux" loading="lazy">
-                <div><span>{{ __('Partenariats') }}</span><strong>{{ __('Structurer des collaborations qui tiennent.') }}</strong></div>
-            </article>
         </section>
 
         @if ($latestJobs->isNotEmpty())

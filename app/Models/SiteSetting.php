@@ -27,6 +27,8 @@ class SiteSetting extends Model
             'whatsapp' => '',
             'address' => '',
             'footer_signature' => 'Des ponts entre les talents, les organisations et les opportunités.',
+            'collaboration_document_path' => '',
+            'collaboration_document_name' => '',
         ];
     }
 

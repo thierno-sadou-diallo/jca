@@ -34,6 +34,7 @@ use App\Http\Controllers\PortalProfileController;
 use App\Http\Controllers\PortalRegisterController;
 use App\Http\Controllers\PortalReviewController;
 use App\Http\Controllers\PublicContentController;
+use App\Http\Controllers\PublicTestimonialController;
 use App\Http\Middleware\EnsureAccountIsActive;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use App\Models\Article;
@@ -43,16 +44,17 @@ use App\Models\JobPosting;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Storage;
 
 $pages = [
     'qui-sommes-nous' => [
-        'title' => 'Qui sommes-nous',
+        'title' => 'À propos',
         'eyebrow' => 'Cabinet international de conseil',
-        'intro' => 'JCA accompagne les personnes, employeurs et partenaires dans leurs projets internationaux.',
+        'intro' => 'JCA — Juristyle Conseil & Accompagnement — accompagne particuliers, entreprises, institutions et organisations dans leurs projets d’immigration, de mobilité et de développement international.',
         'sections' => [
-            ['Notre mission', 'Clarifier les démarches, préparer les dossiers et accompagner les décisions importantes.'],
-            ['Notre approche', 'Une analyse simple, confidentielle et adaptée au pays, au profil et à l’objectif.'],
-            ['Nos publics', 'Candidats, employeurs, institutions et partenaires internationaux.'],
+            ['Notre vision', 'Être une référence internationale du conseil en mobilité et développement.'],
+            ['Notre mission', 'Faciliter la mobilité des talents et soutenir le développement durable.'],
+            ['Nos valeurs', 'Six engagements qui guident chacune de nos missions.'],
         ],
     ],
     'equipe' => [
@@ -83,10 +85,10 @@ $pages = [
         'eyebrow' => 'Solutions internationales',
         'intro' => 'Un partenaire stratégique pour les projets qui traversent les frontières.',
         'sections' => [
-            ['Immigration & mobilité internationale', ''],
-            ['Recrutement international', ''],
-            ['Coopération internationale', ''],
-            ['Service-conseils stratégique', ''],
+            ['Immigration & mobilité internationale', 'Visas, résidence permanente, regroupement familial et parrainage.'],
+            ['Recrutement international', 'Sourcing, sélection et intégration de talents à l’échelle mondiale.'],
+            ['Coopération internationale', 'Ponts institutionnels entre gouvernements, ONG et partenaires.'],
+            ['Services-conseils stratégiques', 'Accompagnement sur mesure des dirigeants et organisations.'],
         ],
     ],
     'immigration' => [
@@ -457,10 +459,24 @@ Route::get('/sitemap.xml', function () use ($pages, $legalPages) {
 Route::post('/demandes', [LeadRequestController::class, 'store'])
     ->middleware('throttle:lead-requests')
     ->name('lead-requests.store');
+Route::post('/temoignages', [PublicTestimonialController::class, 'store'])
+    ->middleware('throttle:lead-requests')
+    ->name('public.testimonials.store');
 Route::get('/blog', [PublicContentController::class, 'blog'])->name('public.blog');
 Route::get('/actualites', [PublicContentController::class, 'news'])->name('public.news');
 Route::get('/articles/{article:slug}', [PublicContentController::class, 'article'])->name('public.articles.show');
 Route::get('/faq', [PublicContentController::class, 'faq'])->name('public.faq');
+Route::get('/dossier-collaboration', function () {
+    $settings = \App\Models\SiteSetting::publicValues();
+    $path = $settings['collaboration_document_path'] ?? '';
+
+    abort_if($path === '' || ! Storage::disk('public')->exists($path), 404);
+
+    return Storage::disk('public')->download(
+        $path,
+        $settings['collaboration_document_name'] ?: 'dossier-collaboration-jca.pdf',
+    );
+})->name('public.collaboration-document.download');
 Route::get('/partenaires', [PublicContentController::class, 'partners'])->name('public.partners');
 Route::get('/projets-cooperation', [PublicContentController::class, 'cooperationProjects'])->name('public.cooperation-projects');
 Route::get('/projets-cooperation/{project:slug}', [PublicContentController::class, 'cooperationProject'])->name('public.cooperation-projects.show');

@@ -76,11 +76,23 @@
             </section>
 
             @if ($slug === 'qui-sommes-nous')
-                <section class="story-showcase">
-                    <div class="story-copy">
-                        <span class="eyebrow">{{ __('Identite JCA') }}</span>
-                        <h2>{{ __('Un accompagnement clair pour les projets internationaux.') }}</h2>
-                        <p>{{ __('JCA aide chaque client a comprendre ses options, organiser les documents utiles et avancer avec un suivi confidentiel.') }}</p>
+                <section class="story-showcase about-showcase">
+                    <div class="story-copy about-copy">
+                        <span class="eyebrow">{{ __('À propos') }}</span>
+                        <h2>{{ __('Un cabinet international guidé par le sens et la rigueur.') }}</h2>
+                        <p>{{ __('JCA — Juristyle Conseil & Accompagnement — accompagne particuliers, entreprises, institutions et organisations dans leurs projets d’immigration, de mobilité et de développement international.') }}</p>
+                        <div class="about-pillars">
+                            <article>
+                                <span>{{ __('Notre vision') }}</span>
+                                <h3>{{ __('Être une référence internationale du conseil en mobilité et développement.') }}</h3>
+                                <p>{{ __('Nous croyons en un monde où le talent et l’ambition peuvent circuler librement, porter des projets utiles, et contribuer à un développement durable et inclusif.') }}</p>
+                            </article>
+                            <article>
+                                <span>{{ __('Notre mission') }}</span>
+                                <h3>{{ __('Faciliter la mobilité des talents et soutenir le développement durable.') }}</h3>
+                                <p>{{ __('De l’analyse stratégique au suivi opérationnel, nous concevons des solutions sur mesure, alliant expertise juridique, connaissance des marchés et sensibilité aux réalités locales.') }}</p>
+                            </article>
+                        </div>
                     </div>
                     <div class="story-gallery" aria-label="Univers JCA">
                         <article>
@@ -95,6 +107,21 @@
                             <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
                             <strong>{{ __('Partenaires') }}</strong>
                         </article>
+                    </div>
+                </section>
+
+                <section class="about-values-section">
+                    <div class="section-heading">
+                        <span class="eyebrow">{{ __('Nos valeurs') }}</span>
+                        <h2>{{ __('Six engagements qui guident chacune de nos missions.') }}</h2>
+                    </div>
+                    <div class="about-values-grid">
+                        <article><span>01</span><h3>{{ __('Excellence') }}</h3><p>{{ __('Une exigence de qualité dans chaque livrable.') }}</p></article>
+                        <article><span>02</span><h3>{{ __('Intégrité') }}</h3><p>{{ __('Une éthique irréprochable au service du client.') }}</p></article>
+                        <article><span>03</span><h3>{{ __('Professionnalisme') }}</h3><p>{{ __('Des équipes formées aux meilleurs standards internationaux.') }}</p></article>
+                        <article><span>04</span><h3>{{ __('Innovation') }}</h3><p>{{ __('Des méthodes agiles au service de résultats concrets.') }}</p></article>
+                        <article><span>05</span><h3>{{ __('Inclusion') }}</h3><p>{{ __('La diversité comme moteur de performance.') }}</p></article>
+                        <article><span>06</span><h3>{{ __('Responsabilité sociale') }}</h3><p>{{ __('Un impact positif et durable pour les communautés.') }}</p></article>
                     </div>
                 </section>
             @endif
@@ -157,6 +184,35 @@
                         </article>
                     </div>
                 </section>
+
+                <section class="collaboration-contact-showcase">
+                    <div class="collaboration-contact-copy">
+                        <span class="eyebrow">{{ __('Contact partenaire') }}</span>
+                        <h2>{{ __('Parlez-nous de votre organisation.') }}</h2>
+                        <p>{{ __('JCA analyse les besoins, le cadre de collaboration et les prochaines étapes avec une approche claire et confidentielle.') }}</p>
+                    </div>
+                    <div class="collaboration-contact-grid">
+                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}">
+                            <span>{{ __('Email') }}</span>
+                            <strong>{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}</strong>
+                        </a>
+                        <a href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '+221789685116') }}">
+                            <span>{{ __('Téléphone / WhatsApp') }}</span>
+                            <strong>{{ $siteSettings['contact_phone'] ?? '78 968 51 16' }}</strong>
+                        </a>
+                        @if (! empty($siteSettings['collaboration_document_path']))
+                            <a class="collaboration-document-card" href="{{ route('public.collaboration-document.download') }}">
+                                <span>{{ __('Dossier de collaboration') }}</span>
+                                <strong>{{ $siteSettings['collaboration_document_name'] ?: __('Lire et télécharger') }}</strong>
+                            </a>
+                        @else
+                            <a class="collaboration-document-card" href="{{ $publicRoute('page.show', 'contact') }}">
+                                <span>{{ __('Dossier de collaboration') }}</span>
+                                <strong>{{ __('Disponible sur demande') }}</strong>
+                            </a>
+                        @endif
+                    </div>
+                </section>
             @endif
 
             @php
@@ -166,42 +222,91 @@
                     'Immigration & mobilité internationale' => 'Immigration & international mobility',
                     'Recrutement international' => 'International recruitment',
                     'Coopération internationale' => 'International cooperation',
-                    'Service-conseils stratégique' => 'Strategic advisory services',
+                    'Services-conseils stratégiques' => 'Strategic advisory services',
+                ];
+                $serviceDetails = [
+                    [
+                        'id' => 'immigration-mobilite',
+                        'title' => 'Immigration & mobilité internationale',
+                        'summary' => 'Visas, résidence permanente, regroupement familial et parrainage.',
+                        'description' => 'JCA accompagne les personnes, familles, étudiants, travailleurs et employeurs dans la préparation de parcours migratoires lisibles. L’accompagnement porte sur l’analyse du profil, la cohérence documentaire, les étapes administratives, les risques à anticiper et les prochaines décisions à prendre.',
+                        'points' => ['Analyse du profil', 'Préparation documentaire', 'Suivi des étapes sensibles'],
+                        'image' => 'jca-immigration.webp',
+                    ],
+                    [
+                        'id' => 'recrutement-international',
+                        'title' => 'Recrutement international',
+                        'summary' => 'Sourcing, sélection et intégration de talents à l’échelle mondiale.',
+                        'description' => 'JCA aide les employeurs à clarifier leurs besoins, identifier des profils qualifiés et organiser un processus de recrutement international plus fiable. Le service relie préqualification, coordination candidat, mobilité professionnelle et préparation de l’intégration.',
+                        'points' => ['Sourcing ciblé', 'Préqualification des talents', 'Coordination employeur-candidat'],
+                        'image' => 'jca-recruitment.webp',
+                    ],
+                    [
+                        'id' => 'cooperation-internationale',
+                        'title' => 'Coopération internationale',
+                        'summary' => 'Ponts institutionnels entre gouvernements, ONG et partenaires.',
+                        'description' => 'JCA structure des collaborations entre institutions, organisations, employeurs et partenaires techniques. L’objectif est de transformer une intention de partenariat en cadre de travail clair: objectifs, rôles, calendrier, gouvernance et résultats attendus.',
+                        'points' => ['Objectifs et gouvernance', 'Partenaires et territoires', 'Résultats mesurables'],
+                        'image' => 'jca-cooperation.webp',
+                    ],
+                    [
+                        'id' => 'services-conseils',
+                        'title' => 'Services-conseils stratégiques',
+                        'summary' => 'Accompagnement sur mesure des dirigeants et organisations.',
+                        'description' => 'JCA conseille les dirigeants, organisations et porteurs de projets dans les décisions internationales sensibles. Le service combine diagnostic, feuille de route, analyse des risques, priorisation des actions et préparation des échanges avec les parties prenantes.',
+                        'points' => ['Diagnostic stratégique', 'Analyse des risques', 'Feuille de route opérationnelle'],
+                        'image' => 'jca-cooperation.webp',
+                    ],
                 ];
             @endphp
 
-            <section class="content-band {{ $usesIcons ? 'services-minimal-band' : '' }}">
-                <div class="section-heading">
-                    <span class="eyebrow">{{ __($usesIcons ? $page['eyebrow'] : 'Expertise') }}</span>
-                    <h2>
-                        @if ($slug === 'services')
-                            {{ __('Choisissez le service dont vous avez besoin.') }}
-                        @elseif ($slug === 'collaboration')
-                            {{ __('Collaborer avec JCA, simplement.') }}
-                        @elseif ($slug === 'confidentialite')
-                            {{ __('Vos informations restent encadrees.') }}
-                        @else
-                            {{ __('Un accompagnement structure et confidentiel') }}
-                        @endif
-                    </h2>
-                </div>
-                <div class="{{ $usesIcons ? 'service-icon-grid' : 'cards-grid' }}">
-                    @foreach ($page['sections'] as $section)
-                        <article class="{{ $usesIcons ? 'service-icon-card reveal' : 'info-card reveal' }}">
-                            @if ($usesIcons)
+            @if ($slug === 'services')
+                @php
+                    $publishedTestimonials = \Illuminate\Support\Facades\Schema::hasTable('testimonials')
+                        ? \Illuminate\Support\Facades\DB::table('testimonials')->where('is_published', true)->latest()->limit(3)->get()
+                        : collect();
+                @endphp
+
+                <section class="services-excellence">
+                    <div class="section-heading">
+                        <span class="eyebrow">{{ __('Expertises JCA') }}</span>
+                        <h2>{{ __('Un cabinet, quatre domaines d’excellence.') }}</h2>
+                        <p>{{ __('Chaque mission est confiée à une équipe pluridisciplinaire, réunie autour d’un objectif : servir vos ambitions avec rigueur, intégrité et une vision internationale.') }}</p>
+                    </div>
+                    <div class="service-domain-grid">
+                        @foreach ($serviceDetails as $service)
+                            <article class="service-domain-card reveal">
                                 <span class="service-icon service-icon-{{ $loop->iteration }}" aria-hidden="true"></span>
-                            @else
-                                <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
-                            @endif
-                            <h3>{{ app()->getLocale() === 'en' ? ($sectionTranslations[$section[0]] ?? __($section[0])) : __($section[0]) }}</h3>
-                            @if (($section[1] ?? '') !== '')
-                                <p>{{ __($section[1]) }}</p>
-                            @endif
+                                <h3>{{ __(app()->getLocale() === 'en' ? ($sectionTranslations[$service['title']] ?? $service['title']) : $service['title']) }}</h3>
+                                <p>{{ __($service['summary']) }}</p>
+                                <a class="button ghost" href="#{{ $service['id'] }}">{{ __('En savoir plus') }}</a>
+                            </article>
+                        @endforeach
+                    </div>
+                </section>
+
+                <section class="service-detail-stack">
+                    @foreach ($serviceDetails as $service)
+                        <article class="service-detail-panel reveal" id="{{ $service['id'] }}">
+                            <div class="service-detail-image">
+                                <img src="{{ asset('images/'.$service['image']) }}" alt="{{ $service['title'] }}" loading="lazy">
+                            </div>
+                            <div class="service-detail-copy">
+                                <span class="eyebrow">{{ __('Service') }}</span>
+                                <h2>{{ __(app()->getLocale() === 'en' ? ($sectionTranslations[$service['title']] ?? $service['title']) : $service['title']) }}</h2>
+                                <p>{{ __($service['description']) }}</p>
+                                <ul class="service-detail-points" aria-label="{{ __('Points clés') }}">
+                                    @foreach ($service['points'] as $point)
+                                        <li>{{ __($point) }}</li>
+                                    @endforeach
+                                </ul>
+                                <a class="button primary" href="{{ route('public.appointments') }}">{{ __('Prendre rendez-vous') }}</a>
+                            </div>
                         </article>
                     @endforeach
-                </div>
+                </section>
 
-                @if ($slug === 'services')
+                <section class="service-proof-band">
                     <div class="service-trust-card reveal">
                         <span class="service-icon service-icon-5" aria-hidden="true"></span>
                         <div>
@@ -210,8 +315,87 @@
                             <p>{{ __('Après l’ouverture d’un dossier, le client peut transmettre ses documents, suivre les demandes et conserver les échanges importants dans un espace organisé et confidentiel.') }}</p>
                         </div>
                     </div>
-                @endif
-            </section>
+                    <div class="service-trust-card reveal">
+                        <span class="service-icon service-icon-6" aria-hidden="true"></span>
+                        <div>
+                            <span class="eyebrow">{{ __('Témoignages') }}</span>
+                            <h3>{{ __('Des retours suivis et modérés') }}</h3>
+                            <p>{{ __('Les témoignages publiés sont sélectionnés avec consentement, modération et souci de confidentialité afin de refléter une expérience réelle sans promettre de résultat.') }}</p>
+                        </div>
+                    </div>
+                    @forelse ($publishedTestimonials as $testimonial)
+                        <figure class="service-testimonial-card reveal">
+                            <blockquote>“{{ $testimonial->quote }}”</blockquote>
+                            <figcaption>
+                                <strong>{{ $testimonial->author_name }}</strong>
+                                <span>{{ $testimonial->author_role ?? __('Client JCA') }}{{ filled($testimonial->organization ?? null) ? ' - '.$testimonial->organization : '' }}</span>
+                            </figcaption>
+                        </figure>
+                    @empty
+                        <figure class="service-testimonial-card service-testimonial-empty reveal">
+                            <blockquote>{{ __('Les témoignages publiés par les visiteurs apparaîtront ici.') }}</blockquote>
+                            <figcaption>
+                                <strong>{{ __('Avis visiteurs') }}</strong>
+                                <span>{{ __('Publication directe') }}</span>
+                            </figcaption>
+                        </figure>
+                    @endforelse
+                </section>
+
+                <section class="testimonial-submit-section" id="temoignage">
+                    <div class="testimonial-submit-copy">
+                        <span class="eyebrow">{{ __('Témoignage') }}</span>
+                        <h2>{{ __('Partagez votre expérience avec JCA.') }}</h2>
+                        <p>{{ __('Votre témoignage aide les futurs visiteurs à mieux comprendre l’accompagnement et s’affiche directement dans la page Services.') }}</p>
+                    </div>
+                    <form class="lead-form testimonial-form" method="post" action="{{ route('public.testimonials.store') }}">
+                        @csrf
+                        <label class="honeypot" aria-hidden="true">Site web<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                        <div class="form-grid">
+                            <label>{{ __('Nom complet') }}<input name="author_name" value="{{ old('author_name') }}" required></label>
+                            <label>{{ __('Profil') }}<input name="author_role" value="{{ old('author_role') }}" placeholder="{{ __('Client, candidat, employeur, partenaire') }}"></label>
+                        </div>
+                        <label>{{ __('Organisation') }}<input name="organization" value="{{ old('organization') }}"></label>
+                        <label>{{ __('Votre témoignage') }}<textarea name="quote" rows="5" required>{{ old('quote') }}</textarea></label>
+                        @if (session('testimonial_status'))
+                            <p class="form-note" data-state="success">{{ session('testimonial_status') }}</p>
+                        @elseif ($errors->has('quote') || $errors->has('author_name'))
+                            <p class="form-note" data-state="error">{{ $errors->first('quote') ?: $errors->first('author_name') }}</p>
+                        @endif
+                        <button class="button primary" type="submit">{{ __('Envoyer le témoignage') }}</button>
+                    </form>
+                </section>
+            @elseif ($slug !== 'qui-sommes-nous')
+                <section class="content-band {{ $usesIcons ? 'services-minimal-band' : '' }}">
+                    <div class="section-heading">
+                        <span class="eyebrow">{{ __($usesIcons ? $page['eyebrow'] : 'Expertise') }}</span>
+                        <h2>
+                            @if ($slug === 'collaboration')
+                                {{ __('Collaborer avec JCA, simplement.') }}
+                            @elseif ($slug === 'confidentialite')
+                                {{ __('Vos informations restent encadrees.') }}
+                            @else
+                                {{ __('Un accompagnement structure et confidentiel') }}
+                            @endif
+                        </h2>
+                    </div>
+                    <div class="{{ $usesIcons ? 'service-icon-grid' : 'cards-grid' }}">
+                        @foreach ($page['sections'] as $section)
+                            <article class="{{ $usesIcons ? 'service-icon-card reveal' : 'info-card reveal' }}">
+                                @if ($usesIcons)
+                                    <span class="service-icon service-icon-{{ $loop->iteration }}" aria-hidden="true"></span>
+                                @else
+                                    <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                                @endif
+                                <h3>{{ app()->getLocale() === 'en' ? ($sectionTranslations[$section[0]] ?? __($section[0])) : __($section[0]) }}</h3>
+                                @if (($section[1] ?? '') !== '')
+                                    <p>{{ __($section[1]) }}</p>
+                                @endif
+                            </article>
+                        @endforeach
+                    </div>
+                </section>
+            @endif
 
             <section class="cta-band">
                 <span class="eyebrow">{{ __('Prochaine etape') }}</span>

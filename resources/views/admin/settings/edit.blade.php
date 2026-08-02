@@ -10,7 +10,7 @@
         @if (session('status'))
             <p class="form-note" data-state="success">{{ session('status') }}</p>
         @endif
-        <form class="lead-form admin-form" method="post" action="{{ route('admin.settings.update') }}">
+        <form class="lead-form admin-form" method="post" action="{{ route('admin.settings.update') }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <div class="form-grid">
@@ -27,6 +27,22 @@
                 <label>Adresse<input name="address" value="{{ old('address', $settings['address']) }}"></label>
             </div>
             <label>Signature pied de page<input name="footer_signature" value="{{ old('footer_signature', $settings['footer_signature']) }}"></label>
+            <div class="admin-upload-panel">
+                <div>
+                    <strong>Dossier de collaboration</strong>
+                    <span>PDF, Word - 10 Mo max. Ce document sera visible et téléchargeable depuis la page Collaboration.</span>
+                </div>
+                @if (! empty($settings['collaboration_document_path']))
+                    <a class="admin-link" href="{{ route('public.collaboration-document.download') }}" target="_blank" rel="noopener">
+                        {{ $settings['collaboration_document_name'] ?: 'Dossier actuel' }}
+                    </a>
+                    <label class="check-inline">
+                        <input type="checkbox" name="remove_collaboration_document" value="1">
+                        Supprimer le dossier actuel
+                    </label>
+                @endif
+                <label>Joindre un nouveau dossier<input type="file" name="collaboration_document" accept=".pdf,.doc,.docx"></label>
+            </div>
             @if ($errors->any())
                 <p class="form-note" data-state="error">{{ $errors->first() }}</p>
             @endif

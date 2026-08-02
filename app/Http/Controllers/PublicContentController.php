@@ -32,8 +32,46 @@ class PublicContentController extends Controller
 
     public function faq(): View
     {
+        $publishedFaqs = Faq::where('is_published', true)->orderBy('sort_order')->get();
+        $defaultFaqs = collect([
+                (object) [
+                    'category' => 'Immigration & mobilité',
+                    'question' => 'Comment savoir si mon profil est admissible à un projet de mobilité?',
+                    'answer' => 'JCA commence par analyser votre objectif, votre parcours, votre pays cible, vos délais et vos documents disponibles. Cette lecture permet d’identifier les options réalistes et les étapes à préparer.',
+                ],
+                (object) [
+                    'category' => 'Immigration & mobilité',
+                    'question' => 'JCA garantit-il l’obtention d’un visa ou d’un permis?',
+                    'answer' => 'Non. Aucune décision administrative ne peut être garantie. JCA sécurise la stratégie, la cohérence documentaire et la préparation du dossier afin de réduire les erreurs et les zones de risque.',
+                ],
+                (object) [
+                    'category' => 'Rendez-vous',
+                    'question' => 'Puis-je prendre rendez-vous sans créer de compte?',
+                    'answer' => 'Oui. Le formulaire de rendez-vous est accessible directement depuis le site public. Le compte client devient utile ensuite lorsqu’un dossier doit être suivi avec documents, messages et étapes.',
+                ],
+                (object) [
+                    'category' => 'Employeurs',
+                    'question' => 'Comment JCA accompagne les employeurs?',
+                    'answer' => 'JCA aide les employeurs à clarifier les besoins, identifier des profils, organiser la préqualification et préparer la mobilité professionnelle des talents étrangers.',
+                ],
+                (object) [
+                    'category' => 'Partenariats',
+                    'question' => 'Quels partenaires peuvent collaborer avec JCA?',
+                    'answer' => 'Les institutions, ONG, gouvernements, organismes de formation, employeurs et partenaires techniques peuvent proposer une collaboration structurée autour d’objectifs mesurables.',
+                ],
+                (object) [
+                    'category' => 'Confidentialité',
+                    'question' => 'Mes informations et documents sont-ils protégés?',
+                    'answer' => 'Les informations transmises sont traitées avec discrétion et utilisées uniquement pour comprendre la demande, préparer une réponse ou suivre un dossier ouvert avec JCA.',
+                ],
+            ]);
+        $faqs = $defaultFaqs
+            ->concat($publishedFaqs)
+            ->unique(fn ($faq) => $faq->question)
+            ->values();
+
         return view('public.faq', [
-            'faqs' => Faq::where('is_published', true)->orderBy('sort_order')->get()->groupBy(fn (Faq $faq) => $faq->category ?: 'General'),
+            'faqs' => $faqs->groupBy(fn ($faq) => $faq->category ?: 'General'),
         ]);
     }
 

@@ -98,4 +98,25 @@ class LeadRequestTest extends TestCase
             'preferred_channel' => 'Téléphone',
         ]);
     }
+
+    public function test_public_visitor_can_submit_published_testimonial(): void
+    {
+        $response = $this->post('/temoignages', [
+            'author_name' => 'Mamadou Ndiaye',
+            'author_role' => 'Employeur',
+            'organization' => 'Groupe Horizon',
+            'quote' => 'JCA nous a aidés à structurer un besoin de recrutement international avec méthode, clarté et professionnalisme.',
+        ]);
+
+        $response->assertRedirect();
+        $response->assertSessionHas('testimonial_status');
+
+        $this->assertDatabaseHas('testimonials', [
+            'author_name' => 'Mamadou Ndiaye',
+            'author_role' => 'Employeur',
+            'organization' => 'Groupe Horizon',
+            'is_published' => true,
+            'status' => 'published',
+        ]);
+    }
 }

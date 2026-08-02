@@ -47,12 +47,14 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
 const searchablePages = [
+    { title: 'À propos', url: '/qui-sommes-nous', terms: 'jca entreprise mission vision valeurs presentation cabinet' },
     { title: 'Immigration', url: '/immigration', terms: 'visa residence permanente permis etude travail citoyennete asile famille statut' },
     { title: 'Recrutement international', url: '/recrutement-international', terms: 'cv emploi employeur talents offre recrutement travailleurs integration' },
     { title: 'Coopération internationale', url: '/cooperation-internationale', terms: 'ong institution projet financement collectivites partenaires' },
     { title: 'Collaboration', url: '/collaboration', terms: 'partenariat partenaire employeur institution ong universite collaboration contacter' },
     { title: 'Confidentialité', url: '/confidentialite', terms: 'donnees documents confidentialite securite protection informations' },
     { title: 'Emplois', url: '/emplois', terms: 'offres candidature filtres cv diplomes contrat entreprise' },
+    { title: 'Blog', url: '/blog', terms: 'articles conseils publications actualites analyses immigration recrutement cooperation' },
     { title: 'Consultation', url: '/consultation', terms: 'rendez-vous paiement calendrier confirmation accompagnement strategie' },
     { title: 'Contact', url: '/contact', terms: 'telephone whatsapp email formulaire demande' },
     { title: 'FAQ', url: '/faq', terms: 'questions delais garanties visa entreprise cv' },
