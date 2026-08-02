@@ -583,6 +583,8 @@ return [
     'Témoignage' => 'Testimonial',
     'Partagez votre expérience avec JCA.' => 'Share your experience with JCA.',
     'Votre témoignage aide les futurs visiteurs à mieux comprendre l’accompagnement et s’affiche directement dans la page Services.' => 'Your testimonial helps future visitors better understand the support experience and appears directly on the Services page.',
+    'Des expériences partagées par les visiteurs JCA.' => 'Experiences shared by JCA visitors.',
+    'Les visiteurs peuvent publier directement leur avis afin d’aider d’autres personnes, employeurs et partenaires à mieux comprendre l’accompagnement JCA.' => 'Visitors can publish their review directly to help other people, employers and partners better understand JCA support.',
     'Profil' => 'Profile',
     'Client, candidat, employeur, partenaire' => 'Client, candidate, employer, partner',
     'Votre témoignage' => 'Your testimonial',

@@ -78,8 +78,8 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    padding: 16px clamp(18px, 5vw, 72px);
+    gap: 14px;
+    padding: 14px clamp(16px, 4vw, 54px);
     background: rgba(255, 255, 255, .92);
     border-bottom: 1px solid rgba(230, 233, 239, .86);
     backdrop-filter: blur(18px);
@@ -95,6 +95,7 @@ form {
     align-items: center;
     gap: 12px;
     min-width: 0;
+    flex: 0 1 240px;
 }
 
 .brand-mark {
@@ -138,11 +139,14 @@ form {
 
 .main-nav {
     display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: clamp(8px, 1vw, 14px);
     color: #344054;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -183,7 +187,7 @@ form {
     align-items: center;
     justify-content: center;
     min-height: 46px;
-    padding: 0 20px;
+    padding: 0 16px;
     border-radius: 8px;
     font-weight: 700;
     text-align: center;
@@ -457,12 +461,13 @@ h1 {
     background:
         radial-gradient(circle at 78% 24%, rgba(213, 173, 71, .22), transparent 28%),
         radial-gradient(circle at 86% 76%, rgba(31, 138, 132, .28), transparent 30%),
-        linear-gradient(90deg, rgba(5, 18, 35, .98) 0%, rgba(8, 27, 49, .84) 48%, rgba(8, 27, 49, .34) 100%);
+        linear-gradient(90deg, rgba(5, 18, 35, .99) 0%, rgba(8, 27, 49, .93) 48%, rgba(8, 27, 49, .58) 78%, rgba(8, 27, 49, .72) 100%);
 }
 
 .home-hero-content {
-    width: min(840px, calc(100% - 36px));
+    width: min(720px, calc(100% - 36px));
     padding-bottom: 120px;
+    z-index: 4;
 }
 
 .home-art-board {
@@ -471,18 +476,21 @@ h1 {
     bottom: clamp(28px, 6vw, 72px);
     z-index: 2;
     display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 180px));
+    grid-template-columns: repeat(3, minmax(108px, 152px));
     gap: 12px;
     align-items: end;
+    pointer-events: none;
+    max-width: min(48vw, 500px);
 }
 
 .home-art-board article {
     position: relative;
-    min-height: 250px;
+    min-height: 220px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, .24);
     border-radius: 8px;
     box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+    opacity: .92;
 }
 
 .home-art-board article:nth-child(2) {
@@ -496,7 +504,7 @@ h1 {
 .home-art-board img {
     width: 100%;
     height: 100%;
-    min-height: 250px;
+    min-height: 220px;
     object-fit: cover;
     filter: saturate(1.05) contrast(1.04);
 }
@@ -1340,6 +1348,33 @@ h2 {
     box-shadow: 0 30px 72px rgba(0, 0, 0, .24);
 }
 
+.home-testimonials-section {
+    display: grid;
+    gap: clamp(22px, 4vw, 42px);
+    padding: clamp(58px, 8vw, 108px) clamp(18px, 6vw, 88px);
+    color: var(--white);
+    background:
+        radial-gradient(circle at 18% 12%, rgba(213, 173, 71, .22), transparent 28%),
+        linear-gradient(135deg, rgba(5, 18, 35, .97), rgba(18, 56, 95, .92)),
+        url('/images/jca-cooperation.webp') center / cover;
+}
+
+.home-testimonials-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, .95fr) minmax(320px, 1.05fr);
+    gap: clamp(20px, 4vw, 46px);
+    align-items: start;
+}
+
+.home-testimonial-list {
+    display: grid;
+    gap: 14px;
+}
+
+.home-testimonials-section .testimonial-submit-copy h2 {
+    max-width: 860px;
+}
+
 .target-band {
     position: relative;
     overflow: hidden;
@@ -1654,10 +1689,12 @@ h2 {
     height: 58px;
     display: grid;
     place-items: center;
-    color: var(--navy);
-    background: #f7f3e8;
-    border: 1px solid rgba(200, 167, 78, .45);
+    color: #0d4f60;
+    background:
+        linear-gradient(135deg, #fff8e7, #ecfbf8);
+    border: 1px solid rgba(31, 138, 132, .28);
     border-radius: 16px;
+    box-shadow: 0 14px 28px rgba(8, 27, 49, .08);
     font-weight: 900;
 }
 
@@ -4945,7 +4982,7 @@ h3 {
     transition: opacity .55s ease, transform .55s ease;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1320px) {
     .nav-toggle {
         display: block;
     }
@@ -4979,6 +5016,7 @@ h3 {
     .page-hero-art.is-immersive,
     .collaboration-contact-showcase,
     .testimonial-submit-section,
+    .home-testimonials-layout,
     .page-context-art,
     .story-showcase,
     .impact-story,
@@ -5286,6 +5324,7 @@ h3 {
     .home-pathway,
     .home-focus-strip,
     .testimonial-submit-section,
+    .home-testimonials-layout,
     .manifesto-grid,
     .home-gallery,
     .axis-strip,

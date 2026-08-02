@@ -126,6 +126,51 @@
             </section>
         @endif
 
+        <section class="home-testimonials-section" id="temoignages">
+            <div class="testimonial-submit-copy">
+                <span class="eyebrow">{{ __('Témoignages') }}</span>
+                <h2>{{ __('Des expériences partagées par les visiteurs JCA.') }}</h2>
+                <p>{{ __('Les visiteurs peuvent publier directement leur avis afin d’aider d’autres personnes, employeurs et partenaires à mieux comprendre l’accompagnement JCA.') }}</p>
+            </div>
+            <div class="home-testimonials-layout">
+                <div class="home-testimonial-list">
+                    @forelse ($testimonials as $testimonial)
+                        <figure class="service-testimonial-card reveal">
+                            <blockquote>“{{ $testimonial->quote }}”</blockquote>
+                            <figcaption>
+                                <strong>{{ $testimonial->author_name }}</strong>
+                                <span>{{ $testimonial->author_role ?? __('Client JCA') }}{{ filled($testimonial->organization ?? null) ? ' - '.$testimonial->organization : '' }}</span>
+                            </figcaption>
+                        </figure>
+                    @empty
+                        <figure class="service-testimonial-card service-testimonial-empty reveal">
+                            <blockquote>{{ __('Les témoignages publiés par les visiteurs apparaîtront ici.') }}</blockquote>
+                            <figcaption>
+                                <strong>{{ __('Avis visiteurs') }}</strong>
+                                <span>{{ __('Publication directe') }}</span>
+                            </figcaption>
+                        </figure>
+                    @endforelse
+                </div>
+                <form class="lead-form testimonial-form" method="post" action="{{ route('public.testimonials.store') }}">
+                    @csrf
+                    <label class="honeypot" aria-hidden="true">Site web<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                    <div class="form-grid">
+                        <label>{{ __('Nom complet') }}<input name="author_name" value="{{ old('author_name') }}" required></label>
+                        <label>{{ __('Profil') }}<input name="author_role" value="{{ old('author_role') }}" placeholder="{{ __('Client, candidat, employeur, partenaire') }}"></label>
+                    </div>
+                    <label>{{ __('Organisation') }}<input name="organization" value="{{ old('organization') }}"></label>
+                    <label>{{ __('Votre témoignage') }}<textarea name="quote" rows="5" required>{{ old('quote') }}</textarea></label>
+                    @if (session('testimonial_status'))
+                        <p class="form-note" data-state="success">{{ session('testimonial_status') }}</p>
+                    @elseif ($errors->has('quote') || $errors->has('author_name'))
+                        <p class="form-note" data-state="error">{{ $errors->first('quote') ?: $errors->first('author_name') }}</p>
+                    @endif
+                    <button class="button primary" type="submit">{{ __('Envoyer le témoignage') }}</button>
+                </form>
+            </div>
+        </section>
+
         <section class="cta-band">
             <span class="eyebrow">{{ __('Commencer') }}</span>
             <h2>{{ __('Présentez votre projet. JCA vous aide à poser les prochaines étapes.') }}</h2>

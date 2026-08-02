@@ -261,12 +261,6 @@
             @endphp
 
             @if ($slug === 'services')
-                @php
-                    $publishedTestimonials = \Illuminate\Support\Facades\Schema::hasTable('testimonials')
-                        ? \Illuminate\Support\Facades\DB::table('testimonials')->where('is_published', true)->latest()->limit(3)->get()
-                        : collect();
-                @endphp
-
                 <section class="services-excellence">
                     <div class="section-heading">
                         <span class="eyebrow">{{ __('Expertises JCA') }}</span>
@@ -315,55 +309,6 @@
                             <p>{{ __('Après l’ouverture d’un dossier, le client peut transmettre ses documents, suivre les demandes et conserver les échanges importants dans un espace organisé et confidentiel.') }}</p>
                         </div>
                     </div>
-                    <div class="service-trust-card reveal">
-                        <span class="service-icon service-icon-6" aria-hidden="true"></span>
-                        <div>
-                            <span class="eyebrow">{{ __('Témoignages') }}</span>
-                            <h3>{{ __('Des retours suivis et modérés') }}</h3>
-                            <p>{{ __('Les témoignages publiés sont sélectionnés avec consentement, modération et souci de confidentialité afin de refléter une expérience réelle sans promettre de résultat.') }}</p>
-                        </div>
-                    </div>
-                    @forelse ($publishedTestimonials as $testimonial)
-                        <figure class="service-testimonial-card reveal">
-                            <blockquote>“{{ $testimonial->quote }}”</blockquote>
-                            <figcaption>
-                                <strong>{{ $testimonial->author_name }}</strong>
-                                <span>{{ $testimonial->author_role ?? __('Client JCA') }}{{ filled($testimonial->organization ?? null) ? ' - '.$testimonial->organization : '' }}</span>
-                            </figcaption>
-                        </figure>
-                    @empty
-                        <figure class="service-testimonial-card service-testimonial-empty reveal">
-                            <blockquote>{{ __('Les témoignages publiés par les visiteurs apparaîtront ici.') }}</blockquote>
-                            <figcaption>
-                                <strong>{{ __('Avis visiteurs') }}</strong>
-                                <span>{{ __('Publication directe') }}</span>
-                            </figcaption>
-                        </figure>
-                    @endforelse
-                </section>
-
-                <section class="testimonial-submit-section" id="temoignage">
-                    <div class="testimonial-submit-copy">
-                        <span class="eyebrow">{{ __('Témoignage') }}</span>
-                        <h2>{{ __('Partagez votre expérience avec JCA.') }}</h2>
-                        <p>{{ __('Votre témoignage aide les futurs visiteurs à mieux comprendre l’accompagnement et s’affiche directement dans la page Services.') }}</p>
-                    </div>
-                    <form class="lead-form testimonial-form" method="post" action="{{ route('public.testimonials.store') }}">
-                        @csrf
-                        <label class="honeypot" aria-hidden="true">Site web<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-                        <div class="form-grid">
-                            <label>{{ __('Nom complet') }}<input name="author_name" value="{{ old('author_name') }}" required></label>
-                            <label>{{ __('Profil') }}<input name="author_role" value="{{ old('author_role') }}" placeholder="{{ __('Client, candidat, employeur, partenaire') }}"></label>
-                        </div>
-                        <label>{{ __('Organisation') }}<input name="organization" value="{{ old('organization') }}"></label>
-                        <label>{{ __('Votre témoignage') }}<textarea name="quote" rows="5" required>{{ old('quote') }}</textarea></label>
-                        @if (session('testimonial_status'))
-                            <p class="form-note" data-state="success">{{ session('testimonial_status') }}</p>
-                        @elseif ($errors->has('quote') || $errors->has('author_name'))
-                            <p class="form-note" data-state="error">{{ $errors->first('quote') ?: $errors->first('author_name') }}</p>
-                        @endif
-                        <button class="button primary" type="submit">{{ __('Envoyer le témoignage') }}</button>
-                    </form>
                 </section>
             @elseif ($slug !== 'qui-sommes-nous')
                 <section class="content-band {{ $usesIcons ? 'services-minimal-band' : '' }}">
