@@ -857,12 +857,12 @@ h2 {
 
 .service-icon-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
 }
 
 .service-icon-card {
-    min-height: 260px;
+    min-height: 220px;
     display: grid;
     align-content: start;
     gap: 14px;
@@ -871,6 +871,152 @@ h2 {
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: 0 12px 30px rgba(11, 31, 58, .08);
+}
+
+.services-minimal-band .section-heading {
+    max-width: 680px;
+}
+
+.services-minimal-band .service-icon-card {
+    justify-items: start;
+}
+
+.services-minimal-band .service-icon-card h3 {
+    max-width: 220px;
+}
+
+.service-trust-card {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-top: 18px;
+    padding: 28px;
+    background:
+        linear-gradient(135deg, #fffaf0, #f2fbfa);
+    border: 1px solid rgba(213, 173, 71, .42);
+    border-radius: 8px;
+    box-shadow: 0 14px 34px rgba(11, 31, 58, .08);
+}
+
+.service-trust-card .eyebrow {
+    color: var(--teal);
+}
+
+.service-trust-card h3 {
+    margin-top: 10px;
+    color: var(--navy);
+    font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+.service-trust-card p {
+    max-width: 860px;
+    margin-top: 8px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.target-band {
+    background: var(--white);
+}
+
+.target-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.target-card {
+    min-height: 230px;
+    display: grid;
+    align-content: start;
+    gap: 14px;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(11, 31, 58, .08);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.target-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(213, 173, 71, .55);
+    box-shadow: 0 20px 42px rgba(11, 31, 58, .12);
+}
+
+.target-card h3 {
+    color: var(--navy);
+    font-size: 24px;
+}
+
+.target-card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.target-icon {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    color: var(--navy);
+    background: #f7f3e8;
+    border: 1px solid rgba(200, 167, 78, .45);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.target-icon::before,
+.target-icon::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+}
+
+.employer-icon::before {
+    width: 28px;
+    height: 20px;
+    border: 3px solid currentColor;
+    border-radius: 5px;
+    background: transparent;
+}
+
+.employer-icon::after {
+    width: 18px;
+    height: 3px;
+    top: 19px;
+    border-radius: 999px;
+}
+
+.candidate-icon::before {
+    width: 18px;
+    height: 18px;
+    top: 13px;
+    border-radius: 50%;
+}
+
+.candidate-icon::after {
+    width: 30px;
+    height: 16px;
+    bottom: 13px;
+    border-radius: 999px 999px 6px 6px;
+}
+
+.partner-icon::before {
+    width: 28px;
+    height: 28px;
+    border: 3px solid currentColor;
+    border-radius: 8px;
+    background: transparent;
+    transform: rotate(45deg);
+}
+
+.partner-icon::after {
+    width: 24px;
+    height: 3px;
+    border-radius: 999px;
 }
 
 .service-icon {
@@ -1129,7 +1275,7 @@ h3 {
 
 .service-row {
     display: grid;
-    grid-template-columns: 60px 220px 1fr auto;
+    grid-template-columns: 60px 1fr auto;
     gap: 18px;
     align-items: center;
     padding: 24px;
@@ -1239,6 +1385,17 @@ h3 {
 .contact-section .lead-form {
     background: var(--white);
     box-shadow: var(--shadow);
+}
+
+.form-only-page {
+    grid-template-columns: minmax(280px, 760px);
+    justify-content: center;
+    padding-block: clamp(42px, 7vw, 84px);
+    background: var(--soft);
+}
+
+.form-only-page .lead-form {
+    width: 100%;
 }
 
 .feature-stack,
@@ -3637,6 +3794,7 @@ h3 {
     .page-hero-art.is-immersive,
     .story-showcase,
     .impact-story,
+    .target-grid,
     .cards-grid,
     .visual-card-grid,
     .service-icon-grid,
@@ -3677,6 +3835,10 @@ h3 {
     }
 
     .service-row {
+        grid-template-columns: 1fr;
+    }
+
+    .service-trust-card {
         grid-template-columns: 1fr;
     }
 
@@ -3864,6 +4026,7 @@ h3 {
     .job-grid,
     .tool-grid,
     .form-grid,
+    .target-grid,
     .portal-grid,
     .portal-hero-grid,
     .service-icon-grid,

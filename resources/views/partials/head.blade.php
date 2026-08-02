@@ -1,6 +1,6 @@
 @php
     $pageTitle = $title ?? (($page['title'] ?? 'JCA').' | JCA');
-    $pageDescription = $description ?? ($page['intro'] ?? 'JCA accompagne les projets d’immigration, de recrutement international, de coopération et de développement durable.');
+    $pageDescription = $description ?? ($page['intro'] ?? 'JCA accompagne les projets d immigration, de recrutement international, de cooperation et de mobilite.');
     $currentRoute = Route::currentRouteName();
     $currentSlug = $slug ?? request()->route('slug');
 

@@ -15,8 +15,8 @@
                 <h1>Programmes humanitaires</h1>
                 <p>Des actions sociales et solidaires pensees pour accompagner les publics, renforcer l’inclusion et construire des parcours plus dignes, utiles et durables.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ $publicRoute('page.show', 'contact') }}">Proposer un partenariat</a>
-                    <a class="button ghost" href="{{ route('portal.register') }}">Créer mon espace</a>
+                    <a class="button primary" href="{{ $publicRoute('page.show', 'collaboration') }}">Proposer une collaboration</a>
+                    <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">

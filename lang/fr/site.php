@@ -16,7 +16,7 @@ return [
         'register' => 'Inscription',
     ],
     'home' => [
-        'eyebrow' => 'Immigration, recrutement et développement international',
-        'lede' => 'Cabinet international de conseil et d’accompagnement, JCA facilite la mobilité des talents, soutient la croissance des organisations et contribue au développement durable des communautes.',
+        'eyebrow' => 'Immigration, recrutement et cooperation',
+        'lede' => 'JCA accompagne les candidats, employeurs et partenaires dans leurs projets internationaux.',
     ],
 ];

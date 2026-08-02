@@ -48,13 +48,11 @@ $pages = [
     'qui-sommes-nous' => [
         'title' => 'Qui sommes-nous',
         'eyebrow' => 'Cabinet international de conseil',
-        'intro' => 'JCA est un cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
+        'intro' => 'JCA accompagne les personnes, employeurs et partenaires dans leurs projets internationaux.',
         'sections' => [
-            ['Notre positionnement', 'Nous accompagnons particuliers, entreprises, institutions publiques, organisations internationales, organismes à but non lucratif et investisseurs dans leurs projets à l’échelle mondiale.'],
-            ['Notre approche', 'JCA combine expertise juridique, compréhension des dynamiques migratoires, connaissance des marchés internationaux du travail et maîtrise des mécanismes de coopération.'],
-            ['Notre mission', 'Faciliter la mobilité des talents, soutenir la croissance des organisations et contribuer au développement durable des communautes.'],
-            ['Nos valeurs', 'Excellence, intégrité, professionnalisme, innovation, inclusion, responsabilité sociale et développement durable.'],
-            ['Notre impact', 'Bâtir des ponts entre les talents, les organisations et les opportunités pour contribuer à un monde plus ouvert, inclusif et prospère.'],
+            ['Notre mission', 'Clarifier les démarches, préparer les dossiers et accompagner les décisions importantes.'],
+            ['Notre approche', 'Une analyse simple, confidentielle et adaptée au pays, au profil et à l’objectif.'],
+            ['Nos publics', 'Candidats, employeurs, institutions et partenaires internationaux.'],
         ],
     ],
     'accreditations' => [
@@ -72,14 +70,12 @@ $pages = [
     'services' => [
         'title' => 'Services',
         'eyebrow' => 'Solutions internationales',
-        'intro' => 'JCA accompagne les projets de mobilité, d’immigration, de recrutement international, de coopération et de développement avec des parcours clairs et sécurisés.',
+        'intro' => 'Un partenaire stratégique pour les projets qui traversent les frontières.',
         'sections' => [
-            ['Immigration et mobilité', 'Évaluation, stratégie, préparation documentaire, dépôt, suivi et accompagnement des candidats, familles, étudiants et travailleurs.'],
-            ['Recrutement international', 'Accompagnement des employeurs et candidats: publication des besoins, préqualification, intégration et suivi.'],
-            ['Coopération internationale', 'Montage de projets, partenariats, gouvernance, financement, indicateurs et évaluation.'],
-            ['Développement durable', 'Programmes a impact autour de l’inclusion, de l’entrepreneuriat, de l’éducation, de la santé et de la résilience.'],
-            ['Espace client sécurisé', 'Après inscription, chaque client peut déposer ses documents, envoyer ses demandes et suivre ses dossiers.'],
-            ['Accompagnement stratégique', 'Consultations, feuille de route, analyse des risques et coordination des prochaines étapes.'],
+            ['Immigration & mobilité internationale', ''],
+            ['Recrutement international', ''],
+            ['Coopération internationale', ''],
+            ['Service-conseils stratégique', ''],
         ],
     ],
     'immigration' => [
@@ -118,18 +114,6 @@ $pages = [
             ['Gouvernance et politiques publiques', 'Appui à la formulation, à la coordination et au suivi de programmes publics ou partenariaux.'],
             ['Éducation et formation', 'Projets relies aux compétences, à l’employabilité, à la formation professionnelle et aux transitions de carriere.'],
             ['Mobilisation de ressources', 'Préparation de notes conceptuelles, dossiers de financement et argumentaires de partenariat international.'],
-        ],
-    ],
-    'developpement-durable' => [
-        'title' => 'Développement durable',
-        'eyebrow' => 'Impact et résilience',
-        'intro' => 'Des programmes orientes vers l’inclusion, l’éducation, la santé communautaire, l’entrepreneuriat, l’employabilité et la résilience des communautes.',
-        'sections' => [
-            ['Femmes et jeunes', 'Initiatives de formation, leadership, insertion professionnelle et autonomisation économique.'],
-            ['Entrepreneuriat', 'Accompagnement des porteurs de projets, structuration, marche, financement et mentorat.'],
-            ['Santé et éducation', 'Projets à fort impact social, de la conception au reporting.'],
-            ['Inclusion', 'Approches sensibles aux vulnerabilites, à l’egalite des chances et à la participation locale.'],
-            ['Résilience', 'Programmes capables de repondre aux chocs économiques, sociaux et environnementaux.'],
         ],
     ],
     'humanitaire' => [
@@ -188,6 +172,28 @@ $pages = [
             ['Gouvernements', 'Appui aux politiques, programmes et projets territoriaux.'],
         ],
     ],
+    'collaboration' => [
+        'title' => 'Collaboration',
+        'eyebrow' => 'Partenariats',
+        'intro' => 'JCA collabore avec les organisations qui souhaitent construire des projets utiles, structurés et internationaux.',
+        'sections' => [
+            ['Pourquoi collaborer avec nous', 'Une approche claire pour relier besoins, expertise, territoires et opportunités.'],
+            ['Types de partenariats', 'Employeurs, institutions, organismes de formation, ONG, universités et partenaires techniques.'],
+            ['Comment nous contacter', 'Présentez votre organisation, votre objectif et le type de collaboration recherché via le formulaire.'],
+            ['Prochaine étape', 'JCA analyse la demande et propose un échange pour qualifier le cadre de collaboration.'],
+        ],
+    ],
+    'confidentialite' => [
+        'title' => 'Confidentialité',
+        'eyebrow' => 'Protection des informations',
+        'intro' => 'JCA traite les informations transmises avec discrétion, sécurité et uniquement pour comprendre la demande.',
+        'sections' => [
+            ['Données partagées', 'Les informations envoyées servent à analyser votre besoin et préparer une réponse adaptée.'],
+            ['Documents', 'Les fichiers transmis sont utilisés uniquement pour l’étude du dossier ou de la demande.'],
+            ['Accès limité', 'Les informations sont consultées par les personnes concernées par le traitement de votre demande.'],
+            ['Suivi confidentiel', 'Les échanges restent encadrés par une logique de discrétion professionnelle et de protection des données.'],
+        ],
+    ],
     'faq' => [
         'title' => 'FAQ',
         'eyebrow' => 'Questions fréquentes',
@@ -201,12 +207,9 @@ $pages = [
     ],
     'contact' => [
         'title' => 'Contact',
-        'eyebrow' => 'Parlons de votre projet',
-        'intro' => 'Contactez JCA pour une consultation, un partenariat, une demande d’immigration, un projet ou un besoin de recrutement.',
+        'eyebrow' => 'Contact',
+        'intro' => 'Envoyez votre demande à JCA.',
         'sections' => [
-            ['Canaux', 'Téléphone, WhatsApp, Messenger, email et formulaire de contact.'],
-            ['Horaires', 'Accueil sur rendez-vous et suivi numérique des demandes.'],
-            ['Adresse et carte', 'Les coordonnées officielles et les indications de rendez-vous sont communiquées par les canaux JCA afin d’éviter toute confusion avec des intermédiaires non autorisés.'],
         ],
         'form' => 'contact',
     ],
@@ -563,7 +566,7 @@ Route::get('/rendez-vous', function () {
         return redirect()->to(route('portal.dashboard').'#portal-appointment');
     }
 
-    return redirect()->route('portal.register', ['next' => 'rendez-vous']);
+    return redirect()->route('page.show', 'consultation');
 })->name('public.appointments');
 
 Route::prefix('admin')

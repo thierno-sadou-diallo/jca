@@ -10,187 +10,152 @@
     @include('partials.header')
 
     <main>
-        <section class="page-hero page-hero-art {{ in_array($slug, ['qui-sommes-nous', 'services'], true) ? 'is-immersive' : '' }}">
-            <div>
-                <span class="eyebrow">{{ $page['eyebrow'] }}</span>
-                <h1>{{ $page['title'] }}</h1>
-                <p>{{ $page['intro'] }}</p>
-                <div class="hero-actions">
-                    <a class="button primary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
-                    <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>
+        @if ($slug === 'contact')
+            <section class="contact-section form-only-page">
+                @include('partials.lead-form', [
+                    'formSource' => 'contact',
+                    'pageSlug' => $slug,
+                    'submitLabel' => 'Envoyer la demande',
+                    'showAppointmentFields' => false,
+                ])
+            </section>
+        @else
+            <section class="page-hero page-hero-art {{ in_array($slug, ['qui-sommes-nous', 'services'], true) ? 'is-immersive' : '' }}">
+                <div>
+                    <span class="eyebrow">{{ $page['eyebrow'] }}</span>
+                    <h1>{{ $page['title'] }}</h1>
+                    <p>{{ $page['intro'] }}</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
+                        <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>
+                    </div>
                 </div>
-            </div>
-            @if (in_array($slug, ['qui-sommes-nous', 'services'], true))
-                <div class="page-hero-collage" aria-hidden="true">
-                    <img src="{{ asset('images/jca-hero.webp') }}" alt="">
-                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
-                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
-                </div>
-            @endif
-        </section>
 
-        @if ($slug === 'qui-sommes-nous')
-            <section class="story-showcase">
-                <div class="story-copy">
-                    <span class="eyebrow">Identite JCA</span>
-                    <h2>Un cabinet qui relie les personnes, les organisations et les opportunités.</h2>
-                    <p>Notre travail commence par l’écoute, puis devient une stratégie: comprendre le contexte, structurer le dossier et accompagner chaque étape avec méthode.</p>
-                </div>
-                <div class="story-gallery" aria-label="Univers JCA">
+                @if (in_array($slug, ['qui-sommes-nous', 'services'], true))
+                    <div class="page-hero-collage" aria-hidden="true">
+                        <img src="{{ asset('images/jca-hero.webp') }}" alt="">
+                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
+                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
+                    </div>
+                @endif
+            </section>
+
+            @if ($slug === 'qui-sommes-nous')
+                <section class="story-showcase">
+                    <div class="story-copy">
+                        <span class="eyebrow">Identite JCA</span>
+                        <h2>Un accompagnement clair pour les projets internationaux.</h2>
+                        <p>JCA aide chaque client a comprendre ses options, organiser les documents utiles et avancer avec un suivi confidentiel.</p>
+                    </div>
+                    <div class="story-gallery" aria-label="Univers JCA">
+                        <article>
+                            <img src="{{ asset('images/jca-immigration.webp') }}" alt="Mobilite internationale" loading="lazy">
+                            <strong>Mobilite</strong>
+                        </article>
+                        <article>
+                            <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
+                            <strong>Talents</strong>
+                        </article>
+                        <article>
+                            <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
+                            <strong>Partenaires</strong>
+                        </article>
+                    </div>
+                </section>
+            @endif
+
+            @if (! in_array($slug, ['qui-sommes-nous', 'services', 'collaboration', 'confidentialite'], true))
+                <section class="page-visual-ribbon" aria-label="Univers visuel JCA">
                     <article>
-                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="Mobilité internationale" loading="lazy">
-                        <strong>Mobilité</strong>
+                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration" loading="lazy">
+                        <span>Mobilite</span>
                     </article>
                     <article>
                         <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
-                        <strong>Talents</strong>
+                        <span>Talents</span>
                     </article>
                     <article>
-                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Coopération internationale" loading="lazy">
-                        <strong>Impact</strong>
+                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
+                        <span>Partenaires</span>
                     </article>
-                </div>
-            </section>
-        @endif
+                </section>
+            @endif
 
-        @if ($slug === 'services')
-            <section class="service-expérience">
+            @php
+                $iconPages = ['services', 'collaboration', 'confidentialite'];
+                $usesIcons = in_array($slug, $iconPages, true);
+            @endphp
+
+            <section class="content-band {{ $usesIcons ? 'services-minimal-band' : '' }}">
                 <div class="section-heading">
-                    <span class="eyebrow">Parcours client</span>
-                    <h2>Des services présentés comme un chemin simple a suivre.</h2>
-                    <p>Chaque client comprend rapidement quoi faire: demander, déposer, échanger, suivre et avancer.</p>
-                </div>
-                <div class="service-flow">
-                    <article><span>01</span><strong>Diagnostic</strong><p>Clarifier l objectif et les options.</p></article>
-                    <article><span>02</span><strong>Dossier</strong><p>Rassembler les pièces et preuves utiles.</p></article>
-                    <article><span>03</span><strong>Stratégie</strong><p>Construire un plan réaliste et priorisé.</p></article>
-                    <article><span>04</span><strong>Suivi</strong><p>Continuer dans l’espace client sécurisé.</p></article>
-                </div>
-            </section>
-        @endif
-
-        @if (! in_array($slug, ['qui-sommes-nous', 'services'], true))
-            <section class="page-visual-ribbon" aria-label="Univers visuel JCA">
-                <article>
-                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration" loading="lazy">
-                    <span>Mobilité</span>
-                </article>
-                <article>
-                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
-                    <span>Talents</span>
-                </article>
-                <article>
-                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Coopération internationale" loading="lazy">
-                    <span>Impact</span>
-                </article>
-            </section>
-        @endif
-
-        <section class="content-band">
-            <div class="section-heading">
-                <span class="eyebrow">Expertise</span>
-                <h2>Un accompagnement structuré et confidentiel</h2>
-                <p>Chaque demande est analysée selon ses objectifs, ses contraintes documentaires et son horizon international.</p>
-            </div>
-            <div class="{{ $slug === 'services' ? 'service-icon-grid' : 'cards-grid' }}">
-                @foreach ($page['sections'] as $section)
-                    <article class="{{ $slug === 'services' ? 'service-icon-card reveal' : 'info-card reveal' }}">
+                    <span class="eyebrow">{{ $usesIcons ? $page['eyebrow'] : 'Expertise' }}</span>
+                    <h2>
                         @if ($slug === 'services')
-                            <span class="service-icon service-icon-{{ $loop->iteration }}" aria-hidden="true"></span>
+                            Choisissez le service dont vous avez besoin.
+                        @elseif ($slug === 'collaboration')
+                            Collaborer avec JCA, simplement.
+                        @elseif ($slug === 'confidentialite')
+                            Vos informations restent encadrees.
                         @else
-                            <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            Un accompagnement structure et confidentiel
                         @endif
-                        <h3>{{ $section[0] }}</h3>
-                        <p>{{ $section[1] }}</p>
-                    </article>
-                @endforeach
-            </div>
-        </section>
+                    </h2>
+                </div>
+                <div class="{{ $usesIcons ? 'service-icon-grid' : 'cards-grid' }}">
+                    @foreach ($page['sections'] as $section)
+                        <article class="{{ $usesIcons ? 'service-icon-card reveal' : 'info-card reveal' }}">
+                            @if ($usesIcons)
+                                <span class="service-icon service-icon-{{ $loop->iteration }}" aria-hidden="true"></span>
+                            @else
+                                <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            @endif
+                            <h3>{{ $section[0] }}</h3>
+                            @if (($section[1] ?? '') !== '')
+                                <p>{{ $section[1] }}</p>
+                            @endif
+                        </article>
+                    @endforeach
+                </div>
 
-        @isset($page['form'])
-            <section class="{{ $page['form'] === 'contact' ? 'contact-section' : 'split-section' }}">
-                <div class="{{ $page['form'] === 'contact' ? 'contact-profile' : '' }}">
-                    <span class="eyebrow">{{ $page['form'] === 'consultation' ? 'Demande' : 'Contact JCA' }}</span>
-                    <h2>{{ $page['form'] === 'consultation' ? 'Planifier une consultation' : 'Parlons de votre projet international.' }}</h2>
-                    @if ($page['form'] === 'contact')
-                        <p>JCA répond aux particuliers, entreprises et organisations qui souhaitent structurer une démarche d’immigration, de mobilité, de recrutement ou de coopération internationale.</p>
-                        <div class="contact-cards">
-                            <article>
-                                <strong>Email</strong>
-                                <span><a href="mailto:contact@jcaconseil.com">contact@jcaconseil.com</a></span>
-                            </article>
-                            <article>
-                                <strong>Téléphone / WhatsApp</strong>
-                                <span><a href="tel:+221789685116">78 968 51 16</a></span>
-                            </article>
-                            <article>
-                                <strong>Accueil professionnel</strong>
-                                <span>Votre demande est orientée vers le bon interlocuteur selon le sujet, le pays concerné et le niveau d’urgence.</span>
-                            </article>
-                            <article>
-                                <strong>Suivi confidentiel</strong>
-                                <span>Les informations partagées servent uniquement à comprendre votre besoin et à proposer les prochaines étapes.</span>
-                            </article>
-                            <article>
-                                <strong>Partenariats</strong>
-                                <span>Institutions, employeurs et organisations peuvent présenter une collaboration ou un projet à développer.</span>
-                            </article>
+                @if ($slug === 'services')
+                    <div class="service-trust-card reveal">
+                        <span class="service-icon service-icon-5" aria-hidden="true"></span>
+                        <div>
+                            <span class="eyebrow">Relation de confiance</span>
+                            <h3>Espace client sécurisé</h3>
+                            <p>Après l’ouverture d’un dossier, le client peut transmettre ses documents, suivre les demandes et conserver les échanges importants dans un espace organisé et confidentiel.</p>
                         </div>
-                    @else
-                        <p>Présentez votre situation à JCA afin de recevoir une première orientation claire et les étapes utiles pour avancer.</p>
+                    </div>
+                @endif
+            </section>
+
+            @isset($page['form'])
+                <section class="split-section">
+                    <div>
+                        <span class="eyebrow">Demande</span>
+                        <h2>Planifier une consultation</h2>
+                        <p>Presentez votre situation afin de recevoir une premiere orientation claire et les prochaines etapes utiles.</p>
                         <ul class="check-list">
                             <li>Analyse du besoin et du contexte international</li>
                             <li>Documents utiles pour immigration, emploi, partenariat ou projet</li>
-                            <li>Réponse de suivi avec les prochaines étapes recommandées</li>
+                            <li>Reponse de suivi avec les prochaines etapes recommandees</li>
                         </ul>
-                    @endif
-                </div>
-                <form class="lead-form" method="post" action="{{ route('lead-requests.store') }}" enctype="multipart/form-data" data-lead-form>
-                    @csrf
-                    <input type="hidden" name="source" value="{{ $page['form'] }}">
-                    <input type="hidden" name="page_slug" value="{{ $slug }}">
-                    <label class="honeypot" aria-hidden="true">Site web<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-                    <label>Nom complet<input type="text" name="name" required></label>
-                    <label>Email<input type="email" name="email" required></label>
-                    <label>Téléphone / WhatsApp<input type="tel" name="phone"></label>
-                    <label>Motif
-                        <select name="topic">
-                            <option>Immigration</option>
-                            <option>Recrutement international</option>
-                            <option>Coopération internationale</option>
-                            <option>Partenariat</option>
-                            <option>Consultation stratégique</option>
-                        </select>
-                    </label>
-                    @if ($page['form'] === 'consultation')
-                        <label>Date souhaitee<input type="date" name="preferred_date"></label>
-                        <label>Canal préféré
-                            <select name="preferred_channel">
-                                <option>Email</option>
-                                <option>WhatsApp</option>
-                                <option>Téléphone</option>
-                            </select>
-                        </label>
-                    @endif
-                    <label>Documents utiles
-                        <input type="file" name="documents[]" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
-                    </label>
-                    <label>Message<textarea name="message" rows="5" required></textarea></label>
-                    <button class="button primary" type="submit" data-submit-label="Envoyer la demande">Envoyer la demande</button>
-                    <p class="form-note" role="status" aria-live="polite" data-form-note>
-                        @if (session('lead_success'))
-                            {{ session('lead_success') }}
-                        @endif
-                    </p>
-                </form>
-            </section>
-        @endisset
+                    </div>
+                    @include('partials.lead-form', [
+                        'formSource' => $page['form'],
+                        'pageSlug' => $slug,
+                        'submitLabel' => 'Envoyer la demande',
+                        'showAppointmentFields' => $page['form'] === 'consultation',
+                    ])
+                </section>
+            @endisset
 
-        <section class="cta-band">
-            <span class="eyebrow">Prochaine étape</span>
-            <h2>Transformez votre projet international en feuille de route claire.</h2>
-            <a class="button primary" href="{{ $publicRoute('page.show', 'consultation') }}">Demander une consultation</a>
-        </section>
+            <section class="cta-band">
+                <span class="eyebrow">Prochaine etape</span>
+                <h2>Transformez votre projet international en feuille de route claire.</h2>
+                <a class="button primary" href="{{ $publicRoute('page.show', 'consultation') }}">Demander une consultation</a>
+            </section>
+        @endif
     </main>
 
     @include('partials.footer')

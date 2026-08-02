@@ -76,4 +76,26 @@ class LeadRequestTest extends TestCase
             'visibility' => 'private',
         ]);
     }
+
+    public function test_public_consultation_form_values_match_validation_rules(): void
+    {
+        $response = $this->postJson('/demandes', [
+            'name' => 'Awa Partenaire',
+            'email' => 'awa@example.com',
+            'phone' => '+221 77 000 00 00',
+            'topic' => 'Coopération internationale',
+            'message' => 'Je souhaite proposer une collaboration institutionnelle avec JCA.',
+            'source' => 'consultation',
+            'page_slug' => 'consultation',
+            'preferred_channel' => 'Téléphone',
+        ]);
+
+        $response->assertCreated();
+
+        $this->assertDatabaseHas('lead_requests', [
+            'email' => 'awa@example.com',
+            'topic' => 'Coopération internationale',
+            'preferred_channel' => 'Téléphone',
+        ]);
+    }
 }

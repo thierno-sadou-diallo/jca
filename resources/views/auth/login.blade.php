@@ -18,7 +18,7 @@
         </a>
 
         <div>
-            <span class="eyebrow">Accès sécurisé</span>
+            <span class="eyebrow">Compte client</span>
             <h1>Connexion</h1>
             <p>Accedez à vos dossiers, rendez-vous, documents, candidatures, paiements et messages.</p>
         </div>

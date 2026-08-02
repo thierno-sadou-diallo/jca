@@ -5,30 +5,25 @@
                 <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
                 <span>
                     <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
-                    <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration et développement international' }}</small>
+                    <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et cooperation' }}</small>
                 </span>
             </a>
-            <p>{{ $siteSettings['footer_description'] ?? 'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.' }}</p>
+            <p>{{ $siteSettings['footer_description'] ?? 'Cabinet international de conseil en immigration, mobilite, recrutement et cooperation.' }}</p>
         </div>
         <div>
-            <h3>Domaines</h3>
+            <h3>Services</h3>
             <a href="{{ $publicRoute('page.show', 'immigration') }}">Immigration</a>
             <a href="{{ $publicRoute('page.show', 'recrutement-international') }}">Recrutement international</a>
             <a href="{{ $publicRoute('page.show', 'cooperation-internationale') }}">Coopération internationale</a>
-            <a href="{{ $publicRoute('public.cooperation-projects') }}">Projets de coopération</a>
-            <a href="{{ $publicRoute('public.humanitarian-programs') }}">Programmes humanitaires</a>
-            <a href="{{ $publicRoute('page.show', 'developpement-durable') }}">Développement durable</a>
+            <a href="{{ $publicRoute('page.show', 'consultation') }}">Service-conseils strategique</a>
         </div>
         <div>
-            <h3>Ressources</h3>
-            <a href="{{ $publicRoute('public.news') }}">Actualités</a>
-            <a href="{{ $publicRoute('public.blog') }}">Blog</a>
+            <h3>Informations</h3>
+            <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
+            <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
             <a href="{{ $publicRoute('public.faq') }}">FAQ</a>
-            <a href="{{ $publicRoute('public.partners') }}">Partenaires</a>
-            <a href="{{ $publicRoute('page.show', 'accreditations') }}">Accréditations</a>
             <a href="{{ $publicRoute('legal.show', 'mentions-legales') }}">Mentions légales</a>
             <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">Politique de confidentialité</a>
-            <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">Conditions d’utilisation</a>
         </div>
         <div>
             <h3>Contact</h3>
@@ -39,7 +34,6 @@
                 <a href="https://wa.me/{{ preg_replace('/\D+/', '', $siteSettings['whatsapp']) }}">WhatsApp</a>
             @endif
             <a href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
-            <a href="{{ route('portal.register') }}">Créer un espace client</a>
             <div class="language-switcher" aria-label="Langues">
                 <a href="{{ route('locale.switch', 'fr') }}">FR</a>
                 <a href="{{ route('locale.switch', 'en') }}">EN</a>

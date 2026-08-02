@@ -14,17 +14,17 @@
                 <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
                 <span>
                     <strong>JCA</strong>
-                    <small>Espace client international</small>
+                    <small>Espace personnel</small>
                 </span>
             </a>
             <div>
-                <span class="eyebrow">Portail sécurisé</span>
+                <span class="eyebrow">Compte client</span>
                 <h1>Créer un compte</h1>
                 <p>Un espace personnel pour déposer vos documents, envoyer vos demandes et suivre vos dossiers avec JCA.</p>
             </div>
             <div class="register-benefits">
                 <span>Demandes centralisees</span>
-                <span>Documents confidentiels</span>
+                <span>Documents organises</span>
                 <span>Suivi de dossier</span>
                 <span>Rendez-vous et prochaines étapes</span>
             </div>

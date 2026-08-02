@@ -152,10 +152,10 @@ class PlatformSchemaTest extends TestCase
             ->assertSee('Créer un compte');
     }
 
-    public function test_appointment_cta_sends_guest_to_registration_with_intent(): void
+    public function test_appointment_cta_sends_guest_to_public_consultation_page(): void
     {
         $this->get('/rendez-vous')
-            ->assertRedirect('/inscription?next=rendez-vous');
+            ->assertRedirect('/consultation');
     }
 
     public function test_appointment_cta_sends_active_client_to_booking_module(): void
@@ -609,14 +609,15 @@ class PlatformSchemaTest extends TestCase
 
         $this->get('/')
             ->assertOk()
-            ->assertSee('Alliance education durable')
-            ->assertSee('Soutien insertion professionnelle')
-            ->assertSee('ecoles partenaires')
-            ->assertSee('beneficiaires')
-            ->assertSee('Voir le projet')
-            ->assertSee('Voir le programme')
+            ->assertSee('Employeur')
+            ->assertSee('Candidat')
+            ->assertSee('Partenaire')
+            ->assertSee('Sans inscription obligatoire')
             ->assertDontSee('Ancien projet cooperation')
-            ->assertDontSee('Programme non publie');
+            ->assertDontSee('Programme non publie')
+            ->assertDontSee('Les services essentiels.')
+            ->assertDontSee('Alliance education durable')
+            ->assertDontSee('Soutien insertion professionnelle');
     }
 
     public function test_english_locale_translates_full_rendered_pages(): void
@@ -629,7 +630,7 @@ class PlatformSchemaTest extends TestCase
         $this->withSession(['locale' => 'en'])
             ->get('/')
             ->assertOk()
-            ->assertSee('Create my space')
+            ->assertSee('Book an appointment')
             ->assertSee('Immigration, international recruitment and cooperation.')
             ->assertDontSee('Créer mon espace');
 

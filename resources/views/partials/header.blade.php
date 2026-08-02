@@ -15,10 +15,11 @@
 
     <nav class="main-nav" data-nav>
         <a href="{{ $publicRoute('home') }}">Accueil</a>
-        <a href="{{ $publicRoute('page.show', 'qui-sommes-nous') }}">A propos</a>
         <a href="{{ $publicRoute('page.show', 'services') }}">Services</a>
-        <a href="{{ $publicRoute('public.cooperation-projects') }}">Coopération</a>
+        <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
+        <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
         <a href="{{ $publicRoute('jobs.index') }}">Emplois</a>
+        <a href="{{ $publicRoute('page.show', 'contact') }}">Contact</a>
         <a class="nav-cta" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
         @auth
             <a class="nav-login" href="{{ route('portal.dashboard') }}">Mon espace</a>

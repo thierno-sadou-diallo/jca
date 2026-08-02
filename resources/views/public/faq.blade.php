@@ -27,8 +27,8 @@
                 <h1>FAQ</h1>
                 <p>Les réponses essentielles avant une consultation ou le dépôt d un dossier.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('portal.register') }}">Créer mon espace</a>
-                    <a class="button ghost" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
+                    <a class="button primary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
+                    <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>
                 </div>
             </div>
             <div class="page-hero-collage" aria-hidden="true">
@@ -41,7 +41,7 @@
         <section class="page-guidance">
             <article><span>01</span><strong>Comprendre</strong><p>Verifier les bases avant de commencer.</p></article>
             <article><span>02</span><strong>Préparer</strong><p>Identifier les documents et informations utiles.</p></article>
-            <article><span>03</span><strong>Avancer</strong><p>Ouvrir un espace client ou demander une consultation.</p></article>
+            <article><span>03</span><strong>Avancer</strong><p>Demander une consultation ou contacter JCA.</p></article>
         </section>
 
         <section class="faq-preview">

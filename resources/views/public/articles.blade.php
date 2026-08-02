@@ -15,7 +15,7 @@
                 <h1>{{ $title }}</h1>
                 <p>{{ $intro }}</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('portal.register') }}">Créer mon espace</a>
+                    <a class="button primary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
                     <a class="button ghost" href="{{ $publicRoute('page.show', 'services') }}">Voir les services</a>
                 </div>
             </div>
