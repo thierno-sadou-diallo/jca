@@ -631,7 +631,7 @@ class PlatformSchemaTest extends TestCase
             ->get('/')
             ->assertOk()
             ->assertSee('Book an appointment')
-            ->assertSee('Immigration, international recruitment and cooperation.')
+            ->assertSee('International projects, better thought through, better prepared, better supported.')
             ->assertDontSee('Créer mon espace');
 
         $this->withSession(['locale' => 'en'])

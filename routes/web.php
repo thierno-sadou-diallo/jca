@@ -55,6 +55,17 @@ $pages = [
             ['Nos publics', 'Candidats, employeurs, institutions et partenaires internationaux.'],
         ],
     ],
+    'equipe' => [
+        'title' => 'Équipe',
+        'eyebrow' => 'Compétences JCA',
+        'intro' => 'Une équipe pluridisciplinaire mobilisée autour de la mobilité internationale, du recrutement, de la coopération et du conseil stratégique.',
+        'sections' => [
+            ['Conseil et orientation', 'Analyse des besoins, clarification des options et accompagnement des décisions importantes.'],
+            ['Immigration et mobilité', 'Préparation, organisation et suivi des démarches avec une attention particulière à la qualité des informations.'],
+            ['Recrutement international', 'Lecture des besoins employeurs, valorisation des profils et coordination des parcours candidats.'],
+            ['Coopération et partenariats', 'Structuration de collaborations avec institutions, organisations, employeurs et partenaires techniques.'],
+        ],
+    ],
     'accreditations' => [
         'title' => 'Accréditations',
         'eyebrow' => 'Legitimite professionnelle',

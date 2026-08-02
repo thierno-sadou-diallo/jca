@@ -38,6 +38,7 @@ video {
 
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body {
@@ -46,6 +47,7 @@ body {
     background:
         linear-gradient(90deg, rgba(8, 27, 49, .035) 1px, transparent 1px) 0 0 / 72px 72px,
         var(--white);
+    overflow-x: hidden;
 }
 
 a {
@@ -58,6 +60,15 @@ input,
 select,
 textarea {
     font: inherit;
+    max-width: 100%;
+}
+
+main,
+section,
+article,
+div,
+form {
+    min-width: 0;
 }
 
 .site-header {
@@ -133,6 +144,10 @@ textarea {
     color: #344054;
     font-size: 14px;
     font-weight: 600;
+}
+
+.main-nav a {
+    overflow-wrap: anywhere;
 }
 
 .main-nav a {
@@ -432,6 +447,74 @@ h1 {
 
 .hero-art span:nth-child(3) {
     transform: translateX(-84px);
+}
+
+.home-hero {
+    min-height: 88vh;
+}
+
+.home-hero .hero-overlay {
+    background:
+        radial-gradient(circle at 78% 24%, rgba(213, 173, 71, .22), transparent 28%),
+        radial-gradient(circle at 86% 76%, rgba(31, 138, 132, .28), transparent 30%),
+        linear-gradient(90deg, rgba(5, 18, 35, .98) 0%, rgba(8, 27, 49, .84) 48%, rgba(8, 27, 49, .34) 100%);
+}
+
+.home-hero-content {
+    width: min(840px, calc(100% - 36px));
+    padding-bottom: 120px;
+}
+
+.home-art-board {
+    position: absolute;
+    right: clamp(18px, 5vw, 72px);
+    bottom: clamp(28px, 6vw, 72px);
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 180px));
+    gap: 12px;
+    align-items: end;
+}
+
+.home-art-board article {
+    position: relative;
+    min-height: 250px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .24);
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+}
+
+.home-art-board article:nth-child(2) {
+    transform: translateY(-34px);
+}
+
+.home-art-board article:nth-child(3) {
+    transform: translateY(18px);
+}
+
+.home-art-board img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    filter: saturate(1.05) contrast(1.04);
+}
+
+.home-art-board span {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 9px 10px;
+    color: var(--white);
+    background: rgba(8, 27, 49, .72);
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
 }
 
 .search-panel {
@@ -851,13 +934,13 @@ h2 {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 18px;
 }
 
 .service-icon-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 18px;
 }
 
@@ -922,7 +1005,7 @@ h2 {
 
 .target-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 18px;
 }
 
@@ -1017,6 +1100,121 @@ h2 {
     width: 24px;
     height: 3px;
     border-radius: 999px;
+}
+
+.home-manifesto {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: clamp(24px, 5vw, 70px);
+    align-items: center;
+    padding: clamp(58px, 8vw, 108px) clamp(18px, 6vw, 88px);
+    background:
+        linear-gradient(90deg, rgba(8, 27, 49, .035) 1px, transparent 1px) 0 0 / 72px 72px,
+        linear-gradient(135deg, #f8fafc, #fffaf0);
+    border-block: 1px solid var(--line);
+}
+
+.manifesto-copy p {
+    max-width: 640px;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 14px;
+}
+
+.manifesto-grid article {
+    min-height: 280px;
+    display: grid;
+    align-content: start;
+    gap: 14px;
+    padding: 26px;
+    color: var(--ink);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 16px 38px rgba(11, 31, 58, .08);
+}
+
+.manifesto-grid h3 {
+    color: var(--navy);
+    font-size: 24px;
+}
+
+.manifesto-grid p {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.home-gallery {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr 1fr;
+    gap: 1px;
+    padding: 1px clamp(18px, 6vw, 88px);
+    background: var(--line);
+}
+
+.home-gallery article {
+    position: relative;
+    min-height: clamp(320px, 34vw, 520px);
+    overflow: hidden;
+    display: grid;
+    align-content: end;
+    color: var(--white);
+    background: var(--navy);
+}
+
+.home-gallery img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.04);
+    transition: transform .65s ease;
+}
+
+.home-gallery article:hover img {
+    transform: scale(1.1);
+}
+
+.home-gallery article::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(5, 18, 35, .9), rgba(5, 18, 35, .16));
+}
+
+.home-gallery div {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 10px;
+    padding: clamp(20px, 3vw, 34px);
+}
+
+.home-gallery span {
+    width: fit-content;
+    padding: 7px 10px;
+    color: #111827;
+    background: var(--gold);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.home-gallery strong {
+    max-width: 420px;
+    font-family: var(--title-font);
+    font-size: clamp(1.55rem, 2.5vw, 3rem);
+    line-height: 1.05;
 }
 
 .service-icon {
@@ -1396,6 +1594,78 @@ h3 {
 
 .form-only-page .lead-form {
     width: 100%;
+}
+
+.appointment-form-page {
+    min-height: calc(100vh - 86px);
+    align-content: center;
+}
+
+.contact-business-page {
+    grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr);
+    align-items: stretch;
+    background:
+        linear-gradient(135deg, rgba(8, 27, 49, .98), rgba(18, 56, 95, .94)),
+        url('/images/jca-hero.webp') center / cover;
+}
+
+.contact-business-card {
+    display: grid;
+    align-content: start;
+    gap: 28px;
+    padding: clamp(24px, 4vw, 42px);
+    color: var(--white);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 8px;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(14px);
+}
+
+.contact-brand strong,
+.contact-brand small {
+    color: var(--white);
+}
+
+.contact-business-card h1 {
+    margin-top: 12px;
+    font-size: clamp(2.4rem, 4.6vw, 5rem);
+}
+
+.contact-business-card p {
+    max-width: 620px;
+    margin-top: 16px;
+    color: rgba(255, 255, 255, .78);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.contact-info-list {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-info-list a {
+    display: grid;
+    gap: 5px;
+    padding: 16px;
+    color: var(--white);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 8px;
+}
+
+.contact-info-list strong {
+    color: var(--gold);
+}
+
+.contact-info-list span {
+    color: rgba(255, 255, 255, .78);
+    overflow-wrap: anywhere;
+}
+
+.contact-business-page .lead-form {
+    background: var(--white);
 }
 
 .feature-stack,
@@ -3780,6 +4050,8 @@ h3 {
         border: 1px solid var(--line);
         border-radius: 8px;
         box-shadow: var(--shadow);
+        max-height: calc(100vh - 88px);
+        overflow-y: auto;
     }
 
     .main-nav.is-open {
@@ -3795,6 +4067,9 @@ h3 {
     .story-showcase,
     .impact-story,
     .target-grid,
+    .home-manifesto,
+    .manifesto-grid,
+    .home-gallery,
     .cards-grid,
     .visual-card-grid,
     .service-icon-grid,
@@ -3816,6 +4091,26 @@ h3 {
 
     .hero-art {
         display: none;
+    }
+
+    .home-art-board {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: calc(100% - 36px);
+        margin: -76px auto 36px;
+        z-index: 3;
+    }
+
+    .home-art-board article,
+    .home-art-board img {
+        min-height: 190px;
+    }
+
+    .home-art-board article:nth-child(2),
+    .home-art-board article:nth-child(3) {
+        transform: none;
     }
 
     .intro-visual,
@@ -3874,6 +4169,13 @@ h3 {
         grid-template-columns: 1fr 1fr;
     }
 
+    .service-icon-grid,
+    .cards-grid,
+    .target-grid,
+    .manifesto-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .journey-panel {
         grid-template-columns: 1fr;
     }
@@ -3922,17 +4224,31 @@ h3 {
     }
 
     .hero {
-        min-height: 86vh;
+        min-height: auto;
     }
 
     .hero-content {
         width: calc(100% - 32px);
         margin-inline: 16px;
-        padding-top: 54px;
+        padding: 54px 0 112px;
+    }
+
+    .home-hero-content {
+        padding-bottom: 118px;
+    }
+
+    .home-art-board {
+        grid-template-columns: 1fr;
+        margin-top: -86px;
+    }
+
+    .home-art-board article,
+    .home-art-board img {
+        min-height: 150px;
     }
 
     h1 {
-        font-size: 3.8rem;
+        font-size: clamp(3rem, 18vw, 3.8rem);
     }
 
     h2,
@@ -3943,6 +4259,10 @@ h3 {
     .hero-lede,
     .page-hero p {
         font-size: 1.06rem;
+    }
+
+    .home-gallery article {
+        min-height: 250px;
     }
 
     .intro-section,
@@ -3957,6 +4277,10 @@ h3 {
 
     .contact-profile {
         position: static;
+    }
+
+    .contact-business-page {
+        grid-template-columns: 1fr;
     }
 
     .intro-visual,
@@ -3981,7 +4305,8 @@ h3 {
     }
 
     .search-panel button,
-    .button {
+    .button,
+    .nav-cta {
         width: 100%;
     }
 
@@ -4031,6 +4356,8 @@ h3 {
     .portal-hero-grid,
     .service-icon-grid,
     .home-pathway,
+    .manifesto-grid,
+    .home-gallery,
     .axis-strip,
     .proof-grid,
     .register-shell,
@@ -4038,6 +4365,24 @@ h3 {
     .report-modules,
     .values-grid {
         grid-template-columns: 1fr;
+    }
+
+    .lead-form,
+    .feature-stack {
+        padding: 20px;
+    }
+
+    .lead-form label,
+    .lead-form input,
+    .lead-form select,
+    .lead-form textarea {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .contact-business-card h1 {
+        font-size: clamp(2.15rem, 12vw, 3.2rem);
+        overflow-wrap: anywhere;
     }
 
     .portal-action-board {
@@ -4094,11 +4439,12 @@ h3 {
     }
 
     .compact-calendar {
-        padding: 10px;
+        padding: 8px;
+        overflow-x: auto;
     }
 
     .calendar-day {
-        min-height: 74px;
+        min-height: 70px;
         padding: 8px 2px;
     }
 
@@ -4120,11 +4466,63 @@ h3 {
         padding: 16px;
     }
 
+    .admin-table {
+        min-width: 680px;
+    }
+
     .journey-steps {
         grid-template-columns: 1fr;
     }
 
     .journey-motivation-actions a {
         width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-header {
+        gap: 10px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand small {
+        display: none;
+    }
+
+    .brand-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .main-nav {
+        left: 10px;
+        right: 10px;
+    }
+
+    .hero-content {
+        width: calc(100% - 24px);
+        margin-inline: 12px;
+    }
+
+    .home-art-board {
+        width: calc(100% - 24px);
+    }
+
+    .content-band,
+    .client-tools,
+    .services-section,
+    .split-section,
+    .contact-section,
+    .home-manifesto,
+    .cta-band {
+        padding-inline: 12px;
+    }
+
+    .calendar-grid,
+    .calendar-weekdays {
+        min-width: 336px;
     }
 }
