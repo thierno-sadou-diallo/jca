@@ -99,20 +99,63 @@
                 </section>
             @endif
 
-            @if ($slug !== 'qui-sommes-nous')
+            @php
+                $visualRibbon = match ($slug) {
+                    'confidentialite' => [
+                        ['image' => 'jca-hero.webp', 'alt' => 'Cadre confidentiel', 'label' => 'Données'],
+                        ['image' => 'jca-immigration.webp', 'alt' => 'Documents confidentiels', 'label' => 'Documents'],
+                        ['image' => 'jca-cooperation.webp', 'alt' => 'Suivi professionnel', 'label' => 'Suivi'],
+                    ],
+                    'immigration' => [
+                        ['image' => 'jca-immigration.webp', 'alt' => 'Mobilité internationale', 'label' => 'Dossier'],
+                        ['image' => 'jca-hero.webp', 'alt' => 'Analyse du parcours', 'label' => 'Parcours'],
+                        ['image' => 'jca-cooperation.webp', 'alt' => 'Préparation internationale', 'label' => 'Préparation'],
+                    ],
+                    'recrutement-international' => [
+                        ['image' => 'jca-recruitment.webp', 'alt' => 'Recrutement international', 'label' => 'Profils'],
+                        ['image' => 'jca-hero.webp', 'alt' => 'Employeurs internationaux', 'label' => 'Employeurs'],
+                        ['image' => 'jca-immigration.webp', 'alt' => 'Mobilité professionnelle', 'label' => 'Mobilité'],
+                    ],
+                    'cooperation-internationale' => [
+                        ['image' => 'jca-cooperation.webp', 'alt' => 'Coopération internationale', 'label' => 'Projets'],
+                        ['image' => 'jca-recruitment.webp', 'alt' => 'Partenaires techniques', 'label' => 'Acteurs'],
+                        ['image' => 'jca-hero.webp', 'alt' => 'Impact international', 'label' => 'Impact'],
+                    ],
+                    default => [],
+                };
+            @endphp
+
+            @if (! empty($visualRibbon))
                 <section class="page-visual-ribbon" aria-label="Univers visuel JCA">
-                    <article>
-                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="Accompagnement immigration" loading="lazy">
-                        <span>{{ __('Mobilite') }}</span>
-                    </article>
-                    <article>
-                        <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
-                        <span>{{ __('Talents') }}</span>
-                    </article>
-                    <article>
-                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
-                        <span>{{ __('Partenaires') }}</span>
-                    </article>
+                    @foreach ($visualRibbon as $visual)
+                        <article>
+                            <img src="{{ asset('images/'.$visual['image']) }}" alt="{{ $visual['alt'] }}" loading="lazy">
+                            <span>{{ __($visual['label']) }}</span>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+
+            @if ($slug === 'collaboration')
+                <section class="page-context-art collaboration-context">
+                    <div>
+                        <span class="eyebrow">{{ __('Collaboration') }}</span>
+                        <h2>{{ __('Des partenariats lisibles, utiles et bien coordonnés.') }}</h2>
+                    </div>
+                    <div class="context-art-grid" aria-label="Collaboration JCA">
+                        <article>
+                            <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Organisations partenaires" loading="lazy">
+                            <span>{{ __('Organisations') }}</span>
+                        </article>
+                        <article>
+                            <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Cadre de collaboration" loading="lazy">
+                            <span>{{ __('Cadre commun') }}</span>
+                        </article>
+                        <article>
+                            <img src="{{ asset('images/jca-hero.webp') }}" alt="Impact des partenariats" loading="lazy">
+                            <span>{{ __('Impact mesurable') }}</span>
+                        </article>
+                    </div>
                 </section>
             @endif
 
