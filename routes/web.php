@@ -350,6 +350,16 @@ $legalPages = [
     ],
 ];
 
+$publishedTestimonialsQuery = function () {
+    $query = DB::table('testimonials')->where('is_published', true);
+
+    if (Schema::hasColumn('testimonials', 'locale')) {
+        $query->where('locale', app()->getLocale());
+    }
+
+    return $query;
+};
+
 $homeData = fn () => [
     'pages' => $pages,
     'latestJobs' => Schema::hasTable('job_postings')
@@ -362,8 +372,11 @@ $homeData = fn () => [
         ? HumanitarianProgram::where('status', 'active')->latest()->limit(2)->get()
         : collect(),
     'testimonials' => Schema::hasTable('testimonials')
-        ? DB::table('testimonials')->where('is_published', true)->latest()->limit(3)->get()
+        ? $publishedTestimonialsQuery()->latest()->limit(3)->get()
         : collect(),
+    'testimonialsTotal' => Schema::hasTable('testimonials')
+        ? $publishedTestimonialsQuery()->count()
+        : 0,
 ];
 
 Route::get('/', fn () => view('welcome', $homeData()))->name('home');
@@ -399,6 +412,7 @@ Route::get('/sitemap.xml', function () use ($pages, $legalPages) {
             route('public.blog'),
             route('public.news'),
             route('public.faq'),
+            route('public.testimonials.index'),
             route('public.partners'),
             route('public.cooperation-projects'),
             route('public.humanitarian-programs'),
@@ -414,6 +428,7 @@ Route::get('/sitemap.xml', function () use ($pages, $legalPages) {
                     route('localized.public.blog', $locale),
                     route('localized.public.news', $locale),
                     route('localized.public.faq', $locale),
+                    route('localized.public.testimonials.index', $locale),
                     route('localized.public.partners', $locale),
                     route('localized.public.cooperation-projects', $locale),
                     route('localized.public.humanitarian-programs', $locale),
@@ -462,6 +477,13 @@ Route::post('/demandes', [LeadRequestController::class, 'store'])
 Route::post('/temoignages', [PublicTestimonialController::class, 'store'])
     ->middleware('throttle:lead-requests')
     ->name('public.testimonials.store');
+Route::get('/temoignages', function () use ($publishedTestimonialsQuery) {
+    return view('public.testimonials', [
+        'testimonials' => Schema::hasTable('testimonials')
+            ? $publishedTestimonialsQuery()->latest()->paginate(9)
+            : collect(),
+    ]);
+})->name('public.testimonials.index');
 Route::get('/blog', [PublicContentController::class, 'blog'])->name('public.blog');
 Route::get('/actualites', [PublicContentController::class, 'news'])->name('public.news');
 Route::get('/articles/{article:slug}', [PublicContentController::class, 'article'])->name('public.articles.show');
@@ -493,7 +515,7 @@ Route::get('/legal/{slug}', function (string $slug) use ($legalPages) {
 
 Route::prefix('{locale}')
     ->whereIn('locale', ['fr', 'en'])
-    ->group(function () use ($legalPages): void {
+    ->group(function () use ($legalPages, $publishedTestimonialsQuery): void {
         $setLocale = function (string $locale): void {
             session(['locale' => $locale]);
             app()->setLocale($locale);
@@ -528,6 +550,16 @@ Route::prefix('{locale}')
 
             return $controller->faq();
         })->name('localized.public.faq');
+
+        Route::get('/temoignages', function (string $locale) use ($setLocale, $publishedTestimonialsQuery) {
+            $setLocale($locale);
+
+            return view('public.testimonials', [
+                'testimonials' => Schema::hasTable('testimonials')
+                    ? $publishedTestimonialsQuery()->latest()->paginate(9)
+                    : collect(),
+            ]);
+        })->name('localized.public.testimonials.index');
 
         Route::get('/partenaires', function (string $locale, PublicContentController $controller) use ($setLocale) {
             $setLocale($locale);
@@ -691,6 +723,7 @@ Route::post('/espace/rendez-vous', [PortalAppointmentController::class, 'store']
     ->name('portal.appointments.store');
 
 Route::get('/{slug}', function (string $slug) use ($pages) {
+    abort_if($slug === 'equipe', 404);
     abort_unless(isset($pages[$slug]), 404);
 
     return view('page', [
@@ -701,7 +734,7 @@ Route::get('/{slug}', function (string $slug) use ($pages) {
 })->name('page.show');
 
 Route::get('/{locale}/{slug}', function (string $locale, string $slug) use ($pages) {
-    abort_unless(in_array($locale, ['fr', 'en'], true) && isset($pages[$slug]), 404);
+    abort_unless(in_array($locale, ['fr', 'en'], true) && isset($pages[$slug]) && $slug !== 'equipe', 404);
     session(['locale' => $locale]);
     app()->setLocale($locale);
 

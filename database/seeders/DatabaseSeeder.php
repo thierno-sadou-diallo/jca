@@ -198,6 +198,7 @@ class DatabaseSeeder extends Seeder
             [
                 'author_role' => 'Partenaire institutionnel',
                 'organization' => 'Programme international',
+                'locale' => 'fr',
                 'quote' => 'JCA apporte une approche structurée, professionnelle et orientée impact.',
                 'is_published' => true,
                 'created_at' => now(),

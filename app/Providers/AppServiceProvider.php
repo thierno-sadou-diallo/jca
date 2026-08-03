@@ -65,6 +65,7 @@ class AppServiceProvider extends ServiceProvider
                     'public.news' => 'localized.public.news',
                     'public.articles.show' => 'localized.public.articles.show',
                     'public.faq' => 'localized.public.faq',
+                    'public.testimonials.index' => 'localized.public.testimonials.index',
                     'public.partners' => 'localized.public.partners',
                     'public.cooperation-projects' => 'localized.public.cooperation-projects',
                     'public.cooperation-projects.show' => 'localized.public.cooperation-projects.show',

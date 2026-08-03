@@ -151,6 +151,11 @@
                             </figcaption>
                         </figure>
                     @endforelse
+                    @if (($testimonialsTotal ?? 0) > $testimonials->count())
+                        <a class="testimonial-more-link" href="{{ $publicRoute('public.testimonials.index') }}">
+                            {{ __('Voir tous les témoignages') }}
+                        </a>
+                    @endif
                 </div>
                 <form class="lead-form testimonial-form" method="post" action="{{ route('public.testimonials.store') }}">
                     @csrf

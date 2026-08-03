@@ -1375,6 +1375,44 @@ h2 {
     max-width: 860px;
 }
 
+.testimonial-more-link {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 16px;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .1);
+    font-weight: 900;
+    transition: transform .22s ease, background .22s ease, border-color .22s ease;
+}
+
+.testimonial-more-link:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, .16);
+    border-color: rgba(213, 173, 71, .48);
+}
+
+.testimonial-index-section {
+    padding: clamp(56px, 7vw, 96px) clamp(18px, 6vw, 88px);
+    background:
+        radial-gradient(circle at 12% 16%, rgba(213, 173, 71, .12), transparent 28%),
+        linear-gradient(135deg, #f8fafc, #ffffff);
+}
+
+.testimonial-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 18px;
+}
+
+.testimonial-index-section nav {
+    margin-top: 26px;
+}
+
 .target-band {
     position: relative;
     overflow: hidden;
@@ -1616,72 +1654,6 @@ h2 {
 .manifesto-grid p {
     color: var(--muted);
     line-height: 1.65;
-}
-
-.home-gallery {
-    display: grid;
-    grid-template-columns: 1.1fr .9fr 1fr;
-    gap: 1px;
-    padding: 1px clamp(18px, 6vw, 88px);
-    background: var(--line);
-}
-
-.home-gallery article {
-    position: relative;
-    min-height: clamp(320px, 34vw, 520px);
-    overflow: hidden;
-    display: grid;
-    align-content: end;
-    color: var(--white);
-    background: var(--navy);
-}
-
-.home-gallery img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.04);
-    transition: transform .65s ease;
-}
-
-.home-gallery article:hover img {
-    transform: scale(1.1);
-}
-
-.home-gallery article::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(0deg, rgba(5, 18, 35, .9), rgba(5, 18, 35, .16));
-}
-
-.home-gallery div {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    gap: 10px;
-    padding: clamp(20px, 3vw, 34px);
-}
-
-.home-gallery span {
-    width: fit-content;
-    padding: 7px 10px;
-    color: #111827;
-    background: var(--gold);
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.home-gallery strong {
-    max-width: 420px;
-    font-family: var(--title-font);
-    font-size: clamp(1.55rem, 2.5vw, 3rem);
-    line-height: 1.05;
 }
 
 .service-icon {
@@ -5023,7 +4995,6 @@ h3 {
     .target-grid,
     .home-manifesto,
     .manifesto-grid,
-    .home-gallery,
     .home-focus-strip,
     .cards-grid,
     .visual-card-grid,
@@ -5227,10 +5198,6 @@ h3 {
         font-size: 1.06rem;
     }
 
-    .home-gallery article {
-        min-height: 250px;
-    }
-
     .intro-section,
     .content-band,
     .client-tools,
@@ -5326,7 +5293,6 @@ h3 {
     .testimonial-submit-section,
     .home-testimonials-layout,
     .manifesto-grid,
-    .home-gallery,
     .axis-strip,
     .proof-grid,
     .register-shell,

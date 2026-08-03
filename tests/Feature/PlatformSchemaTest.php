@@ -47,6 +47,7 @@ class PlatformSchemaTest extends TestCase
 
         $this->assertTrue(Schema::hasColumn('cooperation_projects', 'image_path'));
         $this->assertTrue(Schema::hasColumn('humanitarian_programs', 'image_path'));
+        $this->assertTrue(Schema::hasColumn('testimonials', 'locale'));
     }
 
     public function test_authenticated_user_can_open_portal_dashboard(): void

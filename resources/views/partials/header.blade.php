@@ -21,7 +21,6 @@
         <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
         <a href="{{ $publicRoute('jobs.index') }}">Emplois</a>
         <a href="{{ $publicRoute('public.blog') }}">Blog</a>
-        <a href="{{ $publicRoute('public.faq') }}">FAQ</a>
         <a href="{{ $publicRoute('page.show', 'contact') }}">Contact</a>
         <a class="nav-cta" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
         @auth

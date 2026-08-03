@@ -115,6 +115,7 @@ class LeadRequestTest extends TestCase
             'author_name' => 'Mamadou Ndiaye',
             'author_role' => 'Employeur',
             'organization' => 'Groupe Horizon',
+            'locale' => 'fr',
             'is_published' => true,
             'status' => 'published',
         ]);
