@@ -10,7 +10,7 @@
 <body class="admin-shell">
     <aside class="admin-sidebar">
         <a class="brand admin-brand" href="{{ route('admin.dashboard') }}">
-            <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
+            <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
             <span>
                 <strong>Administration</strong>
                 <small>Back-office</small>

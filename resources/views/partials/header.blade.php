@@ -1,6 +1,6 @@
 <header class="site-header" data-header>
     <a class="brand" href="{{ $publicRoute('home') }}" aria-label="Accueil JCA">
-        <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
+        <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
         <span>
             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
             <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et coopération' }}</small>

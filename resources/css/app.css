@@ -111,8 +111,8 @@ form {
 }
 
 .brand-logo {
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
     object-fit: contain;
     flex: 0 0 auto;
     background: var(--white);
@@ -2819,7 +2819,7 @@ h3 {
 .about-hero-signature {
     position: relative;
     z-index: 2;
-    min-height: clamp(300px, 31vw, 430px);
+    min-height: clamp(320px, 33vw, 450px);
     display: grid;
     grid-template-columns: repeat(2, minmax(120px, 1fr));
     gap: 14px;
@@ -2862,16 +2862,30 @@ h3 {
 
 .about-hero-signature article:first-of-type {
     grid-row: span 2;
-    min-height: 278px;
+    min-height: 300px;
     background:
-        linear-gradient(145deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .07));
+        linear-gradient(145deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .08));
     border-color: rgba(213, 173, 71, .36);
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.about-hero-seal img {
+    width: min(230px, 76%);
+    aspect-ratio: 1;
+    object-fit: contain;
+    padding: 14px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid rgba(213, 173, 71, .5);
+    border-radius: 8px;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, .22);
 }
 
 .about-hero-signature strong {
     font-family: var(--title-font);
-    font-size: clamp(2.3rem, 5vw, 5rem);
-    line-height: .9;
+    font-size: clamp(1.55rem, 3vw, 2.9rem);
+    line-height: 1;
 }
 
 .about-hero-signature small {

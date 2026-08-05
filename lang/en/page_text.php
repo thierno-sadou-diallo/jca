@@ -698,4 +698,8 @@ return [
     'talents' => 'talents',
     'qui construisent' => 'building',
     'le monde de demain.' => 'tomorrow’s world.',
+    'Juristyle Conseil' => 'Juristyle Advisory',
+    'Accompagnement international' => 'International support',
+    'Rigueur' => 'Rigor',
+    'Méthode' => 'Method',
 ];

@@ -10,7 +10,7 @@
 <body class="admin-login">
     <main class="login-panel">
         <a class="brand" href="{{ $publicRoute('home') }}">
-            <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
+            <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
             <span>
                 <strong>JCA</strong>
                 <small>Espace personnel</small>

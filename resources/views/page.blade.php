@@ -23,7 +23,7 @@
             <section class="contact-section contact-business-page">
                 <div class="contact-business-card">
                     <a class="brand contact-brand" href="{{ $publicRoute('home') }}">
-                        <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
+                        <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
                         <span>
                             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
                             <small>{{ __($siteSettings['brand_tagline'] ?? 'Immigration, recrutement et coopération') }}</small>
@@ -72,17 +72,18 @@
                     <div class="about-hero-signature" aria-hidden="true">
                         <span class="about-orbit about-orbit-1"></span>
                         <span class="about-orbit about-orbit-2"></span>
-                        <article>
-                            <strong>JCA</strong>
-                            <small>{{ __('Mobilité') }}</small>
+                        <article class="about-hero-seal">
+                            <img src="{{ asset('images/logo_off.jpg') }}" alt="">
+                            <strong>{{ __('Juristyle Conseil') }}</strong>
+                            <small>{{ __('Accompagnement international') }}</small>
                         </article>
                         <article>
-                            <strong>01</strong>
-                            <small>{{ __('Conseil') }}</small>
+                            <strong>{{ __('Rigueur') }}</strong>
+                            <small>{{ __('Méthode') }}</small>
                         </article>
                         <article>
-                            <strong>360</strong>
-                            <small>{{ __('Impact') }}</small>
+                            <strong>{{ __('Mobilité') }}</strong>
+                            <small>{{ __('Talents') }}</small>
                         </article>
                     </div>
                 @else

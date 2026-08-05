@@ -2,7 +2,7 @@
     <div class="footer-grid">
         <div>
             <a class="brand footer-brand" href="{{ $publicRoute('home') }}">
-                <img class="brand-logo" src="{{ asset('images/logo_jca.jpg') }}" alt="Logo JCA">
+                <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
                 <span>
                     <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
                     <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et cooperation' }}</small>

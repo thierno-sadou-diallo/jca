@@ -9,7 +9,7 @@
             '@type' => 'Organization',
             'name' => $siteSettings['brand_name'] ?? 'JCA',
             'url' => url('/'),
-            'logo' => asset('images/logo_jca.jpg'),
+            'logo' => asset('images/logo_off.jpg'),
             'email' => $siteSettings['contact_email'] ?? 'contact@jcaconseil.com',
             'telephone' => $siteSettings['contact_phone'] ?? '78 968 51 16',
             'sameAs' => array_values(array_filter([
