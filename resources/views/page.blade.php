@@ -69,9 +69,9 @@
                 </div>
 
                 @if ($slug === 'qui-sommes-nous')
-                    <div class="about-hero-signature" aria-hidden="true">
-                        <span class="about-orbit about-orbit-1"></span>
-                        <span class="about-orbit about-orbit-2"></span>
+                    <div class="about-hero-signature">
+                        <span class="about-orbit about-orbit-1" aria-hidden="true"></span>
+                        <span class="about-orbit about-orbit-2" aria-hidden="true"></span>
                         <article class="about-hero-seal">
                             <img src="{{ asset('images/logo_off.jpg') }}" alt="">
                             <strong>{{ __('Juristyle Conseil') }}</strong>

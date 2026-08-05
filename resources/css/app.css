@@ -390,7 +390,7 @@ h1 {
 }
 
 .hero-kicker-accent {
-    color: var(--copper);
+    color: inherit;
 }
 
 .hero-kicker em {
@@ -882,7 +882,7 @@ h2 {
     margin-top: 12px;
     font-family: var(--title-font);
     color: var(--navy);
-    background: linear-gradient(105deg, var(--gold) 0 18%, var(--navy) 18% 100%);
+    background: linear-gradient(105deg, var(--navy) 0 42%, var(--gold) 42% 58%, var(--navy) 58% 100%);
     background-clip: text;
     -webkit-background-clip: text;
     font-size: clamp(1.9rem, 3rem, 3.5rem);
@@ -907,7 +907,7 @@ h2 {
 .service-experience h2,
 .collaboration-contact-copy h2,
 .service-detail-copy h2 {
-    background: linear-gradient(105deg, var(--gold) 0 20%, #ffffff 20% 100%);
+    background: linear-gradient(105deg, #ffffff 0 42%, var(--gold) 42% 58%, #ffffff 58% 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -3795,7 +3795,7 @@ h3 {
 }
 
 .about-values-section .section-heading h2 {
-    background: linear-gradient(105deg, var(--gold) 0 24%, #ffffff 24% 100%);
+    background: linear-gradient(105deg, #ffffff 0 42%, var(--gold) 42% 58%, #ffffff 58% 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
