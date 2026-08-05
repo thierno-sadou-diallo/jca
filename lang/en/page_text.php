@@ -702,4 +702,8 @@ return [
     'Accompagnement international' => 'International support',
     'Rigueur' => 'Rigor',
     'Méthode' => 'Method',
+    'Protection' => 'Protection',
+    'Données encadrées' => 'Governed data',
+    'Accès limité' => 'Limited access',
+    'Discrétion professionnelle' => 'Professional discretion',
 ];

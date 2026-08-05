@@ -2916,6 +2916,121 @@ h3 {
     height: 118px;
 }
 
+.page-hero-privacy {
+    grid-template-columns: minmax(0, .92fr) minmax(300px, .68fr);
+    background:
+        radial-gradient(circle at 18% 20%, rgba(213, 173, 71, .2), transparent 28%),
+        radial-gradient(circle at 84% 70%, rgba(31, 138, 132, .28), transparent 32%),
+        linear-gradient(135deg, rgba(4, 16, 30, .99), rgba(8, 38, 55, .98));
+}
+
+.privacy-hero-mark {
+    position: relative;
+    z-index: 2;
+    min-height: clamp(300px, 32vw, 430px);
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 14px;
+}
+
+.privacy-ring {
+    position: absolute;
+    border: 1px solid rgba(213, 173, 71, .3);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.privacy-ring-1 {
+    width: min(92%, 390px);
+    aspect-ratio: 1;
+}
+
+.privacy-ring-2 {
+    width: min(64%, 270px);
+    aspect-ratio: 1;
+    border-color: rgba(255, 255, 255, .16);
+    transform: rotate(18deg);
+}
+
+.privacy-shield {
+    position: relative;
+    width: min(46vw, 210px);
+    max-width: 210px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .07));
+    border: 1px solid rgba(213, 173, 71, .44);
+    border-radius: 8px;
+    box-shadow: 0 28px 68px rgba(0, 0, 0, .24);
+    backdrop-filter: blur(18px);
+}
+
+.privacy-shield::before {
+    content: "";
+    width: 78px;
+    height: 94px;
+    border: 3px solid currentColor;
+    border-radius: 42px 42px 18px 18px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+}
+
+.privacy-shield span {
+    position: absolute;
+    width: 42px;
+    height: 30px;
+    border: 3px solid currentColor;
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.privacy-shield span::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: -28px;
+    width: 20px;
+    height: 28px;
+    border: 3px solid currentColor;
+    border-bottom: 0;
+    border-radius: 16px 16px 0 0;
+}
+
+.privacy-hero-mark article {
+    position: relative;
+    width: min(100%, 300px);
+    display: grid;
+    gap: 6px;
+    padding: 16px 18px;
+    color: var(--white);
+    background: rgba(255, 255, 255, .09);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 8px;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, .18);
+    backdrop-filter: blur(14px);
+}
+
+.privacy-hero-mark article:nth-of-type(1) {
+    justify-self: start;
+}
+
+.privacy-hero-mark article:nth-of-type(2) {
+    justify-self: end;
+}
+
+.privacy-hero-mark strong {
+    font-family: var(--title-font);
+    font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+.privacy-hero-mark small {
+    color: rgba(255, 255, 255, .7);
+    font-weight: 800;
+}
+
 .page-visual-ribbon {
     position: relative;
     margin-top: -1px;
@@ -3230,6 +3345,44 @@ h3 {
 .service-icon-card:nth-child(4) {
     background:
         linear-gradient(145deg, rgba(33, 25, 29, .98), rgba(131, 79, 56, .9) 58%, rgba(11, 30, 49, .98));
+}
+
+.services-minimal-band-confidentialite {
+    background:
+        radial-gradient(circle at 10% 12%, rgba(213, 173, 71, .16), transparent 24%),
+        linear-gradient(135deg, #f7fbfa, #ffffff 46%, #f3f6fa);
+}
+
+.service-icon-grid-confidentialite {
+    grid-template-columns: minmax(280px, .95fr) repeat(2, minmax(220px, .75fr));
+}
+
+.service-icon-grid-confidentialite .service-icon-card {
+    min-height: 300px;
+    background:
+        linear-gradient(145deg, rgba(5, 18, 35, .98), rgba(13, 51, 66, .94));
+    border-color: rgba(213, 173, 71, .34);
+}
+
+.service-icon-grid-confidentialite .service-icon-card:first-child {
+    grid-row: span 2;
+    min-height: 100%;
+    background:
+        radial-gradient(circle at 82% 18%, rgba(213, 173, 71, .22), transparent 30%),
+        linear-gradient(145deg, rgba(5, 18, 35, .99), rgba(11, 62, 69, .95));
+}
+
+.service-icon-grid-confidentialite .service-icon-card:first-child h3 {
+    font-size: clamp(2rem, 3vw, 3.3rem);
+}
+
+.service-icon-grid-confidentialite .service-icon-card:nth-child(even),
+.service-icon-grid-confidentialite .service-icon-card:nth-child(even):hover {
+    transform: none;
+}
+
+.service-icon-grid-confidentialite .service-card-index {
+    color: rgba(213, 173, 71, .18);
 }
 
 .service-icon-card:nth-child(even) {
@@ -5612,7 +5765,8 @@ h3 {
     }
 
     .about-hero-signature,
-    .about-presentation-board {
+    .about-presentation-board,
+    .service-icon-grid-confidentialite {
         grid-template-columns: 1fr;
     }
 
@@ -5627,6 +5781,17 @@ h3 {
 
     .about-presentation-board article:nth-of-type(3) {
         grid-column: auto;
+    }
+
+    .service-icon-grid-confidentialite .service-icon-card:first-child {
+        grid-row: auto;
+        min-height: 300px;
+    }
+
+    .privacy-hero-mark article,
+    .privacy-hero-mark article:nth-of-type(1),
+    .privacy-hero-mark article:nth-of-type(2) {
+        justify-self: stretch;
     }
 
     .admin-shell {

@@ -57,7 +57,7 @@
                 ])
             </section>
         @else
-            <section class="page-hero page-hero-art is-immersive {{ $slug === 'qui-sommes-nous' ? 'page-hero-about' : '' }}">
+            <section class="page-hero page-hero-art is-immersive {{ $slug === 'qui-sommes-nous' ? 'page-hero-about' : '' }} {{ $slug === 'confidentialite' ? 'page-hero-privacy' : '' }}">
                 <div>
                     <span class="eyebrow">{{ __($page['eyebrow']) }}</span>
                     <h1>{{ __($page['title']) }}</h1>
@@ -84,6 +84,22 @@
                         <article>
                             <strong>{{ __('Mobilité') }}</strong>
                             <small>{{ __('Talents') }}</small>
+                        </article>
+                    </div>
+                @elseif ($slug === 'confidentialite')
+                    <div class="privacy-hero-mark">
+                        <span class="privacy-ring privacy-ring-1" aria-hidden="true"></span>
+                        <span class="privacy-ring privacy-ring-2" aria-hidden="true"></span>
+                        <div class="privacy-shield" aria-hidden="true">
+                            <span></span>
+                        </div>
+                        <article>
+                            <strong>{{ __('Protection') }}</strong>
+                            <small>{{ __('Données encadrées') }}</small>
+                        </article>
+                        <article>
+                            <strong>{{ __('Accès limité') }}</strong>
+                            <small>{{ __('Discrétion professionnelle') }}</small>
                         </article>
                     </div>
                 @else
