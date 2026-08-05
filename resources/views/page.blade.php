@@ -311,7 +311,7 @@
                     </div>
                 </section>
             @elseif ($slug !== 'qui-sommes-nous')
-                <section class="content-band {{ $usesIcons ? 'services-minimal-band' : '' }}">
+                <section class="content-band {{ $usesIcons ? 'services-minimal-band services-minimal-band-'.$slug : '' }}">
                     <div class="section-heading">
                         <span class="eyebrow">{{ __($usesIcons ? $page['eyebrow'] : 'Expertise') }}</span>
                         <h2>
@@ -324,10 +324,11 @@
                             @endif
                         </h2>
                     </div>
-                    <div class="{{ $usesIcons ? 'service-icon-grid' : 'cards-grid' }}">
+                    <div class="{{ $usesIcons ? 'service-icon-grid service-icon-grid-'.$slug : 'cards-grid' }}">
                         @foreach ($page['sections'] as $section)
                             <article class="{{ $usesIcons ? 'service-icon-card reveal' : 'info-card reveal' }}">
                                 @if ($usesIcons)
+                                    <span class="service-card-index">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                                     <span class="service-icon service-icon-{{ $loop->iteration }}" aria-hidden="true"></span>
                                 @else
                                     <span>{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>

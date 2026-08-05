@@ -34,7 +34,11 @@
             <div class="hero-content home-hero-content">
                 <span class="eyebrow">{{ __('Cabinet international') }}</span>
                 <h1>JCA</h1>
-                <p class="hero-kicker">{{ __('Des projets internationaux mieux pensés, mieux préparés, mieux accompagnés.') }}</p>
+                <p class="hero-kicker hero-kicker-statement">
+                    <span class="hero-kicker-accent">{{ __('Faciliter') }}</span> {{ __('la mobilité') }}<br>
+                    {{ __('des') }} <em>{{ __('talents') }}</em> {{ __('qui construisent') }}<br>
+                    {{ __('le monde de demain.') }}
+                </p>
                 <p class="hero-lede">{{ __('JCA relie les personnes, les employeurs et les partenaires autour de parcours clairs: immigration, mobilité, recrutement international, coopération et conseil stratégique.') }}</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('public.appointments') }}">{{ __('Prendre rendez-vous') }}</a>
