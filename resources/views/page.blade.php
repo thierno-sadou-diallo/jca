@@ -57,7 +57,7 @@
                 ])
             </section>
         @else
-            <section class="page-hero page-hero-art is-immersive">
+            <section class="page-hero page-hero-art is-immersive {{ $slug === 'qui-sommes-nous' ? 'page-hero-about' : '' }}">
                 <div>
                     <span class="eyebrow">{{ __($page['eyebrow']) }}</span>
                     <h1>{{ __($page['title']) }}</h1>
@@ -68,11 +68,30 @@
                     </div>
                 </div>
 
-                <div class="page-hero-collage" aria-hidden="true">
-                    <img src="{{ asset('images/jca-hero.webp') }}" alt="">
-                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
-                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
-                </div>
+                @if ($slug === 'qui-sommes-nous')
+                    <div class="about-hero-signature" aria-hidden="true">
+                        <span class="about-orbit about-orbit-1"></span>
+                        <span class="about-orbit about-orbit-2"></span>
+                        <article>
+                            <strong>JCA</strong>
+                            <small>{{ __('Mobilité') }}</small>
+                        </article>
+                        <article>
+                            <strong>01</strong>
+                            <small>{{ __('Conseil') }}</small>
+                        </article>
+                        <article>
+                            <strong>360</strong>
+                            <small>{{ __('Impact') }}</small>
+                        </article>
+                    </div>
+                @else
+                    <div class="page-hero-collage" aria-hidden="true">
+                        <img src="{{ asset('images/jca-hero.webp') }}" alt="">
+                        <img src="{{ asset('images/jca-immigration.webp') }}" alt="">
+                        <img src="{{ asset('images/jca-cooperation.webp') }}" alt="">
+                    </div>
+                @endif
             </section>
 
             @if ($slug === 'qui-sommes-nous')
@@ -94,18 +113,25 @@
                             </article>
                         </div>
                     </div>
-                    <div class="story-gallery" aria-label="Univers JCA">
+                    <div class="about-presentation-board" aria-label="Presentation JCA">
+                        <div class="about-board-core">
+                            <span>{{ __('JCA') }}</span>
+                            <strong>{{ __('Conseil, mobilité et impact') }}</strong>
+                        </div>
                         <article>
-                            <img src="{{ asset('images/jca-immigration.webp') }}" alt="Mobilite internationale" loading="lazy">
-                            <strong>{{ __('Mobilite') }}</strong>
+                            <span class="service-icon service-icon-1" aria-hidden="true"></span>
+                            <strong>{{ __('Parcours') }}</strong>
+                            <p>{{ __('Clarifier les étapes et sécuriser les décisions importantes.') }}</p>
                         </article>
                         <article>
-                            <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Talents internationaux" loading="lazy">
+                            <span class="service-icon service-icon-2" aria-hidden="true"></span>
                             <strong>{{ __('Talents') }}</strong>
+                            <p>{{ __('Relier les profils, les organisations et les opportunités.') }}</p>
                         </article>
                         <article>
-                            <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Cooperation internationale" loading="lazy">
-                            <strong>{{ __('Partenaires') }}</strong>
+                            <span class="service-icon service-icon-3" aria-hidden="true"></span>
+                            <strong>{{ __('Partenariats') }}</strong>
+                            <p>{{ __('Structurer des collaborations utiles, mesurables et durables.') }}</p>
                         </article>
                     </div>
                 </section>
@@ -286,6 +312,7 @@
                                 <img src="{{ asset('images/'.$service['image']) }}" alt="{{ $service['title'] }}" loading="lazy">
                             </div>
                             <div class="service-detail-copy">
+                                <span class="service-detail-count">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                                 <span class="eyebrow">{{ __('Service') }}</span>
                                 <h2>{{ __(app()->getLocale() === 'en' ? ($sectionTranslations[$service['title']] ?? $service['title']) : $service['title']) }}</h2>
                                 <p>{{ __($service['description']) }}</p>
@@ -294,7 +321,6 @@
                                         <li>{{ __($point) }}</li>
                                     @endforeach
                                 </ul>
-                                <a class="button primary" href="{{ route('public.appointments') }}">{{ __('Prendre rendez-vous') }}</a>
                             </div>
                         </article>
                     @endforeach
