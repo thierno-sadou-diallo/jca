@@ -57,7 +57,7 @@
                 ])
             </section>
         @else
-            <section class="page-hero page-hero-art is-immersive {{ $slug === 'qui-sommes-nous' ? 'page-hero-about' : '' }} {{ $slug === 'confidentialite' ? 'page-hero-privacy' : '' }}">
+            <section class="page-hero page-hero-art is-immersive {{ $slug === 'qui-sommes-nous' ? 'page-hero-about' : '' }} {{ $slug === 'confidentialite' ? 'page-hero-privacy' : '' }} {{ $slug === 'services' ? 'page-hero-services' : '' }}">
                 <div>
                     <span class="eyebrow">{{ __($page['eyebrow']) }}</span>
                     <h1>{{ __($page['title']) }}</h1>
@@ -100,6 +100,31 @@
                         <article>
                             <strong>{{ __('Accès limité') }}</strong>
                             <small>{{ __('Discrétion professionnelle') }}</small>
+                        </article>
+                    </div>
+                @elseif ($slug === 'services')
+                    <div class="service-hero-command" aria-hidden="true">
+                        <span class="service-command-ring service-command-ring-1"></span>
+                        <span class="service-command-ring service-command-ring-2"></span>
+                        <div class="service-command-core">
+                            <span class="service-icon service-icon-4"></span>
+                            <strong>{{ __('JCA') }}</strong>
+                            <small>{{ __('Services') }}</small>
+                        </div>
+                        <article>
+                            <span class="service-icon service-icon-1"></span>
+                            <strong>{{ __('Immigration') }}</strong>
+                            <small>{{ __('Parcours structurés') }}</small>
+                        </article>
+                        <article>
+                            <span class="service-icon service-icon-2"></span>
+                            <strong>{{ __('Talents') }}</strong>
+                            <small>{{ __('Recrutement ciblé') }}</small>
+                        </article>
+                        <article>
+                            <span class="service-icon service-icon-3"></span>
+                            <strong>{{ __('Coopération') }}</strong>
+                            <small>{{ __('Partenariats utiles') }}</small>
                         </article>
                     </div>
                 @else
