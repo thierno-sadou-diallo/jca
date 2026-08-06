@@ -29,7 +29,7 @@
 <meta property="og:title" content="{{ $pageTitle }}">
 <meta property="og:description" content="{{ $pageDescription }}">
 <meta property="og:type" content="{{ $ogType ?? 'website' }}">
-<meta property="og:image" content="{{ $ogImage ?? asset('images/logo_off.jpg') }}">
+<meta property="og:image" content="{{ $ogImage ?? asset('images/logo_off.webp') }}">
 <link rel="canonical" href="{{ url()->current() }}">
 <link rel="alternate" hreflang="fr" href="{{ $localizedUrl('fr') }}">
 <link rel="alternate" hreflang="en" href="{{ $localizedUrl('en') }}">

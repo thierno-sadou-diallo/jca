@@ -2,7 +2,7 @@
     <div class="footer-grid">
         <div>
             <a class="brand footer-brand" href="{{ $publicRoute('home') }}">
-                <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
+                <img class="brand-logo" src="{{ asset('images/logo_off.webp') }}" alt="Logo JCA">
                 <span>
                     <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
                     <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et cooperation' }}</small>
@@ -22,6 +22,7 @@
             <a href="{{ $publicRoute('page.show', 'qui-sommes-nous') }}">À propos</a>
             <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
             <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
+            <a href="{{ app()->getLocale() === 'en' ? route('localized.public.portfolio', 'en') : route('public.portfolio') }}">Portfolio</a>
             <a href="{{ $publicRoute('public.blog') }}">Blog</a>
             <a href="{{ $publicRoute('public.faq') }}">FAQ</a>
             <a href="{{ $publicRoute('legal.show', 'mentions-legales') }}">Mentions légales</a>

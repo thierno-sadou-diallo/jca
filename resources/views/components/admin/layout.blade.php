@@ -10,7 +10,7 @@
 <body class="admin-shell">
     <aside class="admin-sidebar">
         <a class="brand admin-brand" href="{{ route('admin.dashboard') }}">
-            <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
+            <img class="brand-logo" src="{{ asset('images/logo_off.webp') }}" alt="Logo JCA">
             <span>
                 <strong>Administration</strong>
                 <small>Back-office</small>
@@ -26,6 +26,7 @@
             <a @class(['is-active' => request()->routeIs('admin.jobs.*')]) href="{{ route('admin.jobs.index') }}">Emplois</a>
             <a @class(['is-active' => request()->routeIs('admin.applications.*')]) href="{{ route('admin.applications.index') }}">Candidatures</a>
             <a @class(['is-active' => request()->routeIs('admin.articles.*')]) href="{{ route('admin.articles.index') }}">Articles</a>
+            <a @class(['is-active' => request()->routeIs('admin.portfolio.*')]) href="{{ route('admin.portfolio.index') }}">Portfolio</a>
             <a @class(['is-active' => request()->routeIs('admin.faqs.*')]) href="{{ route('admin.faqs.index') }}">FAQ</a>
             <a @class(['is-active' => request()->routeIs('admin.cooperation-projects.*')]) href="{{ route('admin.cooperation-projects.index') }}">Coopération</a>
             <a @class(['is-active' => request()->routeIs('admin.humanitarian-programs.*')]) href="{{ route('admin.humanitarian-programs.index') }}">Humanitaire</a>

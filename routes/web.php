@@ -418,6 +418,7 @@ Route::get('/sitemap.xml', function () use ($pages, $legalPages) {
             route('public.humanitarian-programs'),
         ])
         ->merge(collect(array_keys($legalPages))->map(fn (string $slug) => route('legal.show', $slug)))
+        ->merge([route('public.portfolio')])
         ->merge(collect(['fr', 'en'])->flatMap(function (string $locale) use ($pages, $legalPages) {
             return collect(array_keys($pages))
                 ->reject(fn (string $slug) => $slug === 'emplois')
@@ -429,6 +430,7 @@ Route::get('/sitemap.xml', function () use ($pages, $legalPages) {
                     route('localized.public.news', $locale),
                     route('localized.public.faq', $locale),
                     route('localized.public.testimonials.index', $locale),
+                    route('localized.public.portfolio', $locale),
                     route('localized.public.partners', $locale),
                     route('localized.public.cooperation-projects', $locale),
                     route('localized.public.humanitarian-programs', $locale),
@@ -499,6 +501,18 @@ Route::get('/dossier-collaboration', function () {
         $settings['collaboration_document_name'] ?: 'dossier-collaboration-jca.pdf',
     );
 })->name('public.collaboration-document.download');
+
+Route::get('/portfolio', [\App\Http\Controllers\PublicPortfolioController::class, 'index'])
+    ->name('public.portfolio');
+
+Route::middleware(['auth', 'admin'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('portfolio', \App\Http\Controllers\Admin\PortfolioItemController::class)
+            ->except(['show'])
+            ->parameters(['portfolio' => 'portfolio']);
+    });
 Route::get('/partenaires', [PublicContentController::class, 'partners'])->name('public.partners');
 Route::get('/projets-cooperation', [PublicContentController::class, 'cooperationProjects'])->name('public.cooperation-projects');
 Route::get('/projets-cooperation/{project:slug}', [PublicContentController::class, 'cooperationProject'])->name('public.cooperation-projects.show');
@@ -560,6 +574,12 @@ Route::prefix('{locale}')
                     : collect(),
             ]);
         })->name('localized.public.testimonials.index');
+
+        Route::get('/portfolio', function (string $locale, \App\Http\Controllers\PublicPortfolioController $controller) use ($setLocale) {
+            $setLocale($locale);
+
+            return $controller->index();
+        })->name('localized.public.portfolio');
 
         Route::get('/partenaires', function (string $locale, PublicContentController $controller) use ($setLocale) {
             $setLocale($locale);

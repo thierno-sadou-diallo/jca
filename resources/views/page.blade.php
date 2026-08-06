@@ -23,7 +23,7 @@
             <section class="contact-section contact-business-page">
                 <div class="contact-business-card">
                     <a class="brand contact-brand" href="{{ $publicRoute('home') }}">
-                        <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
+                        <img class="brand-logo" src="{{ asset('images/logo_off.webp') }}" alt="Logo JCA">
                         <span>
                             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
                             <small>{{ __($siteSettings['brand_tagline'] ?? 'Immigration, recrutement et coopération') }}</small>
@@ -73,7 +73,7 @@
                         <span class="about-orbit about-orbit-1" aria-hidden="true"></span>
                         <span class="about-orbit about-orbit-2" aria-hidden="true"></span>
                         <article class="about-hero-seal">
-                            <img src="{{ asset('images/logo_off.jpg') }}" alt="">
+                            <img src="{{ asset('images/logo_off.webp') }}" alt="">
                             <strong>{{ __('Juristyle Conseil') }}</strong>
                             <small>{{ __('Accompagnement international') }}</small>
                         </article>
@@ -116,7 +116,8 @@
                     <div class="story-copy about-copy">
                         <span class="eyebrow">{{ __('À propos') }}</span>
                         <h2>{{ __('Un cabinet international guidé par le sens et la rigueur.') }}</h2>
-                        <p>{{ __('JCA — Juristyle Conseil & Accompagnement — accompagne particuliers, entreprises, institutions et organisations dans leurs projets d’immigration, de mobilité et de développement international.') }}</p>
+                        <p class="about-credentials">{{ __('Avocat (Barreau du Québec) / Expert en gouvernance, sécurité et politiques publiques en Afrique de l’Ouest / Gestionnaire de projets internationaux / Auteur') }}</p>
+                        <p class="about-signature-text">{{ __('Fort d’une expertise reconnue en immigration, mobilité internationale et développement, Me NDIAYE accompagne depuis des années une clientèle variée à travers le monde — particuliers, entreprises, gouvernements et organisations internationales — dans leurs démarches les plus stratégiques, dans les projets d’immigration, de recrutement internationnal ainsi que dans leur demarches juridique.') }}</p>
                         <div class="about-pillars">
                             <article>
                                 <span>{{ __('Notre vision') }}</span>

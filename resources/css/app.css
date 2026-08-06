@@ -745,6 +745,93 @@ h1 {
     transform: translateY(-2px);
 }
 
+.home-why-jca {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(54px, 7vw, 96px) clamp(18px, 6vw, 88px);
+    color: var(--white);
+    background:
+        radial-gradient(circle at 12% 16%, rgba(213, 173, 71, .2), transparent 28%),
+        radial-gradient(circle at 88% 78%, rgba(31, 138, 132, .22), transparent 30%),
+        linear-gradient(135deg, rgba(5, 18, 35, .98), rgba(12, 48, 68, .96));
+}
+
+.home-why-jca::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px) 0 0 / 82px 82px;
+    pointer-events: none;
+}
+
+.home-why-jca > * {
+    position: relative;
+    z-index: 1;
+}
+
+.home-why-jca .section-heading h2 {
+    background: linear-gradient(105deg, #ffffff 0 42%, var(--gold) 42% 58%, #ffffff 58% 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 22px);
+}
+
+.home-why-grid article {
+    position: relative;
+    min-height: 230px;
+    display: grid;
+    align-content: space-between;
+    overflow: hidden;
+    padding: clamp(22px, 3vw, 32px);
+    background: rgba(255, 255, 255, .09);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 8px;
+    box-shadow: 0 24px 62px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(16px);
+    transition: transform .26s ease, border-color .26s ease, box-shadow .26s ease;
+}
+
+.home-why-grid article::after {
+    content: "";
+    position: absolute;
+    right: -44px;
+    top: -44px;
+    width: 150px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(213, 173, 71, .28);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(213, 173, 71, .14), transparent 62%);
+}
+
+.home-why-grid article:hover {
+    transform: translateY(-7px);
+    border-color: rgba(213, 173, 71, .44);
+    box-shadow: 0 34px 78px rgba(0, 0, 0, .26);
+}
+
+.home-why-grid span {
+    color: rgba(213, 173, 71, .32);
+    font-family: var(--title-font);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: .8;
+}
+
+.home-why-grid strong {
+    position: relative;
+    z-index: 1;
+    font-family: var(--title-font);
+    font-size: clamp(1.4rem, 2vw, 2.1rem);
+    line-height: 1.05;
+}
+
 .home-pathway strong {
     color: var(--navy);
     font-size: 20px;
@@ -1198,6 +1285,28 @@ h2 {
     transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease, background .24s ease;
 }
 
+.service-domain-card:nth-child(1) {
+    --service-card-image: url('/images/jca-immigration.webp') center / cover;
+    background:
+        linear-gradient(180deg, rgba(4, 14, 26, .12), rgba(4, 14, 26, .92)),
+        var(--service-card-image);
+}
+
+.service-domain-card:nth-child(2) {
+    --service-card-image: url('/images/jca-recruitment.webp') center / cover;
+    background:
+        linear-gradient(180deg, rgba(4, 14, 26, .12), rgba(4, 14, 26, .92)),
+        var(--service-card-image);
+}
+
+.service-domain-card:nth-child(3),
+.service-domain-card:nth-child(4) {
+    --service-card-image: url('/images/jca-cooperation.webp') center / cover;
+    background:
+        linear-gradient(180deg, rgba(4, 14, 26, .12), rgba(4, 14, 26, .92)),
+        var(--service-card-image);
+}
+
 .service-domain-card::before,
 .service-domain-card::after {
     content: "";
@@ -1222,8 +1331,8 @@ h2 {
 .service-domain-card:hover {
     transform: translateY(-8px);
     background:
-        linear-gradient(145deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .07)),
-        rgba(7, 24, 42, .86);
+        linear-gradient(180deg, rgba(4, 14, 26, .06), rgba(4, 14, 26, .86)),
+        var(--service-card-image, rgba(7, 24, 42, .86));
     border-color: rgba(213, 173, 71, .42);
     box-shadow: 0 34px 80px rgba(0, 0, 0, .28);
 }
@@ -1552,6 +1661,12 @@ h2 {
 
 .home-testimonials-section .testimonial-submit-copy h2 {
     max-width: 860px;
+    background: none;
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
+    font-family: Inter, Poppins, Montserrat, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 900;
+    line-height: 1.12;
 }
 
 .testimonial-more-link {
@@ -3623,6 +3738,24 @@ h3 {
     max-width: 720px;
 }
 
+.about-credentials {
+    max-width: 980px;
+    color: #4b5563;
+    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    font-style: italic;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.about-signature-text {
+    max-width: 1080px;
+    margin-top: 28px !important;
+    color: #3f4652 !important;
+    font-size: clamp(1.45rem, 3vw, 2.65rem) !important;
+    line-height: 1.7 !important;
+    text-align: center;
+}
+
 .about-pillars {
     display: grid;
     gap: 14px;
@@ -5512,6 +5645,104 @@ h3 {
     line-height: 1.6;
 }
 
+.portfolio-hero {
+    background:
+        radial-gradient(circle at 16% 18%, rgba(213, 173, 71, .24), transparent 28%),
+        radial-gradient(circle at 84% 76%, rgba(31, 138, 132, .24), transparent 30%),
+        linear-gradient(135deg, rgba(5, 18, 35, .98), rgba(12, 48, 68, .95));
+}
+
+.portfolio-showcase {
+    padding: clamp(56px, 7vw, 96px) clamp(18px, 6vw, 88px);
+    background:
+        linear-gradient(90deg, rgba(8, 27, 49, .035) 1px, transparent 1px) 0 0 / 78px 78px,
+        linear-gradient(135deg, #f8fbfc, #ffffff 48%, #f2fbfa);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.portfolio-card,
+.portfolio-empty {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+    display: grid;
+    align-content: end;
+    color: var(--white);
+    background:
+        linear-gradient(145deg, rgba(5, 18, 35, .98), rgba(13, 51, 66, .94));
+    border: 1px solid rgba(213, 173, 71, .3);
+    border-radius: 8px;
+    box-shadow: 0 28px 70px rgba(8, 27, 49, .16);
+}
+
+.portfolio-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .72;
+    transform: scale(1.04);
+    transition: transform .6s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(5, 18, 35, .94), rgba(5, 18, 35, .18));
+}
+
+.portfolio-card > div,
+.portfolio-empty > * {
+    position: relative;
+    z-index: 1;
+}
+
+.portfolio-card > div,
+.portfolio-empty {
+    padding: clamp(22px, 3vw, 32px);
+}
+
+.portfolio-card span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.portfolio-card h2,
+.portfolio-empty h2 {
+    margin-top: 10px;
+    color: var(--white);
+    background: none;
+    -webkit-text-fill-color: var(--white);
+    font-size: clamp(1.55rem, 2.2vw, 2.4rem);
+}
+
+.portfolio-card p,
+.portfolio-empty p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, .72);
+    line-height: 1.65;
+}
+
+.portfolio-card small {
+    display: block;
+    margin-top: 16px;
+    color: rgba(255, 255, 255, .82);
+    font-weight: 800;
+}
+
 .portal-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -6375,6 +6606,7 @@ h3 {
     }
 
     .target-grid,
+    .home-why-grid,
     .about-values-grid,
     .service-flow,
     .impact-story-grid,
@@ -6458,6 +6690,7 @@ h3 {
     }
 
     .target-grid,
+    .home-why-grid,
     .about-values-grid,
     .service-flow,
     .impact-story-grid,
@@ -6472,6 +6705,7 @@ h3 {
     }
 
     .target-card,
+    .home-why-grid article,
     .service-domain-card,
     .service-icon-card,
     .about-values-grid article,
@@ -6589,6 +6823,7 @@ h3 {
     }
 
     .target-card,
+    .home-why-grid article,
     .service-icon-card,
     .service-domain-card,
     .service-detail-panel,
@@ -6655,6 +6890,7 @@ h3 {
     }
 
     .target-card,
+    .home-why-grid article,
     .service-icon-card,
     .service-domain-card,
     .service-detail-panel,

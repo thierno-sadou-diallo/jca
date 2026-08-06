@@ -1,6 +1,6 @@
 <header class="site-header" data-header>
     <a class="brand" href="{{ $publicRoute('home') }}" aria-label="Accueil JCA">
-        <img class="brand-logo" src="{{ asset('images/logo_off.jpg') }}" alt="Logo JCA">
+        <img class="brand-logo" src="{{ asset('images/logo_off.webp') }}" alt="Logo JCA">
         <span>
             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
             <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et coopération' }}</small>
@@ -19,6 +19,7 @@
         <a href="{{ $publicRoute('page.show', 'services') }}">Services</a>
         <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
         <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>
+        <a href="{{ app()->getLocale() === 'en' ? route('localized.public.portfolio', 'en') : route('public.portfolio') }}">Portfolio</a>
         <a href="{{ $publicRoute('jobs.index') }}">Emplois</a>
         <a href="{{ $publicRoute('public.blog') }}">Blog</a>
         <a href="{{ $publicRoute('page.show', 'contact') }}">Contact</a>

@@ -9,7 +9,7 @@
             '@type' => 'Organization',
             'name' => $siteSettings['brand_name'] ?? 'JCA',
             'url' => url('/'),
-            'logo' => asset('images/logo_off.jpg'),
+            'logo' => asset('images/logo_off.webp'),
             'email' => $siteSettings['contact_email'] ?? 'contact@jcaconseil.com',
             'telephone' => $siteSettings['contact_phone'] ?? '78 968 51 16',
             'sameAs' => array_values(array_filter([
@@ -45,26 +45,19 @@
                     <a class="button secondary ghost-link" href="{{ $publicRoute('page.show', 'services') }}">{{ __('Explorer les services') }}</a>
                 </div>
             </div>
-            <div class="home-art-board" aria-label="Univers JCA">
-                <article>
-                    <img src="{{ asset('images/jca-immigration.webp') }}" alt="Mobilité internationale">
-                    <span>{{ __('Mobilité') }}</span>
-                </article>
-                <article>
-                    <img src="{{ asset('images/jca-recruitment.webp') }}" alt="Recrutement international">
-                    <span>{{ __('Talents') }}</span>
-                </article>
-                <article>
-                    <img src="{{ asset('images/jca-cooperation.webp') }}" alt="Coopération internationale">
-                    <span>{{ __('Coopération') }}</span>
-                </article>
-            </div>
         </section>
 
-        <section class="home-pathway quick-actions" aria-label="Actions rapides">
-            <a href="{{ route('public.appointments') }}"><strong>{{ __('Prendre rendez-vous') }}</strong><span>{{ __('Sans inscription obligatoire, formulaire direct') }}</span></a>
-            <a href="{{ $publicRoute('page.show', 'services') }}"><strong>{{ __('Comprendre les services') }}</strong><span>{{ __('Quatre axes d’accompagnement') }}</span></a>
-            <a href="{{ $publicRoute('page.show', 'collaboration') }}"><strong>{{ __('Collaborer avec JCA') }}</strong><span>{{ __('Employeurs, institutions et partenaires') }}</span></a>
+        <section class="home-why-jca" aria-label="Pourquoi choisir JCA Conseil">
+            <div class="section-heading">
+                <span class="eyebrow">{{ __('Pourquoi choisir') }}</span>
+                <h2>{{ __('Pourquoi choisir JCA Conseil ?') }}</h2>
+            </div>
+            <div class="home-why-grid">
+                <article><span>01</span><strong>{{ __('Expertise Sénégal-Canada') }}</strong></article>
+                <article><span>02</span><strong>{{ __('Accompagnement personnalisé') }}</strong></article>
+                <article><span>03</span><strong>{{ __('Vision stratégique') }}</strong></article>
+                <article><span>04</span><strong>{{ __('Suivi des projets') }}</strong></article>
+            </div>
         </section>
 
         <section class="home-focus-strip" aria-label="Priorités JCA">
