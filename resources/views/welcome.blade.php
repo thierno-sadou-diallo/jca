@@ -60,21 +60,21 @@
             </div>
         </section>
 
-        <section class="home-focus-strip" aria-label="Priorités JCA">
-            <article>
-                <span class="service-icon service-icon-2" aria-hidden="true"></span>
-                <div>
-                    <strong>{{ __('Talents') }}</strong>
-                    <p>{{ __('Relier les profils aux bons projets.') }}</p>
-                </div>
-            </article>
-            <article>
-                <span class="service-icon service-icon-3" aria-hidden="true"></span>
-                <div>
-                    <strong>{{ __('Partenariats') }}</strong>
-                    <p>{{ __('Structurer des collaborations qui tiennent.') }}</p>
-                </div>
-            </article>
+        <section class="home-focus-strip home-stat-strip" aria-label="{{ __('Statistiques JCA') }}">
+            <ul class="home-stat-list">
+                <li>
+                    <strong>{{ __('+ de 50') }}</strong>
+                    <span>{{ __('dossiers accompagnés') }}</span>
+                </li>
+                <li>
+                    <strong>{{ __('96%') }}</strong>
+                    <span>{{ __('taux de satisfaction') }}</span>
+                </li>
+                <li>
+                    <strong>{{ __('+10 ans') }}</strong>
+                    <span>{{ __('d’expérience') }}</span>
+                </li>
+            </ul>
         </section>
 
         <section class="content-band target-band">
