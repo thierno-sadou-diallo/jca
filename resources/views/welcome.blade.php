@@ -50,13 +50,13 @@
         <section class="home-why-jca" aria-label="Pourquoi choisir JCA Conseil">
             <div class="section-heading">
                 <span class="eyebrow">{{ __('Pourquoi choisir') }}</span>
-                <h2>{{ __('Pourquoi choisir JCA Conseil ?') }}</h2>
+                <h2>{{ __('Pourquoi choisir') }} <em>{{ __('JCA Conseil') }}</em> ?</h2>
             </div>
             <div class="home-why-grid">
-                <article><span>01</span><strong>{{ __('Expertise Sénégal-Canada') }}</strong></article>
-                <article><span>02</span><strong>{{ __('Accompagnement personnalisé') }}</strong></article>
-                <article><span>03</span><strong>{{ __('Vision stratégique') }}</strong></article>
-                <article><span>04</span><strong>{{ __('Suivi des projets') }}</strong></article>
+                <article><span>01</span><strong>{{ __('Expertise') }} <em>{{ __('Sénégal-Canada') }}</em></strong></article>
+                <article><span>02</span><strong>{{ __('Accompagnement') }} <em>{{ __('personnalisé') }}</em></strong></article>
+                <article><span>03</span><strong>{{ __('Vision') }} <em>{{ __('stratégique') }}</em></strong></article>
+                <article><span>04</span><strong>{{ __('Suivi des') }} <em>{{ __('projets') }}</em></strong></article>
             </div>
         </section>
 

@@ -797,11 +797,15 @@ h1 {
 }
 
 .home-why-jca .section-heading h2 {
-    background: linear-gradient(105deg, var(--navy) 0 42%, var(--gold) 42% 58%, var(--navy) 58% 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: var(--navy);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+}
+
+.home-why-jca .section-heading h2 em {
+    color: var(--gold);
+    font-style: italic;
+    -webkit-text-fill-color: currentColor;
 }
 
 .home-why-grid {
@@ -812,7 +816,7 @@ h1 {
 
 .home-why-grid article {
     position: relative;
-    min-height: 230px;
+    min-height: clamp(230px, 20vw, 280px);
     display: grid;
     align-content: space-between;
     overflow: hidden;
@@ -855,9 +859,18 @@ h1 {
 .home-why-grid strong {
     position: relative;
     z-index: 1;
+    max-width: 100%;
     font-family: var(--title-font);
-    font-size: clamp(1.4rem, 2vw, 2.1rem);
-    line-height: 1.05;
+    font-size: clamp(1.25rem, 1.55vw, 1.78rem);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+}
+
+.home-why-grid strong em {
+    display: inline;
+    color: var(--gold);
+    font-style: italic;
+    -webkit-text-fill-color: currentColor;
 }
 
 .home-pathway strong {
@@ -968,8 +981,8 @@ h1 {
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 74px minmax(130px, .36fr) minmax(0, 1fr);
-    gap: clamp(14px, 3vw, 34px);
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px clamp(16px, 3vw, 30px);
     align-items: center;
     min-height: clamp(150px, 14vw, 190px);
     padding: clamp(24px, 3.5vw, 42px);
@@ -1027,6 +1040,7 @@ h1 {
 .home-stat-icon {
     width: 66px;
     height: 66px;
+    grid-row: 1 / span 2;
     color: var(--gold);
     background:
         linear-gradient(145deg, rgba(255, 255, 255, .92), rgba(255, 248, 232, .62));
@@ -1036,14 +1050,18 @@ h1 {
 
 .home-stat-list strong {
     display: block;
+    align-self: end;
+    min-width: 0;
     color: var(--navy);
     font-family: var(--title-font);
-    font-size: clamp(2.65rem, 4.8vw, 5.2rem);
-    line-height: .9;
-    white-space: nowrap;
+    font-size: clamp(2.45rem, 4.35vw, 4.85rem);
+    line-height: .95;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .home-stat-label {
+    align-self: start;
     max-width: 440px;
     color: #2f3a45;
     font-size: clamp(1.05rem, 1.65vw, 1.45rem);
@@ -7530,8 +7548,10 @@ h3 {
     }
 
     .home-stat-list strong {
-        font-size: clamp(2.4rem, 15vw, 3.8rem);
+        align-self: end;
+        font-size: clamp(2.15rem, 13vw, 3.35rem);
         white-space: normal;
+        overflow-wrap: anywhere;
     }
 
     .home-stat-icon {
@@ -7543,6 +7563,13 @@ h3 {
     .home-stat-label {
         max-width: none;
         font-size: 15px;
+        line-height: 1.25;
+    }
+
+    .home-why-grid strong {
+        font-size: clamp(1.35rem, 7vw, 1.9rem);
+        line-height: 1.12;
+        overflow-wrap: anywhere;
     }
 
     .service-hero-command,
