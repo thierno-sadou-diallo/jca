@@ -61,18 +61,25 @@
         </section>
 
         <section class="home-focus-strip home-stat-strip" aria-label="{{ __('Statistiques JCA') }}">
+            <div class="home-stat-heading">
+                <span class="eyebrow">{{ __('Impact JCA') }}</span>
+                <h2>{{ __('Des repères concrets pour avancer avec confiance.') }}</h2>
+            </div>
             <ul class="home-stat-list">
                 <li>
+                    <span class="home-stat-icon service-icon service-icon-1" aria-hidden="true"></span>
                     <strong>{{ __('+ de 50') }}</strong>
-                    <span>{{ __('dossiers accompagnés') }}</span>
+                    <span class="home-stat-label">{{ __('dossiers accompagnés') }}</span>
                 </li>
                 <li>
+                    <span class="home-stat-icon service-icon service-icon-5" aria-hidden="true"></span>
                     <strong>{{ __('96%') }}</strong>
-                    <span>{{ __('taux de satisfaction') }}</span>
+                    <span class="home-stat-label">{{ __('taux de satisfaction') }}</span>
                 </li>
                 <li>
+                    <span class="home-stat-icon service-icon service-icon-4" aria-hidden="true"></span>
                     <strong>{{ __('+10 ans') }}</strong>
-                    <span>{{ __('d’expérience') }}</span>
+                    <span class="home-stat-label">{{ __('d’expérience') }}</span>
                 </li>
             </ul>
         </section>
