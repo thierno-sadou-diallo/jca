@@ -41,13 +41,13 @@
                                 <span>{{ $document->type ?: 'Autre' }} - {{ $document->created_at->format('d/m/Y H:i') }}</span>
                             </td>
                             <td>
-                                <strong>{{ $document->user?->name ?? 'Client non lie' }}</strong>
+                                <strong>{{ $document->user?->name ?? 'Client non lié' }}</strong>
                                 <span>{{ $document->user?->email ?? 'Email non disponible' }}</span>
                             </td>
                             <td>{{ $document->leadRequest?->topic ?? 'Document espace client' }}</td>
                             <td><mark>{{ $statuses[$document->status] ?? $document->status }}</mark></td>
                             <td>
-                                <span>{{ $document->reviewer?->name ?? 'Non revue' }}</span>
+                                <span>{{ $document->reviewer?->name ?? 'Non revu' }}</span>
                                 @if ($document->reviewed_at)
                                     <span>{{ $document->reviewed_at->format('d/m/Y H:i') }}</span>
                                 @endif

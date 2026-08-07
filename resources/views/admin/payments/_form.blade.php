@@ -8,7 +8,7 @@
             @endforeach
         </select>
     </label>
-    <label>Rendez-vous lie
+    <label>Rendez-vous lié
         <select name="appointment_id">
             <option value="">Aucun</option>
             @foreach ($appointments as $appointment)
@@ -18,7 +18,7 @@
     </label>
 </div>
 <div class="form-grid">
-    <label>Reference<input name="reference" value="{{ old('reference', $payment->reference) }}" placeholder="Reference automatique si vide"></label>
+    <label>Référence<input name="reference" value="{{ old('reference', $payment->reference) }}" placeholder="Référence automatique si vide"></label>
     <label>Statut
         <select name="status" required>
             @foreach ($statuses as $value => $label)

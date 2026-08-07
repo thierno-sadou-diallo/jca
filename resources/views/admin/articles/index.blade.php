@@ -12,7 +12,7 @@
             <select name="status">
                 <option value="">Tous les statuts</option>
                 <option value="draft" @selected($status === 'draft')>Brouillon</option>
-                <option value="published" @selected($status === 'published')>Publie</option>
+                <option value="published" @selected($status === 'published')>Publié</option>
             </select>
             <button class="button primary" type="submit">Filtrer</button>
         </form>
@@ -25,7 +25,7 @@
                             <td><strong>{{ $article->title }}</strong><span>{{ $article->slug }}</span></td>
                             <td><mark>{{ $article->status }}</mark></td>
                             <td>{{ $article->author?->name ?? 'JCA' }}</td>
-                            <td>{{ $article->published_at?->format('d/m/Y H:i') ?: 'Non publie' }}</td>
+                            <td>{{ $article->published_at?->format('d/m/Y H:i') ?: 'Non publié' }}</td>
                             <td><a class="admin-link" href="{{ route('admin.articles.edit', $article) }}">Modifier</a></td>
                         </tr>
                     @empty

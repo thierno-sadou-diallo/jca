@@ -16,7 +16,7 @@ return [
         'register' => 'Inscription',
     ],
     'home' => [
-        'eyebrow' => 'Immigration, recrutement et cooperation',
+        'eyebrow' => 'Immigration, recrutement et coopération',
         'lede' => 'JCA accompagne les candidats, employeurs et partenaires dans leurs projets internationaux.',
     ],
 ];

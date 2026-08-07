@@ -27,9 +27,9 @@
         </section>
 
         <section class="page-guidance">
-            <article><span>01</span><strong>S informer</strong><p>Lire les analyses et conseils publies par JCA.</p></article>
+            <article><span>01</span><strong>S’informer</strong><p>Lire les analyses et conseils publiés par JCA.</p></article>
             <article><span>02</span><strong>Comparer</strong><p>Comprendre les options avant de choisir une démarche.</p></article>
-            <article><span>03</span><strong>Agir</strong><p>Passer de l information à un dossier suivi.</p></article>
+            <article><span>03</span><strong>Agir</strong><p>Passer de l’information à un dossier suivi.</p></article>
         </section>
 
         <section class="content-band">

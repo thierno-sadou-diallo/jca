@@ -73,7 +73,7 @@
                                 <td><strong>{{ $lead->name }}</strong><span>{{ $lead->email }}</span></td>
                                 <td>{{ $lead->topic }}</td>
                                 <td><mark>{{ $lead->status }}</mark></td>
-                                <td><a class="admin-link" href="{{ route('admin.leads.show', $lead) }}">Repondre</a></td>
+                                <td><a class="admin-link" href="{{ route('admin.leads.show', $lead) }}">Répondre</a></td>
                             </tr>
                         @empty
                             <tr><td colspan="4">Aucune demande pour le moment.</td></tr>

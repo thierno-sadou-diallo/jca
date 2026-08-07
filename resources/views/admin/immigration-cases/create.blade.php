@@ -16,7 +16,7 @@
                 </label>
                 @if ($lead)
                     <input type="hidden" name="lead_request_id" value="{{ $lead->id }}">
-                    <p class="form-note">Demande liee: {{ $lead->topic }} - {{ $lead->email }}</p>
+                    <p class="form-note">Demande liée : {{ $lead->topic }} - {{ $lead->email }}</p>
                 @endif
                 <label>Programme<input name="program_type" value="{{ old('program_type', $lead?->topic ?: 'Résidence permanente') }}" required></label>
                 <div class="form-grid">
@@ -45,7 +45,7 @@
             </div>
             <div class="admin-list">
                 @foreach ($statuses as $label)
-                    <div><strong>{{ $label }}</strong><span>Etape visible par le client dans son espace.</span></div>
+                    <div><strong>{{ $label }}</strong><span>Étape visible par le client dans son espace.</span></div>
                 @endforeach
             </div>
         </article>

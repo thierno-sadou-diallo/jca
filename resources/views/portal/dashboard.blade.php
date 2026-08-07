@@ -341,7 +341,7 @@
                 <article class="admin-panel portal-priority">
                     <div class="admin-panel-head">
                         <h2>Messagerie JCA</h2>
-                        <span>Echanges confidentiels</span>
+                        <span>Échanges confidentiels</span>
                     </div>
                     @if (session('message_status'))
                         <p class="form-note" data-state="success">{{ session('message_status') }}</p>
@@ -459,7 +459,7 @@
                     <div class="admin-list">
                         @forelse ($applications as $application)
                             <div>
-                                <strong>{{ $application->jobPosting?->title ?? 'Offre supprimee' }}</strong>
+                                <strong>{{ $application->jobPosting?->title ?? 'Offre supprimée' }}</strong>
                                 <span>{{ \App\Models\JobApplication::statuses()[$application->status] ?? $application->status }} - {{ $application->created_at->format('d/m/Y') }}</span>
                                 @if ($application->admin_note)
                                     <p>{{ $application->admin_note }}</p>

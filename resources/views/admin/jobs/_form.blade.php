@@ -3,7 +3,7 @@
     @method('PUT')
 @endisset
 
-<label>Titre de l offre<input name="title" value="{{ old('title', $job->title) }}" required></label>
+<label>Titre de l’offre<input name="title" value="{{ old('title', $job->title) }}" required></label>
 <label>Entreprise<input name="company_name" value="{{ old('company_name', $job->company_name) }}"></label>
 <div class="form-grid">
     <label>Pays<input name="country" value="{{ old('country', $job->country) }}" required></label>
@@ -29,4 +29,4 @@
 @if ($errors->any())
     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
 @endif
-<button class="button primary" type="submit">Enregistrer l offre</button>
+<button class="button primary" type="submit">Enregistrer l’offre</button>

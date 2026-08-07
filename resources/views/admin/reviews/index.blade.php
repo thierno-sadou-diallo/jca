@@ -3,7 +3,7 @@
         <div class="admin-panel-head">
             <div>
                 <h2>Avis et retours clients</h2>
-                <span>Lire, repondre, publier ou supprimer</span>
+                <span>Lire, répondre, publier ou supprimer</span>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
                         <label>Statut
                             <select name="status">
                                 <option value="pending" @selected($review->status === 'pending')>En attente</option>
-                                <option value="published" @selected($review->status === 'published')>Publie</option>
+                                <option value="published" @selected($review->status === 'published')>Publié</option>
                                 <option value="closed" @selected($review->status === 'closed')>Fermé</option>
                             </select>
                         </label>
@@ -45,7 +45,7 @@
             @empty
                 <article class="empty-state">
                     <h2>Aucun avis pour le moment.</h2>
-                    <p>Les avis envoyes par les clients depuis leur espace apparaîtront ici.</p>
+                    <p>Les avis envoyés par les clients depuis leur espace apparaîtront ici.</p>
                 </article>
             @endforelse
         </div>

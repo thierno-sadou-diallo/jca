@@ -26,7 +26,7 @@
                 <div><strong>Pays / ville</strong><span>{{ $client->profile?->country ?: 'Non indiqué' }}{{ $client->profile?->city ? ' - '.$client->profile->city : '' }}</span></div>
                 <div><strong>Langue préférée</strong><span>{{ strtoupper($client->profile?->preferred_language ?? 'fr') }}</span></div>
                 <div><strong>Statut du compte</strong><span>{{ $client->status }}</span></div>
-                <div><strong>Creation</strong><span>{{ $client->created_at->format('d/m/Y H:i') }}</span></div>
+                <div><strong>Création</strong><span>{{ $client->created_at->format('d/m/Y H:i') }}</span></div>
             </div>
         </article>
 
@@ -100,7 +100,7 @@
                         <a class="admin-link" href="{{ route('admin.documents.download', $document) }}">Télécharger</a>
                     </div>
                 @empty
-                    <div><strong>Aucun document</strong><span>Le client n’a pas encore déposé de piece.</span></div>
+                    <div><strong>Aucun document</strong><span>Le client n’a pas encore déposé de pièce.</span></div>
                 @endforelse
             </div>
         </article>
@@ -133,7 +133,7 @@
             <div class="admin-list">
                 @forelse ($applications as $application)
                     <div>
-                        <strong>{{ $application->jobPosting?->title ?? 'Offre supprimee' }}</strong>
+                        <strong>{{ $application->jobPosting?->title ?? 'Offre supprimée' }}</strong>
                         <span>{{ \App\Models\JobApplication::statuses()[$application->status] ?? $application->status }} - {{ $application->created_at->format('d/m/Y') }}</span>
                         <a class="admin-link" href="{{ route('admin.applications.show', $application) }}">Traiter</a>
                     </div>
@@ -172,7 +172,7 @@
                         <p>{{ str($message->body)->limit(130) }}</p>
                     </div>
                 @empty
-                    <div><strong>Aucun message</strong><span>Demarrez une conversation avec ce client.</span></div>
+                    <div><strong>Aucun message</strong><span>Démarrez une conversation avec ce client.</span></div>
                 @endforelse
             </div>
         </article>

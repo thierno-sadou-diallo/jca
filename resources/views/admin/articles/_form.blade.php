@@ -12,7 +12,7 @@
 <label>Statut
     <select name="status" required>
         <option value="draft" @selected(old('status', $article->status ?: 'draft') === 'draft')>Brouillon</option>
-        <option value="published" @selected(old('status', $article->status) === 'published')>Publie</option>
+        <option value="published" @selected(old('status', $article->status) === 'published')>Publié</option>
     </select>
 </label>
 @if ($errors->any())

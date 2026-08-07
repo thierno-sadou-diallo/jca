@@ -3,7 +3,7 @@
         <article class="admin-panel">
             <div class="admin-panel-head">
                 <h2>Conversations</h2>
-                <span>{{ $clients->count() }} echange(s)</span>
+                <span>{{ $clients->count() }} échange(s)</span>
             </div>
             <div class="admin-list">
                 @forelse ($clients as $client)
@@ -29,17 +29,17 @@
         <article class="admin-panel">
             <div class="admin-panel-head">
                 <h2>Nouveau message</h2>
-                <span>Demarrer un echange</span>
+                <span>Démarrer un échange</span>
             </div>
             <div class="admin-list">
                 @forelse ($allClients as $client)
                     <div>
                         <strong>{{ $client->name }}</strong>
                         <span>{{ $client->email }}</span>
-                        <a class="admin-link" href="{{ route('admin.messages.show', $client) }}">Ecrire</a>
+                        <a class="admin-link" href="{{ route('admin.messages.show', $client) }}">Écrire</a>
                     </div>
                 @empty
-                    <div><strong>Aucun client actif</strong><span>Les comptes clients actifs seront listes ici.</span></div>
+                    <div><strong>Aucun client actif</strong><span>Les comptes clients actifs seront listés ici.</span></div>
                 @endforelse
             </div>
         </article>

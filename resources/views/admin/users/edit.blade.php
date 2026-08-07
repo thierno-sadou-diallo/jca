@@ -11,10 +11,10 @@
                 @endif
             </div>
             <div class="admin-list">
-                <div><strong>Role actuel</strong><span>{{ $managedUser->role }}</span></div>
+                <div><strong>Rôle actuel</strong><span>{{ $managedUser->role }}</span></div>
                 <div><strong>Statut</strong><span>{{ $managedUser->status }}</span></div>
                 <div><strong>Type client</strong><span>{{ $managedUser->profile?->type_client ?: 'Non applicable' }}</span></div>
-                <div><strong>Creation</strong><span>{{ $managedUser->created_at->format('d/m/Y H:i') }}</span></div>
+                <div><strong>Création</strong><span>{{ $managedUser->created_at->format('d/m/Y H:i') }}</span></div>
             </div>
         </article>
 
@@ -32,7 +32,7 @@
                 <label>Nom<input name="name" value="{{ old('name', $managedUser->name) }}" required></label>
                 <label>Téléphone<input name="phone" value="{{ old('phone', $managedUser->phone) }}"></label>
                 <div class="form-grid">
-                    <label>Role
+                    <label>Rôle
                         <select name="role" required>
                             <option value="admin" @selected($managedUser->role === 'admin')>Administrateur</option>
                             <option value="client" @selected($managedUser->role === 'client')>Client</option>

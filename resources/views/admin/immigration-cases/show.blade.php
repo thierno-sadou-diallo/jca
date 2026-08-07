@@ -4,7 +4,7 @@
             <div class="admin-panel-head">
                 <div>
                     <h2>{{ $case->reference }}</h2>
-                    <span>{{ $case->user?->name ?? 'Client non lie' }} - {{ $statuses[$case->status] ?? $case->status }}</span>
+                    <span>{{ $case->user?->name ?? 'Client non lié' }} - {{ $statuses[$case->status] ?? $case->status }}</span>
                 </div>
                 @if ($case->user)
                     <a class="button ghost" href="{{ route('admin.clients.show', $case->user) }}">Client</a>
@@ -63,7 +63,7 @@
         <div class="case-timeline">
             @forelse ($case->histories->sortByDesc('created_at') as $history)
                 <article>
-                    <span>{{ $history->created_at->format('d/m/Y H:i') }} - {{ $history->user?->name ?? 'Systeme' }}</span>
+                    <span>{{ $history->created_at->format('d/m/Y H:i') }} - {{ $history->user?->name ?? 'Système' }}</span>
                     <strong>{{ $statuses[$history->status] ?? $history->status }}</strong>
                     <p>{{ $history->note ?: 'Mise à jour du statut.' }}</p>
                 </article>

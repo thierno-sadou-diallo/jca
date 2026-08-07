@@ -11,7 +11,7 @@
                 @endif
             </div>
             <div class="admin-list">
-                <div><strong>Offre</strong><span>{{ $application->jobPosting?->title ?? 'Offre supprimee' }}</span></div>
+                <div><strong>Offre</strong><span>{{ $application->jobPosting?->title ?? 'Offre supprimée' }}</span></div>
                 <div><strong>Entreprise</strong><span>{{ $application->jobPosting?->company_name ?: 'Entreprise partenaire' }}</span></div>
                 <div><strong>Pays</strong><span>{{ $application->country ?: 'Non indiqué' }}</span></div>
                 <div><strong>Message</strong><span>{{ $application->message ?: 'Aucun message' }}</span></div>

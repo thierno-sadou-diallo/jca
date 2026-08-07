@@ -45,7 +45,7 @@
                                     <span>Non indiqué</span>
                                 @endif
                             </td>
-                            <td><strong>{{ $lead->documents_count }}</strong><span>piece(s)</span></td>
+                            <td><strong>{{ $lead->documents_count }}</strong><span>pièce(s)</span></td>
                             <td><mark>{{ $lead->status }}</mark></td>
                             <td>{{ $lead->preferred_channel ?: 'Email' }}</td>
                             <td>{{ $lead->created_at->format('d/m/Y H:i') }}</td>

@@ -3,7 +3,7 @@
 <head>
     @include('partials.head', [
         'title' => __('Portfolio').' | JCA',
-        'description' => __('Evenements, forums, relations presse et temps forts de JCA.'),
+        'description' => __('Événements, forums, relations presse et temps forts de JCA.'),
     ])
 </head>
 <body>
@@ -12,7 +12,7 @@
     <main>
         <section class="page-hero portfolio-hero">
             <span class="eyebrow">{{ __('Portfolio') }}</span>
-            <h1>{{ __('Evenements, forums et relations presse.') }}</h1>
+            <h1>{{ __('Événements, forums et relations presse.') }}</h1>
             <p>{{ __('Un espace vivant pour suivre les rencontres, prises de parole, collaborations et moments institutionnels de JCA.') }}</p>
         </section>
 
@@ -33,7 +33,7 @@
                 @empty
                     <article class="portfolio-empty">
                         <h2>{{ __('Portfolio en preparation.') }}</h2>
-                        <p>{{ __('Les prochains evenements, forums et relations presse seront publies ici.') }}</p>
+                        <p>{{ __('Les prochains événements, forums et relations presse seront publiés ici.') }}</p>
                     </article>
                 @endforelse
             </div>

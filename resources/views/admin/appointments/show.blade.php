@@ -11,8 +11,8 @@
                 @endif
             </div>
             <div class="admin-list">
-                <div><strong>Client</strong><span>{{ $appointment->user?->name ?? 'Non lie' }} - {{ $appointment->user?->email }}</span></div>
-                <div><strong>Date</strong><span>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'A confirmer' }}</span></div>
+                <div><strong>Client</strong><span>{{ $appointment->user?->name ?? 'Non lié' }} - {{ $appointment->user?->email }}</span></div>
+                <div><strong>Date</strong><span>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'À confirmer' }}</span></div>
                 <div><strong>Durée</strong><span>{{ $appointment->duration_minutes }} minutes</span></div>
                 <div><strong>Canal</strong><span>{{ $appointment->channel }}</span></div>
                 <div><strong>Demande source</strong><span>{{ $appointment->leadRequest?->topic ?? 'Aucune' }}</span></div>
@@ -52,7 +52,7 @@
                         </select>
                     </label>
                 </div>
-                <label>Note<textarea name="notes" rows="6" placeholder="Instructions pour le client, lien de reunion, raison du report...">{{ old('notes', $appointment->notes) }}</textarea></label>
+                <label>Note<textarea name="notes" rows="6" placeholder="Instructions pour le client, lien de réunion, raison du report...">{{ old('notes', $appointment->notes) }}</textarea></label>
                 @if ($errors->any())
                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                 @endif

@@ -44,7 +44,7 @@
                             <td>{{ $client->profile?->type_client ?? 'Particulier' }}</td>
                             <td>{{ $client->profile?->organization_name ?: 'Non indiqué' }}</td>
                             <td>{{ $client->profile?->country ?: 'Non indiqué' }}</td>
-                            <td><strong>{{ $client->documents_count }}</strong><span>piece(s)</span></td>
+                            <td><strong>{{ $client->documents_count }}</strong><span>pièce(s)</span></td>
                             <td><mark>{{ $client->status }}</mark></td>
                             <td>{{ $client->created_at->format('d/m/Y') }}</td>
                             <td><a class="admin-link" href="{{ route('admin.clients.show', $client) }}">Ouvrir</a></td>

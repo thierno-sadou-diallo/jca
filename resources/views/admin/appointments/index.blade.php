@@ -23,9 +23,9 @@
                 <tbody>
                     @forelse ($appointments as $appointment)
                         <tr>
-                            <td><strong>{{ $appointment->user?->name ?? 'Client non lie' }}</strong><span>{{ $appointment->user?->email }}</span></td>
+                            <td><strong>{{ $appointment->user?->name ?? 'Client non lié' }}</strong><span>{{ $appointment->user?->email }}</span></td>
                             <td>{{ $appointment->topic }}</td>
-                            <td>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'A confirmer' }}</td>
+                            <td>{{ $appointment->starts_at?->format('d/m/Y H:i') ?: 'À confirmer' }}</td>
                             <td>{{ $appointment->channel }}</td>
                             <td><mark>{{ $statuses[$appointment->status] ?? $appointment->status }}</mark></td>
                             <td><a class="admin-link" href="{{ route('admin.appointments.show', $appointment) }}">Traiter</a></td>

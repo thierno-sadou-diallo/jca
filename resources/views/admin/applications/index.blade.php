@@ -34,10 +34,10 @@
                     @forelse ($applications as $application)
                         <tr>
                             <td><strong>{{ $application->name }}</strong><span>{{ $application->email }} {{ $application->phone ? '- '.$application->phone : '' }}</span></td>
-                            <td>{{ $application->jobPosting?->title ?? 'Offre supprimee' }}</td>
+                            <td>{{ $application->jobPosting?->title ?? 'Offre supprimée' }}</td>
                             <td>{{ $application->country ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $statuses[$application->status] ?? $application->status }}</mark></td>
-                            <td>{{ $application->reviewer?->name ?? 'Non revue' }}</td>
+                            <td>{{ $application->reviewer?->name ?? 'Non revu' }}</td>
                             <td>{{ $application->created_at->format('d/m/Y H:i') }}</td>
                             <td><a class="admin-link" href="{{ route('admin.applications.show', $application) }}">Traiter</a></td>
                         </tr>

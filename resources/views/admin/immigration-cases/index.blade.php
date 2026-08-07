@@ -9,7 +9,7 @@
         </div>
 
         <form class="admin-filter wide-filter" method="get" action="{{ route('admin.immigration-cases.index') }}">
-            <input name="q" value="{{ $query }}" placeholder="Reference, client, programme, pays">
+            <input name="q" value="{{ $query }}" placeholder="Référence, client, programme, pays">
             <select name="status">
                 <option value="">Tous les statuts</option>
                 @foreach ($statuses as $value => $label)
@@ -23,7 +23,7 @@
             <table class="admin-table">
                 <thead>
                     <tr>
-                        <th>Reference</th>
+                        <th>Référence</th>
                         <th>Client</th>
                         <th>Programme</th>
                         <th>Destination</th>
@@ -36,7 +36,7 @@
                     @forelse ($cases as $case)
                         <tr>
                             <td><strong>{{ $case->reference }}</strong><span>{{ $case->leadRequest?->topic ?: 'Dossier direct' }}</span></td>
-                            <td><strong>{{ $case->user?->name ?? 'Client non lie' }}</strong><span>{{ $case->user?->email }}</span></td>
+                            <td><strong>{{ $case->user?->name ?? 'Client non lié' }}</strong><span>{{ $case->user?->email }}</span></td>
                             <td>{{ $case->program_type }}</td>
                             <td>{{ $case->destination_country ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $statuses[$case->status] ?? $case->status }}</mark></td>

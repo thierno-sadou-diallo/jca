@@ -35,7 +35,7 @@
             <div class="impact-story-grid">
                 <article><span>01</span><strong>Identifier</strong><p>Comprendre les publics, les urgences et les ressources locales.</p></article>
                 <article><span>02</span><strong>Accompagner</strong><p>Former, orienter, soutenir et documenter les parcours.</p></article>
-                <article><span>03</span><strong>Mesurer</strong><p>Suivre les résultats et valoriser l impact humain.</p></article>
+                <article><span>03</span><strong>Mesurer</strong><p>Suivre les résultats et valoriser l’impact humain.</p></article>
             </div>
         </section>
 

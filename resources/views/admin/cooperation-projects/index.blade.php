@@ -26,7 +26,7 @@
                             <td>{{ $project->country ?: 'International' }}</td>
                             <td>{{ $project->sector ?: 'Non indiqué' }}</td>
                             <td><mark>{{ $project->status }}</mark></td>
-                            <td>{{ $project->starts_at?->format('d/m/Y') ?: 'A definir' }} - {{ $project->ends_at?->format('d/m/Y') ?: 'En cours' }}</td>
+                            <td>{{ $project->starts_at?->format('d/m/Y') ?: 'À définir' }} - {{ $project->ends_at?->format('d/m/Y') ?: 'En cours' }}</td>
                             <td><a class="admin-link" href="{{ route('admin.cooperation-projects.edit', $project) }}">Modifier</a></td>
                         </tr>
                     @empty

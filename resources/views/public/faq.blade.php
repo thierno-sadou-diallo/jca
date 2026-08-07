@@ -25,7 +25,7 @@
             <div>
                 <span class="eyebrow">Questions fréquentes</span>
                 <h1>FAQ</h1>
-                <p>Les réponses essentielles avant une consultation ou le dépôt d un dossier.</p>
+                <p>Les réponses essentielles avant une consultation ou le dépôt d’un dossier.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('public.appointments') }}">Prendre rendez-vous</a>
                     <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>

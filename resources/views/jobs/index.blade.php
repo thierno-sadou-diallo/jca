@@ -73,7 +73,7 @@
                 @empty
                     <article class="empty-state">
                         <h2>Aucune offre ne correspond à votre recherche.</h2>
-                        <p>Déposez votre profil pour être préqualifié lorsqu une opportunite compatible sera ouverte.</p>
+                        <p>Déposez votre profil pour être préqualifié lorsqu’une opportunité compatible sera ouverte.</p>
                         <a class="button primary" href="{{ route('portal.register') }}">Créer un compte</a>
                     </article>
                 @endforelse

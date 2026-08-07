@@ -1,4 +1,4 @@
-<x-admin.layout title="Modifier l offre">
+<x-admin.layout title="Modifier l’offre">
     <section class="admin-panel admin-form-panel">
         <div class="admin-panel-head">
             <h2>{{ $job->title }}</h2>

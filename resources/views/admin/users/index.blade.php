@@ -9,7 +9,7 @@
         <form class="admin-filter wide-filter" method="get" action="{{ route('admin.users.index') }}">
             <input name="q" value="{{ $query }}" placeholder="Nom, email, téléphone">
             <select name="role">
-                <option value="">Tous les roles</option>
+                <option value="">Tous les rôles</option>
                 <option value="admin" @selected($role === 'admin')>Administrateur</option>
                 <option value="client" @selected($role === 'client')>Client</option>
             </select>
@@ -23,7 +23,7 @@
         </form>
         <div class="admin-table-wrap">
             <table class="admin-table">
-                <thead><tr><th>Utilisateur</th><th>Role</th><th>Type client</th><th>Statut</th><th>Date</th><th></th></tr></thead>
+                <thead><tr><th>Utilisateur</th><th>Rôle</th><th>Type client</th><th>Statut</th><th>Date</th><th></th></tr></thead>
                 <tbody>
                     @forelse ($users as $user)
                         <tr>

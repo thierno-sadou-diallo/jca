@@ -142,7 +142,7 @@
                         <span class="eyebrow">{{ __('À propos') }}</span>
                         <h2>{{ __('Un cabinet international guidé par le sens et la rigueur.') }}</h2>
                         <p class="about-credentials">{{ __('Avocat (Barreau du Québec) / Expert en gouvernance, sécurité et politiques publiques en Afrique de l’Ouest / Gestionnaire de projets internationaux / Auteur') }}</p>
-                        <p class="about-signature-text">{{ __('Fort d’une expertise reconnue en immigration, mobilité internationale et développement, Me NDIAYE accompagne depuis des années une clientèle variée à travers le monde — particuliers, entreprises, gouvernements et organisations internationales — dans leurs démarches les plus stratégiques, dans les projets d’immigration, de recrutement internationnal ainsi que dans leur demarches juridique.') }}</p>
+                        <p class="about-signature-text">{{ __('Fort d’une expertise reconnue en immigration, mobilité internationale et développement, Me NDIAYE accompagne depuis des années une clientèle variée à travers le monde — particuliers, entreprises, gouvernements et organisations internationales — dans leurs démarches les plus stratégiques, notamment dans les projets d’immigration, de recrutement international ainsi que dans leurs démarches juridiques.') }}</p>
                         <div class="about-pillars">
                             <article>
                                 <span>{{ __('Notre vision') }}</span>

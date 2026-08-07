@@ -19,7 +19,7 @@
                 @empty
                     <article class="message-bubble is-client">
                         <span>Aucun message</span>
-                        <strong>Demarrer la conversation</strong>
+                        <strong>Démarrer la conversation</strong>
                         <p>Envoyez un premier message professionnel au client.</p>
                     </article>
                 @endforelse
@@ -28,7 +28,7 @@
 
         <article class="admin-panel">
             <div class="admin-panel-head">
-                <h2>Repondre</h2>
+                <h2>Répondre</h2>
                 <span>Message interne</span>
             </div>
             @if (session('message_status'))

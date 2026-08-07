@@ -3,7 +3,7 @@
         <div class="admin-panel-head">
             <div>
                 <h2>Offres d’emploi</h2>
-                <span>Creation, publication et suivi des opportunités</span>
+                <span>Création, publication et suivi des opportunités</span>
             </div>
             <a class="button primary" href="{{ route('admin.jobs.create') }}">Nouvelle offre</a>
         </div>

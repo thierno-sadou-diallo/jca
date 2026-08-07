@@ -35,7 +35,7 @@
             <div class="impact-story-grid">
                 <article><span>01</span><strong>Connecter</strong><p>Relier institutions, talents, entreprises et organisations.</p></article>
                 <article><span>02</span><strong>Construire</strong><p>Structurer des projets avec une gouvernance claire.</p></article>
-                <article><span>03</span><strong>Amplifier</strong><p>Valoriser les résultats et l impact des collaborations.</p></article>
+                <article><span>03</span><strong>Amplifier</strong><p>Valoriser les résultats et l’impact des collaborations.</p></article>
             </div>
         </section>
 
