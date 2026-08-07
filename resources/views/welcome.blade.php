@@ -63,7 +63,7 @@
         <section class="home-focus-strip home-stat-strip" aria-label="{{ __('Statistiques JCA') }}">
             <div class="home-stat-heading">
                 <span class="eyebrow">{{ __('Impact JCA') }}</span>
-                <h2>{{ __('Des chiffres qui traduisent notre engagement.') }}</h2>
+                <h2>{{ __('Des') }} <em>{{ __('chiffres') }}</em> {{ __('qui traduisent notre engagement.') }}</h2>
             </div>
             <ul class="home-stat-list">
                 <li>
