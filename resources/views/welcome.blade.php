@@ -45,6 +45,16 @@
                     <a class="button secondary ghost-link" href="{{ $publicRoute('page.show', 'services') }}">{{ __('Explorer les services') }}</a>
                 </div>
             </div>
+            <div class="home-hero-artistry" aria-hidden="true">
+                <span class="hero-art-orbit hero-art-orbit-1"></span>
+                <span class="hero-art-orbit hero-art-orbit-2"></span>
+                <div class="hero-art-seal">
+                    <img src="{{ asset('images/logo_off.webp') }}" alt="">
+                    <strong>JCA</strong>
+                    <small>{{ __('Mobilité internationale') }}</small>
+                    <span>{{ __('Sénégal') }} · {{ __('Canada') }}</span>
+                </div>
+            </div>
         </section>
 
         <section class="home-why-jca" aria-label="Pourquoi choisir JCA Conseil">
