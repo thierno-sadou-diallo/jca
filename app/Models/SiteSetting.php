@@ -50,6 +50,18 @@ class SiteSetting extends Model
             $values['contact_email'] = 'contact@jcaconseil.com';
         }
 
+        if (($values['footer_description'] ?? '') === 'Cabinet international de conseil en immigration, mobilite, recrutement et cooperation.') {
+            $values['footer_description'] = 'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.';
+        }
+
+        if (($values['brand_tagline'] ?? '') === 'Immigration, recrutement et cooperation') {
+            $values['brand_tagline'] = 'Immigration, mobilité internationale, recrutement international et coopération internationale';
+        }
+
+        if (($values['footer_signature'] ?? '') === 'Des ponts entre les talents, les organisations et les opportunites.') {
+            $values['footer_signature'] = 'Des ponts entre les talents, les organisations et les opportunités.';
+        }
+
         if (blank($values['contact_phone'] ?? '')) {
             $values['contact_phone'] = '78 968 51 16';
         }
