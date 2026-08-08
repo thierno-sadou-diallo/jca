@@ -50,12 +50,28 @@ class SiteSetting extends Model
             $values['contact_email'] = 'contact@jcaconseil.com';
         }
 
-        if (($values['footer_description'] ?? '') === 'Cabinet international de conseil en immigration, mobilite, recrutement et cooperation.') {
-            $values['footer_description'] = 'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.';
+        if (! empty($values['footer_description'])) {
+            $values['footer_description'] = str_replace(
+                [
+                    'Cabinet international de conseil en immigration, mobilite, recrutement et cooperation.',
+                    'Cabinet international de conseil et d accompagnement specialise en immigration, mobilite internationale, recrutement international, cooperation internationale et developpement durable.',
+                    'Cabinet international de conseil et d’accompagnement specialise en immigration, mobilite internationale, recrutement international, cooperation internationale et developpement durable.',
+                ],
+                [
+                    'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
+                    'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
+                    'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
+                ],
+                $values['footer_description'],
+            );
         }
 
-        if (($values['brand_tagline'] ?? '') === 'Immigration, recrutement et cooperation') {
-            $values['brand_tagline'] = 'Immigration, mobilité internationale, recrutement international et coopération internationale';
+        if (! empty($values['brand_tagline'])) {
+            $values['brand_tagline'] = str_replace(
+                'Immigration, recrutement et cooperation',
+                'Immigration, mobilité internationale, recrutement international et coopération internationale',
+                $values['brand_tagline'],
+            );
         }
 
         if (($values['footer_signature'] ?? '') === 'Des ponts entre les talents, les organisations et les opportunites.') {
