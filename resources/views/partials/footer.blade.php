@@ -5,7 +5,7 @@
                 <img class="brand-logo" src="{{ asset('images/logo_off.webp') }}" alt="Logo JCA">
                 <span>
                     <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
-                    <small>{{ $siteSettings['brand_tagline'] ?? __('Immigration, recrutement et coopération') }}</small>
+                    <small>{{ $siteSettings['brand_tagline'] ?? __('Immigration, mobilité internationale, recrutement international et coopération internationale') }}</small>
                 </span>
             </a>
             <p>{{ $siteSettings['footer_description'] ?? __('Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.') }}</p>

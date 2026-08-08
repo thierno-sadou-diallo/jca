@@ -20,7 +20,7 @@ class SiteSetting extends Model
     {
         return [
             'brand_name' => 'JCA',
-            'brand_tagline' => 'Immigration, recrutement et cooperation',
+            'brand_tagline' => 'Immigration, mobilité internationale, recrutement international et coopération internationale',
             'footer_description' => 'Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.',
             'contact_email' => 'contact@jcaconseil.com',
             'contact_phone' => '78 968 51 16',

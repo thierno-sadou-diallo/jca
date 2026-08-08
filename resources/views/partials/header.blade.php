@@ -3,7 +3,7 @@
         <img class="brand-logo" src="{{ asset('images/logo_off.webp') }}" alt="Logo JCA">
         <span>
             <strong>{{ $siteSettings['brand_name'] ?? 'JCA' }}</strong>
-            <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, recrutement et coopération' }}</small>
+            <small>{{ $siteSettings['brand_tagline'] ?? 'Immigration, mobilité internationale, recrutement international et coopération internationale' }}</small>
         </span>
     </a>
 
