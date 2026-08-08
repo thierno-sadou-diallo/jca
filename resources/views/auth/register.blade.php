@@ -23,7 +23,7 @@
                 <p>Un espace personnel pour déposer vos documents, envoyer vos demandes et suivre vos dossiers avec JCA.</p>
             </div>
             <div class="register-benefits">
-                <span>Demandes centralisees</span>
+                <span>Demandes centralisées</span>
                 <span>Documents organises</span>
                 <span>Suivi de dossier</span>
                 <span>Rendez-vous et prochaines étapes</span>
@@ -78,7 +78,7 @@
                     <button class="button primary" type="submit">Créer mon espace</button>
                     <a class="button ghost" href="{{ route('portal.login', array_filter(['next' => request('next')])) }}">Connexion</a>
                 </div>
-                <p class="form-note">En creant un compte, vous acceptez les <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">conditions d’utilisation</a> et la <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">politique de confidentialité</a>.</p>
+                <p class="form-note">En créant un compte, vous acceptez les <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">conditions d’utilisation</a> et la <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">politique de confidentialité</a>.</p>
             </form>
         </section>
     </main>

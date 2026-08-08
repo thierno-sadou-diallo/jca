@@ -32,7 +32,7 @@
                     </article>
                 @empty
                     <article class="portfolio-empty">
-                        <h2>{{ __('Portfolio en preparation.') }}</h2>
+                        <h2>{{ __('Portfolio en préparation.') }}</h2>
                         <p>{{ __('Les prochains événements, forums et relations presse seront publiés ici.') }}</p>
                     </article>
                 @endforelse

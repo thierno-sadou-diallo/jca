@@ -62,7 +62,7 @@ class PortfolioItemController extends Controller
 
         $portfolio->update($data);
 
-        return redirect()->route('admin.portfolio.index')->with('status', 'Publication portfolio mise a jour.');
+        return redirect()->route('admin.portfolio.index')->with('status', 'Publication portfolio mise à jour.');
     }
 
     public function destroy(PortfolioItem $portfolio)

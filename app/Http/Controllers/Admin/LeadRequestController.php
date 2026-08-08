@@ -74,6 +74,6 @@ class LeadRequestController extends Controller
             'updated_at' => now(),
         ]);
 
-        return back()->with('status', 'Demande mise a jour.');
+        return back()->with('status', 'Demande mise à jour.');
     }
 }

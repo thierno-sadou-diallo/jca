@@ -58,7 +58,7 @@
                 @endforeach
             @empty
                 <details open>
-                    <summary>Aucune FAQ publiee</summary>
+                    <summary>Aucune FAQ publiée</summary>
                     <p>Les réponses JCA seront publiées prochainement.</p>
                 </details>
             @endforelse

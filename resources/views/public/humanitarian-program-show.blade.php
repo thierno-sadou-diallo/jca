@@ -3,7 +3,7 @@
 <head>
     @include('partials.head', [
         'title' => $program->title.' | JCA',
-        'description' => str($program->description ?: 'Programme humanitaire accompagne par JCA.')->limit(155),
+        'description' => str($program->description ?: 'Programme humanitaire accompagné par JCA.')->limit(155),
     ])
 </head>
 <body>
@@ -21,7 +21,7 @@
             <div class="admin-panel">
                 <img class="article-cover" src="{{ $program->image_path ? asset('storage/'.$program->image_path) : asset('images/jca-hero.webp') }}" alt="{{ $program->title }}" loading="lazy">
                 <span class="eyebrow">Programme actif</span>
-                <p>{!! nl2br(e($program->description ?: 'Ce programme humanitaire est accompagne par JCA pour soutenir les publics, renforcer les capacités et créer un impact social durable.')) !!}</p>
+                <p>{!! nl2br(e($program->description ?: 'Ce programme humanitaire est accompagné par JCA pour soutenir les publics, renforcer les capacités et créer un impact social durable.')) !!}</p>
                 @if (! empty($program->impact_metrics))
                     <div class="impact-metrics">
                         @foreach ($program->impact_metrics as $metric)

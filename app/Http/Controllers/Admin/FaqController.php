@@ -47,7 +47,7 @@ class FaqController extends Controller
     {
         $faq->update($this->validated($request));
 
-        return back()->with('status', 'FAQ mise a jour.');
+        return back()->with('status', 'FAQ mise à jour.');
     }
 
     /**

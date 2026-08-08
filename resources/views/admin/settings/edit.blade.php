@@ -3,7 +3,7 @@
         <div class="admin-panel-head">
             <div>
                 <h2>Paramètres du site</h2>
-                <span>Identite, contact et pied de page</span>
+                <span>Identité, contact et pied de page</span>
             </div>
             <a class="button ghost" href="{{ route('home') }}">Voir le site</a>
         </div>

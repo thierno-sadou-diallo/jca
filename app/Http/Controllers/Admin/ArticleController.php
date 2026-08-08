@@ -62,7 +62,7 @@ class ArticleController extends Controller
 
         $article->update($validated);
 
-        return back()->with('status', 'Article mis a jour.');
+        return back()->with('status', 'Article mis à jour.');
     }
 
     /**

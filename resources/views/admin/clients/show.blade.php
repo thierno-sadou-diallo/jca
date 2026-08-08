@@ -71,7 +71,7 @@
     <section class="admin-grid">
         <article class="admin-panel">
             <div class="admin-panel-head">
-                <h2>Demandes recentes</h2>
+                <h2>Demandes récentes</h2>
                 <span>Suivi du dossier</span>
             </div>
             <div class="admin-list">

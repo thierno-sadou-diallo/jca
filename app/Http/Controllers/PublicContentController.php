@@ -18,7 +18,7 @@ class PublicContentController extends Controller
 
     public function news(): View
     {
-        return $this->articles(Article::TYPE_NEWS, 'Actualites', 'Veille et communiques', 'Suivez les annonces, opportunites et informations importantes publiees par JCA.');
+        return $this->articles(Article::TYPE_NEWS, 'Actualités', 'Veille et communiqués', 'Suivez les annonces, opportunités et informations importantes publiées par JCA.');
     }
 
     public function article(Article $article): View
@@ -46,7 +46,7 @@ class PublicContentController extends Controller
                 ],
                 (object) [
                     'category' => 'Rendez-vous',
-                    'question' => 'Puis-je prendre rendez-vous sans créer de compte?',
+                    'question' => 'Puis-je prendre rendez-vous sans créer de compte ?',
                     'answer' => 'Oui. Le formulaire de rendez-vous est accessible directement depuis le site public. Le compte client devient utile ensuite lorsqu’un dossier doit être suivi avec documents, messages et étapes.',
                 ],
                 (object) [

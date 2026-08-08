@@ -62,13 +62,13 @@ class JobApplicationController extends Controller
         ]);
 
         $application->user?->notify(new PortalStatusNotification(
-            'Candidature mise a jour',
+            'Candidature mise à jour',
             ($validated['admin_note'] ?? null) ?: 'Le statut de votre candidature a été mis à jour.',
             'candidature',
             route('portal.dashboard'),
         ));
 
-        return back()->with('application_review_status', 'Candidature mise a jour.');
+        return back()->with('application_review_status', 'Candidature mise à jour.');
     }
 
     public function download(JobApplication $application): StreamedResponse

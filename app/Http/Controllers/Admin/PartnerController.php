@@ -51,7 +51,7 @@ class PartnerController extends Controller
     {
         $partner->update($this->validated($request, $partner));
 
-        return back()->with('status', 'Partenaire mis a jour.');
+        return back()->with('status', 'Partenaire mis à jour.');
     }
 
     /**

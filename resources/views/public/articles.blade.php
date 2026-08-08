@@ -43,7 +43,7 @@
                     </article>
                 @empty
                     <article class="empty-state">
-                        <h2>Aucun contenu publie pour le moment.</h2>
+                        <h2>Aucun contenu publié pour le moment.</h2>
                         <p>Les publications JCA apparaîtront ici des leur publication.</p>
                     </article>
                 @endforelse

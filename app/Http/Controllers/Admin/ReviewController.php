@@ -34,7 +34,7 @@ class ReviewController extends Controller
                 'updated_at' => now(),
             ]);
 
-        return back()->with('status', 'Avis mis a jour.');
+        return back()->with('status', 'Avis mis à jour.');
     }
 
     public function destroy(int $review): RedirectResponse

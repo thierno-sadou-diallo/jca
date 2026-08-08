@@ -64,6 +64,6 @@ class UserController extends Controller
 
         $user->update($validated);
 
-        return back()->with('status', 'Utilisateur mis a jour.');
+        return back()->with('status', 'Utilisateur mis à jour.');
     }
 }

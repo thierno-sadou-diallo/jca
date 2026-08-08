@@ -50,7 +50,7 @@
                         <img src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.webp') }}" alt="{{ $project->title }}" loading="lazy">
                         <span>{{ $project->sector ?: 'Coopération' }} - {{ $project->country ?: 'International' }}</span>
                         <h3>{{ $project->title }}</h3>
-                        <p>{{ $project->description ? str($project->description)->limit(170) : 'Projet actif accompagne par JCA avec une approche orientee résultats, gouvernance et durabilite.' }}</p>
+                        <p>{{ $project->description ? str($project->description)->limit(170) : 'Projet actif accompagné par JCA avec une approche orientée résultats, gouvernance et durabilité.' }}</p>
                         @if (! empty($project->indicators))
                             <div class="mini-metrics">
                                 @foreach (array_slice($project->indicators, 0, 2) as $metric)
@@ -63,7 +63,7 @@
                     </article>
                 @empty
                     <article class="empty-state">
-                        <h2>Aucun projet actif publie pour le moment.</h2>
+                        <h2>Aucun projet actif publié pour le moment.</h2>
                         <p>Les projets de coopération actifs apparaîtront ici après validation par l’équipe JCA.</p>
                     </article>
                 @endforelse

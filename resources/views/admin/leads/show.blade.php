@@ -10,12 +10,12 @@
                 <div><strong>Téléphone</strong><span>{{ $lead->phone ?: 'Non indiqué' }}</span></div>
                 <div><strong>Motif</strong><span>{{ $lead->topic }}</span></div>
                 <div>
-                    <strong>Rendez-vous demande</strong>
+                    <strong>Rendez-vous demandé</strong>
                     <span>
                         @if ($lead->preferred_date)
                             {{ $lead->preferred_date->format('d/m/Y') }}
                             @if (! empty($lead->payload['appointment_requested_at']))
-                                a {{ \Carbon\Carbon::parse($lead->payload['appointment_requested_at'])->format('H:i') }}
+                                à {{ \Carbon\Carbon::parse($lead->payload['appointment_requested_at'])->format('H:i') }}
                             @endif
                         @else
                             Non indiqué

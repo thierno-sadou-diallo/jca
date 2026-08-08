@@ -77,7 +77,7 @@ class PaymentController extends Controller
 
         $payment->update($validated);
 
-        return back()->with('status', 'Paiement mis a jour.');
+        return back()->with('status', 'Paiement mis à jour.');
     }
 
     /**

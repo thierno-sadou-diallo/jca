@@ -125,17 +125,17 @@ class ImmigrationCaseController extends Controller
             $immigrationCase->histories()->create([
                 'user_id' => $request->user()->id,
                 'status' => $validated['status'],
-                'note' => $validated['note'] ?? 'Statut mis a jour.',
+                'note' => $validated['note'] ?? 'Statut mis à jour.',
             ]);
 
             $immigrationCase->user?->notify(new PortalStatusNotification(
-                'Dossier immigration mis a jour',
+                'Dossier immigration mis à jour',
                 ($validated['note'] ?? null) ?: 'Le statut de votre dossier '.$immigrationCase->reference.' a été mis à jour.',
                 'dossier',
                 route('portal.dashboard'),
             ));
         }
 
-        return back()->with('status', 'Dossier immigration mis a jour.');
+        return back()->with('status', 'Dossier immigration mis à jour.');
     }
 }

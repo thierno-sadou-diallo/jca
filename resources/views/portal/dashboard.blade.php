@@ -79,7 +79,7 @@
                 <div class="journey-steps">
                     @foreach ($journeySteps as $step)
                         <article @class(['is-done' => $step['done']])>
-                            <span>{{ $step['done'] ? 'Fait' : 'A faire' }}</span>
+                            <span>{{ $step['done'] ? 'Fait' : 'À faire' }}</span>
                             <strong>{{ $step['title'] }}</strong>
                             <p>{{ $step['text'] }}</p>
                         </article>

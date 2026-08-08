@@ -3,7 +3,7 @@
 <head>
     @include('partials.head', [
         'title' => 'Programmes humanitaires | JCA',
-        'description' => 'Programmes humanitaires et initiatives sociales JCA: inclusion, formation, employabilite, solidarite et impact humain.',
+        'description' => 'Programmes humanitaires et initiatives sociales JCA : inclusion, formation, employabilité, solidarité et impact humain.',
     ])
 </head>
 <body>
@@ -13,7 +13,7 @@
             <div>
                 <span class="eyebrow">Action humanitaire</span>
                 <h1>Programmes humanitaires</h1>
-                <p>Des actions sociales et solidaires pensees pour accompagner les publics, renforcer l’inclusion et construire des parcours plus dignes, utiles et durables.</p>
+                <p>Des actions sociales et solidaires pensées pour accompagner les publics, renforcer l’inclusion et construire des parcours plus dignes, utiles et durables.</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ $publicRoute('page.show', 'collaboration') }}">Proposer une collaboration</a>
                     <a class="button ghost" href="{{ $publicRoute('page.show', 'contact') }}">Nous contacter</a>
@@ -50,7 +50,7 @@
                         <img src="{{ $program->image_path ? asset('storage/'.$program->image_path) : asset('images/jca-hero.webp') }}" alt="{{ $program->title }}" loading="lazy">
                         <span>{{ $program->focus_area ?: 'Impact social' }} - {{ $program->country ?: 'International' }}</span>
                         <h3>{{ $program->title }}</h3>
-                        <p>{{ $program->description ? str($program->description)->limit(170) : 'Programme actif accompagne par JCA pour soutenir des besoins sociaux prioritaires.' }}</p>
+                        <p>{{ $program->description ? str($program->description)->limit(170) : 'Programme actif accompagné par JCA pour soutenir des besoins sociaux prioritaires.' }}</p>
                         @if (! empty($program->impact_metrics))
                             <div class="mini-metrics">
                                 @foreach (array_slice($program->impact_metrics, 0, 2) as $metric)
@@ -62,7 +62,7 @@
                     </article>
                 @empty
                     <article class="empty-state">
-                        <h2>Aucun programme actif publie pour le moment.</h2>
+                        <h2>Aucun programme actif publié pour le moment.</h2>
                         <p>Les programmes humanitaires actifs apparaîtront ici après validation par l’équipe JCA.</p>
                     </article>
                 @endforelse

@@ -73,6 +73,6 @@ class SiteSettingController extends Controller
             );
         }
 
-        return back()->with('status', 'Parametres du site mis a jour.');
+        return back()->with('status', 'Paramètres du site mis à jour.');
     }
 }

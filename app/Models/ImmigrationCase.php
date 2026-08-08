@@ -45,7 +45,7 @@ class ImmigrationCase extends Model
         return [
             self::STATUS_RECEIVED => 'Recue',
             self::STATUS_IN_ANALYSIS => 'En analyse',
-            self::STATUS_ADDITIONAL_DOCUMENTS_REQUESTED => 'Documents complementaires demandes',
+            self::STATUS_ADDITIONAL_DOCUMENTS_REQUESTED => 'Documents complémentaires demandés',
             self::STATUS_DOCUMENTS_VALIDATED => 'Documents valides',
             self::STATUS_IN_PROCESS => 'En traitement',
             self::STATUS_COMPLETED => 'Terminee',

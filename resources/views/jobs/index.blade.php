@@ -13,13 +13,13 @@
             <div>
                 <span class="eyebrow">Talents et employeurs</span>
                 <h1>Emplois internationaux</h1>
-                <p>Recherchez les opportunités publiées par JCA et preparez votre candidature avec un parcours clair, professionnel et sécurisé.</p>
+                <p>Recherchez les opportunités publiées par JCA et préparez votre candidature avec un parcours clair, professionnel et sécurisé.</p>
             </div>
         </section>
 
         <section class="job-board">
             <form class="job-search" method="get" action="{{ $publicRoute('jobs.index') }}">
-                <label>Recherche<input name="q" value="{{ $query }}" placeholder="Metier, entreprise, competence..."></label>
+                <label>Recherche<input name="q" value="{{ $query }}" placeholder="Métier, entreprise, compétence..."></label>
                 <label>Secteur<select name="sector">
                     <option value="">Tous les secteurs</option>
                     @foreach ($sectors as $item)
@@ -60,7 +60,7 @@
                                     <label>Téléphone<input name="phone" value="{{ old('phone', auth()->user()->phone) }}"></label>
                                 </div>
                                 <label>CV<input type="file" name="résumé" accept=".pdf,.doc,.docx" required></label>
-                                <label>Message<textarea name="message" rows="3" placeholder="Resumez votre expérience et votre disponibilité.">{{ old('message') }}</textarea></label>
+                                <label>Message<textarea name="message" rows="3" placeholder="Résumez votre expérience et votre disponibilité.">{{ old('message') }}</textarea></label>
                                 @if ($errors->any())
                                     <p class="form-note" data-state="error">{{ $errors->first() }}</p>
                                 @endif

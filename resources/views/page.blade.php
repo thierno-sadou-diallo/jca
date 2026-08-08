@@ -389,7 +389,7 @@
                             @elseif ($slug === 'confidentialite')
                                 {{ __('Vos informations restent encadrees.') }}
                             @else
-                                {{ __('Un accompagnement structure et confidentiel') }}
+                                {{ __('Un accompagnement structuré et confidentiel') }}
                             @endif
                         </h2>
                     </div>

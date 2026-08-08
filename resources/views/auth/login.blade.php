@@ -20,7 +20,7 @@
         <div>
             <span class="eyebrow">Compte client</span>
             <h1>Connexion</h1>
-            <p>Accedez à vos dossiers, rendez-vous, documents, candidatures, paiements et messages.</p>
+            <p>Accédez à vos dossiers, rendez-vous, documents, candidatures, paiements et messages.</p>
         </div>
 
         <form class="lead-form admin-form" method="post" action="{{ route('portal.login.store') }}">
@@ -42,7 +42,7 @@
                 <p class="form-note" data-state="error">{{ $message }}</p>
             @enderror
         </form>
-        <nav class="legal-auth-links" aria-label="Liens legaux">
+        <nav class="legal-auth-links" aria-label="Liens légaux">
             <a href="{{ $publicRoute('legal.show', 'mentions-legales') }}">Mentions légales</a>
             <a href="{{ $publicRoute('legal.show', 'politique-confidentialite') }}">Confidentialité</a>
             <a href="{{ $publicRoute('legal.show', 'conditions-utilisation') }}">Conditions</a>

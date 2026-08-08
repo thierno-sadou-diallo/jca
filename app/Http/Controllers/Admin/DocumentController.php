@@ -54,13 +54,13 @@ class DocumentController extends Controller
         ]);
 
         $document->user?->notify(new PortalStatusNotification(
-            'Document mis a jour',
+            'Document mis à jour',
             ($validated['admin_note'] ?? null) ?: 'Le statut de votre document '.$document->title.' a été mis à jour.',
             'document',
             route('portal.dashboard'),
         ));
 
-        return back()->with('document_review_status', 'Statut du document mis a jour.');
+        return back()->with('document_review_status', 'Statut du document mis à jour.');
     }
 
     public function download(Document $document): StreamedResponse

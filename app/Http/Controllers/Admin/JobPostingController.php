@@ -43,7 +43,7 @@ class JobPostingController extends Controller
         $job->update($this->validatedData($request, $job));
         $this->log($request, 'job_updated', $job);
 
-        return back()->with('status', 'Offre mise a jour.');
+        return back()->with('status', 'Offre mise à jour.');
     }
 
     private function validatedData(Request $request, ?JobPosting $job = null): array

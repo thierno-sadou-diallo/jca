@@ -3,7 +3,7 @@
 <head>
     @include('partials.head', [
         'title' => $project->title.' | JCA',
-        'description' => str($project->description ?: 'Projet de coopération internationale accompagne par JCA.')->limit(155),
+        'description' => str($project->description ?: 'Projet de coopération internationale accompagné par JCA.')->limit(155),
     ])
 </head>
 <body>
@@ -21,7 +21,7 @@
             <div class="admin-panel">
                 <img class="article-cover" src="{{ $project->image_path ? asset('storage/'.$project->image_path) : asset('images/jca-cooperation.webp') }}" alt="{{ $project->title }}" loading="lazy">
                 <span class="eyebrow">Projet actif</span>
-                <p>{!! nl2br(e($project->description ?: 'Ce projet de coopération est accompagne par JCA avec une approche structuree, orientee impact, coordination et résultats durables.')) !!}</p>
+                <p>{!! nl2br(e($project->description ?: 'Ce projet de coopération est accompagné par JCA avec une approche structurée, orientée impact, coordination et résultats durables.')) !!}</p>
                 @if (! empty($project->indicators))
                     <div class="impact-metrics">
                         @foreach ($project->indicators as $metric)

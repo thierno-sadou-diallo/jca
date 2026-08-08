@@ -58,7 +58,7 @@ class HumanitarianProgramController extends Controller
 
         $program->update($validated);
 
-        return back()->with('status', 'Programme humanitaire mis a jour.');
+        return back()->with('status', 'Programme humanitaire mis à jour.');
     }
 
     /**

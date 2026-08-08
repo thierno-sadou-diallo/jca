@@ -71,12 +71,12 @@ class AppointmentController extends Controller
         }
 
         $appointment->user?->notify(new PortalStatusNotification(
-            'Rendez-vous mis a jour',
+            'Rendez-vous mis à jour',
             ($validated['notes'] ?? null) ?: 'Le statut de votre rendez-vous a été mis à jour.',
             'rendez-vous',
             route('portal.dashboard'),
         ));
 
-        return back()->with('status', 'Rendez-vous mis a jour.');
+        return back()->with('status', 'Rendez-vous mis à jour.');
     }
 }

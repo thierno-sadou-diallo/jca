@@ -22,7 +22,7 @@
                     <tr>
                         <th>Contact</th>
                         <th>Motif</th>
-                        <th>Rendez-vous demande</th>
+                        <th>Rendez-vous demandé</th>
                         <th>Documents</th>
                         <th>Statut</th>
                         <th>Canal</th>

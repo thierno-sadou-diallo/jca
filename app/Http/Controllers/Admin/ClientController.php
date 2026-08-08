@@ -107,6 +107,6 @@ class ClientController extends Controller
             ],
         );
 
-        return back()->with('status', 'Profil client mis a jour.');
+        return back()->with('status', 'Profil client mis à jour.');
     }
 }
