@@ -269,7 +269,7 @@ $legalPages = [
     ],
     'politique-confidentialite' => [
         'title' => 'Politique de confidentialité',
-        'description' => 'Politique de traitement des données personnelles reçueillies par JCA via le site public et l’espace client.',
+        'description' => 'Politique de traitement des données personnelles recueillies par JCA via le site public et l’espace client.',
         'sections' => [
             [
                 'title' => 'Données collectées',
@@ -280,11 +280,11 @@ $legalPages = [
                     'Identité et coordonnées : nom, email, téléphone, pays, ville, organisation.',
                     'Données de dossier : motif, messages, statut, notes de suivi et documents transmis.',
                     'Documents sensibles : CV, diplômes, justificatifs, pièces d’identité et fichiers utiles au traitement.',
-                    'Données techniques: IP, navigateur, journaux de sécurité et horodatages.',
+                    'Données techniques : IP, navigateur, journaux de sécurité et horodatages.',
                 ],
             ],
             [
-                'title' => 'Finalites',
+                'title' => 'Finalités',
                 'paragraphs' => [
                     'Ces données servent à répondre aux demandes, évaluer les projets, organiser les consultations, gérer les candidatures, suivre les dossiers dans l’espace client, sécuriser les accès et respecter les obligations légales ou contractuelles applicables.',
                 ],
@@ -306,7 +306,7 @@ $legalPages = [
                 'title' => 'Droits des personnes',
                 'paragraphs' => [
                     'Toute personne concernée peut demander l’accès, la rectification, la suppression, la limitation ou la portabilité de ses données lorsque le droit applicable le permet.',
-                    'Contact responsable du traitement: contact@jcaconseil.com.',
+                    'Contact responsable du traitement : contact@jcaconseil.com.',
                 ],
             ],
             [
