@@ -8,7 +8,7 @@
                     <small>{{ $siteSettings['brand_tagline'] ?? __('Immigration, recrutement et coopération') }}</small>
                 </span>
             </a>
-            <p>{{ $siteSettings['footer_description'] ?? __('Cabinet international de conseil en immigration, mobilité, recrutement et coopération.') }}</p>
+            <p>{{ $siteSettings['footer_description'] ?? __('Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.') }}</p>
         </div>
         <div>
             <h3>{{ __('Services') }}</h3>
