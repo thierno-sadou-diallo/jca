@@ -387,7 +387,7 @@
                             @if ($slug === 'collaboration')
                                 {{ __('Collaborer avec JCA, simplement.') }}
                             @elseif ($slug === 'confidentialite')
-                                {{ __('Vos informations restent encadrees.') }}
+                                {{ __('Vos informations restent encadrées.') }}
                             @else
                                 {{ __('Un accompagnement structuré et confidentiel') }}
                             @endif
