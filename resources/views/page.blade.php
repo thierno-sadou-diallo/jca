@@ -193,6 +193,56 @@
                         <article><span>06</span><h3>{{ __('Responsabilité sociale') }}</h3><p>{{ __('Un impact positif et durable pour les communautés.') }}</p></article>
                     </div>
                 </section>
+            @elseif ($slug === 'equipe')
+                <section class="team-showcase about-showcase">
+                    <div class="team-copy about-copy">
+                        <span class="eyebrow">{{ __('Équipe') }}</span>
+                        <h2>{{ __('Une équipe pluridisciplinaire au service de vos projets.') }}</h2>
+                        <p>{{ __('JCA réunit des expertise complémentaires en immigration, mobilité internationale, recrutement, coopération et conseil stratégique. Chaque projet est confié à une équipe mobilisée autour d\'un objectif commun : servir vos ambitions avec rigueur et intégrité.') }}</p>
+                    </div>
+                    <div class="team-members-grid" aria-label="Team members">
+                        <article class="team-member-card">
+                            <div class="team-member-image">
+                                <span class="team-member-initial">N</span>
+                            </div>
+                            <div class="team-member-info">
+                                <h3>Me Amadou NDIAYE</h3>
+                                <span class="team-member-role">{{ __('Founder & Principal Advisor') }}</span>
+                                <p class="team-member-credentials">{{ __('Avocat (Barreau du Québec) / Expert en gouvernance, sécurité et politiques publiques en Afrique de l\'Ouest / Gestionnaire de projets internationaux / Auteur') }}</p>
+                                <p class="team-member-bio">{{ __('Fort d\'une expertise reconnue en immigration, mobilité internationale et développement, Me NDIAYE accompagne depuis des années une clientèle variée — particuliers, entreprises, gouvernements et organisations internationales — dans leurs démarches stratégiques et juridiques.') }}</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="team-expertise">
+                    <div class="section-heading">
+                        <span class="eyebrow">{{ __('Domaines d\'expertise') }}</span>
+                        <h2>{{ __('Les compétences qui font la différence.') }}</h2>
+                    </div>
+                    <div class="team-expertise-grid">
+                        <article>
+                            <span class="service-icon service-icon-1" aria-hidden="true"></span>
+                            <h3>{{ __('Conseil et orientation') }}</h3>
+                            <p>{{ __('Analyse des besoins, clarification des options et accompagnement des décisions importantes.') }}</p>
+                        </article>
+                        <article>
+                            <span class="service-icon service-icon-2" aria-hidden="true"></span>
+                            <h3>{{ __('Immigration et mobilité') }}</h3>
+                            <p>{{ __('Préparation, organisation et suivi des démarches avec attention particulière à la qualité des informations.') }}</p>
+                        </article>
+                        <article>
+                            <span class="service-icon service-icon-3" aria-hidden="true"></span>
+                            <h3>{{ __('Recrutement international') }}</h3>
+                            <p>{{ __('Lecture des besoins employeurs, valorisation des profils et coordination des parcours candidats.') }}</p>
+                        </article>
+                        <article>
+                            <span class="service-icon service-icon-4" aria-hidden="true"></span>
+                            <h3>{{ __('Coopération et partenariats') }}</h3>
+                            <p>{{ __('Structuration de collaborations avec institutions, organisations, employeurs et partenaires techniques.') }}</p>
+                        </article>
+                    </div>
+                </section>
             @endif
 
             @php

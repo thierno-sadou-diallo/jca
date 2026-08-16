@@ -35,11 +35,9 @@
                 <span class="eyebrow">{{ __('Cabinet international') }}</span>
                 <h1>JCA</h1>
                 <p class="hero-kicker hero-kicker-statement">
-                    <span class="hero-kicker-accent">{{ __('Faciliter') }}</span> {{ __('la mobilité') }}<br>
-                    {{ __('des') }} <em>{{ __('talents') }}</em> {{ __('qui construisent') }}<br>
-                    {{ __('le monde de demain.') }}
+                    <span class="hero-kicker-accent">{{ __('Faciliter') }}</span> {{ __('la mobilité des talents qui construisent le monde de demain.') }}
                 </p>
-                <p class="hero-lede">{{ __('JCA relie les personnes, les employeurs et les partenaires autour de parcours clairs: immigration, mobilité, recrutement international, coopération et conseil stratégique.') }}</p>
+                <p class="hero-lede">{{ __('JCA relie les personnes, les employeurs et les partenaires autour de parcours clairs: immigration, mobilité, recrutement international, coopération, développement durable et conseil stratégique.') }}</p>
                 <div class="hero-actions">
                     <a class="button primary" href="{{ route('public.appointments') }}">{{ __('Prendre rendez-vous') }}</a>
                     <a class="button secondary ghost-link" href="{{ $publicRoute('page.show', 'services') }}">{{ __('Explorer les services') }}</a>
@@ -52,7 +50,7 @@
                     <img src="{{ asset('images/logo_off.webp') }}" alt="">
                     <strong>JCA</strong>
                     <small>{{ __('Mobilité internationale') }}</small>
-                    <span>{{ __('Sénégal') }} · {{ __('Canada') }}</span>
+                    <span>{{ __('Afrique') }} · {{ __('Canada') }}</span>
                 </div>
             </div>
         </section>
@@ -60,20 +58,20 @@
         <section class="home-why-jca" aria-label="Pourquoi choisir JCA Conseil">
             <div class="section-heading">
                 <span class="eyebrow">{{ __('Pourquoi choisir') }}</span>
-                <h2>{{ __('Pourquoi choisir') }} <em>{{ __('JCA Conseil') }}</em> ?</h2>
+                <h2>{{ __('Pourquoi choisir JCA Conseil ?') }}</h2>
             </div>
             <div class="home-why-grid">
-                <article><span>01</span><strong>{{ __('Expertise') }} <em>{{ __('Sénégal-Canada') }}</em></strong></article>
-                <article><span>02</span><strong>{{ __('Accompagnement') }} <em>{{ __('personnalisé') }}</em></strong></article>
-                <article><span>03</span><strong>{{ __('Vision') }} <em>{{ __('stratégique') }}</em></strong></article>
-                <article><span>04</span><strong>{{ __('Suivi des') }} <em>{{ __('projets') }}</em></strong></article>
+                <article><span>01</span><strong>{{ __('Expertise Afrique - Canada') }}</strong></article>
+                <article><span>02</span><strong>{{ __('Accompagnement personnalisé') }}</strong></article>
+                <article><span>03</span><strong>{{ __('Vision stratégique') }}</strong></article>
+                <article><span>04</span><strong>{{ __('Suivi des projets') }}</strong></article>
             </div>
         </section>
 
         <section class="home-focus-strip home-stat-strip" aria-label="{{ __('Statistiques JCA') }}">
             <div class="home-stat-heading">
                 <span class="eyebrow">{{ __('Impact JCA') }}</span>
-                <h2>{{ __('Des') }} <em>{{ __('chiffres') }}</em> {{ __('qui traduisent notre engagement.') }}</h2>
+                <h2>{{ __('Des chiffres qui traduisent notre engagement.') }}</h2>
             </div>
             <ul class="home-stat-list">
                 <li>
@@ -102,21 +100,24 @@
             <div class="target-grid">
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'recrutement-international') }}">
                     <span class="target-icon employer-icon" aria-hidden="true"></span>
-                    <h3>{{ __('Employeur') }}</h3>
-                    <p>{{ __('Recruter, mobiliser et fidéliser les meilleurs talents étrangers avec un parcours clair et professionnel.') }}</p>
-                    <span class="target-action">{{ __('Accéder') }}</span>
+                    <h3>{{ __('Vous êtes employeur') }}</h3>
+                    <strong>{{ __('Vous cherchez des talents locaux ou internationaux?') }}</strong>
+                    <p>{{ __('Recrutement international • EIMT • Mobilité des travailleurs • Accompagnement employeur') }}</p>
+                    <span class="target-action">{{ __('Explorer les solutions') }}</span>
                 </a>
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'immigration') }}">
                     <span class="target-icon candidate-icon" aria-hidden="true"></span>
-                    <h3>{{ __('Candidat') }}</h3>
-                    <p>{{ __('Étudiants, travailleurs et investisseurs: comprendre vos options et préparer un projet de mobilité solide.') }}</p>
-                    <span class="target-action">{{ __('Accéder') }}</span>
+                    <h3>{{ __('Vous souhaitez immigrer') }}</h3>
+                    <strong>{{ __('Vous envisagez le Canada, l'Europe ou une autre destination?') }}</strong>
+                    <p>{{ __('Visa visiteur • Permis de travail • Permis d\'études • Résidence permanente • Parrainage • Citoyenneté') }}</p>
+                    <span class="target-action">{{ __('Comprendre mes options') }}</span>
                 </a>
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'collaboration') }}">
                     <span class="target-icon partner-icon" aria-hidden="true"></span>
-                    <h3>{{ __('Partenaire') }}</h3>
-                    <p>{{ __('Institutions, ONG et gouvernements: structurer des collaborations utiles, mesurables et durables.') }}</p>
-                    <span class="target-action">{{ __('Accéder') }}</span>
+                    <h3>{{ __('Vous êtes partenaire') }}</h3>
+                    <strong>{{ __('Vous pilotez des projets ou programmes internationaux?') }}</strong>
+                    <p>{{ __('Coopération • Développement international • Projets • Partenariats institutionnels') }}</p>
+                    <span class="target-action">{{ __('Collaborer avec JCA') }}</span>
                 </a>
             </div>
         </section>

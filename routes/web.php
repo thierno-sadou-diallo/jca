@@ -83,50 +83,48 @@ $pages = [
     'services' => [
         'title' => 'Services',
         'eyebrow' => 'Solutions internationales',
-        'intro' => 'Un partenaire stratégique pour les projets qui traversent les frontières.',
+        'intro' => 'JCA accompagne particuliers, entreprises, institutions et organisations dans leurs projets d'immigration, mobilité, recrutement international, coopération et développement durable. Un partenaire stratégique pour les projets qui traversent les frontières.',
         'sections' => [
             ['Immigration & mobilité internationale', 'Visas, résidence permanente, regroupement familial et parrainage.'],
-            ['Recrutement international', 'Sourcing, sélection et intégration de talents à l’échelle mondiale.'],
+            ['Recrutement international', 'Sourcing, sélection et intégration de talents à l'échelle mondiale.'],
             ['Coopération internationale', 'Ponts institutionnels entre gouvernements, ONG et partenaires.'],
+            ['Développement durable', 'Programmes à impact, renforcement des capacités et amélioration des conditions de vie.'],
             ['Services-conseils stratégiques', 'Accompagnement sur mesure des dirigeants et organisations.'],
         ],
     ],
     'immigration' => [
-        'title' => 'Immigration',
-        'eyebrow' => 'Dossiers et statuts',
-        'intro' => 'JCA accompagne ses clients dans toutes les étapes des procédures d’immigration et de mobilité internationale vers le Canada, l’Europe, les États-Unis et d’autres destinations stratégiques.',
+        'title' => 'Je veux immigrer au Canada',
+        'eyebrow' => 'Parcours et statuts',
+        'intro' => 'JCA accompagne les candidats dans toutes les étapes des procédures d'immigration vers le Canada et d'autres destinations. De l'analyse du profil à la finalisation du dossier, chaque étape est encadrée avec rigueur et confidentialité.',
         'sections' => [
-            ['Immigration économique et professionnelle', 'Évaluation du profil, stratégie de sélection, préparation documentaire et suivi des programmes adaptés.'],
-            ['Permis de travail et permis d’études', 'Accompagnement des étudiants, travailleurs qualifiés, employeurs et familles dans la préparation des demandes.'],
-            ['Résidence permanente', 'Structuration du dossier, preuves, formulaires, cohérence du parcours et anticipation des exigences.'],
-            ['Réunification familiale', 'Vérification des critères, preuves relationnelles et accompagnement des familles dans les étapes sensibles.'],
-            ['Visas temporaires', 'Dossiers visiteurs, invitations, garanties financières, assurances et justificatifs de retour.'],
-            ['Mobilité internationale', 'Conseils stratégiques pour employeurs, travailleurs et organisations qui opèrent dans plusieurs territoires.'],
+            ['Visa visiteur', 'Préparation de demandes de visite, invitations, assurances et garanties financières.'],
+            ['Permis de travail', 'Accompagnement des travailleurs qualifiés et employeurs pour les demandes de mobilité professionnelle.'],
+            ['Permis d'études', 'Aide à la sélection de programmes, admission, visa d'étudiant et préparation de l'installation.'],
+            ['Résidence permanente (RP)', 'Structuration du dossier, preuves, formulaires, cohérence du parcours et anticipation des exigences.'],
+            ['Parrainage familial', 'Vérification des critères, preuves relationnelles et accompagnement des familles dans les étapes sensibles.'],
+            ['Citoyenneté canadienne', 'Préparation de la demande de citoyenneté et compréhension des droits et obligations.'],
         ],
     ],
     'recrutement-international' => [
-        'title' => 'Recrutement international',
-        'eyebrow' => 'Talents et employeurs',
-        'intro' => 'JCA soutient les employeurs dans la recherche, la sélection, l’intégration et la rétention de talents qualifiés provenant de différents marchés internationaux.',
+        'title' => 'Je suis employeur',
+        'eyebrow' => 'Recrutement et talents',
+        'intro' => 'JCA accompagne les employeurs dans le recrutement international, la mobilité des travailleurs et l'accompagnement aux étapes clés. Sourcing, préqualification, coordination candidat-employeur et intégration.',
         'sections' => [
-            ['Travailleurs qualifiés', 'Identification de profils spécialisés, présélection, entretiens, vérification des compétences et coordination des étapes.'],
-            ['Missions de recrutement', 'Dispositifs adaptés aux besoins sectoriels, campagnes internationales et suivi des cohortes.'],
-            ['Pénuries de main-d’œuvre', 'Accompagnement des employeurs pour planifier les besoins, les contrats, la mobilité et l’intégration.'],
-            ['Intégration et rétention', 'Préparation administrative, culturelle et logistique pour favoriser une installation durable.'],
-            ['Institutions de formation', 'Développement de passerelles entre employeurs, talents et organismes de formation.'],
-            ['Portail candidat', 'Parcours clair pour déposer CV, diplômes, langues, disponibilités et préférences professionnelles.'],
+            ['Recrutement international', 'Identification et présélection de profils qualifiés, coordination du processus de sélection et intégration.'],
+            ['EIMT (Évaluation des Impacts sur le Marché du Travail)', 'Accompagnement des employeurs dans les démarches réglementaires et préqualification des candidats.'],
+            ['Mobilité des travailleurs', 'Accompagnement des travailleurs dans les démarches de permis, visa et préparation de l'installation au Canada.'],
+            ['Accompagnement employeur', 'Consultation stratégique sur les besoins, planification de la mobilité et intégration des talents.'],
         ],
     ],
     'cooperation-internationale' => [
-        'title' => 'Coopération internationale',
-        'eyebrow' => 'Institutions et projets',
-        'intro' => 'JCA accompagne les gouvernements, institutions, organisations et partenaires au développement dans la conception, la mise en œuvre et l’évaluation de programmes à fort impact.',
+        'title' => 'Je suis partenaire',
+        'eyebrow' => 'Partenariats internationaux',
+        'intro' => 'JCA accompagne les institutions, organisations et gouvernements dans la structuration de partenariats internationaux. Coopération, développement international, projets à impact et partenariats institutionnels.'
         'sections' => [
-            ['Développement économique et territorial', 'Programmes favorisant l’entrepreneuriat, les chaînes de valeur, l’emploi et la structuration locale.'],
-            ['Renforcement des capacités', 'Diagnostic, plan d’action, gouvernance, formation et outils de pilotage institutionnel.'],
-            ['Gouvernance et politiques publiques', 'Appui à la formulation, à la coordination et au suivi de programmes publics ou partenariaux.'],
-            ['Éducation et formation', 'Projets relies aux compétences, à l’employabilité, à la formation professionnelle et aux transitions de carriere.'],
-            ['Mobilisation de ressources', 'Préparation de notes conceptuelles, dossiers de financement et argumentaires de partenariat international.'],
+            ['Coopération internationale', 'Structuration de collaborations entre institutions, gouvernements et organisations. Cadre de travail clair et partenariats mesurables.'],
+            ['Développement international', 'Programmes territoriaux, développement économique et renforcement des capacités institutionnelles.'],
+            ['Projets à impact', 'Conception, mise en œuvre et évaluation de programmes visant l'amélioration durable des conditions de vie.'],
+            ['Partenariats institutionnels', 'Collaborations entre acteurs publics, ONG, universités et organisations internationales.'],
         ],
     ],
     'humanitaire' => [
@@ -743,7 +741,6 @@ Route::post('/espace/rendez-vous', [PortalAppointmentController::class, 'store']
     ->name('portal.appointments.store');
 
 Route::get('/{slug}', function (string $slug) use ($pages) {
-    abort_if($slug === 'equipe', 404);
     abort_unless(isset($pages[$slug]), 404);
 
     return view('page', [
@@ -754,7 +751,7 @@ Route::get('/{slug}', function (string $slug) use ($pages) {
 })->name('page.show');
 
 Route::get('/{locale}/{slug}', function (string $locale, string $slug) use ($pages) {
-    abort_unless(in_array($locale, ['fr', 'en'], true) && isset($pages[$slug]) && $slug !== 'equipe', 404);
+    abort_unless(in_array($locale, ['fr', 'en'], true) && isset($pages[$slug]), 404);
     session(['locale' => $locale]);
     app()->setLocale($locale);
 
