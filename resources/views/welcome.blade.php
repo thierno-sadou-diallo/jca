@@ -19,6 +19,7 @@
         ],
     ])
 </head>
+
 <body>
     @include('partials.header')
 
@@ -30,22 +31,38 @@
                 <img src="{{ asset('images/jca-recruitment.webp') }}" alt="" loading="lazy">
                 <img src="{{ asset('images/jca-cooperation.webp') }}" alt="" loading="lazy">
             </div>
+
             <div class="hero-overlay"></div>
+
             <div class="hero-content home-hero-content">
                 <span class="eyebrow">{{ __('Cabinet international') }}</span>
+
                 <h1>JCA</h1>
+
                 <p class="hero-kicker hero-kicker-statement">
-                    <span class="hero-kicker-accent">{{ __('Faciliter') }}</span> {{ __('la mobilité des talents qui construisent le monde de demain.') }}
+                    <span class="hero-kicker-accent">{{ __('Faciliter') }}</span>
+                    {{ __('la mobilité des talents qui construisent le monde de demain.') }}
                 </p>
-                <p class="hero-lede">{{ __('JCA relie les personnes, les employeurs et les partenaires autour de parcours clairs: immigration, mobilité, recrutement international, coopération, développement durable et conseil stratégique.') }}</p>
+
+                <p class="hero-lede">
+                    {{ __('JCA relie les personnes, les employeurs et les partenaires autour de parcours clairs: immigration, mobilité, recrutement international, coopération, développement durable et conseil stratégique.') }}
+                </p>
+
                 <div class="hero-actions">
-                    <a class="button primary" href="{{ route('public.appointments') }}">{{ __('Prendre rendez-vous') }}</a>
-                    <a class="button secondary ghost-link" href="{{ $publicRoute('page.show', 'services') }}">{{ __('Explorer les services') }}</a>
+                    <a class="button primary" href="{{ route('public.appointments') }}">
+                        {{ __('Prendre rendez-vous') }}
+                    </a>
+
+                    <a class="button secondary ghost-link" href="{{ $publicRoute('page.show', 'services') }}">
+                        {{ __('Explorer les services') }}
+                    </a>
                 </div>
             </div>
+
             <div class="home-hero-artistry" aria-hidden="true">
                 <span class="hero-art-orbit hero-art-orbit-1"></span>
                 <span class="hero-art-orbit hero-art-orbit-2"></span>
+
                 <div class="hero-art-seal">
                     <img src="{{ asset('images/logo_off.webp') }}" alt="">
                     <strong>JCA</strong>
@@ -55,16 +72,32 @@
             </div>
         </section>
 
-        <section class="home-why-jca" aria-label="Pourquoi choisir JCA Conseil">
+        <section class="home-why-jca" aria-label="{{ __('Pourquoi choisir JCA Conseil') }}">
             <div class="section-heading">
                 <span class="eyebrow">{{ __('Pourquoi choisir') }}</span>
                 <h2>{{ __('Pourquoi choisir JCA Conseil ?') }}</h2>
             </div>
+
             <div class="home-why-grid">
-                <article><span>01</span><strong>{{ __('Expertise Afrique - Canada') }}</strong></article>
-                <article><span>02</span><strong>{{ __('Accompagnement personnalisé') }}</strong></article>
-                <article><span>03</span><strong>{{ __('Vision stratégique') }}</strong></article>
-                <article><span>04</span><strong>{{ __('Suivi des projets') }}</strong></article>
+                <article>
+                    <span>01</span>
+                    <strong>{{ __('Expertise Afrique - Canada') }}</strong>
+                </article>
+
+                <article>
+                    <span>02</span>
+                    <strong>{{ __('Accompagnement personnalisé') }}</strong>
+                </article>
+
+                <article>
+                    <span>03</span>
+                    <strong>{{ __('Vision stratégique') }}</strong>
+                </article>
+
+                <article>
+                    <span>04</span>
+                    <strong>{{ __('Suivi des projets') }}</strong>
+                </article>
             </div>
         </section>
 
@@ -73,17 +106,20 @@
                 <span class="eyebrow">{{ __('Impact JCA') }}</span>
                 <h2>{{ __('Des chiffres qui traduisent notre engagement.') }}</h2>
             </div>
+
             <ul class="home-stat-list">
                 <li>
                     <span class="home-stat-icon service-icon service-icon-1" aria-hidden="true"></span>
                     <strong>{{ __('+ de 50') }}</strong>
                     <span class="home-stat-label">{{ __('dossiers accompagnés') }}</span>
                 </li>
+
                 <li>
                     <span class="home-stat-icon service-icon service-icon-5" aria-hidden="true"></span>
                     <strong>{{ __('96%') }}</strong>
                     <span class="home-stat-label">{{ __('taux de satisfaction') }}</span>
                 </li>
+
                 <li>
                     <span class="home-stat-icon service-icon service-icon-4" aria-hidden="true"></span>
                     <strong>{{ __('+10 ans') }}</strong>
@@ -97,27 +133,60 @@
                 <span class="eyebrow">{{ __('Pour qui') }}</span>
                 <h2>{{ __('Un point d’entrée clair pour chaque visiteur.') }}</h2>
             </div>
+
             <div class="target-grid">
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'recrutement-international') }}">
                     <span class="target-icon employer-icon" aria-hidden="true"></span>
+
                     <h3>{{ __('Vous êtes employeur') }}</h3>
-                    <strong>{{ __('Vous cherchez des talents locaux ou internationaux?') }}</strong>
-                    <p>{{ __('Recrutement international • EIMT • Mobilité des travailleurs • Accompagnement employeur') }}</p>
-                    <span class="target-action">{{ __('Explorer les solutions') }}</span>
+
+                    <strong>
+                        {{ __('Vous cherchez des talents locaux ou internationaux?') }}
+                    </strong>
+
+                    <p>
+                        {{ __('Recrutement international • EIMT • Mobilité des travailleurs • Accompagnement employeur') }}
+                    </p>
+
+                    <span class="target-action">
+                        {{ __('Explorer les solutions') }}
+                    </span>
                 </a>
+
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'immigration') }}">
                     <span class="target-icon candidate-icon" aria-hidden="true"></span>
+
                     <h3>{{ __('Vous souhaitez immigrer') }}</h3>
-                    <strong>{{ __('Vous envisagez le Canada, l'Europe ou une autre destination?') }}</strong>
-                    <p>{{ __('Visa visiteur • Permis de travail • Permis d\'études • Résidence permanente • Parrainage • Citoyenneté') }}</p>
-                    <span class="target-action">{{ __('Comprendre mes options') }}</span>
+
+                    <strong>
+                        {{ __('Vous envisagez le Canada, l\'Europe ou une autre destination?') }}
+                    </strong>
+
+                    <p>
+                        {{ __('Visa visiteur • Permis de travail • Permis d\'études • Résidence permanente • Parrainage • Citoyenneté') }}
+                    </p>
+
+                    <span class="target-action">
+                        {{ __('Comprendre mes options') }}
+                    </span>
                 </a>
+
                 <a class="target-card reveal" href="{{ $publicRoute('page.show', 'collaboration') }}">
                     <span class="target-icon partner-icon" aria-hidden="true"></span>
+
                     <h3>{{ __('Vous êtes partenaire') }}</h3>
-                    <strong>{{ __('Vous pilotez des projets ou programmes internationaux?') }}</strong>
-                    <p>{{ __('Coopération • Développement international • Projets • Partenariats institutionnels') }}</p>
-                    <span class="target-action">{{ __('Collaborer avec JCA') }}</span>
+
+                    <strong>
+                        {{ __('Vous pilotez des projets ou programmes internationaux?') }}
+                    </strong>
+
+                    <p>
+                        {{ __('Coopération • Développement international • Projets • Partenariats institutionnels') }}
+                    </p>
+
+                    <span class="target-action">
+                        {{ __('Collaborer avec JCA') }}
+                    </span>
                 </a>
             </div>
         </section>
@@ -128,13 +197,22 @@
                     <span class="eyebrow">{{ __('Opportunités') }}</span>
                     <h2>{{ __('Offres publiées.') }}</h2>
                 </div>
+
                 <div class="cards-grid">
                     @foreach ($latestJobs as $job)
                         <article class="news-card reveal">
                             <span>{{ $job->sector }}</span>
+
                             <h3>{{ $job->title }}</h3>
-                            <p>{{ $job->country }} - {{ str($job->description)->limit(90) }}</p>
-                            <a class="admin-link" href="{{ $publicRoute('jobs.index') }}">{{ __('Voir les offres') }}</a>
+
+                            <p>
+                                {{ $job->country }} -
+                                {{ str($job->description)->limit(90) }}
+                            </p>
+
+                            <a class="admin-link" href="{{ $publicRoute('jobs.index') }}">
+                                {{ __('Voir les offres') }}
+                            </a>
                         </article>
                     @endforeach
                 </div>
@@ -144,59 +222,142 @@
         <section class="home-testimonials-section" id="temoignages">
             <div class="testimonial-submit-copy">
                 <span class="eyebrow">{{ __('Témoignages') }}</span>
-                <h2>{{ __('Des expériences partagées par les visiteurs JCA.') }}</h2>
-                <p>{{ __('Les visiteurs peuvent publier directement leur avis afin d’aider d’autres personnes, employeurs et partenaires à mieux comprendre l’accompagnement JCA.') }}</p>
+
+                <h2>
+                    {{ __('Des expériences partagées par les visiteurs JCA.') }}
+                </h2>
+
+                <p>
+                    {{ __('Les visiteurs peuvent publier directement leur avis afin d’aider d’autres personnes, employeurs et partenaires à mieux comprendre l’accompagnement JCA.') }}
+                </p>
             </div>
+
             <div class="home-testimonials-layout">
                 <div class="home-testimonial-list">
                     @forelse ($testimonials as $testimonial)
                         <figure class="service-testimonial-card reveal">
-                            <blockquote>“{{ $testimonial->quote }}”</blockquote>
+                            <blockquote>
+                                “{{ $testimonial->quote }}”
+                            </blockquote>
+
                             <figcaption>
                                 <strong>{{ $testimonial->author_name }}</strong>
-                                <span>{{ $testimonial->author_role ?? __('Client JCA') }}{{ filled($testimonial->organization ?? null) ? ' - '.$testimonial->organization : '' }}</span>
+
+                                <span>
+                                    {{ $testimonial->author_role ?? __('Client JCA') }}
+
+                                    @if (filled($testimonial->organization ?? null))
+                                        - {{ $testimonial->organization }}
+                                    @endif
+                                </span>
                             </figcaption>
                         </figure>
                     @empty
                         <figure class="service-testimonial-card service-testimonial-empty reveal">
-                            <blockquote>{{ __('Les témoignages publiés par les visiteurs apparaîtront ici.') }}</blockquote>
+                            <blockquote>
+                                {{ __('Les témoignages publiés par les visiteurs apparaîtront ici.') }}
+                            </blockquote>
+
                             <figcaption>
                                 <strong>{{ __('Avis visiteurs') }}</strong>
                                 <span>{{ __('Publication directe') }}</span>
                             </figcaption>
                         </figure>
                     @endforelse
+
                     @if (($testimonialsTotal ?? 0) > $testimonials->count())
                         <a class="testimonial-more-link" href="{{ $publicRoute('public.testimonials.index') }}">
                             {{ __('Voir tous les témoignages') }}
                         </a>
                     @endif
                 </div>
-                <form class="lead-form testimonial-form" method="post" action="{{ route('public.testimonials.store') }}">
+
+                <form
+                    class="lead-form testimonial-form"
+                    method="post"
+                    action="{{ route('public.testimonials.store') }}"
+                >
                     @csrf
-                    <label class="honeypot" aria-hidden="true">Site web<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+
+                    <label class="honeypot" aria-hidden="true">
+                        Site web
+                        <input
+                            type="text"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+                    </label>
+
                     <div class="form-grid">
-                        <label>{{ __('Nom complet') }}<input name="author_name" value="{{ old('author_name') }}" required></label>
-                        <label>{{ __('Profil') }}<input name="author_role" value="{{ old('author_role') }}" placeholder="{{ __('Client, candidat, employeur, partenaire') }}"></label>
+                        <label>
+                            {{ __('Nom complet') }}
+                            <input
+                                name="author_name"
+                                value="{{ old('author_name') }}"
+                                required
+                            >
+                        </label>
+
+                        <label>
+                            {{ __('Profil') }}
+                            <input
+                                name="author_role"
+                                value="{{ old('author_role') }}"
+                                placeholder="{{ __('Client, candidat, employeur, partenaire') }}"
+                            >
+                        </label>
                     </div>
-                    <label>{{ __('Organisation') }}<input name="organization" value="{{ old('organization') }}"></label>
-                    <label>{{ __('Votre témoignage') }}<textarea name="quote" rows="5" required>{{ old('quote') }}</textarea></label>
+
+                    <label>
+                        {{ __('Organisation') }}
+                        <input
+                            name="organization"
+                            value="{{ old('organization') }}"
+                        >
+                    </label>
+
+                    <label>
+                        {{ __('Votre témoignage') }}
+                        <textarea
+                            name="quote"
+                            rows="5"
+                            required
+                        >{{ old('quote') }}</textarea>
+                    </label>
+
                     @if (session('testimonial_status'))
-                        <p class="form-note" data-state="success">{{ session('testimonial_status') }}</p>
+                        <p class="form-note" data-state="success">
+                            {{ session('testimonial_status') }}
+                        </p>
                     @elseif ($errors->has('quote') || $errors->has('author_name'))
-                        <p class="form-note" data-state="error">{{ $errors->first('quote') ?: $errors->first('author_name') }}</p>
+                        <p class="form-note" data-state="error">
+                            {{ $errors->first('quote') ?: $errors->first('author_name') }}
+                        </p>
                     @endif
-                    <button class="button primary" type="submit">{{ __('Envoyer le témoignage') }}</button>
+
+                    <button class="button primary" type="submit">
+                        {{ __('Envoyer le témoignage') }}
+                    </button>
                 </form>
             </div>
         </section>
 
         <section class="cta-band">
             <span class="eyebrow">{{ __('Commencer') }}</span>
-            <h2>{{ __('Présentez votre projet. JCA vous aide à poser les prochaines étapes.') }}</h2>
+
+            <h2>
+                {{ __('Présentez votre projet. JCA vous aide à poser les prochaines étapes.') }}
+            </h2>
+
             <div class="hero-actions">
-                <a class="button primary" href="{{ route('public.appointments') }}">{{ __('Prendre rendez-vous') }}</a>
-                <a class="button secondary" href="{{ $publicRoute('page.show', 'contact') }}">{{ __('Contacter JCA') }}</a>
+                <a class="button primary" href="{{ route('public.appointments') }}">
+                    {{ __('Prendre rendez-vous') }}
+                </a>
+
+                <a class="button secondary" href="{{ $publicRoute('page.show', 'contact') }}">
+                    {{ __('Contacter JCA') }}
+                </a>
             </div>
         </section>
     </main>
