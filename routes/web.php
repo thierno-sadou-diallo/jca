@@ -88,11 +88,9 @@ $pages = [
         'eyebrow' => 'Solutions internationales',
         'intro' => 'JCA accompagne particuliers, entreprises, institutions et organisations dans leurs projets d\'immigration, mobilité, recrutement international, coopération et développement durable. Un partenaire stratégique pour les projets qui traversent les frontières.',
         'sections' => [
-            ['Immigration & mobilité internationale', 'Visas, résidence permanente, regroupement familial et parrainage.'],
-            ['Recrutement international', 'Sourcing, sélection et intégration de talents à l\'échelle mondiale.'],
-            ['Coopération internationale', 'Ponts institutionnels entre gouvernements, ONG et partenaires.'],
-            ['Développement durable', 'Programmes à impact, renforcement des capacités et amélioration des conditions de vie.'],
-            ['Services-conseils stratégiques', 'Accompagnement sur mesure des dirigeants et organisations.'],
+            ['Je veux immigrer au Canada (Visa visiteur, Permis de travail, Permis d\'études, RP, Parrainage, Citoyenneté)', 'Visa visiteur, permis de travail, permis d\'études, résidence permanente, parrainage et citoyenneté.'],
+            ['Je suis employeur (Recrutement international, EIMT, Mobilité des travailleurs, Accompagnement employeur)', 'Recrutement international, EIMT, mobilité des travailleurs et accompagnement employeur.'],
+            ['Je suis partenaire (Coopération, Développement international, Projets, Partenariats institutionnels)', 'Coopération, développement international, projets et partenariats institutionnels.'],
         ],
     ],
     'immigration' => [

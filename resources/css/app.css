@@ -16,6 +16,7 @@
     --line: #e6e9ef;
     --soft: #f6f8fb;
     --white: #ffffff;
+    --accent-primary: var(--gold);
     --shadow: 0 24px 60px rgba(8, 27, 49, .14);
     --title-font: Georgia, "Times New Roman", ui-serif, serif;
     font-family: Inter, Poppins, Montserrat, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -78,8 +79,8 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
-    padding: 14px clamp(16px, 4vw, 54px);
+    gap: clamp(10px, 1.6vw, 18px);
+    padding: 12px clamp(16px, 4vw, 54px);
     background: rgba(255, 255, 255, .92);
     border-bottom: 1px solid rgba(230, 233, 239, .86);
     backdrop-filter: blur(18px);
@@ -95,7 +96,7 @@ form {
     align-items: center;
     gap: 12px;
     min-width: 0;
-    flex: 0 1 240px;
+    flex: 0 1 260px;
 }
 
 .brand-mark {
@@ -144,13 +145,14 @@ form {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    gap: clamp(8px, 1vw, 14px);
+    gap: clamp(7px, .8vw, 12px);
     color: #344054;
-    font-size: 13px;
+    font-size: clamp(12px, .82vw, 13px);
     font-weight: 600;
 }
 
 .main-nav a {
+    padding-block: 6px;
     overflow-wrap: anywhere;
 }
 
@@ -405,6 +407,21 @@ h1 {
     color: rgba(255, 255, 255, .84);
     font-size: clamp(1.06rem, 2.2vw, 1.44rem);
     line-height: 1.45;
+}
+
+.hero-question-strip {
+    width: fit-content;
+    max-width: 720px;
+    margin-top: 18px;
+    padding: 12px 14px;
+    color: rgba(255, 255, 255, .94);
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(242, 207, 117, .34);
+    border-radius: 8px;
+    font-size: clamp(.98rem, 1.6vw, 1.12rem);
+    font-weight: 800;
+    line-height: 1.45;
+    backdrop-filter: blur(14px);
 }
 
 .hero-actions {
@@ -1741,16 +1758,17 @@ h2 {
 
 .service-domain-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: clamp(16px, 2vw, 24px);
+    align-items: stretch;
 }
 
 .service-domain-card {
     position: relative;
-    min-height: 360px;
+    min-height: clamp(330px, 34vw, 390px);
     display: grid;
     align-content: space-between;
-    gap: 18px;
+    gap: clamp(14px, 1.8vw, 20px);
     padding: clamp(24px, 3vw, 34px);
     overflow: hidden;
     color: var(--white);
@@ -1848,10 +1866,13 @@ h2 {
     z-index: 1;
     color: var(--white);
     font-family: var(--title-font);
-    max-width: 360px;
-    font-size: clamp(2rem, 2.6vw, 3rem);
-    line-height: .98;
+    max-width: 100%;
+    font-family: Inter, Poppins, Montserrat, ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.16rem, 1.45vw, 1.62rem);
+    line-height: 1.2;
+    font-weight: 900;
     text-shadow: 0 18px 38px rgba(0, 0, 0, .25);
+    overflow-wrap: break-word;
 }
 
 .service-domain-card p {
@@ -1883,8 +1904,8 @@ h2 {
 .service-detail-panel {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(230px, .5fr) minmax(320px, 1fr);
-    gap: clamp(22px, 4vw, 58px);
+    grid-template-columns: minmax(230px, .44fr) minmax(320px, 1fr);
+    gap: clamp(20px, 3.4vw, 48px);
     align-items: stretch;
     overflow: hidden;
     padding: clamp(18px, 2.4vw, 28px);
@@ -1969,8 +1990,11 @@ h2 {
     max-width: 760px;
     margin-top: 12px;
     color: var(--white);
-    font-size: clamp(1.85rem, 3.1vw, 3.5rem);
-    line-height: 1;
+    font-family: Inter, Poppins, Montserrat, ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(1.45rem, 2.45vw, 2.75rem);
+    line-height: 1.12;
+    font-weight: 900;
+    overflow-wrap: break-word;
 }
 
 .service-detail-copy p {
@@ -2212,6 +2236,7 @@ h2 {
 }
 
 .team-member-image {
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2222,6 +2247,14 @@ h2 {
     font-size: 48px;
     font-weight: 900;
     color: var(--accent-primary);
+}
+
+.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
+    background: var(--white);
 }
 
 .team-member-info h3 {
@@ -2413,11 +2446,12 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(16px, 2vw, 24px);
+    align-items: stretch;
 }
 
 .target-card {
     position: relative;
-    min-height: 360px;
+    min-height: clamp(330px, 32vw, 380px);
     display: grid;
     align-content: space-between;
     gap: 18px;
@@ -2499,9 +2533,17 @@ h2 {
     max-width: 340px;
     color: var(--white);
     font-family: var(--title-font);
-    font-size: clamp(2rem, 3vw, 3.2rem);
-    line-height: .98;
+    font-size: clamp(1.75rem, 2.5vw, 2.75rem);
+    line-height: 1.02;
     text-shadow: 0 18px 38px rgba(0, 0, 0, .25);
+}
+
+.target-card strong {
+    display: block;
+    max-width: 430px;
+    font-size: clamp(1.02rem, 1.4vw, 1.22rem);
+    line-height: 1.35;
+    overflow-wrap: break-word;
 }
 
 .target-card p {
@@ -7847,6 +7889,19 @@ h3 {
     .service-detail-points li,
     .target-action {
         width: 100%;
+    }
+
+    .team-members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member-card {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member-image {
+        width: 120px;
+        min-width: 0;
     }
 
     .about-hero-signature article:first-of-type,

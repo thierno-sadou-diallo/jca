@@ -20,6 +20,7 @@
         <div>
             <h3>{{ __('Informations') }}</h3>
             <a href="{{ $publicRoute('page.show', 'qui-sommes-nous') }}">{{ __('À propos') }}</a>
+            <a href="{{ $publicRoute('page.show', 'equipe') }}">Équipe</a>
             <a href="{{ $publicRoute('page.show', 'collaboration') }}">{{ __('Collaboration') }}</a>
             <a href="{{ $publicRoute('page.show', 'confidentialite') }}">{{ __('Confidentialité') }}</a>
             <a href="{{ app()->getLocale() === 'en' ? route('localized.public.portfolio', 'en') : route('public.portfolio') }}">Portfolio</a>
@@ -32,7 +33,8 @@
             <h3>{{ __('Contact') }}</h3>
             <a href="{{ $publicRoute('page.show', 'contact') }}">{{ __('Formulaire') }}</a>
             <a href="mailto:{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}">{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}</a>
-            <a href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '+221789685116') }}">{{ $siteSettings['contact_phone'] ?? '78 968 51 16' }}</a>
+            <a href="tel:+221789685116">🇸🇳 +221 78 968 51 16</a>
+            <a href="tel:+15818497199">🇨🇦 +1 581 849 7199</a>
             @if (! empty($siteSettings['whatsapp']))
                 <a href="https://wa.me/{{ preg_replace('/\D+/', '', $siteSettings['whatsapp']) }}">WhatsApp</a>
             @endif

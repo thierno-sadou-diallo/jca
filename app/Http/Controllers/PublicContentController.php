@@ -7,6 +7,9 @@ use App\Models\CooperationProject;
 use App\Models\Faq;
 use App\Models\HumanitarianProgram;
 use App\Models\Partner;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 
 class PublicContentController extends Controller
@@ -32,7 +35,9 @@ class PublicContentController extends Controller
 
     public function faq(): View
     {
-        $publishedFaqs = Faq::where('is_published', true)->orderBy('sort_order')->get();
+        $publishedFaqs = Schema::hasTable('faqs')
+            ? Faq::where('is_published', true)->orderBy('sort_order')->get()
+            : collect();
         $defaultFaqs = collect([
                 (object) [
                     'category' => 'Immigration & mobilité',
@@ -77,18 +82,28 @@ class PublicContentController extends Controller
 
     public function partners(): View
     {
+        $partners = Schema::hasTable('partners')
+            ? Partner::query()->latest('is_featured')->latest()->get()
+            : collect();
+
+        $featuredPartners = Schema::hasTable('partners')
+            ? Partner::where('is_featured', true)->latest()->get()
+            : collect();
+
         return view('public.partners', [
-            'partners' => Partner::query()->latest('is_featured')->latest()->get(),
-            'featuredPartners' => Partner::where('is_featured', true)->latest()->get(),
+            'partners' => $partners,
+            'featuredPartners' => $featuredPartners,
         ]);
     }
 
     public function cooperationProjects(): View
     {
         return view('public.cooperation-projects', [
-            'projects' => CooperationProject::where('status', 'active')
+            'projects' => Schema::hasTable('cooperation_projects')
+                ? CooperationProject::where('status', 'active')
                 ->latest('starts_at')
-                ->paginate(9),
+                ->paginate(9)
+                : $this->emptyPaginator(9),
         ]);
     }
 
@@ -104,9 +119,11 @@ class PublicContentController extends Controller
     public function humanitarianPrograms(): View
     {
         return view('public.humanitarian-programs', [
-            'programs' => HumanitarianProgram::where('status', 'active')
+            'programs' => Schema::hasTable('humanitarian_programs')
+                ? HumanitarianProgram::where('status', 'active')
                 ->latest()
-                ->paginate(9),
+                ->paginate(9)
+                : $this->emptyPaginator(9),
         ]);
     }
 
@@ -122,14 +139,27 @@ class PublicContentController extends Controller
     private function articles(string $type, string $title, string $eyebrow, string $intro): View
     {
         return view('public.articles', [
-            'articles' => Article::where('status', 'published')
+            'articles' => Schema::hasTable('articles')
+                ? Article::where('status', 'published')
                 ->where('type', $type)
                 ->latest('published_at')
-                ->paginate(9),
+                ->paginate(9)
+                : $this->emptyPaginator(9),
             'title' => $title,
             'eyebrow' => $eyebrow,
             'intro' => $intro,
             'type' => $type,
         ]);
+    }
+
+    private function emptyPaginator(int $perPage): LengthAwarePaginator
+    {
+        return new LengthAwarePaginator(
+            new Collection(),
+            0,
+            $perPage,
+            1,
+            ['path' => request()->url(), 'query' => request()->query()],
+        );
     }
 }

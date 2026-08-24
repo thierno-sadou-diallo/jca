@@ -16,6 +16,7 @@
     <nav class="main-nav" data-nav>
         <a href="{{ $publicRoute('home') }}">Accueil</a>
         <a href="{{ $publicRoute('page.show', 'qui-sommes-nous') }}">À propos</a>
+        <a href="{{ $publicRoute('page.show', 'equipe') }}">Équipe</a>
         <a href="{{ $publicRoute('page.show', 'services') }}">Services</a>
         <a href="{{ $publicRoute('page.show', 'collaboration') }}">Collaboration</a>
         <a href="{{ $publicRoute('page.show', 'confidentialite') }}">Confidentialité</a>

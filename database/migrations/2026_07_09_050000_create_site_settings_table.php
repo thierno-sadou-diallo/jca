@@ -22,7 +22,7 @@ return new class extends Migration
             'brand_tagline' => ['Immigration, mobilité internationale, recrutement international et coopération internationale', 'general'],
             'footer_description' => ['Cabinet international de conseil et d’accompagnement spécialisé en immigration, mobilité internationale, recrutement international, coopération internationale et développement durable.', 'general'],
             'contact_email' => ['contact@jcaconseil.com', 'contact'],
-            'contact_phone' => ['78 968 51 16', 'contact'],
+            'contact_phone' => ['+221 78 968 51 16', 'contact'],
             'whatsapp' => ['', 'contact'],
             'address' => ['', 'contact'],
             'footer_signature' => ['Des ponts entre les talents, les organisations et les opportunites.', 'general'],

@@ -11,7 +11,7 @@
             'url' => url('/'),
             'logo' => asset('images/logo_off.webp'),
             'email' => $siteSettings['contact_email'] ?? 'contact@jcaconseil.com',
-            'telephone' => $siteSettings['contact_phone'] ?? '78 968 51 16',
+            'telephone' => $siteSettings['contact_phone'] ?? '+221 78 968 51 16',
             'sameAs' => array_values(array_filter([
                 $siteSettings['facebook_url'] ?? null,
                 $siteSettings['linkedin_url'] ?? null,
@@ -46,6 +46,10 @@
 
                 <p class="hero-lede">
                     {{ __('JCA relie les personnes, les employeurs et les partenaires autour de parcours clairs: immigration, mobilité, recrutement international, coopération, développement durable et conseil stratégique.') }}
+                </p>
+
+                <p class="hero-question-strip">
+                    {{ __('Vous souhaitez immigrer au Canada ? Vous êtes employeur qui cherche des talents locaux ou internationaux ?') }}
                 </p>
 
                 <div class="hero-actions">
@@ -141,7 +145,7 @@
                     <h3>{{ __('Vous êtes employeur') }}</h3>
 
                     <strong>
-                        {{ __('Vous cherchez des talents locaux ou internationaux?') }}
+                        {{ __('Vous êtes employeur qui cherche des talents locaux ou internationaux ?') }}
                     </strong>
 
                     <p>
@@ -159,7 +163,7 @@
                     <h3>{{ __('Vous souhaitez immigrer') }}</h3>
 
                     <strong>
-                        {{ __('Vous envisagez le Canada, l\'Europe ou une autre destination?') }}
+                        {{ __('Vous souhaitez immigrer au Canada ?') }}
                     </strong>
 
                     <p>

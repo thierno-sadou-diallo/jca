@@ -39,9 +39,13 @@
                             <strong>{{ __('Email') }}</strong>
                             <span>{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}</span>
                         </a>
-                        <a href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '+221789685116') }}">
-                            <strong>{{ __('Téléphone / WhatsApp') }}</strong>
-                            <span>{{ $siteSettings['contact_phone'] ?? '78 968 51 16' }}</span>
+                        <a href="tel:+221789685116">
+                            <strong>{{ __('Téléphone / WhatsApp') }} {{ __('Sénégal') }}</strong>
+                            <span>🇸🇳 +221 78 968 51 16</span>
+                        </a>
+                        <a href="tel:+15818497199">
+                            <strong>{{ __('Téléphone / WhatsApp') }} Canada</strong>
+                            <span>🇨🇦 +1 581 849 7199</span>
                         </a>
                         <a href="{{ route('public.appointments') }}">
                             <strong>{{ __('Rendez-vous') }}</strong>
@@ -203,7 +207,7 @@
                     <div class="team-members-grid" aria-label="Team members">
                         <article class="team-member-card">
                             <div class="team-member-image">
-                                <span class="team-member-initial">N</span>
+                                <img src="{{ asset('images/logo_off.webp') }}" alt="Me Amadou NDIAYE" loading="lazy">
                             </div>
                             <div class="team-member-info">
                                 <h3>Me Amadou NDIAYE</h3>
@@ -315,9 +319,13 @@
                             <span>{{ __('Email') }}</span>
                             <strong>{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}</strong>
                         </a>
-                        <a href="tel:{{ preg_replace('/\D+/', '', $siteSettings['contact_phone'] ?? '+221789685116') }}">
-                            <span>{{ __('Téléphone / WhatsApp') }}</span>
-                            <strong>{{ $siteSettings['contact_phone'] ?? '78 968 51 16' }}</strong>
+                        <a href="tel:+221789685116">
+                            <span>{{ __('Téléphone / WhatsApp') }} {{ __('Sénégal') }}</span>
+                            <strong>🇸🇳 +221 78 968 51 16</strong>
+                        </a>
+                        <a href="tel:+15818497199">
+                            <span>{{ __('Téléphone / WhatsApp') }} Canada</span>
+                            <strong>🇨🇦 +1 581 849 7199</strong>
                         </a>
                         @if (! empty($siteSettings['collaboration_document_path']))
                             <a class="collaboration-document-card" href="{{ route('public.collaboration-document.download') }}">
@@ -338,42 +346,33 @@
                 $iconPages = ['services', 'collaboration', 'confidentialite'];
                 $usesIcons = in_array($slug, $iconPages, true);
                 $sectionTranslations = [
-                    'Immigration & mobilité internationale' => 'Immigration & international mobility',
-                    'Recrutement international' => 'International recruitment',
-                    'Coopération internationale' => 'International cooperation',
-                    'Services-conseils stratégiques' => 'Strategic advisory services',
+                    'Je veux immigrer au Canada (Visa visiteur, Permis de travail, Permis d\'études, RP, Parrainage, Citoyenneté)' => 'I want to immigrate to Canada (Visitor visa, Work permit, Study permit, PR, Sponsorship, Citizenship)',
+                    'Je suis employeur (Recrutement international, EIMT, Mobilité des travailleurs, Accompagnement employeur)' => 'I am an employer (International recruitment, LMIA, Worker mobility, Employer support)',
+                    'Je suis partenaire (Coopération, Développement international, Projets, Partenariats institutionnels)' => 'I am a partner (Cooperation, International development, projects, institutional partnerships)',
                 ];
                 $serviceDetails = [
                     [
-                        'id' => 'immigration-mobilite',
-                        'title' => 'Immigration & mobilité internationale',
-                        'summary' => 'Visas, résidence permanente, regroupement familial et parrainage.',
+                        'id' => 'immigration-canada',
+                        'title' => 'Je veux immigrer au Canada (Visa visiteur, Permis de travail, Permis d\'études, RP, Parrainage, Citoyenneté)',
+                        'summary' => 'Visa visiteur, permis de travail, permis d\'études, résidence permanente, parrainage et citoyenneté.',
                         'description' => 'JCA accompagne les personnes, familles, étudiants, travailleurs et employeurs dans la préparation de parcours migratoires lisibles. L’accompagnement porte sur l’analyse du profil, la cohérence documentaire, les étapes administratives, les risques à anticiper et les prochaines décisions à prendre.',
                         'points' => ['Analyse du profil', 'Préparation documentaire', 'Suivi des étapes sensibles'],
                         'image' => 'jca-immigration.webp',
                     ],
                     [
-                        'id' => 'recrutement-international',
-                        'title' => 'Recrutement international',
-                        'summary' => 'Sourcing, sélection et intégration de talents à l’échelle mondiale.',
+                        'id' => 'employeur',
+                        'title' => 'Je suis employeur (Recrutement international, EIMT, Mobilité des travailleurs, Accompagnement employeur)',
+                        'summary' => 'Recrutement international, EIMT, mobilité des travailleurs et accompagnement employeur.',
                         'description' => 'JCA aide les employeurs à clarifier leurs besoins, identifier des profils qualifiés et organiser un processus de recrutement international plus fiable. Le service relie préqualification, coordination candidat, mobilité professionnelle et préparation de l’intégration.',
                         'points' => ['Sourcing ciblé', 'Préqualification des talents', 'Coordination employeur-candidat'],
                         'image' => 'jca-recruitment.webp',
                     ],
                     [
-                        'id' => 'cooperation-internationale',
-                        'title' => 'Coopération internationale',
-                        'summary' => 'Ponts institutionnels entre gouvernements, ONG et partenaires.',
+                        'id' => 'partenaire',
+                        'title' => 'Je suis partenaire (Coopération, Développement international, Projets, Partenariats institutionnels)',
+                        'summary' => 'Coopération, développement international, projets et partenariats institutionnels.',
                         'description' => 'JCA structure des collaborations entre institutions, organisations, employeurs et partenaires techniques. L’objectif est de transformer une intention de partenariat en cadre de travail clair: objectifs, rôles, calendrier, gouvernance et résultats attendus.',
                         'points' => ['Objectifs et gouvernance', 'Partenaires et territoires', 'Résultats mesurables'],
-                        'image' => 'jca-cooperation.webp',
-                    ],
-                    [
-                        'id' => 'services-conseils',
-                        'title' => 'Services-conseils stratégiques',
-                        'summary' => 'Accompagnement sur mesure des dirigeants et organisations.',
-                        'description' => 'JCA conseille les dirigeants, organisations et porteurs de projets dans les décisions internationales sensibles. Le service combine diagnostic, feuille de route, analyse des risques, priorisation des actions et préparation des échanges avec les parties prenantes.',
-                        'points' => ['Diagnostic stratégique', 'Analyse des risques', 'Feuille de route opérationnelle'],
                         'image' => 'jca-cooperation.webp',
                     ],
                 ];
@@ -463,7 +462,7 @@
             @endif
 
             <section class="cta-band">
-                <span class="eyebrow">{{ __('Prochaine etape') }}</span>
+                <span class="eyebrow">{{ __('Prochaine étape') }}</span>
                 <h2>{{ __('Transformez votre projet international en feuille de route claire.') }}</h2>
                 <a class="button primary" href="{{ $publicRoute('page.show', 'consultation') }}">{{ __('Demander une consultation') }}</a>
             </section>
