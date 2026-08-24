@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
@@ -83,10 +86,10 @@ $pages = [
     'services' => [
         'title' => 'Services',
         'eyebrow' => 'Solutions internationales',
-        'intro' => 'JCA accompagne particuliers, entreprises, institutions et organisations dans leurs projets d'immigration, mobilité, recrutement international, coopération et développement durable. Un partenaire stratégique pour les projets qui traversent les frontières.',
+        'intro' => 'JCA accompagne particuliers, entreprises, institutions et organisations dans leurs projets d\'immigration, mobilité, recrutement international, coopération et développement durable. Un partenaire stratégique pour les projets qui traversent les frontières.',
         'sections' => [
             ['Immigration & mobilité internationale', 'Visas, résidence permanente, regroupement familial et parrainage.'],
-            ['Recrutement international', 'Sourcing, sélection et intégration de talents à l'échelle mondiale.'],
+            ['Recrutement international', 'Sourcing, sélection et intégration de talents à l\'échelle mondiale.'],
             ['Coopération internationale', 'Ponts institutionnels entre gouvernements, ONG et partenaires.'],
             ['Développement durable', 'Programmes à impact, renforcement des capacités et amélioration des conditions de vie.'],
             ['Services-conseils stratégiques', 'Accompagnement sur mesure des dirigeants et organisations.'],
@@ -95,11 +98,11 @@ $pages = [
     'immigration' => [
         'title' => 'Je veux immigrer au Canada',
         'eyebrow' => 'Parcours et statuts',
-        'intro' => 'JCA accompagne les candidats dans toutes les étapes des procédures d'immigration vers le Canada et d'autres destinations. De l'analyse du profil à la finalisation du dossier, chaque étape est encadrée avec rigueur et confidentialité.',
+        'intro' => 'JCA accompagne les candidats dans toutes les étapes des procédures d\'immigration vers le Canada et d\'autres destinations. De l\'analyse du profil à la finalisation du dossier, chaque étape est encadrée avec rigueur et confidentialité.',
         'sections' => [
             ['Visa visiteur', 'Préparation de demandes de visite, invitations, assurances et garanties financières.'],
             ['Permis de travail', 'Accompagnement des travailleurs qualifiés et employeurs pour les demandes de mobilité professionnelle.'],
-            ['Permis d'études', 'Aide à la sélection de programmes, admission, visa d'étudiant et préparation de l'installation.'],
+            ['Permis d\'études', 'Aide à la sélection de programmes, admission, visa d\'étudiant et préparation de l\'installation.'],
             ['Résidence permanente (RP)', 'Structuration du dossier, preuves, formulaires, cohérence du parcours et anticipation des exigences.'],
             ['Parrainage familial', 'Vérification des critères, preuves relationnelles et accompagnement des familles dans les étapes sensibles.'],
             ['Citoyenneté canadienne', 'Préparation de la demande de citoyenneté et compréhension des droits et obligations.'],
@@ -108,22 +111,22 @@ $pages = [
     'recrutement-international' => [
         'title' => 'Je suis employeur',
         'eyebrow' => 'Recrutement et talents',
-        'intro' => 'JCA accompagne les employeurs dans le recrutement international, la mobilité des travailleurs et l'accompagnement aux étapes clés. Sourcing, préqualification, coordination candidat-employeur et intégration.',
+        'intro' => 'JCA accompagne les employeurs dans le recrutement international, la mobilité des travailleurs et l\'accompagnement aux étapes clés. Sourcing, préqualification, coordination candidat-employeur et intégration.',
         'sections' => [
             ['Recrutement international', 'Identification et présélection de profils qualifiés, coordination du processus de sélection et intégration.'],
             ['EIMT (Évaluation des Impacts sur le Marché du Travail)', 'Accompagnement des employeurs dans les démarches réglementaires et préqualification des candidats.'],
-            ['Mobilité des travailleurs', 'Accompagnement des travailleurs dans les démarches de permis, visa et préparation de l'installation au Canada.'],
+            ['Mobilité des travailleurs', 'Accompagnement des travailleurs dans les démarches de permis, visa et préparation de l\'installation au Canada.'],
             ['Accompagnement employeur', 'Consultation stratégique sur les besoins, planification de la mobilité et intégration des talents.'],
         ],
     ],
     'cooperation-internationale' => [
         'title' => 'Je suis partenaire',
         'eyebrow' => 'Partenariats internationaux',
-        'intro' => 'JCA accompagne les institutions, organisations et gouvernements dans la structuration de partenariats internationaux. Coopération, développement international, projets à impact et partenariats institutionnels.'
+        'intro' => 'JCA accompagne les institutions, organisations et gouvernements dans la structuration de partenariats internationaux. Coopération, développement international, projets à impact et partenariats institutionnels.',
         'sections' => [
             ['Coopération internationale', 'Structuration de collaborations entre institutions, gouvernements et organisations. Cadre de travail clair et partenariats mesurables.'],
             ['Développement international', 'Programmes territoriaux, développement économique et renforcement des capacités institutionnelles.'],
-            ['Projets à impact', 'Conception, mise en œuvre et évaluation de programmes visant l'amélioration durable des conditions de vie.'],
+            ['Projets à impact', 'Conception, mise en œuvre et évaluation de programmes visant l\'amélioration durable des conditions de vie.'],
             ['Partenariats institutionnels', 'Collaborations entre acteurs publics, ONG, universités et organisations internationales.'],
         ],
     ],
