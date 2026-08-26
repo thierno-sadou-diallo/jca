@@ -34,7 +34,6 @@
             <a href="{{ $publicRoute('page.show', 'contact') }}">{{ __('Formulaire') }}</a>
             <a href="mailto:{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}">{{ $siteSettings['contact_email'] ?? 'contact@jcaconseil.com' }}</a>
             <a href="tel:+221789685116">🇸🇳 +221 78 968 51 16</a>
-            <a href="tel:+15818497199">🇨🇦 +1 581 849 7199</a>
             @if (! empty($siteSettings['whatsapp']))
                 <a href="https://wa.me/{{ preg_replace('/\D+/', '', $siteSettings['whatsapp']) }}">WhatsApp</a>
             @endif

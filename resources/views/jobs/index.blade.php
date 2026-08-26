@@ -79,7 +79,9 @@
                 @endforelse
             </div>
 
-            {{ $jobs->links() }}
+            <div class="pagination-wrap">
+                {{ $jobs->links() }}
+            </div>
         </section>
     </main>
     @include('partials.footer')

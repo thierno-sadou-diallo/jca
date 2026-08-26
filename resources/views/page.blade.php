@@ -43,10 +43,6 @@
                             <strong>{{ __('Téléphone / WhatsApp') }} {{ __('Sénégal') }}</strong>
                             <span>🇸🇳 +221 78 968 51 16</span>
                         </a>
-                        <a href="tel:+15818497199">
-                            <strong>{{ __('Téléphone / WhatsApp') }} Canada</strong>
-                            <span>🇨🇦 +1 581 849 7199</span>
-                        </a>
                         <a href="{{ route('public.appointments') }}">
                             <strong>{{ __('Rendez-vous') }}</strong>
                             <span>{{ __('Formulaire direct, sans inscription obligatoire') }}</span>
@@ -202,9 +198,9 @@
                     <div class="team-copy about-copy">
                         <span class="eyebrow">{{ __('Équipe') }}</span>
                         <h2>{{ __('Une équipe pluridisciplinaire au service de vos projets.') }}</h2>
-                        <p>{{ __('JCA réunit des expertise complémentaires en immigration, mobilité internationale, recrutement, coopération et conseil stratégique. Chaque projet est confié à une équipe mobilisée autour d\'un objectif commun : servir vos ambitions avec rigueur et intégrité.') }}</p>
+                        <p>{{ __('JCA réunit des expertises complémentaires en immigration, mobilité internationale, recrutement, coopération et conseil stratégique. Chaque projet est confié à une équipe mobilisée autour d\'un objectif commun : servir vos ambitions avec rigueur et intégrité.') }}</p>
                     </div>
-                    <div class="team-members-grid" aria-label="Team members">
+                    <div class="team-members-grid" aria-label="{{ __('Membres de l’équipe') }}">
                         <article class="team-member-card">
                             <div class="team-member-image">
                                 <img src="{{ asset('images/logo_off.webp') }}" alt="Me Amadou NDIAYE" loading="lazy">
@@ -322,10 +318,6 @@
                         <a href="tel:+221789685116">
                             <span>{{ __('Téléphone / WhatsApp') }} {{ __('Sénégal') }}</span>
                             <strong>🇸🇳 +221 78 968 51 16</strong>
-                        </a>
-                        <a href="tel:+15818497199">
-                            <span>{{ __('Téléphone / WhatsApp') }} Canada</span>
-                            <strong>🇨🇦 +1 581 849 7199</strong>
                         </a>
                         @if (! empty($siteSettings['collaboration_document_path']))
                             <a class="collaboration-document-card" href="{{ route('public.collaboration-document.download') }}">

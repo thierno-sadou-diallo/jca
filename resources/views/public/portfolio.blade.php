@@ -38,7 +38,9 @@
                 @endforelse
             </div>
 
-            {{ $items->links() }}
+            <div class="pagination-wrap">
+                {{ $items->links() }}
+            </div>
         </section>
     </main>
 

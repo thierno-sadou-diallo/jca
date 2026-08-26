@@ -1,6 +1,3 @@
-
-
-
 <?php
 
 use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;

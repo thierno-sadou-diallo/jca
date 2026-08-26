@@ -68,7 +68,9 @@
                     </article>
                 @endforelse
             </div>
-            {{ $projects->links() }}
+            <div class="pagination-wrap">
+                {{ $projects->links() }}
+            </div>
         </section>
     </main>
     @include('partials.footer')

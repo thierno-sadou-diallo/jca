@@ -45,7 +45,9 @@
             </div>
 
             @if (method_exists($testimonials, 'links'))
-                {{ $testimonials->links() }}
+                <div class="pagination-wrap">
+                    {{ $testimonials->links() }}
+                </div>
             @endif
         </section>
     </main>
