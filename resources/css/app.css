@@ -7643,6 +7643,7 @@ h3 {
     .page-hero-about,
     .page-hero-privacy,
     .story-showcase,
+    .team-showcase,
     .impact-story,
     .journey-panel,
     .portal-hero-grid {
@@ -7931,6 +7932,14 @@ h3 {
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
+    }
+
+    .team-showcase {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .team-member-card {
