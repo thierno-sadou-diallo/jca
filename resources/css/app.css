@@ -2213,6 +2213,7 @@ h2 {
 
 /* Team section styles */
 .team-showcase {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
     gap: clamp(22px, 4vw, 52px);
@@ -2221,11 +2222,41 @@ h2 {
         radial-gradient(circle at 8% 18%, rgba(213, 173, 71, .18), transparent 26%),
         radial-gradient(circle at 92% 82%, rgba(31, 138, 132, .16), transparent 30%),
         linear-gradient(135deg, #f7fafb 0%, #ffffff 48%, #eef7f4 100%);
+    isolation: isolate;
+}
+
+.team-showcase::after {
+    content: "JCA";
+    position: absolute;
+    left: clamp(14px, 4vw, 62px);
+    bottom: clamp(18px, 4vw, 54px);
+    z-index: -1;
+    color: rgba(8, 27, 49, .055);
+    font-family: var(--title-font);
+    font-size: clamp(7rem, 19vw, 17rem);
+    font-weight: 700;
+    line-height: .7;
+    pointer-events: none;
 }
 
 .team-copy {
+    position: relative;
     max-width: none;
     align-self: center;
+}
+
+.team-copy::before {
+    content: "01 / IDENTITÉ";
+    display: block;
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 7px 11px;
+    color: var(--teal);
+    border: 1px solid rgba(31, 138, 132, .3);
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .12em;
 }
 
 .team-copy h2 {
@@ -2241,8 +2272,9 @@ h2 {
 
 .team-member-card {
     display: grid;
-    grid-template-columns: minmax(150px, 190px) 1fr;
-    gap: clamp(24px, 4vw, 42px);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 22px;
     padding: clamp(20px, 4vw, 32px);
     border-radius: 12px;
     color: var(--white);
@@ -2298,6 +2330,7 @@ h2 {
     font-size: 20px;
     font-weight: 900;
     line-height: 1.2;
+    text-align: center;
 }
 
 .team-member-role {
@@ -2308,6 +2341,7 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--accent-primary);
+    text-align: center;
 }
 
 .team-member-credentials {
@@ -2316,6 +2350,7 @@ h2 {
     font-weight: 600;
     line-height: 1.5;
     color: #e4edf0;
+    text-align: center;
 }
 
 .team-member-bio {
@@ -2323,6 +2358,7 @@ h2 {
     font-size: 14px;
     line-height: 1.6;
     color: #f4f7f8;
+    text-align: left;
 }
 
 .team-member-bio p {
@@ -7977,6 +8013,13 @@ h3 {
         width: 100%;
         padding: 30px 12px 38px;
         overflow: hidden;
+    }
+
+    .team-showcase::after {
+        right: -12px;
+        left: auto;
+        bottom: 16px;
+        font-size: 7rem;
     }
 
     .team-showcase .about-copy {
