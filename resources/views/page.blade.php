@@ -203,10 +203,10 @@
                     <div class="team-members-grid" aria-label="{{ __('Membres de l’équipe') }}">
                         <article class="team-member-card">
                             <div class="team-member-image">
-                                <img src="{{ asset('images/logo_off.webp') }}" alt="Me Amadou NDIAYE" loading="lazy">
+                                <img src="{{ asset('images/logo_off.webp') }}" alt="Me Ousmane NDIAYE" loading="lazy">
                             </div>
                             <div class="team-member-info">
-                                <h3>Me Amadou NDIAYE</h3>
+                                <h3>Me Ousmane NDIAYE</h3>
                                 <span class="team-member-role">{{ __('Founder & Principal Advisor') }}</span>
                                 <p class="team-member-credentials">{{ __('Avocat (Barreau du Québec) / Expert en gouvernance, sécurité et politiques publiques en Afrique de l\'Ouest / Gestionnaire de projets internationaux / Auteur') }}</p>
                                 <p class="team-member-bio">{{ __('Fort d\'une expertise reconnue en immigration, mobilité internationale et développement, Me NDIAYE accompagne depuis des années une clientèle variée — particuliers, entreprises, gouvernements et organisations internationales — dans leurs démarches stratégiques et juridiques.') }}</p>
