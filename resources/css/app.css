@@ -1148,7 +1148,7 @@ strong em {
     font-size: clamp(1.25rem, 1.55vw, 1.78rem);
     line-height: 1.12;
     overflow-wrap: anywhere;
-    color: var(--navy);
+    color: #f2cf75;
 }
 
 .home-pathway strong {
@@ -7928,11 +7928,20 @@ h3 {
     }
 
     .team-members-grid {
+        display: grid;
         grid-template-columns: 1fr;
+        width: 100%;
     }
 
     .team-member-card {
+        display: grid;
         grid-template-columns: 1fr;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .team-member-info {
+        min-width: 0;
     }
 
     .team-member-image {
