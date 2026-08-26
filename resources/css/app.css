@@ -2301,6 +2301,18 @@ h2 {
     color: #f4f7f8;
 }
 
+.team-member-bio p {
+    margin: 0;
+}
+
+.team-member-bio p + p {
+    margin-top: 14px;
+}
+
+.team-member-bio strong {
+    color: #f2cf75;
+}
+
 .team-expertise {
     display: grid;
     gap: clamp(22px, 4vw, 42px);

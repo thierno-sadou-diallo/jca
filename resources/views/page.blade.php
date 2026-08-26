@@ -207,9 +207,15 @@
                             </div>
                             <div class="team-member-info">
                                 <h3>Me Ousmane NDIAYE</h3>
-                                <span class="team-member-role">{{ __('Founder & Principal Advisor') }}</span>
-                                <p class="team-member-credentials">{{ __('Avocat (Barreau du Québec) / Expert en gouvernance, sécurité et politiques publiques en Afrique de l\'Ouest / Gestionnaire de projets internationaux / Auteur') }}</p>
-                                <p class="team-member-bio">{{ __('Fort d\'une expertise reconnue en immigration, mobilité internationale et développement, Me NDIAYE accompagne depuis des années une clientèle variée — particuliers, entreprises, gouvernements et organisations internationales — dans leurs démarches stratégiques et juridiques.') }}</p>
+                                <span class="team-member-role">{{ __('Avocat au Barreau du Québec') }}</span>
+                                <p class="team-member-credentials">{{ __('Expert en gouvernance, sécurité et politiques publiques en Afrique de l’Ouest | Gestionnaire de projets internationaux | Auteur') }}</p>
+                                <div class="team-member-bio">
+                                    <p>{{ __('Fort d’une solide expérience en immigration, en mobilité internationale et en développement, Me NDIAYE accompagne depuis plusieurs années une clientèle diversifiée au Canada, en Afrique et à l’international.') }}</p>
+                                    <p>{{ __('Son expertise s’étend notamment à l’immigration, au recrutement international, à la mobilité des talents et à l’accompagnement juridique, auprès de particuliers, d’entreprises, d’institutions publiques et d’organisations internationales.') }}</p>
+                                    <p>{{ __('À travers une approche à la fois stratégique, rigoureuse et personnalisée, Me NDIAYE intervient dans des projets nécessitant une compréhension approfondie des enjeux juridiques, institutionnels et internationaux. Son parcours en gouvernance, sécurité et politiques publiques en Afrique de l’Ouest lui permet également d’apporter une vision globale aux projets de développement et de coopération internationale.') }}</p>
+                                    <p>{{ __('En tant que gestionnaire de projets internationaux et auteur, il met son expertise au service de projets porteurs d’impact, en favorisant la création de passerelles entre les personnes, les organisations et les territoires.') }}</p>
+                                    <p><strong>{{ __('Sa mission :') }}</strong> {{ __('offrir un accompagnement fiable et stratégique pour transformer les projets de mobilité, d’immigration, de recrutement et de coopération internationale en parcours structurés et durables.') }}</p>
+                                </div>
                             </div>
                         </article>
                     </div>
